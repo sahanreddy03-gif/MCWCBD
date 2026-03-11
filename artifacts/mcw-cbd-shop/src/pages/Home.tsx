@@ -2,21 +2,15 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
-import { BRANDS } from "@/lib/data";
+import { BRANDS, PRODUCTS } from "@/lib/data";
 
-const CATEGORY_TILES = [
-  { name: "CBD Flowers", count: 24, bg: "from-[#1a3a1a] to-[#051005]" },
-  { name: "CBD Vapes", count: 18, bg: "from-[#2e1a3a] to-[#0a0510]" },
-  { name: "CBD Oils", count: 15, bg: "from-[#3a2e1a] to-[#100a05]" },
-  { name: "CBD Hash", count: 10, bg: "from-[#1a2e3a] to-[#050a10]" },
-  { name: "Pre-Rolls", count: 14, bg: "from-[#3a1a1a] to-[#100505]" },
-  { name: "Gummies", count: 12, bg: "from-[#3a1a2e] to-[#10050a]" },
-  { name: "H4CBD", count: 8, bg: "from-[#1a3a2e] to-[#05100a]" },
-  { name: "HHC", count: 9, bg: "from-[#2e3a1a] to-[#0a1005]" },
-  { name: "Accessories", count: 40, bg: "from-[#222222] to-[#050505]" },
-  { name: "Creams", count: 6, bg: "from-[#1a1a3a] to-[#050510]" },
-  { name: "Capsules", count: 5, bg: "from-[#3a3a1a] to-[#101005]" },
-  { name: "Cigars", count: 15, bg: "from-[#3a221a] to-[#100805]" }
+const SHOWCASE_CARDS = [
+  { id: '01', cat: "PRE-ROLL", name: "BABY JEETER", sub: "QUAD-INFUSED", bg: "bg-[#00C8C8]", text: "text-black", img: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400&q=80" },
+  { id: '02', cat: "CBD VAPES", name: "LIQUID DIAMONDS", sub: "LIVE RESIN", bg: "bg-[#FF6B35]", text: "text-black", img: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=400&q=80" },
+  { id: '03', cat: "CBD FLOWERS", name: "PREMIUM BUDS", sub: "INDOOR GROWN", bg: "bg-[#7B4FFF]", text: "text-white", img: "https://images.unsplash.com/photo-1616469829941-c7200edec809?w=400&q=80" },
+  { id: '04', cat: "CBD GUMMIES", name: "SOUR RINGS", sub: "FULL SPECTRUM", bg: "bg-[#FF3366]", text: "text-white", img: "https://images.unsplash.com/photo-1582749933611-5e9d5b0e5aa4?w=400&q=80" },
+  { id: '05', cat: "CBD OILS", name: "PURE DROPS", sub: "FAST ACTING", bg: "bg-[#22C55E]", text: "text-black", img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80" },
+  { id: '06', cat: "HHC PRODUCTS", name: "HHC DISPOSABLE", sub: "POTENT EFFECT", bg: "bg-[#FFB800]", text: "text-black", img: "https://images.unsplash.com/photo-1536244636800-a3f74db0f3cf?w=400&q=80" }
 ];
 
 export default function Home() {
@@ -84,69 +78,145 @@ export default function Home() {
       </section>
 
       {/* DOUBLE TRUST BAR */}
-      <div className="bg-black py-4 border-y border-white/[0.04] overflow-hidden flex flex-col gap-2 relative z-20">
-        <div className="flex whitespace-nowrap animate-marquee text-xs font-black uppercase tracking-[0.25em] text-white">
-          {[...Array(6)].map((_, i) => (
-            <div key={`top-${i}`} className="flex items-center">
-              <span className="mx-8">100% Legal in Malta</span>
-              <span className="text-secondary">◆</span>
-              <span className="mx-8">Official Brand Distributor</span>
-              <span className="text-secondary">◆</span>
-              <span className="mx-8">EU Lab-Tested Products</span>
-              <span className="text-secondary">◆</span>
-            </div>
-          ))}
+      <div className="flex flex-col relative z-20">
+        <div className="bg-black py-4 overflow-hidden">
+          <div className="flex whitespace-nowrap animate-marquee text-xs font-black uppercase tracking-[0.25em] text-white">
+            {[...Array(6)].map((_, i) => (
+              <div key={`top-${i}`} className="flex items-center">
+                <span className="mx-8">100% Legal in Malta</span>
+                <span className="text-white/30">◆</span>
+                <span className="mx-8">Official Brand Distributor</span>
+                <span className="text-white/30">◆</span>
+                <span className="mx-8">EU Lab-Tested Products</span>
+                <span className="text-white/30">◆</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex whitespace-nowrap animate-marquee-reverse text-xs font-black uppercase tracking-[0.25em] text-white/50">
-          {[...Array(6)].map((_, i) => (
-            <div key={`bottom-${i}`} className="flex items-center">
-              <span className="mx-8">Same-Day Delivery</span>
-              <span className="text-primary">◆</span>
-              <span className="mx-8">4 Locations Island-Wide</span>
-              <span className="text-primary">◆</span>
-              <span className="mx-8">Top International Brands</span>
-              <span className="text-primary">◆</span>
-            </div>
-          ))}
+        <div className="bg-gradient-to-r from-[#22c55e] via-[#4ade80] to-[#22c55e] py-4 overflow-hidden border-y border-black">
+          <div className="flex whitespace-nowrap animate-marquee-reverse text-xs font-black uppercase tracking-[0.25em] text-black">
+            {[...Array(6)].map((_, i) => (
+              <div key={`bottom-${i}`} className="flex items-center">
+                <span className="mx-8">Same-Day Delivery</span>
+                <span className="text-black/50">◆</span>
+                <span className="mx-8">4 Locations Island-Wide</span>
+                <span className="text-black/50">◆</span>
+                <span className="mx-8">Top International Brands</span>
+                <span className="text-black/50">◆</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* CATEGORY TILES (Jeeter Drops Style) */}
-      <section className="py-32 bg-[#0a0a0a]">
+      {/* NEW ARRIVALS */}
+      <section className="pt-24 pb-12 bg-[#0a0a0a] overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <h2 className="text-5xl md:text-7xl font-bebas tracking-tight text-white">NEW ARRIVALS</h2>
+        </div>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-16">
-            <h2 className="text-6xl md:text-8xl font-bebas tracking-tight">SHOP BY CATEGORY</h2>
-            <Link href="/shop" className="hidden md:flex items-center gap-2 text-primary font-black uppercase tracking-widest text-sm hover:text-white transition-colors group pb-2">
-              View All <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {CATEGORY_TILES.map((cat, i) => (
-              <Link key={cat.name} href={`/shop`}>
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: (i % 6) * 0.1, duration: 0.5 }}
-                  className={`relative aspect-[3/4] rounded-xl overflow-hidden group bg-gradient-to-br ${cat.bg} border border-white/[0.04] cursor-pointer`}
-                >
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/50 transition-colors duration-500 rounded-xl z-20 pointer-events-none" />
-                  
-                  <div className="absolute inset-0 p-4 flex flex-col justify-between z-10">
-                    <span className="text-[10px] font-bold text-white/50 tracking-widest uppercase">{cat.count} Items</span>
-                    <h3 className="font-bebas text-3xl md:text-4xl text-white tracking-wide leading-none group-hover:scale-110 group-hover:origin-bottom-left transition-transform duration-500">{cat.name}</h3>
+          <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-6 snap-x md:grid md:grid-cols-4 md:gap-6 md:overflow-visible">
+            {PRODUCTS.filter(p => p.isNew).slice(0, 4).map((p, i) => (
+              <Link key={p.id} href="/shop" className="shrink-0 w-[280px] md:w-full snap-start group block">
+                <div className="bg-white rounded-2xl relative overflow-hidden flex flex-col h-[380px] shadow-lg border-2 border-transparent group-hover:border-[#FF3366] transition-colors">
+                  <div className="p-5 flex justify-between items-start z-10 relative">
+                    <span className="bg-[#FF3366] text-white text-[11px] font-black px-3 py-1.5 uppercase tracking-widest shadow-md">NEW</span>
+                    <span className="text-[10px] font-black text-black/40 uppercase tracking-widest">{p.brand}</span>
                   </div>
-                </motion.div>
+                  <div className="px-5 z-10 relative">
+                    <h3 className="font-bebas text-4xl text-black leading-none line-clamp-2">{p.name}</h3>
+                  </div>
+                  <div className="absolute -bottom-8 -right-8 w-64 h-64 z-20 pointer-events-none">
+                    <img 
+                      src={p.image} 
+                      className={`w-full h-full object-cover rounded-full shadow-2xl ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`} 
+                      alt={p.name} 
+                    />
+                  </div>
+                  <div className="mt-auto category-accent-bar z-30" style={{ background: '#FF3366' }}></div>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* FEATURED PRODUCT SHOWCASE (Jeeter Style) */}
+      <section className="py-16 bg-[#0a0a0a]">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <h2 className="text-5xl md:text-7xl font-bebas tracking-tight text-white mb-2">FEATURED CATEGORIES</h2>
+        </div>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {SHOWCASE_CARDS.map((card, i) => (
+              <Link key={card.id} href="/shop" className="block group">
+                <div className={`relative w-full min-h-[400px] rounded-3xl overflow-hidden ${card.bg} flex flex-col shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
+                  {/* Left content */}
+                  <div className={`p-8 md:p-12 w-full md:w-2/3 flex-1 flex flex-col justify-center z-10 ${card.text} relative`}>
+                    <div className="flex justify-between items-center mb-6 w-full max-w-[120px]">
+                      <span className="text-sm font-black opacity-60">{card.id}</span>
+                      <span className="text-xs font-black tracking-widest uppercase opacity-80">{card.cat}</span>
+                    </div>
+                    
+                    <h3 className="font-bebas text-6xl md:text-[6rem] leading-[0.85] tracking-tighter mb-2">{card.name}</h3>
+                    <p className="text-sm font-bold tracking-[0.2em] uppercase opacity-90 mb-10">{card.sub}</p>
+                    
+                    <div className="mt-auto inline-flex">
+                      <div className={`flex items-center gap-2 font-black text-sm uppercase tracking-widest border-b-2 pb-1 ${card.text === 'text-white' ? 'border-white' : 'border-black'} hover:opacity-70 transition-opacity`}>
+                        SHOP NOW <ArrowRight size={18} />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Right image */}
+                  <div className="absolute right-0 bottom-0 w-3/4 md:w-1/2 h-[120%] pointer-events-none z-20 flex items-center justify-end overflow-visible">
+                    <img 
+                      src={card.img} 
+                      alt={card.name} 
+                      className={`w-[110%] max-w-none object-cover rounded-2xl shadow-2xl ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
+                      style={{ transformOrigin: 'center' }}
+                    />
+                  </div>
+
+                  {/* Accent bar at bottom */}
+                  <div className="absolute bottom-0 left-0 w-full h-[6px] bg-black/20 z-30"></div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY MCW SECTION - MASSIVE NUMBERS */}
+      <section className="py-32 bg-white relative">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 border-4 border-black rounded-3xl overflow-hidden bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center border-b-4 md:border-b-0 md:border-r-4 border-black">
+              <span className="text-[8rem] md:text-[10rem] font-bebas text-[#22c55e] leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '2px #000' }}>300+</span>
+              <span className="text-xl font-bold uppercase tracking-[0.2em] text-black">Products in Stock</span>
+            </div>
+            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center border-b-4 md:border-b-0 md:border-r-4 border-black">
+              <span className="text-[8rem] md:text-[10rem] font-bebas text-[#22c55e] leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '2px #000' }}>50+</span>
+              <span className="text-xl font-bold uppercase tracking-[0.2em] text-black">Global Brands</span>
+            </div>
+            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center">
+              <span className="text-[8rem] md:text-[10rem] font-bebas text-[#22c55e] leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '2px #000' }}>4</span>
+              <span className="text-xl font-bold uppercase tracking-[0.2em] text-black">Malta Locations</span>
+            </div>
+          </div>
+          
+          <div className="mt-20 text-center">
+            <h3 className="text-4xl md:text-5xl lg:text-7xl font-bebas tracking-wide text-black max-w-5xl mx-auto leading-tight">
+              WE DON'T JUST SELL PRODUCTS. <br className="hidden md:block"/>WE CURATE AN EXPERIENCE.
+            </h3>
+          </div>
+
+        </div>
+      </section>
+
       {/* THE MCW FAMILY (Brand Wall) */}
-      <section className="py-32 bg-black border-y border-white/[0.04] overflow-hidden">
+      <section className="py-32 bg-black border-t-4 border-white/[0.04] overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <h2 className="text-6xl md:text-8xl font-bebas tracking-tight text-white">THE MCW FAMILY</h2>
         </div>
@@ -185,32 +255,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY MCW SECTION - MASSIVE NUMBERS */}
-      <section className="py-32 bg-[#0a0a0a] relative">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 border border-white/[0.08] rounded-3xl overflow-hidden bg-[#111]">
-            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-white/[0.08]">
-              <span className="text-[8rem] md:text-[10rem] font-bebas text-primary leading-none tracking-tighter mb-4 text-glow">300+</span>
-              <span className="text-xl font-bold uppercase tracking-[0.2em] text-white">Products in Stock</span>
-            </div>
-            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-white/[0.08]">
-              <span className="text-[8rem] md:text-[10rem] font-bebas text-primary leading-none tracking-tighter mb-4 text-glow">50+</span>
-              <span className="text-xl font-bold uppercase tracking-[0.2em] text-white">Global Brands</span>
-            </div>
-            <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center">
-              <span className="text-[8rem] md:text-[10rem] font-bebas text-primary leading-none tracking-tighter mb-4 text-glow">4</span>
-              <span className="text-xl font-bold uppercase tracking-[0.2em] text-white">Malta Locations</span>
-            </div>
-          </div>
-          
-          <div className="mt-20 text-center">
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bebas tracking-wide text-secondary max-w-4xl mx-auto leading-tight text-glow-gold">
-              WE DON'T JUST SELL PRODUCTS. <br className="hidden md:block"/>WE CURATE AN EXPERIENCE.
-            </h3>
-          </div>
-
-        </div>
+      {/* FOOTER CTA BANNER */}
+      <section className="py-32 bg-[#00C8C8] text-black text-center px-4 flex flex-col items-center justify-center border-t-4 border-black">
+        <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">ORDER ON WHATSAPP</h2>
+        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">SAME DAY DELIVERY</p>
+        <a 
+          href="https://wa.me/35699999999" 
+          target="_blank" 
+          rel="noreferrer" 
+          className="inline-block px-16 py-6 bg-black text-white font-black text-xl md:text-2xl uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:translate-y-2 hover:translate-x-2"
+        >
+          Chat With Us
+        </a>
       </section>
     </>
   );
