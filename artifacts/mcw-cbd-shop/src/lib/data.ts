@@ -29,12 +29,13 @@ export const BRANDS = [
   "Gelato", "Top Shelf", "Amsterdam Gold", "Dutch Gold", "Sensi Seeds", "MCW"
 ];
 
-// High-quality Unsplash placeholders that fit a dark, premium aesthetic
-const pFlower = "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80"; // Abstract dark smoke/flower feel
-const pOil = "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=800&q=80"; // Amber dark drop / oil
-const pVape = "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80"; // Premium dark mood
-const pGummy = "https://images.unsplash.com/photo-1536644211181-8b010c2227d8?w=800&q=80"; // Moody abstract texture
-const pAccessory = "https://images.unsplash.com/photo-1550505095-81378a675e2e?w=800&q=80"; // Black aesthetic object
+// Product image placeholders — themed by category
+const pFlower = "https://images.unsplash.com/photo-1574226516831-e1dff420e562?w=500&q=80";    // Green botanical plant
+const pOil = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=80";       // Green dropper bottle
+const pVape = "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&q=80";      // Glass science tubes
+const pGummy = "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=500&q=80";     // Colorful gummies
+const pAccessory = "https://images.unsplash.com/photo-1586495777744-4e6232bf2f8e?w=500&q=80"; // Dark premium object
+const pHash = "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=500&q=80";      // Amber/resin texture
 
 export const PRODUCTS: Product[] = [
   // CBD Oils
@@ -95,8 +96,8 @@ export const PRODUCTS: Product[] = [
   
   // Padding out to ~60 with variations
   { id: "41", name: "MCW Sleep Tincture 500mg", brand: "MCW", category: "CBD Oils", price: 40.00, effect: "Sleeping", cannabinoid: "CBD", image: pOil },
-  { id: "42", name: "Cookies Hash Rosin", brand: "Cookies", category: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower },
-  { id: "43", name: "Amsterdam Gold Hash", brand: "Amsterdam Gold", category: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pFlower },
+  { id: "42", name: "Cookies Hash Rosin", brand: "Cookies", category: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pHash },
+  { id: "43", name: "Amsterdam Gold Hash", brand: "Amsterdam Gold", category: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pHash },
   { id: "44", name: "STIIIZY Pod Blue Dream", brand: "STIIIZY", category: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pVape },
   { id: "45", name: "CBX Disposable Pen", brand: "CBX", category: "CBD Vapes", price: 42.00, effect: "Relaxing", cannabinoid: "CBD", image: pVape },
   { id: "46", name: "Gelato Gummies 500mg", brand: "Gelato", category: "CBD Gummies", price: 35.00, effect: "Sleeping", cannabinoid: "CBD", image: pGummy },

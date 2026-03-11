@@ -154,52 +154,50 @@ export default function Shop() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: (i % 6) * 0.05 }}
-                  className="product-card-light relative flex flex-col group transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] overflow-visible min-h-[420px] rounded-3xl z-10 hover:z-20"
+                  className="bg-white rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 min-h-[300px]"
                 >
-                  {/* Top bar */}
-                  <div className="p-6 flex justify-between items-start">
-                    <div className="flex flex-col gap-2">
-                      {product.isNew && (
-                        <span className="bg-[#FF3366] text-white text-[11px] font-black uppercase tracking-widest px-3 py-1 shadow-md">NEW</span>
-                      )}
-                      {product.isPopular && !product.isNew && (
-                        <span className="bg-[#FFB800] text-black text-[11px] font-black uppercase tracking-widest px-3 py-1 shadow-md">HOT</span>
-                      )}
+                  {/* TOP ROW: badges + brand */}
+                  <div className="px-5 pt-5 pb-3 flex items-start justify-between shrink-0">
+                    <div>
+                      {product.isNew && <span className="bg-[#FF3366] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">NEW</span>}
+                      {product.isPopular && !product.isNew && <span className="bg-[#FFB800] text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">HOT</span>}
                     </div>
-                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-black/40 text-right">{product.brand}</span>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="px-6 relative z-10 flex-1">
-                    <h3 className="font-bebas text-5xl text-black leading-[0.9] tracking-tighter mb-2 line-clamp-3 w-3/4">{product.name}</h3>
-                    <span className="text-[11px] font-black uppercase tracking-widest text-black/60 block mb-6">
-                      {product.category} {product.effect && `• ${product.effect}`}
-                    </span>
-                  </div>
-                  
-                  {/* Image floating */}
-                  <div className="absolute -right-6 bottom-20 w-[60%] h-[240px] pointer-events-none z-20 flex items-center justify-center">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className={`w-full h-full object-cover rounded-2xl shadow-2xl ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  {/* Bottom */}
-                  <div className="mt-auto px-6 pb-6 relative z-10 flex items-end justify-between">
-                    <button 
-                      onClick={(e) => { e.preventDefault(); addToCart(product); }}
-                      className="bg-black text-white px-6 py-4 text-[11px] font-black uppercase tracking-widest hover:bg-black/80 transition-colors shadow-lg hover:scale-105"
-                    >
-                      LEARN MORE
-                    </button>
-                    <span className="font-bebas text-4xl text-black leading-none bg-white/90 px-2 py-1 backdrop-blur-sm rounded">€{product.price.toFixed(2)}</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-black/30 leading-tight text-right">{product.brand}</span>
                   </div>
 
-                  {/* Accent bar */}
-                  <div className="category-accent-bar absolute bottom-0 left-0 rounded-b-3xl" style={{ backgroundColor: getCategoryColor(product.category), height: '6px' }}></div>
+                  {/* MIDDLE ROW: name (left) + image (right), flex-row, contained */}
+                  <div className="flex flex-row flex-1 min-h-0 overflow-hidden">
+                    {/* Left: name + category */}
+                    <div className="px-5 pb-4 flex flex-col justify-end w-[58%] shrink-0">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.category}</p>
+                      <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
+                      {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-1">{product.effect}</p>}
+                    </div>
+                    {/* Right: product image — strictly contained */}
+                    <div className="relative w-[42%] shrink-0 overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
+                    </div>
+                  </div>
+
+                  {/* BOTTOM ROW: CTA + price */}
+                  <div className="px-5 pb-5 flex items-center justify-between shrink-0 mt-2">
+                    <button
+                      onClick={(e) => { e.preventDefault(); addToCart(product); }}
+                      className="bg-black text-white text-[11px] font-black uppercase tracking-widest px-5 py-3 hover:bg-[#22c55e] hover:text-black transition-colors"
+                    >
+                      + ADD TO CART
+                    </button>
+                    <span className="font-bebas text-3xl text-black">€{product.price.toFixed(2)}</span>
+                  </div>
+
+                  {/* Category accent bar */}
+                  <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
                 </motion.div>
               ))}
             </div>

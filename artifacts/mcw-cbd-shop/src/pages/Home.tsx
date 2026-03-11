@@ -5,12 +5,12 @@ import { SEO } from "@/components/SEO";
 import { BRANDS, PRODUCTS } from "@/lib/data";
 
 const SHOWCASE_CARDS = [
-  { id: '01', cat: "PRE-ROLL", name: "BABY JEETER", sub: "QUAD-INFUSED", bg: "bg-[#00C8C8]", text: "text-black", img: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=400&q=80" },
-  { id: '02', cat: "CBD VAPES", name: "LIQUID DIAMONDS", sub: "LIVE RESIN", bg: "bg-[#FF6B35]", text: "text-black", img: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=400&q=80" },
-  { id: '03', cat: "CBD FLOWERS", name: "PREMIUM BUDS", sub: "INDOOR GROWN", bg: "bg-[#7B4FFF]", text: "text-white", img: "https://images.unsplash.com/photo-1616469829941-c7200edec809?w=400&q=80" },
-  { id: '04', cat: "CBD GUMMIES", name: "SOUR RINGS", sub: "FULL SPECTRUM", bg: "bg-[#FF3366]", text: "text-white", img: "https://images.unsplash.com/photo-1582749933611-5e9d5b0e5aa4?w=400&q=80" },
-  { id: '05', cat: "CBD OILS", name: "PURE DROPS", sub: "FAST ACTING", bg: "bg-[#22C55E]", text: "text-black", img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80" },
-  { id: '06', cat: "HHC PRODUCTS", name: "HHC DISPOSABLE", sub: "POTENT EFFECT", bg: "bg-[#FFB800]", text: "text-black", img: "https://images.unsplash.com/photo-1536244636800-a3f74db0f3cf?w=400&q=80" }
+  { id: '01', cat: "PRE-ROLL", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: "https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=600&q=80" },
+  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80" },
+  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: "https://images.unsplash.com/photo-1574226516831-e1dff420e562?w=600&q=80" },
+  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=600&q=80" },
+  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" },
+  { id: '06', cat: "HHC PRODUCTS", name: "HHC", sub: "NEXT-GEN CANNABINOIDS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=600&q=80" }
 ];
 
 export default function Home() {
@@ -118,23 +118,29 @@ export default function Home() {
           <div className="flex overflow-x-auto pb-8 -mx-4 px-4 gap-6 snap-x md:grid md:grid-cols-4 md:gap-6 md:overflow-visible">
             {PRODUCTS.filter(p => p.isNew).slice(0, 4).map((p, i) => (
               <Link key={p.id} href="/shop" className="shrink-0 w-[280px] md:w-full snap-start group block">
-                <div className="bg-white rounded-2xl relative overflow-hidden flex flex-col h-[380px] shadow-lg border-2 border-transparent group-hover:border-[#FF3366] transition-colors">
-                  <div className="p-5 flex justify-between items-start z-10 relative">
-                    <span className="bg-[#FF3366] text-white text-[11px] font-black px-3 py-1.5 uppercase tracking-widest shadow-md">NEW</span>
-                    <span className="text-[10px] font-black text-black/40 uppercase tracking-widest">{p.brand}</span>
+                <div className="bg-white rounded-2xl overflow-hidden flex flex-row h-[200px] md:h-[220px] shadow-lg border-2 border-transparent group-hover:border-[#FF3366] transition-colors">
+                  {/* Left text */}
+                  <div className="flex flex-col justify-between p-5 w-[58%] shrink-0">
+                    <div>
+                      <span className="bg-[#FF3366] text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest inline-block mb-2">NEW</span>
+                      <p className="text-[10px] font-black text-black/40 uppercase tracking-widest">{p.brand}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-bebas text-3xl text-black leading-none line-clamp-2 mb-3">{p.name}</h3>
+                      <span className="text-[10px] font-black text-black/50 uppercase tracking-wider">{p.category}</span>
+                    </div>
                   </div>
-                  <div className="px-5 z-10 relative">
-                    <h3 className="font-bebas text-4xl text-black leading-none line-clamp-2">{p.name}</h3>
-                  </div>
-                  <div className="absolute -bottom-8 -right-8 w-64 h-64 z-20 pointer-events-none">
+                  {/* Right image */}
+                  <div className="relative w-[42%] shrink-0 overflow-hidden">
                     <img 
                       src={p.image} 
-                      className={`w-full h-full object-cover rounded-full shadow-2xl ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`} 
+                      className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
                       alt={p.name} 
                     />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-40% pointer-events-none" />
                   </div>
-                  <div className="mt-auto category-accent-bar z-30" style={{ background: '#FF3366' }}></div>
                 </div>
+                <div className="h-[4px] w-full rounded-b-2xl" style={{ background: '#FF3366' }} />
               </Link>
             ))}
           </div>
@@ -150,36 +156,40 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SHOWCASE_CARDS.map((card, i) => (
               <Link key={card.id} href="/shop" className="block group">
-                <div className={`relative w-full min-h-[400px] rounded-3xl overflow-hidden ${card.bg} flex flex-col shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
-                  {/* Left content */}
-                  <div className={`p-8 md:p-12 w-full md:w-2/3 flex-1 flex flex-col justify-center z-10 ${card.text} relative`}>
-                    <div className="flex justify-between items-center mb-6 w-full max-w-[120px]">
-                      <span className="text-sm font-black opacity-60">{card.id}</span>
-                      <span className="text-xs font-black tracking-widest uppercase opacity-80">{card.cat}</span>
+                <div className={`relative w-full min-h-[360px] rounded-3xl overflow-hidden ${card.bg} flex flex-row shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
+                  
+                  {/* LEFT: Text — fixed 55%, never overlapped */}
+                  <div className={`relative z-10 flex flex-col justify-between p-8 md:p-10 shrink-0 w-[55%] ${card.text}`}>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-black opacity-40 tracking-widest">{card.id}</span>
+                      <span className="text-[11px] font-black tracking-[0.2em] uppercase opacity-70">{card.cat}</span>
                     </div>
-                    
-                    <h3 className="font-bebas text-6xl md:text-[6rem] leading-[0.85] tracking-tighter mb-2">{card.name}</h3>
-                    <p className="text-sm font-bold tracking-[0.2em] uppercase opacity-90 mb-10">{card.sub}</p>
-                    
-                    <div className="mt-auto inline-flex">
-                      <div className={`flex items-center gap-2 font-black text-sm uppercase tracking-widest border-b-2 pb-1 ${card.text === 'text-white' ? 'border-white' : 'border-black'} hover:opacity-70 transition-opacity`}>
-                        SHOP NOW <ArrowRight size={18} />
-                      </div>
+                    <div className="flex flex-col py-4">
+                      <h3 className="font-bebas text-[3.2rem] md:text-[4.5rem] leading-[0.85] tracking-tighter mb-2">{card.name}</h3>
+                      <p className="text-[11px] font-bold tracking-[0.2em] uppercase opacity-80">{card.sub}</p>
+                    </div>
+                    <div className={`flex items-center gap-2 font-black text-xs uppercase tracking-widest border-b-2 pb-1 w-fit ${card.text === 'text-white' ? 'border-white' : 'border-black'}`}>
+                      SHOP NOW <ArrowRight size={14} />
                     </div>
                   </div>
-                  
-                  {/* Right image */}
-                  <div className="absolute right-0 bottom-0 w-3/4 md:w-1/2 h-[120%] pointer-events-none z-20 flex items-center justify-end overflow-visible">
-                    <img 
-                      src={card.img} 
-                      alt={card.name} 
-                      className={`w-[110%] max-w-none object-cover rounded-2xl shadow-2xl ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
-                      style={{ transformOrigin: 'center' }}
+
+                  {/* RIGHT: Image — fixed 45%, strictly contained */}
+                  <div className="relative w-[45%] shrink-0 overflow-hidden">
+                    <img
+                      src={card.img}
+                      alt={card.name}
+                      className={`absolute inset-0 w-full h-full object-cover object-center ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
+                      loading="lazy"
+                    />
+                    {/* Gradient fade — blends image into card color on the left edge */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{ background: `linear-gradient(to right, ${card.gradFrom} 0%, transparent 45%)` }}
                     />
                   </div>
 
-                  {/* Accent bar at bottom */}
-                  <div className="absolute bottom-0 left-0 w-full h-[6px] bg-black/20 z-30"></div>
+                  {/* Bottom dark strip */}
+                  <div className="absolute bottom-0 left-0 w-full h-[5px] bg-black/25 z-20" />
                 </div>
               </Link>
             ))}
