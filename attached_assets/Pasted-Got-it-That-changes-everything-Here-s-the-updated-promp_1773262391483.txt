@@ -1,0 +1,53 @@
+Got it. That changes everything. Here’s the updated prompt — direct and confident:
+
+PASTE INTO REPLIT:
+
+Build a world-class website for MCW — CBD Relax Shop, Malta’s number one cannabis and CBD retail destination with multiple locations across the island. Sliema , Gzira , Melliha , Buggiba 
+ 
+STEP 1 — STUDY THESE SITES FIRST. THEN BUILD.
+MCW is has the most latest and best products for all of these brands and more we need to show all the products , brand is not important because for example CBD vape is on product but we have 30 to 50 brands from the same and in the same product different strains we have beta and most highest quality and strength . We have full rights to use their product images, branding, and content. Go through every page of each site, extract product images, product names, descriptions, and also any other products in this category, also in accessories , also in cigars , in liquor in so many . Use them directly in the MCW website:
+	∙	https://www.stiiizy.com/ and https://www.stiiizy.com/collections/all
+	∙	https://cookies.co/ and https://cookies.co/shop and https://cookies.co/catalog
+	∙	https://www.jeeter.com/ and https://www.jeeter.com/products
+	∙	https://tyson20.com/ and https://tyson20.com/pages/our-products
+	∙	https://www.jungleboys.com/
+Also study their design language — layout, typography, colour energy, product card style, hero structure. The MCW site should feel like it belongs alongside all five. Take the best design elements from each and combine them into one site that beats all of them.
+
+WHO MCW IS:
+Malta’s number one cannabis retail destination. And also sells all kind of CBD and wee products all legal best quality , also liquor , cigars Multiple locations island-wide. more from Amsterdam, Netherlands, Germany, across Europe and America. Staff educates every customer. Widest range in Malta by far. Locals and tourists both.
+
+FULL PRODUCT RANGE — populate the shop with real products pulled from the partner brand sites above, plus these MCW-specific categories:
+CBD Oils (all strengths and spectrums), CBD Flowers & Buds (all strains — Indica, Sativa, Hybrid), CBD Hash, CBD Pre-Rolls, CBD Vapes (disposables, pods, cartridges), CBD Gummies, CBD Edibles & Cookies, CBD Creams, CBD Moisturisers, CBD Cosmetics & Skincare, CBD Chewing Gums, CBD Capsules, H4CBD Products (all forms), THCV Products (all forms), THCJD Vapes & Pre-Rolls, HHC Products, CBG & CBN Products, Grinders (all kinds), Rolling Papers & Filters, Pipes & Bongs, Vaporizers, Storage, Lighters, Trays & Accessories, Cigarettes, Cigars, Alcohol.many more products is missing , table full liberty to add all , but remember we don’t sell TC products all under legal in malta 
+
+5 PAGES:
+HOME:
+Full-screen cinematic dark video hero. Headline: “Malta’s #1 Cannabis & CBD Destination.” Subline: “” CTAs: SHOP THE RANGE + FIND A STORE. Age gate 18+ on load. Sticky navbar.
+Trust bar: “100% Legal in Malta” · “Official Brand Distributor” · “EU Lab-Tested” · “Multiple Locations” · “Same-Day Delivery” · “Expert Staff”
+Product category tiles — bold, dark, colourful like Jeeter’s drop grid. All categories above.
+Brand wall — horizontal scrolling ticker with real brand logos pulled from the partner sites: STIIIZY, Cookies, Jeeter, Tyson 2.0, Jungle Boys + European brands.
+Why MCW — 3 punchy columns: “We Know Cannabis” / “Everything Tested” / “The Widest Range in Malta”
+Education strip: “Don’t know where to start? We do.” — dark green, walk-in CTA.
+Locations map with branch cards.
+Instagram placeholder grid.
+Delivery banner — WhatsApp order button.
+Footer — all links, addresses, social, legal disclaimer.
+SHOP:
+Full catalogue using real product images and names pulled from STIIIZY, Cookies, Jeeter, Tyson 2.0, Jungle Boys sites and more not just these and a. Supplement with MCW-only categories. Filter by: Category, Effect, Brand, Cannabinoid Type. Sort by price/newest/popular. Dark premium product cards like STIIIZY. Cart sidebar. Checkout: Stripe placeholder + WhatsApp order alternative.
+STORES:
+“Find Us Across Malta” hero. Store cards: Sliema Triq Bisazza (main), Branch 2 TBC, Branch 3 TBC. Each with map embed, hours, WhatsApp, directions.
+BRANDS:
+Dedicated brand page. Pull logos and brand descriptions from partner sites. Organised by region: Netherlands & Amsterdam / Germany / Europe / USA. Each brand card links to filtered shop showing that brand’s products.
+ABOUT / FAQ:
+“MCW is Malta’s official home for the world’s biggest cannabis brands. We started in Sliema and grew across Malta because we do it right — real products, real education, real staff.” FAQ accordion covering legality, effects, product guidance, delivery, lab testing, international brands, tourist access.
+
+TECH:
+React + Tailwind. Framer Motion animations. Mobile-first. Floating WhatsApp button all pages. SEO meta tags for CBD Malta, cannabis shop Malta, CBD shop Sliema, buy CBD Malta. Age gate sessionStorage. Lazy load images. Google Maps embed. Deploy-ready Vercel.
+
+Tech go above and begins 
+
+DESIGN:( important to follow is the sites I gave you that is more important that what I have said below in the text ) design you can copy from there if those sites mentioned like same to same best of all mentioned ) 
+Deep black base. Bold heavy typography. Gold and green accent moments. Product cards feel like drops not listings. Parallax hero. Cards lift on hover. Sections fade on scroll. No white backgrounds. Full-screen dark mobile menu. Study and combine the best visual elements from all 5 reference sites. Make this the best cannabis website in Europe.
+
+Make it best and also smartly make sure to navigate copy right issues and make sure Google SEO along the way , weed and CBd store in malta if some one wants to search only us have to show 
+
+That’s it. Go build.​​​​​​​​​​​​​​​​

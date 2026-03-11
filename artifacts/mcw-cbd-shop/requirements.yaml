@@ -1,0 +1,17 @@
+packages:
+  "framer-motion": "For cinematic page transitions, scroll animations, and hero effects"
+  "clsx": "For conditional tailwind class merging"
+  "tailwind-merge": "For conditional tailwind class merging"
+
+images:
+  - path: "artifacts/mcw-cbd-shop/public/images/hero-bg.png"
+    description: "Dark cinematic background with subtle deep green smoke and gold dust particles on pure black, ultra premium luxury feel"
+    aspect_ratio: "16:9"
+  - path: "artifacts/mcw-cbd-shop/public/images/pattern-dark.png"
+    description: "Subtle dark geometric luxury pattern on black background, almost invisible texture for sections"
+    aspect_ratio: "16:9"
+
+notes:
+  - Frontend-only application with static hardcoded data for the catalog.
+  - Using Framer Motion for premium scroll and entrance animations.
+  - Relying on lucide-react for all iconography.
