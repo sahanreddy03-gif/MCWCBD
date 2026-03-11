@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Filter, X, Check, Search, Plus } from "lucide-react";
+import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
 
@@ -30,7 +30,6 @@ export default function Shop() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
 
-  // Subscribe to cart changes
   useState(() => subscribe(() => setCartState([...cartItems])));
 
   const categories = ["All", ...Array.from(new Set(PRODUCTS.map(p => p.category)))];
@@ -57,75 +56,82 @@ export default function Shop() {
     <>
       <SEO title="Shop the Collection" />
       
-      {/* HEADER */}
-      <div className="pt-28 pb-12 bg-card border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-7xl font-bebas tracking-wide mb-6">The MCW Collection</h1>
-          <div className="flex flex-col md:flex-row justify-between gap-4">
-            <div className="relative max-w-md w-full">
+      {/* SHOP HEADER */}
+      <div className="pt-32 pb-16 bg-[#0d0d0d] border-b border-white/[0.04] relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
+        
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h1 className="text-7xl md:text-9xl font-bebas tracking-tight text-white mb-4">
+            THE MCW COLLECTION
+          </h1>
+          <p className="text-muted-foreground font-bold tracking-widest uppercase text-sm mb-12">
+            {PRODUCTS.length} Premium Products Available
+          </p>
+          
+          <div className="flex flex-col md:flex-row justify-between gap-6 items-end">
+            <div className="relative w-full max-w-xl">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
               <input 
                 type="text" 
-                placeholder="Search products or brands..."
+                placeholder="SEARCH PRODUCTS OR BRANDS..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-background border border-border rounded-xl py-3 pl-12 pr-4 focus:outline-none focus:border-primary transition-colors text-white"
+                className="w-full bg-[#111] border border-white/10 rounded-none py-4 pl-12 pr-4 focus:outline-none focus:border-primary transition-colors text-white font-bold tracking-widest text-xs uppercase"
               />
             </div>
             
-            <div className="flex gap-4">
+            <div className="flex gap-4 w-full md:w-auto">
               <button 
                 onClick={() => setIsFilterOpen(true)}
-                className="md:hidden px-6 py-3 border border-border rounded-xl flex items-center gap-2 font-bold uppercase tracking-wider text-sm hover:bg-white/5"
+                className="md:hidden flex-1 px-6 py-4 border border-white/10 bg-[#111] flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs text-white"
               >
-                <Filter size={18} /> Filters
+                <Filter size={16} /> Filters
               </button>
               <button 
                 onClick={() => setIsCartOpen(true)}
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-xl flex items-center gap-2 font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors"
+                className="flex-1 md:flex-none px-8 py-4 bg-primary text-black flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs hover:bg-primary/90 transition-colors"
               >
-                <ShoppingBag size={18} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
+                <ShoppingBag size={16} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex gap-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12">
         
-        {/* DESKTOP SIDEBAR */}
-        <div className="hidden md:block w-64 shrink-0">
-          <div className="sticky top-28">
-            <h3 className="font-bebas text-2xl tracking-widest mb-6">Categories</h3>
-            <ul className="space-y-2">
+        {/* DESKTOP SIDEBAR - PILL TAGS */}
+        <div className="hidden md:block w-72 shrink-0">
+          <div className="sticky top-32">
+            <h3 className="font-bebas text-3xl tracking-widest mb-6 text-white">FILTER BY</h3>
+            <div className="flex flex-wrap gap-2">
               {categories.map(cat => (
-                <li key={cat}>
-                  <button
-                    onClick={() => setActiveCategory(cat as any)}
-                    className={`w-full text-left py-2 px-3 rounded-lg text-sm font-semibold tracking-wide transition-colors ${
-                      activeCategory === cat 
-                        ? "bg-white/10 text-white" 
-                        : "text-muted-foreground hover:bg-white/5 hover:text-white"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                </li>
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat as any)}
+                  className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
+                    activeCategory === cat 
+                      ? "bg-primary text-black border-primary" 
+                      : "bg-transparent text-muted-foreground border-white/10 hover:border-white/30 hover:text-white"
+                  }`}
+                >
+                  {cat}
+                </button>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        {/* PRODUCT GRID */}
+        {/* PRODUCT GRID - STIIIZY STYLE */}
         <div className="flex-1">
-          <div className="mb-6 flex justify-between items-center text-sm text-muted-foreground">
-            <span>Showing {filteredProducts.length} products</span>
+          <div className="mb-8 flex justify-between items-center text-xs font-bold tracking-widest uppercase text-muted-foreground">
+            <span>Showing {filteredProducts.length} results</span>
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div className="py-20 text-center border border-dashed border-border rounded-2xl">
-              <p className="text-xl text-muted-foreground">No products found matching your search.</p>
-              <button onClick={() => {setSearch(""); setActiveCategory("All");}} className="mt-4 text-primary font-bold uppercase">Clear Filters</button>
+            <div className="py-32 text-center border border-white/[0.04] bg-[#111]">
+              <p className="text-xl text-muted-foreground font-bold uppercase tracking-widest">No products found.</p>
+              <button onClick={() => {setSearch(""); setActiveCategory("All");}} className="mt-6 px-6 py-3 border border-primary text-primary font-black uppercase tracking-widest text-xs hover:bg-primary hover:text-black transition-colors">Clear Filters</button>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -133,42 +139,46 @@ export default function Shop() {
                 <motion.div 
                   key={product.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-card border border-border rounded-xl overflow-hidden group flex flex-col"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="bg-[#111] border border-white/[0.06] rounded-2xl overflow-hidden group flex flex-col relative"
                 >
-                  <div className="relative aspect-square bg-[#111] overflow-hidden">
+                  {/* Image Area */}
+                  <div className="relative aspect-square bg-[#0d0d0d] overflow-hidden">
+                    {/* Sharp Corner Badges */}
                     {product.isNew && (
-                      <span className="absolute top-3 left-3 z-10 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-sm">NEW</span>
+                      <span className="absolute top-0 left-0 z-10 bg-primary text-black text-[9px] font-black uppercase tracking-widest px-3 py-1.5 shadow-lg">NEW</span>
                     )}
-                    {product.isPopular && (
-                      <span className="absolute top-3 left-3 z-10 bg-secondary text-secondary-foreground text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-sm">HOT</span>
+                    {product.isPopular && !product.isNew && (
+                      <span className="absolute top-0 left-0 z-10 bg-secondary text-black text-[9px] font-black uppercase tracking-widest px-3 py-1.5 shadow-lg">HOT</span>
                     )}
+                    
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                      className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-110"
                       loading="lazy"
                     />
+                    {/* Hover Inner Glow */}
+                    <div className="absolute inset-0 shadow-[inset_0_-40px_40px_rgba(34,197,94,0)] group-hover:shadow-[inset_0_-40px_40px_rgba(34,197,94,0.15)] transition-shadow duration-500 pointer-events-none" />
                   </div>
                   
-                  <div className="p-5 flex-1 flex flex-col">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">{product.brand}</span>
-                    <h3 className="font-semibold text-foreground leading-tight mb-2 flex-1">{product.name}</h3>
+                  {/* Content Area */}
+                  <div className="p-5 flex-1 flex flex-col bg-[#111] relative z-10">
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/80 mb-1">{product.brand}</span>
+                    <h3 className="text-sm font-bold text-white leading-tight mb-2 line-clamp-2">{product.name}</h3>
                     
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="text-[10px] uppercase border border-border px-2 py-0.5 rounded text-muted-foreground">{product.category}</span>
-                      {product.effect && <span className="text-[10px] uppercase border border-border px-2 py-0.5 rounded text-muted-foreground">{product.effect}</span>}
-                    </div>
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-6">
+                      {product.category} {product.effect && `• ${product.effect}`}
+                    </span>
                     
-                    <div className="flex items-center justify-between mt-auto">
-                      <span className="font-bebas text-xl">€{product.price.toFixed(2)}</span>
+                    <div className="flex items-end justify-between mt-auto">
+                      <span className="font-bebas text-3xl text-white leading-none">€{product.price.toFixed(2)}</span>
                       <button 
-                        onClick={() => addToCart(product)}
-                        className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-black transition-colors"
+                        onClick={(e) => { e.preventDefault(); addToCart(product); }}
+                        className="px-4 py-2 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-white hover:bg-primary hover:border-primary hover:text-black transition-colors"
                       >
-                        <Plus size={20} />
+                        ADD
                       </button>
                     </div>
                   </div>
@@ -188,40 +198,42 @@ export default function Shop() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsCartOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
             />
             <motion.div 
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-full max-w-md bg-card border-l border-border z-50 flex flex-col shadow-2xl"
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
+              className="fixed top-0 right-0 h-full w-full max-w-md bg-[#111] border-l border-white/10 z-50 flex flex-col shadow-2xl"
             >
-              <div className="p-6 border-b border-border flex justify-between items-center">
-                <h2 className="font-bebas text-3xl tracking-wide">Your Cart</h2>
-                <button onClick={() => setIsCartOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+              <div className="p-6 border-b border-white/10 flex justify-between items-center bg-[#0a0a0a]">
+                <h2 className="font-bebas text-4xl tracking-widest text-white">YOUR CART</h2>
+                <button onClick={() => setIsCartOpen(false)} className="p-2 text-muted-foreground hover:text-white transition-colors">
                   <X size={24} />
                 </button>
               </div>
 
               <div className="flex-1 overflow-y-auto p-6 space-y-6">
                 {cartState.length === 0 ? (
-                  <div className="text-center text-muted-foreground mt-20">
-                    <ShoppingBag size={48} className="mx-auto mb-4 opacity-20" />
-                    <p>Your cart is empty.</p>
+                  <div className="text-center text-muted-foreground mt-32">
+                    <ShoppingBag size={48} className="mx-auto mb-6 opacity-20" />
+                    <p className="font-bold uppercase tracking-widest text-sm">Your cart is empty.</p>
                   </div>
                 ) : (
                   cartState.map(item => (
-                    <div key={item.product.id} className="flex gap-4">
-                      <img src={item.product.image} className="w-20 h-20 rounded-lg object-cover bg-black" alt={item.product.name} />
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-sm line-clamp-2">{item.product.name}</h4>
-                        <p className="text-muted-foreground text-xs mt-1">{item.product.brand}</p>
+                    <div key={item.product.id} className="flex gap-4 bg-[#0d0d0d] p-3 border border-white/5">
+                      <img src={item.product.image} className="w-24 h-24 object-cover bg-black" alt={item.product.name} />
+                      <div className="flex-1 flex flex-col justify-between py-1">
+                        <div>
+                          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary">{item.product.brand}</p>
+                          <h4 className="font-bold text-sm text-white line-clamp-2 mt-1">{item.product.name}</h4>
+                        </div>
                         <div className="flex justify-between items-center mt-2">
-                          <span className="font-bebas text-lg">€{item.product.price.toFixed(2)}</span>
-                          <div className="flex items-center gap-3 bg-background rounded-md px-2 py-1">
-                            <span className="text-xs font-bold text-muted-foreground">QTY {item.quantity}</span>
-                            <button onClick={() => removeFromCart(item.product.id)} className="text-destructive hover:text-red-400">
+                          <span className="font-bebas text-2xl text-white">€{item.product.price.toFixed(2)}</span>
+                          <div className="flex items-center gap-4 border border-white/10 px-3 py-1 bg-black">
+                            <span className="text-[10px] font-black tracking-widest text-white">QTY {item.quantity}</span>
+                            <button onClick={() => removeFromCart(item.product.id)} className="text-muted-foreground hover:text-destructive transition-colors">
                               <X size={14} />
                             </button>
                           </div>
@@ -232,21 +244,18 @@ export default function Shop() {
                 )}
               </div>
 
-              <div className="p-6 border-t border-border bg-background/50">
-                <div className="flex justify-between mb-6 font-bebas text-2xl">
-                  <span>Total</span>
-                  <span className="text-primary">€{getCartTotal().toFixed(2)}</span>
+              <div className="p-6 border-t border-white/10 bg-[#0a0a0a]">
+                <div className="flex justify-between items-end mb-6">
+                  <span className="font-bold uppercase tracking-widest text-xs text-muted-foreground">SUBTOTAL</span>
+                  <span className="font-bebas text-4xl text-primary leading-none">€{getCartTotal().toFixed(2)}</span>
                 </div>
                 <button 
                   onClick={handleCheckout}
                   disabled={cartState.length === 0}
-                  className="w-full py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest rounded-xl hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full py-5 bg-primary text-black font-black uppercase tracking-widest text-sm hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Checkout via WhatsApp
+                  CHECKOUT VIA WHATSAPP
                 </button>
-                <p className="text-xs text-center text-muted-foreground mt-4">
-                  Pay securely upon confirmation. <br/>Stripe integration coming soon.
-                </p>
               </div>
             </motion.div>
           </>
@@ -260,25 +269,28 @@ export default function Shop() {
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setIsFilterOpen(false)}
-              className="fixed inset-0 bg-black/60 z-50 md:hidden"
+              className="fixed inset-0 bg-black/80 z-50 md:hidden"
             />
             <motion.div 
               initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
-              className="fixed bottom-0 left-0 w-full h-[80vh] bg-card border-t border-border rounded-t-3xl z-50 flex flex-col md:hidden"
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed bottom-0 left-0 w-full h-[85vh] bg-[#111] border-t border-white/10 z-50 flex flex-col md:hidden"
             >
-              <div className="p-6 border-b border-border flex justify-between items-center">
-                <h2 className="font-bebas text-2xl tracking-wide">Filters</h2>
-                <button onClick={() => setIsFilterOpen(false)}><X size={24} /></button>
+              <div className="p-6 border-b border-white/10 flex justify-between items-center bg-[#0a0a0a]">
+                <h2 className="font-bebas text-4xl tracking-widest text-white">FILTERS</h2>
+                <button onClick={() => setIsFilterOpen(false)} className="text-white"><X size={24} /></button>
               </div>
               <div className="p-6 overflow-y-auto flex-1">
-                <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Categories</h3>
-                <div className="flex flex-col gap-2">
+                <h3 className="text-xs font-black uppercase tracking-widest text-muted-foreground mb-4">CATEGORIES</h3>
+                <div className="flex flex-wrap gap-2">
                   {categories.map(cat => (
                     <button
                       key={cat}
                       onClick={() => { setActiveCategory(cat as any); setIsFilterOpen(false); }}
-                      className={`text-left py-3 px-4 rounded-xl text-sm font-semibold tracking-wide border ${
-                        activeCategory === cat ? "border-primary text-primary bg-primary/10" : "border-border text-foreground bg-background"
+                      className={`py-3 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border ${
+                        activeCategory === cat 
+                          ? "bg-primary text-black border-primary" 
+                          : "bg-transparent text-white border-white/20"
                       }`}
                     >
                       {cat}
