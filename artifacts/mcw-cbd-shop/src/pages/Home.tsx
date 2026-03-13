@@ -2,15 +2,15 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
-import { BRANDS, PRODUCTS } from "@/lib/data";
+import { BRANDS, PRODUCTS, pPreRoll1, pVape1, pFlower1, pGummy2, pDrink1, pGummy4 } from "@/lib/data";
 
 const SHOWCASE_CARDS = [
-  { id: '01', cat: "PRE-ROLL", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: "https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=600&q=80" },
-  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80" },
-  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: "https://images.unsplash.com/photo-1574226516831-e1dff420e562?w=600&q=80" },
-  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?w=600&q=80" },
-  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" },
-  { id: '06', cat: "HHC PRODUCTS", name: "HHC", sub: "NEXT-GEN CANNABINOIDS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=600&q=80" }
+  { id: '01', cat: "PRE-ROLL", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: pPreRoll1 },
+  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: pVape1 },
+  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: pFlower1 },
+  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: pGummy2 },
+  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: pDrink1 },
+  { id: '06', cat: "HHC PRODUCTS", name: "HHC", sub: "NEXT-GEN CANNABINOIDS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4 }
 ];
 
 export default function Home() {
@@ -261,6 +261,41 @@ export default function Home() {
                 ))}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FROM OUR INSTAGRAM */}
+      <section className="py-24 bg-[#0a0a0a]">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-6xl md:text-8xl font-bebas tracking-tight text-white mb-2">FROM OUR INSTAGRAM</h2>
+            <a href="https://instagram.com/mcwrelaxshop" target="_blank" rel="noreferrer" className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-sm hover:text-white transition-colors">@mcwrelaxshop</a>
+          </div>
+          <div className="grid grid-cols-3 gap-2 md:gap-4">
+            {[
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/MnnAixmBevKgqSAq.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/eijgTxraqtDAPCFc.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/CxKYBwEsQyUXncYA.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/ninNxXVmWIUYrkEQ.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/lzapsybCKCkeKAqy.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/fVqnoiCqTQfwmtzj.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/tsNExEVCzHeVWzef.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/nLerxxnSpqpQaJXK.jpg",
+              "https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/PRyFYrLCyffOEgdz.jpg"
+            ].map((url, idx) => (
+              <a key={idx} href="https://instagram.com/mcwrelaxshop" target="_blank" rel="noreferrer" className="relative aspect-square overflow-hidden group">
+                <img src={url} alt={`MCW Instagram post ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                <div className="absolute inset-0 bg-[#22c55e]/0 group-hover:bg-[#22c55e]/30 transition-colors duration-300 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href="https://instagram.com/mcwrelaxshop" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-[#22c55e] hover:text-black transition-colors">
+              FOLLOW US ON INSTAGRAM <ArrowRight size={18} />
+            </a>
           </div>
         </div>
       </section>
