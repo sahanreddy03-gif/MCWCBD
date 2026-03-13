@@ -1,0 +1,78 @@
+Replace ALL product images in the site with these real MCW product photos. Update the products data file (data.ts or wherever products are defined) with these exact image URLs. Map each image to the most relevant product by category. Also add a new "From Our Instagram" section on the homepage with a 3x3 grid of the Instagram post images.
+
+PRODUCT IMAGE MAPPINGS:
+
+Cannabis Bakehouse White Widow Cookies (Edibles/Cookies):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/EhUbTmHJJVBKSdxo.png
+
+Canapuff CBG9 Gummies Candy Cotton (Gummies/CBG):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/YXlwyZGzemPzYsHz.png
+
+Moon Rock CBD Gummies Lemon Haze (Gummies/CBD):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/yalqoNHpyIkWOuck.png
+
+THCV Gummies Grape Euphoria (Gummies/THCV):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/odxaGReOwIJXlpdW.png
+
+THCJD Jelly Wizard (Gummies/THCJD):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/aizYkOoHjFWQOQjN.png
+
+Multitrance Space Cake (Edibles/Space Cake):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/ZPuxwnmFtGZpYSte.png
+
+VIP Line Aloe Vera CBD Face Cream (Topicals/Skincare):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/EnpqWOfMcJOzbFiY.png
+
+Cannabis Incense Sticks (Accessories/Lifestyle):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/zLKvWvafyTWxvlVG.png
+
+Venus Secrets CBD Cosmetics Bundle (Topicals/Cosmetics):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/UFtcgDYGnUmXhrVs.png
+
+CannaShot CBD Energy Drink (Drinks/CBD):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/UcSlTFdKpYMYGiAN.png
+
+MediCBD Chewing Gum Strawberry (Edibles/Gum):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/bLqnQXgfpSirFMkq.png
+
+Pod Salt ONYX 1000 Vape (Vapes/Disposable):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/SeogvyOtkkVhRlAV.png
+
+Joint Holder + Pre-roll Tubes (Accessories/Pre-rolls):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/bwbtNlKvpVeMQVHL.png
+
+Mixed Joints Store Display (Pre-rolls/Featured):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/ULClKSqaNgRnQRJo.png
+
+MCW Edibles Flat Lay - brownies, cookies, muffins (Edibles/Featured):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/pVJfckPTFuEBZcAm.png
+
+OCTORINDER Octopus Grinder (Accessories/Grinders):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/KLOignIGLvsjgOHw.png
+
+Smart.800 Disposable Vape (Vapes/Disposable):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/wvCYuVBaWeFGiAhO.png
+
+Choco Kush (Edibles/Chocolate):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/nLerxxnSpqpQaJXK.jpg
+
+H4 Lemon Haze (Flowers/CBD):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/FAcZyRaPmHyWdRcm.jpg
+
+Pod Salt Vape Raspberry (Vapes/Disposable):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/JTQBxGVCFnTbZwad.jpg
+
+Mixed Natural Skincare Set (Topicals/Skincare):
+https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/ZAUEGiSuyRZlDeGM.jpg
+
+INSTAGRAM GRID IMAGES (add a "From Our Instagram" section on the homepage, 3x3 grid, link to https://instagram.com/mcwrelaxshop):
+
+Image 1: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/MnnAixmBevKgqSAq.jpg
+Image 2: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/eijgTxraqtDAPCFc.jpg
+Image 3: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/CxKYBwEsQyUXncYA.jpg
+Image 4: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/ninNxXVmWIUYrkEQ.jpg
+Image 5: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/lzapsybCKCkeKAqy.jpg
+Image 6: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/fVqnoiCqTQfwmtzj.jpg
+Image 7: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/tsNExEVCzHeVWzef.jpg
+Image 8: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/nLerxxnSpqpQaJXK.jpg
+Image 9: https://files.manuscdn.com/user_upload_by_module/session_file/310519663099450436/PRyFYrLCyffOEgdz.jpg
