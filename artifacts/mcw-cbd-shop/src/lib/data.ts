@@ -9,6 +9,7 @@ import pHouseCigar from "@assets/92343873_1602319463249512_8897552270137229312_o
 import pBambooMat from "@assets/RAWBambooRollingMat_900x_1773528012276.webp";
 import pCBDPreRolls from "@assets/nno-Euphoria-H4CBD-JOINT-BOX-New-A-04-PACKSHOT_1773528952421.png";
 import pH4CBDVapePen from "@assets/auj-H4CBD-VAPE-PEN-DISPLAY-Juicy-Blueberry-A-01-FINAL_1773529171969.png";
+import pCBDCartridgeEnergize from "@assets/a7z-euphoria-cbd-cartridge-energize.213439910.1724832076_1773529665223.jpg";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
@@ -96,7 +97,7 @@ export const PRODUCTS: Product[] = [
   { id: "16", name: "E-Cigarette 1000 Puffs", brand: "Pod Salt Onyx", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true, imageFit: "contain" },
 
   { id: "18", name: "Live Resin Cartridge", brand: "Raw Garden", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "CBD", image: pVape2 },
-  { id: "44", name: "Pod Blue Dream", brand: "STIIIZY", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pVape3 },
+  { id: "44", name: "CBD Cartridge Energize", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pCBDCartridgeEnergize },
   { id: "45", name: "Disposable Pen", brand: "CBX", category: "CBD Vapes", subCategory: "CBD Vapes", price: 42.00, effect: "Relaxing", cannabinoid: "CBD", image: pVape1 },
   { id: "28", name: "H4CBD Vape Cartridge Blueberry", brand: "Top Shelf", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pGummy3 },
   { id: "29", name: "HHC Disposable Vape", brand: "MCW", category: "CBD Vapes", subCategory: "HHC Products", price: 50.00, effect: "Energizing", cannabinoid: "HHC", image: pVape1, isPopular: true },
