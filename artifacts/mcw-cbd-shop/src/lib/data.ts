@@ -16,6 +16,7 @@ import pTHCVCartridgeBlueDream from "@assets/b85cde0f833d1008003b3f2f210a53ad-th
 import pTHCVPenGMOCookies from "@assets/48e10bc7365b1f5179c98c10b37ef7b2-canntropy-thcv-pen-cartdige-_1773531116168.webp";
 import pVolcanoHybrid from "@assets/d62d023fd59c28deb95ee65bfb961776-volcano-hybrid-vaporizer-sto_1773531278009.webp";
 import pPaxFlow from "@assets/467582908f657e91635ec12fb3eb25a4-flow-onyx-hero-1024x1024_1773531362359.webp";
+import pSmart800AllFlavours from "@assets/vl0NgP98-scaled_1773531442437.jpeg";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -173,7 +174,7 @@ export const PRODUCTS: Product[] = [
   { id: "81", name: "CBG9 Vape Watermelon Mojito 79% 1ml", brand: "Canapuff", category: "CBD Vapes", subCategory: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_vape_oneuse_watermelon_mojito.png?width=1200", isNew: true },
   { id: "82", name: "CBG9 Vape Caribbean Breeze 79% 1ml", brand: "Canapuff", category: "CBD Vapes", subCategory: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_baribbean_breeze_vape_premium_canapuff.png?width=1200", isNew: true },
   { id: "83", name: "CBG9 Vape Blood Orange 79% 1ml", brand: "Canapuff", category: "CBD Vapes", subCategory: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/CBG9_vape_blood_orange.png?width=1200", isNew: true },
-  { id: "84", name: "Smart.800 Disposable CBD Vape Apple Ice", brand: "Smart.800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Smart800.png", isNew: true },
+  { id: "84", name: "Smart.800 E-Cigarette Vape All Fruit Flavours", brand: "SMART800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: pSmart800AllFlavours, isNew: true },
 
   // Canapuff THCV Vapes
   { id: "85", name: "THCv XXL Vape Papaya Punch 99% 2ml", brand: "Canapuff", category: "CBD Vapes", subCategory: "THCV", price: 42.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/NEW_XXL_Papaya_Punch-Current_View.png?width=1200", isNew: true },
