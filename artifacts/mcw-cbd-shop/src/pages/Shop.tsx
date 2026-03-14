@@ -1,8 +1,12 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
+import { useSearch } from "wouter";
+
+type FilterCategory = Category | "All";
+const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle"];
 
 // Simple Cart Store
 let cartItems: { product: Product, quantity: number }[] = [];
@@ -24,15 +28,24 @@ const removeFromCart = (id: string) => {
 const getCartTotal = () => cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
 
 export default function Shop() {
-  const [activeCategory, setActiveCategory] = useState<Category | "All">("CBD Oils");
+  const searchString = useSearch();
+  const urlParams = new URLSearchParams(searchString);
+  const urlCategory = urlParams.get("category");
+  const initialCategory: FilterCategory = PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : "CBD Oils";
+
+  const [activeCategory, setActiveCategory] = useState<FilterCategory>(initialCategory);
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
 
-  useState(() => subscribe(() => setCartState([...cartItems])));
+  useEffect(() => {
+    if (PRIMARY_CATEGORIES.includes(urlCategory as Category)) {
+      setActiveCategory(urlCategory as Category);
+    }
+  }, [urlCategory]);
 
-  const categories = ["All", ...Array.from(new Set(PRODUCTS.map(p => p.category)))];
+  useState(() => subscribe(() => setCartState([...cartItems])));
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter(p => {
@@ -110,15 +123,15 @@ export default function Shop() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12 bg-[#0a0a0a]">
         
-        {/* DESKTOP SIDEBAR - PILL TAGS */}
+        {/* DESKTOP SIDEBAR */}
         <div className="hidden md:block w-72 shrink-0">
           <div className="sticky top-32">
-            <h3 className="font-bebas text-4xl tracking-widest mb-6 text-white">FILTER BY</h3>
+            <h3 className="font-bebas text-4xl tracking-widest mb-6 text-white">CATEGORIES</h3>
             <div className="flex flex-wrap gap-3">
-              {categories.map(cat => (
+              {PRIMARY_CATEGORIES.map(cat => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat as any)}
+                  onClick={() => setActiveCategory(cat)}
                   className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 ${
                     activeCategory === cat 
                       ? "bg-black text-white border-white" 
@@ -130,6 +143,17 @@ export default function Shop() {
                 </button>
               ))}
             </div>
+            <button
+              onClick={() => setActiveCategory("All")}
+              className={`mt-4 py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 ${
+                activeCategory === "All"
+                  ? "bg-black text-white border-white"
+                  : "bg-transparent text-white/50 border-white/20 hover:bg-white/10 hover:text-white hover:border-white/50"
+              }`}
+              style={{ borderRadius: 0 }}
+            >
+              View All
+            </button>
           </div>
         </div>
 
@@ -298,10 +322,10 @@ export default function Shop() {
               <div className="p-6 overflow-y-auto flex-1 bg-white">
                 <h3 className="text-sm font-black uppercase tracking-widest text-black/50 mb-4">CATEGORIES</h3>
                 <div className="flex flex-wrap gap-3">
-                  {categories.map(cat => (
+                  {PRIMARY_CATEGORIES.map(cat => (
                     <button
                       key={cat}
-                      onClick={() => { setActiveCategory(cat as any); setIsFilterOpen(false); }}
+                      onClick={() => { setActiveCategory(cat); setIsFilterOpen(false); }}
                       className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 ${
                         activeCategory === cat 
                           ? "bg-black text-white border-black" 
@@ -312,6 +336,16 @@ export default function Shop() {
                     </button>
                   ))}
                 </div>
+                <button
+                  onClick={() => { setActiveCategory("All"); setIsFilterOpen(false); }}
+                  className={`mt-4 py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 ${
+                    activeCategory === "All"
+                      ? "bg-black text-white border-black"
+                      : "bg-gray-100 text-black/50 border-gray-200"
+                  }`}
+                >
+                  View All
+                </button>
               </div>
             </motion.div>
           </>

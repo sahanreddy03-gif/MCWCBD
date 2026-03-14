@@ -5,12 +5,12 @@ import { SEO } from "@/components/SEO";
 import { BRANDS, PRODUCTS, pPreRoll1, pVape1, pFlower1, pGummy2, pDrink1, pGummy4 } from "@/lib/data";
 
 const SHOWCASE_CARDS = [
-  { id: '01', cat: "PRE-ROLLS", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: pPreRoll1 },
-  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: pVape1 },
-  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: pFlower1 },
-  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: pGummy2 },
-  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: pDrink1 },
-  { id: '06', cat: "LIFESTYLE", name: "LIFESTYLE", sub: "GRINDERS · MERCH · SPIRITS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4 }
+  { id: '01', cat: "PRE-ROLLS", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: pPreRoll1, link: "/shop?category=Pre-Rolls" },
+  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: pVape1, link: "/shop?category=CBD+Vapes" },
+  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: pFlower1, link: "/shop?category=CBD+Flowers" },
+  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: pGummy2, link: "/shop?category=CBD+Gummies" },
+  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: pDrink1, link: "/shop?category=CBD+Oils" },
+  { id: '06', cat: "LIFESTYLE", name: "LIFESTYLE", sub: "GRINDERS · MERCH · SPIRITS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4, link: "/shop?category=Lifestyle" }
 ];
 
 export default function Home() {
@@ -155,7 +155,7 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SHOWCASE_CARDS.map((card, i) => (
-              <Link key={card.id} href="/shop" className="block group">
+              <Link key={card.id} href={card.link} className="block group">
                 <div className={`relative w-full min-h-[360px] rounded-3xl overflow-hidden ${card.bg} flex flex-row shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
                   
                   {/* LEFT: Text — fixed 55%, never overlapped */}
