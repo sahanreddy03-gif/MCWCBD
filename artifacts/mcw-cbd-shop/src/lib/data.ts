@@ -14,6 +14,7 @@ import pH4CBDVapeMango from "@assets/fn8-H4CBD-VAPE-PEN-DISPLAY-Mango-A-01-FINAL
 import pTHCVCartridgeGelato from "@assets/ji4-Euphoria-THCV-CARTRIDGES-Gelato-1ML-A-01-PACKSHOT.21343991_1773530664453.png";
 import pTHCVCartridgeBlueDream from "@assets/b85cde0f833d1008003b3f2f210a53ad-thcv-cartridge-blue-dream-1m_1773530958967.webp";
 import pTHCVPenGMOCookies from "@assets/48e10bc7365b1f5179c98c10b37ef7b2-canntropy-thcv-pen-cartdige-_1773531116168.webp";
+import pVolcanoHybrid from "@assets/d62d023fd59c28deb95ee65bfb961776-volcano-hybrid-vaporizer-sto_1773531278009.webp";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -107,7 +108,7 @@ export const PRODUCTS: Product[] = [
   { id: "28", name: "H4CBD Vape Cartridge Grape Mint", brand: "Euphoria", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapeGrapeMint },
   { id: "29", name: "THCV Cartridge Blue Dream", brand: "Canntropy", category: "CBD Vapes", subCategory: "THCV", price: 50.00, effect: "Energizing", cannabinoid: "THCV", image: pTHCVCartridgeBlueDream, isPopular: true },
   { id: "49", name: "THCV Pen + Cartridge GMO Cookies", brand: "Canntropy", category: "CBD Vapes", subCategory: "THCV", price: 60.00, effect: "Energizing", cannabinoid: "THCV", image: pTHCVPenGMOCookies },
-  { id: "33", name: "Volcano Hybrid Vaporizer", brand: "Storz & Bickel", category: "CBD Vapes", subCategory: "Vaporizers", price: 450.00, cannabinoid: "None", image: pVape2 },
+  { id: "33", name: "Volcano Hybrid Vaporizer", brand: "Storz & Bickel", category: "CBD Vapes", subCategory: "Vaporizers", price: 450.00, cannabinoid: "None", image: pVolcanoHybrid },
   { id: "34", name: "Pax 3 Vaporizer", brand: "Pax", category: "CBD Vapes", subCategory: "Vaporizers", price: 180.00, cannabinoid: "None", image: pVape2 },
 
   // CBD Gummies
