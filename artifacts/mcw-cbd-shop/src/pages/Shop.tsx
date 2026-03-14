@@ -1,14 +1,14 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
 import { useSearch } from "wouter";
 
-type FilterCategory = Category | "All";
 const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle"];
 
-// Simple Cart Store
+const SUB_CATEGORIES = Array.from(new Set(PRODUCTS.map(p => p.subCategory))).sort();
+
 let cartItems: { product: Product, quantity: number }[] = [];
 let cartListeners: (() => void)[] = [];
 const subscribe = (listener: () => void) => {
@@ -31,29 +31,26 @@ export default function Shop() {
   const searchString = useSearch();
   const urlParams = new URLSearchParams(searchString);
   const urlCategory = urlParams.get("category");
-  const initialCategory: FilterCategory = PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : "CBD Oils";
 
-  const [activeCategory, setActiveCategory] = useState<FilterCategory>(initialCategory);
+  const activeCategory: Category | null = PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : null;
+  const [activeSubCategory, setActiveSubCategory] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
 
-  useEffect(() => {
-    if (PRIMARY_CATEGORIES.includes(urlCategory as Category)) {
-      setActiveCategory(urlCategory as Category);
-    }
-  }, [urlCategory]);
-
   useState(() => subscribe(() => setCartState([...cartItems])));
+
+  const availableSubCategories = SUB_CATEGORIES;
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter(p => {
-      const matchCat = activeCategory === "All" || p.category === activeCategory;
+      const matchCat = !activeCategory || p.category === activeCategory;
+      const matchSub = !activeSubCategory || p.subCategory === activeSubCategory;
       const matchSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.brand.toLowerCase().includes(search.toLowerCase());
-      return matchCat && matchSearch;
+      return matchCat && matchSub && matchSearch;
     });
-  }, [activeCategory, search]);
+  }, [activeCategory, activeSubCategory, search]);
 
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
@@ -75,6 +72,15 @@ export default function Shop() {
       case "Lifestyle": return "#FFB800";
       default: return "#1a1a1a";
     }
+  };
+
+  const handleSubCategoryClick = (sub: string) => {
+    setActiveSubCategory(prev => prev === sub ? null : sub);
+  };
+
+  const clearAllFilters = () => {
+    setActiveSubCategory(null);
+    setSearch("");
   };
 
   return (
@@ -126,38 +132,38 @@ export default function Shop() {
         {/* DESKTOP SIDEBAR */}
         <div className="hidden md:block w-72 shrink-0">
           <div className="sticky top-32">
-            <h3 className="font-bebas text-4xl tracking-widest mb-6 text-white">CATEGORIES</h3>
-            <div className="flex flex-wrap gap-3">
-              {PRIMARY_CATEGORIES.map(cat => (
+            <h3 className="font-bebas text-4xl tracking-widest mb-6 text-white">FILTERS</h3>
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={clearAllFilters}
+                className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
+                  !activeSubCategory
+                    ? "bg-white text-black border-white"
+                    : "bg-transparent text-white/50 border-white/20 hover:bg-white/10 hover:text-white hover:border-white/50"
+                }`}
+                style={{ borderRadius: 0 }}
+              >
+                All Products
+              </button>
+              {availableSubCategories.map(sub => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 ${
-                    activeCategory === cat 
-                      ? "bg-black text-white border-white" 
-                      : "bg-white text-black border-black hover:bg-black hover:text-white hover:border-white"
+                  key={sub}
+                  onClick={() => handleSubCategoryClick(sub)}
+                  className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
+                    activeSubCategory === sub
+                      ? "bg-white text-black border-white"
+                      : "bg-transparent text-white/70 border-white/10 hover:bg-white/10 hover:text-white hover:border-white/30"
                   }`}
                   style={{ borderRadius: 0 }}
                 >
-                  {cat}
+                  {sub}
                 </button>
               ))}
             </div>
-            <button
-              onClick={() => setActiveCategory("All")}
-              className={`mt-4 py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 ${
-                activeCategory === "All"
-                  ? "bg-black text-white border-white"
-                  : "bg-transparent text-white/50 border-white/20 hover:bg-white/10 hover:text-white hover:border-white/50"
-              }`}
-              style={{ borderRadius: 0 }}
-            >
-              View All
-            </button>
           </div>
         </div>
 
-        {/* PRODUCT GRID - JEETER STYLE */}
+        {/* PRODUCT GRID */}
         <div className="flex-1">
           <div className="mb-8 flex justify-between items-center text-sm font-black tracking-widest uppercase text-white/50">
             <span>Showing {filteredProducts.length} results</span>
@@ -166,7 +172,7 @@ export default function Shop() {
           {filteredProducts.length === 0 ? (
             <div className="py-32 text-center border-4 border-white/10 bg-white/5 rounded-3xl">
               <p className="text-2xl text-white font-bebas tracking-widest">No products found.</p>
-              <button onClick={() => {setSearch(""); setActiveCategory("All");}} className="mt-6 px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors">Clear Filters</button>
+              <button onClick={clearAllFilters} className="mt-6 px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors">Clear Filters</button>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
@@ -192,7 +198,7 @@ export default function Shop() {
                   <div className="flex flex-row flex-1 min-h-0 overflow-hidden">
                     {/* Left: name + category */}
                     <div className="px-5 pb-4 flex flex-col justify-end w-[58%] shrink-0">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.category}</p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.subCategory}</p>
                       <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
                       {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-1">{product.effect}</p>}
                     </div>
@@ -321,31 +327,31 @@ export default function Shop() {
               </div>
               <div className="p-6 overflow-y-auto flex-1 bg-white">
                 <h3 className="text-sm font-black uppercase tracking-widest text-black/50 mb-4">CATEGORIES</h3>
-                <div className="flex flex-wrap gap-3">
-                  {PRIMARY_CATEGORIES.map(cat => (
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={() => { clearAllFilters(); setIsFilterOpen(false); }}
+                    className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
+                      !activeSubCategory
+                        ? "bg-black text-white border-black"
+                        : "bg-gray-100 text-black/50 border-gray-200"
+                    }`}
+                  >
+                    All Products
+                  </button>
+                  {availableSubCategories.map(sub => (
                     <button
-                      key={cat}
-                      onClick={() => { setActiveCategory(cat); setIsFilterOpen(false); }}
-                      className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 ${
-                        activeCategory === cat 
-                          ? "bg-black text-white border-black" 
-                          : "bg-white text-black border-black"
+                      key={sub}
+                      onClick={() => { handleSubCategoryClick(sub); setIsFilterOpen(false); }}
+                      className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
+                        activeSubCategory === sub
+                          ? "bg-black text-white border-black"
+                          : "bg-white text-black border-gray-200"
                       }`}
                     >
-                      {cat}
+                      {sub}
                     </button>
                   ))}
                 </div>
-                <button
-                  onClick={() => { setActiveCategory("All"); setIsFilterOpen(false); }}
-                  className={`mt-4 py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 ${
-                    activeCategory === "All"
-                      ? "bg-black text-white border-black"
-                      : "bg-gray-100 text-black/50 border-gray-200"
-                  }`}
-                >
-                  View All
-                </button>
               </div>
             </motion.div>
           </>
