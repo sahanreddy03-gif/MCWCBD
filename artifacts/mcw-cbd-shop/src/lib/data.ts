@@ -1,3 +1,6 @@
+import pOil1500 from "@assets/IMG_9897_1773459848147.webp";
+export { pOil1500 };
+
 export type Category = 
   | "CBD Oils" | "CBD Flowers" | "CBD Hash" | "CBD Pre-Rolls" 
   | "CBD Vapes" | "CBD Gummies" | "CBD Edibles" | "CBD Creams" 
@@ -53,7 +56,7 @@ export const pIncense1 = "https://files.manuscdn.com/user_upload_by_module/sessi
 
 export const PRODUCTS: Product[] = [
   // CBD Oils
-  { id: "1", name: "MCW Premium Full Spectrum 1500mg", brand: "MCW", category: "CBD Oils", price: 85.00, effect: "Relaxing", cannabinoid: "CBD", image: pDrink1, isPopular: true },
+  { id: "1", name: "MCW Premium Full Spectrum 1500mg", brand: "MCW", category: "CBD Oils", price: 85.00, effect: "Relaxing", cannabinoid: "CBD", image: pOil1500, isPopular: true },
   { id: "2", name: "MCW Broad Spectrum 1000mg", brand: "MCW", category: "CBD Oils", price: 65.00, effect: "Focus", cannabinoid: "CBD", image: pCream1 },
   { id: "3", name: "Raw Garden CBD Oil 500mg", brand: "Raw Garden", category: "CBD Oils", price: 45.00, effect: "Pain Relief", cannabinoid: "CBD", image: pDrink1 },
   { id: "4", name: "Euphoria CBD 750mg Sleep Drops", brand: "Euphoria", category: "CBD Oils", price: 55.00, effect: "Sleeping", cannabinoid: "CBD", image: pCream1, isNew: true },
