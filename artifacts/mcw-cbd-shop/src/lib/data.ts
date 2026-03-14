@@ -5,6 +5,7 @@ import pPreRollGelato from "@assets/OIP_(2)_1773526968325.webp";
 import pPreRollOG from "@assets/3ffe1785-a0b0-4fcc-af29-2416964c110f_1773527217089.jpeg";
 import pSigloIV from "@assets/Cigar-Review-Cohiba-Siglo-IV-3_1773527382826.webp";
 import pChurchill from "@assets/Cigar-Review-Cohiba-Siglo-IV-3_1773527461627.webp";
+import pHouseCigar from "@assets/92343873_1602319463249512_8897552270137229312_o_9B9C63F9-5056-_1773527919139.jpg";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
@@ -115,7 +116,7 @@ export const PRODUCTS: Product[] = [
   { id: "47", name: "Pre-Roll Pack", brand: "Haze", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 28.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "36", name: "Siglo IV Cigar", brand: "Cohiba", category: "Pre-Rolls", subCategory: "Cigars", price: 35.00, cannabinoid: "None", image: pSigloIV },
   { id: "37", name: "Churchill Cigar", brand: "Romeo y Julieta", category: "Pre-Rolls", subCategory: "Cigars", price: 28.00, cannabinoid: "None", image: pChurchill },
-  { id: "38", name: "House Cigar", brand: "MCW", category: "Pre-Rolls", subCategory: "Cigars", price: 15.00, cannabinoid: "None", image: pPreRoll1 },
+  { id: "38", name: "House Cigar", brand: "MCW", category: "Pre-Rolls", subCategory: "Cigars", price: 15.00, cannabinoid: "None", image: pHouseCigar },
   { id: "31", name: "Black Papers King Size", brand: "RAW", category: "Pre-Rolls", subCategory: "Papers & Filters", price: 2.50, cannabinoid: "None", image: pPreRoll2 },
   { id: "35", name: "Bamboo Rolling Mat", brand: "RAW", category: "Pre-Rolls", subCategory: "Accessories", price: 8.00, cannabinoid: "None", image: pIncense1 },
   { id: "58", name: "Rolling Tray", brand: "Jungle Boys", category: "Pre-Rolls", subCategory: "Accessories", price: 25.00, cannabinoid: "None", image: pIncense1 },
