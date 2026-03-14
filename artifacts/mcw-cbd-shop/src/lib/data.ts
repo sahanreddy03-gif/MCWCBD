@@ -88,7 +88,6 @@ export const PRODUCTS: Product[] = [
   { id: "52", name: "CBD Capsules", brand: "Sensi Seeds", category: "CBD Oils", subCategory: "CBD Capsules", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pCream1 },
 
   // CBD Flowers
-  { id: "6", name: "Wedding Cake", brand: "Cookies", category: "CBD Flowers", subCategory: "CBD Flowers", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isPopular: true },
   { id: "7", name: "Gelato", brand: "Jeeter", category: "CBD Flowers", subCategory: "CBD Flowers", price: 20.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "8", name: "OG Kush", brand: "Jungle Boys", category: "CBD Flowers", subCategory: "CBD Flowers", price: 22.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isNew: true },
   { id: "9", name: "White Widow", brand: "STIIIZY", category: "CBD Flowers", subCategory: "CBD Flowers", price: 19.00, effect: "Focus", cannabinoid: "CBD", image: pPreRoll1 },
@@ -114,6 +113,7 @@ export const PRODUCTS: Product[] = [
   { id: "34", name: "Pax Flow Vaporizer", brand: "Pax", category: "CBD Vapes", subCategory: "Vaporizers", price: 180.00, cannabinoid: "None", image: pPaxFlow },
 
   // CBD Gummies
+  { id: "6", name: "H4 Lemon Gummies", brand: "Cannabis", category: "CBD Gummies", subCategory: "CBD Gummies", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isPopular: true },
   { id: "19", name: "Sleep Gummies 300mg", brand: "MCW", category: "CBD Gummies", subCategory: "CBD Gummies", price: 25.00, effect: "Sleeping", cannabinoid: "CBD", image: pGummy1, isPopular: true },
   { id: "20", name: "CBD Gummies Mixed Fruit", brand: "Euphoria", category: "CBD Gummies", subCategory: "CBD Gummies", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pGummy2 },
   { id: "21", name: "Knockout Gummies", brand: "Tyson 2.0", category: "CBD Gummies", subCategory: "CBD Gummies", price: 30.00, effect: "Sleeping", cannabinoid: "CBD", image: pGummy3, isNew: true },
