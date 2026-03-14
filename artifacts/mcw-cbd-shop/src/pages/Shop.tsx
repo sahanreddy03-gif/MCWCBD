@@ -62,6 +62,18 @@ export default function Shop() {
     window.open(`https://wa.me/35699999999?text=${encodeURIComponent(text)}`, '_blank');
   };
 
+  const getCategorySEODescription = (cat: Category): string => {
+    switch(cat) {
+      case "CBD Oils": return "Shop premium CBD oils, tinctures and creams available in Malta. Full spectrum, broad spectrum and isolate options with same day delivery.";
+      case "CBD Flowers": return "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Indoor grown, lab tested and delivered to your door.";
+      case "CBD Vapes": return "Discover CBD, CBG9 and THCv vape pens, cartridges and disposables in Malta. Premium brands with fast delivery.";
+      case "CBD Gummies": return "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Tasty, lab tested and discreet.";
+      case "Pre-Rolls": return "Buy ready-to-smoke CBD pre-rolls in Malta. Infused joints, classic rolls and premium packs delivered same day.";
+      case "Lifestyle": return "Browse CBD lifestyle accessories, grinders, incense, merch and more available in Malta. Everything you need in one place.";
+      default: return "Malta's #1 Cannabis & CBD Destination. Shop the world's best brands with same day delivery across Malta.";
+    }
+  };
+
   const getCategoryColor = (cat: string) => {
     switch(cat) {
       case "CBD Oils": return "#22C55E";
@@ -212,7 +224,7 @@ export default function Shop() {
                       <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.subCategory}</p>
                       <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
                       <span className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-1">{product.brand}</span>
-                      {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-1">{product.effect}</p>}
+                      {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-0.5">{product.effect}</p>}
                     </div>
                     {/* Right: product image — strictly contained */}
                     <div className="relative w-[42%] shrink-0 overflow-hidden">
