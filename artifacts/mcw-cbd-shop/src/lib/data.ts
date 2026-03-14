@@ -1,6 +1,7 @@
 import pOil1500 from "@assets/IMG_9897_1773459848147.webp";
 import pOil500 from "@assets/IMG_9898_1773460947867.webp";
 import pSleepDrops from "@assets/pexels-gb-the-green-brand-1259697174-29612816_1773461557894.jpg";
+import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
   | "CBD Oils" | "CBD Flowers" | "CBD Vapes" 
@@ -103,7 +104,7 @@ export const PRODUCTS: Product[] = [
   { id: "30", name: "HHC Gummies Tropical", brand: "Euphoria", category: "CBD Gummies", subCategory: "HHC Products", price: 35.00, effect: "Relaxing", cannabinoid: "HHC", image: pGummy4 },
 
   // Pre-Rolls
-  { id: "23", name: "Baby Pre-Rolls Pack", brand: "Jeeter", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 45.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, isPopular: true },
+  { id: "23", name: "Baby Pre-Rolls Pack", brand: "Jeeter", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 45.00, effect: "Relaxing", cannabinoid: "CBD", image: pBabyPreRolls, isPopular: true },
   { id: "24", name: "Pre-Roll Gelato", brand: "Cookies", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 15.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRoll2 },
   { id: "25", name: "Pre-Roll OG", brand: "Jungle Boys", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 18.00, effect: "Focus", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "26", name: "House Pre-Roll", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 8.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll2 },
