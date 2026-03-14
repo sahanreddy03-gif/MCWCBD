@@ -24,7 +24,7 @@ const removeFromCart = (id: string) => {
 const getCartTotal = () => cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
 
 export default function Shop() {
-  const [activeCategory, setActiveCategory] = useState<Category | "All">("All");
+  const [activeCategory, setActiveCategory] = useState<Category | "All">("CBD Oils");
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -54,13 +54,12 @@ export default function Shop() {
 
   const getCategoryColor = (cat: string) => {
     switch(cat) {
-      case "CBD Flowers": return "#22C55E";
+      case "CBD Oils": return "#22C55E";
+      case "CBD Flowers": return "#7B4FFF";
       case "CBD Vapes": return "#FF6B35";
-      case "CBD Oils": return "#FFB800";
-      case "CBD Pre-Rolls": return "#00C8C8";
       case "CBD Gummies": return "#FF3366";
-      case "H4CBD": return "#7B4FFF";
-      case "HHC Products": return "#FF6B35";
+      case "Pre-Rolls": return "#00C8C8";
+      case "Lifestyle": return "#FFB800";
       default: return "#1a1a1a";
     }
   };

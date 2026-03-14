@@ -91,6 +91,16 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/mcw-cbd-shop` (`@workspace/mcw-cbd-shop`)
+
+MCW CBD Relax Shop — a premium 5-page website for Malta's cannabis/CBD shops. React + Vite + TailwindCSS with Jeeter.com-inspired design.
+
+- **Pages**: Home, Shop, About, Stores, Contact
+- **Categories**: 6 main product categories — CBD Oils (11), CBD Flowers (10), CBD Vapes (12), CBD Gummies (6), Pre-Rolls (11), Lifestyle (10) = 60 total products
+- **Features**: Age gate, WhatsApp cart/checkout, animated showcase cards, brand wall marquee, Instagram grid
+- **Design**: Bebas Neue typography, bold color-coded category cards, Jeeter-style white product cards
+- **Key files**: `src/lib/data.ts` (products & images), `src/pages/Home.tsx`, `src/pages/Shop.tsx`
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
