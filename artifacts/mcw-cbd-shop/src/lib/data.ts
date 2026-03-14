@@ -11,6 +11,7 @@ import pCBDPreRolls from "@assets/nno-Euphoria-H4CBD-JOINT-BOX-New-A-04-PACKSHOT
 import pH4CBDVapePen from "@assets/auj-H4CBD-VAPE-PEN-DISPLAY-Juicy-Blueberry-A-01-FINAL_1773529171969.png";
 import pCBDCartridgeEnergize from "@assets/a7z-euphoria-cbd-cartridge-energize.213439910.1724832076_1773529665223.jpg";
 import pH4CBDVapeMango from "@assets/fn8-H4CBD-VAPE-PEN-DISPLAY-Mango-A-01-FINAL.213439910.17440180_1773529874366.png";
+import pTHCVCartridgeGelato from "@assets/ji4-Euphoria-THCV-CARTRIDGES-Gelato-1ML-A-01-PACKSHOT.21343991_1773530664453.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -98,7 +99,7 @@ export const PRODUCTS: Product[] = [
   { id: "15", name: "E-Cigarette 800 Puffs", brand: "SMART800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 40.00, effect: "Energizing", cannabinoid: "CBD", image: pVape2, imageFit: "contain" },
   { id: "16", name: "E-Cigarette 1000 Puffs", brand: "Pod Salt Onyx", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true, imageFit: "contain" },
 
-  { id: "18", name: "Live Resin Cartridge", brand: "Raw Garden", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "CBD", image: pVape2 },
+  { id: "18", name: "THCV Cartridge Gelato 1ml", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "THCV", image: pTHCVCartridgeGelato },
   { id: "44", name: "CBD Cartridge Energize", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pCBDCartridgeEnergize },
   { id: "45", name: "H4CBD Vape Pen Mango", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 42.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapeMango },
   { id: "28", name: "H4CBD Vape Cartridge Grape Mint", brand: "Euphoria", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapeGrapeMint },
