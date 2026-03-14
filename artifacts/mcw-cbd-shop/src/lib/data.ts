@@ -12,6 +12,7 @@ import pH4CBDVapePen from "@assets/auj-H4CBD-VAPE-PEN-DISPLAY-Juicy-Blueberry-A-
 import pCBDCartridgeEnergize from "@assets/a7z-euphoria-cbd-cartridge-energize.213439910.1724832076_1773529665223.jpg";
 import pH4CBDVapeMango from "@assets/fn8-H4CBD-VAPE-PEN-DISPLAY-Mango-A-01-FINAL.213439910.17440180_1773529874366.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
+import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
 export type Category = 
   | "CBD Oils" | "CBD Flowers" | "CBD Vapes" 
@@ -100,7 +101,7 @@ export const PRODUCTS: Product[] = [
   { id: "18", name: "Live Resin Cartridge", brand: "Raw Garden", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "CBD", image: pVape2 },
   { id: "44", name: "CBD Cartridge Energize", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pCBDCartridgeEnergize },
   { id: "45", name: "H4CBD Vape Pen Mango", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 42.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapeMango },
-  { id: "28", name: "H4CBD Vape Cartridge Blueberry", brand: "Top Shelf", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pGummy3 },
+  { id: "28", name: "H4CBD Vape Cartridge Grape Mint", brand: "Euphoria", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapeGrapeMint },
   { id: "29", name: "HHC Disposable Vape", brand: "MCW", category: "CBD Vapes", subCategory: "HHC Products", price: 50.00, effect: "Energizing", cannabinoid: "HHC", image: pVape1, isPopular: true },
   { id: "49", name: "THCV Disposable", brand: "Jeeter", category: "CBD Vapes", subCategory: "THCV", price: 60.00, effect: "Energizing", cannabinoid: "THCV", image: pGummy3 },
   { id: "33", name: "Volcano Hybrid Vaporizer", brand: "Storz & Bickel", category: "CBD Vapes", subCategory: "Vaporizers", price: 450.00, cannabinoid: "None", image: pVape2 },
