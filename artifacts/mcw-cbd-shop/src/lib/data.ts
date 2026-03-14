@@ -1,5 +1,4 @@
 import pOil1500 from "@assets/IMG_9897_1773459848147.webp";
-export { pOil1500 };
 
 export type Category = 
   | "CBD Oils" | "CBD Flowers" | "CBD Hash" | "CBD Pre-Rolls" 
