@@ -178,10 +178,9 @@ export default function Shop() {
                       <img
                         src={product.image}
                         alt={product.name}
-                        className={`absolute inset-0 w-full h-full object-cover ${product.id === "1" ? 'animate-ken-burns-oil' : (i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt')}`}
+                        className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
                         loading="lazy"
                       />
-                      {product.id === "1" && <div className="absolute inset-0 animate-hue-shimmer" />}
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
                     </div>
                   </div>
