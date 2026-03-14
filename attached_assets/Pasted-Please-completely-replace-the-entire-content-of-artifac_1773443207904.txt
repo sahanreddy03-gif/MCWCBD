@@ -1,0 +1,84 @@
+Please completely replace the entire content of artifacts/mcw-cbd-shop/src/lib/data.ts with the following. This replaces ALL existing products with 64 real products using CDN image URLs. Remove ALL old "import p..." image import lines at the top:
+
+export type Category = "CBD Oils" | "CBD Flowers" | "CBD Hash" | "CBD Pre-Rolls" | "CBD Vapes" | "CBD Gummies" | "CBD Edibles" | "CBD Creams" | "CBD Capsules" | "H4CBD" | "HHC Products" | "THCV" | "Grinders" | "Papers & Filters" | "Vaporizers" | "Storage Solutions" | "Lighters" | "Cigars" | "Liquor & Spirits" | "Clothing & Merch" | "Accessories";
+export type Effect = "Relaxing" | "Energizing" | "Sleeping" | "Focus" | "Pain Relief";
+export type Cannabinoid = "CBD" | "H4CBD" | "HHC" | "THCV" | "CBG9" | "None";
+export interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  category: Category;
+  price: number;
+  effect?: Effect;
+  cannabinoid: Cannabinoid;
+  image: string;
+  isNew?: boolean;
+}
+export const PRODUCTS: Product[] = [
+  { id: "1", name: "CBD Flowers Amnesia 69%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/amns_cbd.png" },
+  { id: "2", name: "CBD Flowers Lemon Gelato 69%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/lmn_glt_cbd.png" },
+  { id: "3", name: "CBD Flowers Royal Skunk 24%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/ryl_sknk_cbd.png" },
+  { id: "4", name: "CBD Flowers Lemon Skunk 14%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/lmn_sknk_cbd.png" },
+  { id: "5", name: "CBD Flowers Fire Kush 13%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/fir_ksh_cbd.png" },
+  { id: "6", name: "CBD Flowers Wellness 18%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/wlns_cbd.png" },
+  { id: "7", name: "CBD Flowers Strawberry 13%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/strwbry_cbd.png" },
+  { id: "8", name: "CBD Flowers Sugar Queen 17%", brand: "Canapuff", category: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/sgr_qen_cbd.png" },
+  { id: "9", name: "CBG9 Flowers Blueberry Cookie 65%", brand: "Canapuff", category: "CBD Flowers", price: 8.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_blueberry_cookies.jpg", isNew: true },
+  { id: "10", name: "CBG9 Flowers Caribbean Breeze 65%", brand: "Canapuff", category: "CBD Flowers", price: 8.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_caribbean_breeze.jpg", isNew: true },
+  { id: "11", name: "CBG9 Flowers Watermelon Mojito 50%", brand: "Canapuff", category: "CBD Flowers", price: 8.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_flowers_watermelon_mojito.png", isNew: true },
+  { id: "12", name: "CBG9 Flowers Blood Orange 50%", brand: "Canapuff", category: "CBD Flowers", price: 8.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_blood_orange_blueten.png", isNew: true },
+  { id: "13", name: "CBD Gummies Sleep", brand: "Canapuff", category: "CBD Gummies", price: 14.40, effect: "Sleeping", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_sleep-camera_2_720.png" },
+  { id: "14", name: "CBD Gummies Rest", brand: "Canapuff", category: "CBD Gummies", price: 14.40, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_rest-camera_2.png" },
+  { id: "15", name: "CBD Gummies Recovery", brand: "Canapuff", category: "CBD Gummies", price: 14.40, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_recovery-camera_2_720.png" },
+  { id: "16", name: "Melatonin+CBD Gummies Cherry", brand: "Canapuff", category: "CBD Gummies", price: 18.90, effect: "Sleeping", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/melatonin_cbd_cherry_10pcs-camera_2_720.png" },
+  { id: "17", name: "CBD Gummies Blueberry", brand: "Canapuff", category: "CBD Gummies", price: 1.79, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/1pc_cbd_blueberry.png" },
+  { id: "18", name: "CBD Gummies Immunity", brand: "Canapuff", category: "CBD Gummies", price: 14.40, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_immunity-camera_2_720.png" },
+  { id: "19", name: "Canapuff CBG9 Candy Cotton Gummies", brand: "Canapuff", category: "CBD Gummies", price: 9.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://static.manus.im/file/mcw-cbd-shop/CBG9_Gummy.png", isNew: true },
+  { id: "20", name: "Moon Rock CBD Lemon Haze Gummies", brand: "Moon Rock", category: "CBD Gummies", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Lemon_Haze.png", isNew: true },
+  { id: "21", name: "CBG9 Gummies Sour Apple", brand: "Canapuff", category: "CBD Gummies", price: 14.97, effect: "Energizing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_gummies_sour_apple.png", isNew: true },
+  { id: "22", name: "CBG9 Gummies Raspberry", brand: "Canapuff", category: "CBD Gummies", price: 14.97, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_gummies_raspberry.png", isNew: true },
+  { id: "23", name: "CBG9 Gummies Candy Cotton", brand: "Canapuff", category: "CBD Gummies", price: 14.97, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_gummies_candy_cotton.png", isNew: true },
+  { id: "24", name: "CBG9 Gummies Strawberry", brand: "Canapuff", category: "CBD Gummies", price: 19.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_gummies_strawberry.png", isNew: true },
+  { id: "25", name: "CBG9 Gummies Sour Cherry", brand: "Canapuff", category: "CBD Gummies", price: 19.99, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_gummies_sour_cherry.png", isNew: true },
+  { id: "26", name: "THCv Gummies Blueberry", brand: "Canapuff", category: "CBD Gummies", price: 16.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/blueberry_thcv-camera_2_720_94df2802-9c00-4ba3-811c-80e46a6b2f48.png" },
+  { id: "27", name: "THCv Gummies Green Apple", brand: "Canapuff", category: "CBD Gummies", price: 16.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/green_apple_thcv-camera_2.png" },
+  { id: "28", name: "THCv Gummies Strawberry", brand: "Canapuff", category: "CBD Gummies", price: 16.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/strawberry_thcv-camera_2.png" },
+  { id: "29", name: "THCv Gummies Raspberry", brand: "Canapuff", category: "CBD Gummies", price: 16.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/raspberry_thcv-camera_2.png" },
+  { id: "30", name: "CBD Vape OG Kush 95% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 29.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/og_kush_720.png" },
+  { id: "31", name: "CBD Vape Rest 95% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 24.20, effect: "Sleeping", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/rest_720.png" },
+  { id: "32", name: "CBD Vape Recovery 95% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 24.20, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/recovery_720.png" },
+  { id: "33", name: "CBG9 Vape Blueberry Cookie 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_blueberry_cookie_vape_premium_canapuff.png", isNew: true },
+  { id: "34", name: "CBG9 Vape Watermelon Mojito 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_canapuff_vape_oneuse_watermelon_mojito.png", isNew: true },
+  { id: "35", name: "CBG9 Vape Caribbean Breeze 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbg9_baribbean_breeze_vape_premium_canapuff.png", isNew: true },
+  { id: "36", name: "CBG9 Vape Blood Orange 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 31.63, effect: "Relaxing", cannabinoid: "CBG9", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/CBG9_vape_blood_orange.png", isNew: true },
+  { id: "37", name: "THCv XXL Vape Papaya Punch 99% 2ml", brand: "Canapuff", category: "CBD Vapes", price: 42.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/NEW_XXL_Papaya_Punch-Current_View.png", isNew: true },
+  { id: "38", name: "THCv XXL Vape Blueberry Cookies 99% 2ml", brand: "Canapuff", category: "CBD Vapes", price: 42.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/NEW_XXL_Blueberry_Cookies-Current_View.png", isNew: true },
+  { id: "39", name: "THCv XXL Vape Berry Gelato 99% 2ml", brand: "Canapuff", category: "CBD Vapes", price: 42.90, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/NEW_XXL_Berry_Gelato-Current_View.png", isNew: true },
+  { id: "40", name: "THCv Vape Papaya Punch 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 31.63, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/ppy_79__720_428c743e-f2fe-4592-8d47-5958ac4fe218.png" },
+  { id: "41", name: "THCv Vape Berry Gelato 79% 1ml", brand: "Canapuff", category: "CBD Vapes", price: 39.99, effect: "Focus", cannabinoid: "THCV", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/brry_glt_79__720_3a98a7a0-eb69-415e-8611-488b20dcf641.png" },
+  { id: "42", name: "CBD Hash Afghan Gold 60%", brand: "Canapuff", category: "CBD Hash", price: 6.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_afghan-camera_2_720.png" },
+  { id: "43", name: "CBD Hash Libanese 60%", brand: "Canapuff", category: "CBD Hash", price: 6.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_libanese-camera_2_720.png" },
+  { id: "44", name: "CBD Hash Choco 60%", brand: "Canapuff", category: "CBD Hash", price: 6.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_choco-camera_2_720.png" },
+  { id: "45", name: "CBD Hash Banana 60%", brand: "Canapuff", category: "CBD Hash", price: 6.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd_banana-camera_2_720.png" },
+  { id: "46", name: "CBD Oil Full Spectrum 5% 15ml", brand: "Canapuff", category: "CBD Oils", price: 16.70, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd5.jpg" },
+  { id: "47", name: "CBD Oil Full Spectrum 20% 15ml", brand: "Canapuff", category: "CBD Oils", price: 32.70, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd20_fullspectrum.jpg" },
+  { id: "48", name: "CBD Oil Full Spectrum 10% 15ml", brand: "Canapuff", category: "CBD Oils", price: 21.20, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd10_fullspectrum.jpg" },
+  { id: "49", name: "CBD Oil 30% 15ml", brand: "Canapuff", category: "CBD Oils", price: 40.10, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd30.jpg" },
+  { id: "50", name: "CBD Oil 20% 15ml", brand: "Canapuff", category: "CBD Oils", price: 29.70, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd20.jpg" },
+  { id: "51", name: "CBD Oil 10% 15ml", brand: "Canapuff", category: "CBD Oils", price: 19.30, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/cbd10.jpg" },
+  { id: "52", name: "Cannabis Bakehouse White Widow Cookies", brand: "Cannabis Bakehouse", category: "CBD Edibles", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Cookie.png", isNew: true },
+  { id: "53", name: "Multitrance Space Cake", brand: "Multitrance", category: "CBD Edibles", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Space_Cake.png", isNew: true },
+  { id: "54", name: "VIP Line CBD Face Cream Aloe Vera 2000mg", brand: "VIP Line", category: "CBD Creams", price: 9.99, effect: "Pain Relief", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Face_Cream.png", isNew: true },
+  { id: "55", name: "Multitrance Cannabis Incense Sticks", brand: "Multitrance", category: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Incense.png", isNew: true },
+  { id: "56", name: "Venus Secrets CBD Cosmetics Bundle", brand: "Venus Secrets", category: "CBD Creams", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Oil_Lipstick.png", isNew: true },
+  { id: "57", name: "CannaShot CBD Energy Drink", brand: "CannaShot", category: "CBD Edibles", price: 9.99, effect: "Energizing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/CannaShot.png", isNew: true },
+  { id: "58", name: "MediCBD Strawberry Chewing Gum", brand: "MediCBD", category: "CBD Edibles", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Chewing_Gum.png", isNew: true },
+  { id: "59", name: "Pre-roll Tube Holder", brand: "MCW", category: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Joint_Holder.png", isNew: true },
+  { id: "60", name: "Euphoria CBD Pre-rolls Display", brand: "Euphoria", category: "CBD Pre-Rolls", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Mixed_Joints.png", isNew: true },
+  { id: "61", name: "MCW Edibles Collection", brand: "MCW", category: "CBD Edibles", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Mixed_Products.png", isNew: true },
+  { id: "62", name: "OCTORINDER Octopus Grinder", brand: "OCTORINDER", category: "Grinders", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/OCTORINDER.png", isNew: true },
+  { id: "63", name: "Smart.800 Disposable CBD Vape Apple Ice", brand: "Smart.800", category: "CBD Vapes", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Smart800.png", isNew: true },
+  { id: "64", name: "Pod Salt ONYX 1000 Nicotine Vape", brand: "Pod Salt", category: "Vaporizers", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Firefly_Product.png", isNew: true },
+];
+
+Also add Framer Motion staggered fade-in + slide-up animations to product cards. Each card should animate with opacity 0->1 and y 20->0, with 0.05s stagger delay between cards.
