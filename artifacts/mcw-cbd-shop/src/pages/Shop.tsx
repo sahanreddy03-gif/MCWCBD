@@ -83,9 +83,21 @@ export default function Shop() {
     setSearch("");
   };
 
+  const categoryMeta: Record<string, { title: string; description: string }> = {
+    "CBD Oils": { title: "CBD Oils Malta", description: "Browse premium CBD oils, tinctures and creams available in Malta. Full spectrum, broad spectrum and isolate options with same day delivery." },
+    "CBD Flowers": { title: "CBD Flowers Malta", description: "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Top quality strains with same day delivery across Malta." },
+    "CBD Vapes": { title: "CBD Vapes Malta", description: "Shop CBD, CBG9 and THCv vape cartridges and disposables in Malta. Premium brands with same day delivery." },
+    "CBD Gummies": { title: "CBD Gummies Malta", description: "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Delicious options with same day delivery." },
+    "Pre-Rolls": { title: "CBD Pre-Rolls Malta", description: "Browse premium CBD pre-rolls and accessories available in Malta. Ready to enjoy with same day delivery." },
+    "Lifestyle": { title: "Lifestyle & Accessories Malta", description: "Shop CBD lifestyle products, grinders, accessories, clothing and merch in Malta. Same day delivery across Malta." },
+  };
+
+  const seoTitle = activeCategory ? categoryMeta[activeCategory]?.title || "Shop the Collection" : "Shop the Collection";
+  const seoDescription = activeCategory ? categoryMeta[activeCategory]?.description : undefined;
+
   return (
     <>
-      <SEO title="Shop the Collection" />
+      <SEO title={seoTitle} {...(seoDescription ? { description: seoDescription } : {})} />
       
       {/* SHOP HEADER */}
       <div className="pt-32 pb-16 bg-gradient-to-r from-[#FF6B35] to-[#FFB800] relative overflow-hidden border-b-4 border-black">
@@ -185,28 +197,30 @@ export default function Shop() {
                   transition={{ delay: (i % 6) * 0.05 }}
                   className="bg-white rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 min-h-[300px]"
                 >
-                  {/* TOP ROW: badges + brand */}
+                  {/* TOP ROW: badges */}
                   <div className="px-5 pt-5 pb-3 flex items-start justify-between shrink-0">
                     <div>
                       {product.isNew && <span className="bg-[#FF3366] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">NEW</span>}
                       {product.isPopular && !product.isNew && <span className="bg-[#FFB800] text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">HOT</span>}
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-black/30 leading-tight text-right">{product.brand}</span>
                   </div>
 
                   {/* MIDDLE ROW: name (left) + image (right), flex-row, contained */}
                   <div className="flex flex-row flex-1 min-h-0 overflow-hidden">
-                    {/* Left: name + category */}
+                    {/* Left: name + brand + category */}
                     <div className="px-5 pb-4 flex flex-col justify-end w-[58%] shrink-0">
                       <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.subCategory}</p>
                       <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-1">{product.brand}</span>
                       {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-1">{product.effect}</p>}
                     </div>
                     {/* Right: product image — strictly contained */}
                     <div className="relative w-[42%] shrink-0 overflow-hidden">
                       <img
                         src={product.image}
-                        alt={product.name}
+                        alt={`${product.name} – ${product.brand} – Buy CBD in Malta`}
+                        width={300}
+                        height={300}
                         className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
                         loading="lazy"
                       />
