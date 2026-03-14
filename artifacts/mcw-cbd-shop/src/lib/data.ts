@@ -7,6 +7,7 @@ import pSigloIV from "@assets/Cigar-Review-Cohiba-Siglo-IV-3_1773527382826.webp"
 import pChurchill from "@assets/Cigar-Review-Cohiba-Siglo-IV-3_1773527461627.webp";
 import pHouseCigar from "@assets/92343873_1602319463249512_8897552270137229312_o_9B9C63F9-5056-_1773527919139.jpg";
 import pBambooMat from "@assets/RAWBambooRollingMat_900x_1773528012276.webp";
+import pCBDPreRolls from "@assets/nno-Euphoria-H4CBD-JOINT-BOX-New-A-04-PACKSHOT_1773528952421.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
@@ -212,7 +213,7 @@ export const PRODUCTS: Product[] = [
   { id: "119", name: "CBD Cosmetics Bundle", brand: "Venus Secrets", category: "CBD Oils", subCategory: "CBD Creams", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Oil_Lipstick.png", isNew: true },
 
   // Pre-Rolls
-  { id: "120", name: "CBD Pre-rolls Display", brand: "Euphoria", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://static.manus.im/file/mcw-cbd-shop/Mixed_Joints.png", isNew: true },
+  { id: "120", name: "CBD Pre-rolls", brand: "Euphoria", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: pCBDPreRolls, isNew: true },
 
   // Lifestyle / Accessories
   { id: "121", name: "Cannabis Incense Sticks", brand: "Multitrance", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Incense.png", isNew: true },
