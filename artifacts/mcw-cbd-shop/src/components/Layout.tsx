@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ShoppingBag, MapPin, ChevronRight } from "lucide-react";
+import { Menu, X, ShoppingBag, MapPin, ChevronRight, AlertTriangle } from "lucide-react";
+import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { AgeGate } from "./AgeGate";
 import { WhatsAppCTA } from "./WhatsAppCTA";
@@ -52,9 +53,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <Link href="/" className="flex flex-col hover:opacity-80 transition-opacity">
-            <span className="font-bebas text-4xl leading-none tracking-widest text-glow">MCW</span>
-            <span className="text-[0.6rem] uppercase tracking-[0.3em] text-primary font-bold -mt-1">Relax Shop</span>
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <img src={logoSrc} alt="MCW Relax Store" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
@@ -103,7 +103,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             className="fixed inset-0 z-50 bg-black flex flex-col"
           >
             <div className="flex justify-between items-center p-6 pt-8 border-b border-white/[0.04]">
-              <span className="font-bebas text-4xl tracking-widest text-glow">MCW</span>
+              <img src={logoSrc} alt="MCW Relax Store" className="h-12 w-auto object-contain" />
               <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-white hover:text-primary transition-colors">
                 <X size={32} />
               </button>
@@ -157,9 +157,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div className="col-span-1 md:col-span-1">
-              <Link href="/" className="flex flex-col mb-8">
-                <span className="font-bebas text-6xl leading-none tracking-widest text-glow">MCW</span>
-                <span className="text-xs uppercase tracking-[0.3em] text-primary font-black">CBD Relax Shop</span>
+              <Link href="/" className="mb-8 inline-block">
+                <img src={logoSrc} alt="MCW Relax Store" className="h-20 w-auto object-contain" />
               </Link>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs font-medium">
                 Malta's premium destination for the world's finest CBD, cannabis derivatives, and lifestyle accessories.
@@ -218,10 +217,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="pt-8 border-t border-white/[0.04] text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[10px] text-muted-foreground/60 max-w-3xl leading-relaxed uppercase tracking-wider font-bold">
-              DISCLAIMER: All products contain less than 0.2% THC in accordance with EU and Maltese law. 
-              Products are intended for adults 18+ only. Keep out of reach of children.
-            </p>
+            <div className="flex items-start gap-3">
+              <AlertTriangle size={16} className="text-yellow-500 shrink-0 mt-0.5" />
+              <p className="text-[10px] text-muted-foreground/60 max-w-3xl leading-relaxed uppercase tracking-wider font-bold">
+                WARNING: All products contain less than 0.2% THC in accordance with EU and Maltese law. 
+                Products are intended for adults 18+ only. Keep out of reach of children. 
+                These products are not intended to diagnose, treat, cure, or prevent any disease. 
+                Consult your healthcare provider before use. Not for use during pregnancy or breastfeeding. 
+                If you or someone you know needs help with substance use, contact Sedqa on 1551 (free, confidential).
+              </p>
+            </div>
             <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] font-black shrink-0">
               © {new Date().getFullYear()} MCW Malta.
             </p>

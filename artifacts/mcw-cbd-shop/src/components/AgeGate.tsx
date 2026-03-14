@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 
 export function AgeGate() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ export function AgeGate() {
             transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-2xl w-full text-center relative z-10"
           >
-            <div className="font-bebas text-6xl md:text-8xl tracking-widest text-glow mb-8 text-primary">MCW</div>
+            <img src={logoSrc} alt="MCW Relax Store" className="w-40 h-40 md:w-52 md:h-52 object-contain mx-auto mb-8" />
             
             <h2 className="text-7xl md:text-[8rem] leading-[0.8] font-bebas tracking-tight text-white mb-6">ARE YOU 18+?</h2>
             

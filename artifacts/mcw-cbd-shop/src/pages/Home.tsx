@@ -233,7 +233,7 @@ export default function Home() {
         
         <div className="flex flex-col gap-6">
           <div className="flex whitespace-nowrap animate-marquee">
-            {[...Array(3)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={`row1-${i}`} className="flex items-center">
                 {BRANDS.slice(0, 8).map((brand, idx) => (
                   <span 
@@ -248,7 +248,7 @@ export default function Home() {
             ))}
           </div>
           <div className="flex whitespace-nowrap animate-marquee-reverse">
-            {[...Array(3)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div key={`row2-${i}`} className="flex items-center">
                 {BRANDS.slice(8).map((brand, idx) => (
                   <span 
