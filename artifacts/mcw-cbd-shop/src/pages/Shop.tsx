@@ -219,12 +219,10 @@ export default function Shop() {
 
                   {/* MIDDLE ROW: name (left) + image (right), flex-row, contained */}
                   <div className="flex flex-row flex-1 min-h-0 overflow-hidden">
-                    {/* Left: name + brand + category */}
+                    {/* Left: name + brand */}
                     <div className="px-5 pb-4 flex flex-col justify-end w-[58%] shrink-0">
-                      <p className="text-[10px] font-black uppercase tracking-widest text-black/40 mb-1">{product.subCategory}</p>
                       <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-black/40 mt-1">{product.brand}</span>
-                      {product.effect && <p className="text-[10px] font-bold uppercase tracking-widest text-black/40 mt-0.5">{product.effect}</p>}
+                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-black/35 mt-1">{product.brand}</span>
                     </div>
                     {/* Right: product image — strictly contained */}
                     <div className="relative w-[42%] shrink-0 overflow-hidden">
@@ -244,11 +242,15 @@ export default function Shop() {
                   <div className="px-5 pb-5 flex items-center justify-between shrink-0 mt-2">
                     <button
                       onClick={(e) => { e.preventDefault(); addToCart(product); }}
-                      className="bg-black text-white text-[11px] font-black uppercase tracking-widest px-5 py-3 hover:bg-[#22c55e] hover:text-black transition-colors"
+                      title="Add to cart"
+                      className="w-10 h-10 flex items-center justify-center bg-black text-white hover:bg-[#22c55e] hover:text-black transition-colors"
                     >
-                      + ADD TO CART
+                      <ShoppingBag size={16} />
                     </button>
-                    <span className="font-bebas text-3xl text-black">€{product.price.toFixed(2)}</span>
+                    <div className="text-right">
+                      <p className="text-[9px] font-bold uppercase tracking-widest text-black/30 leading-none mb-0.5">Price</p>
+                      <span className="font-bebas text-4xl text-black leading-none">€{product.price.toFixed(2)}</span>
+                    </div>
                   </div>
 
                   {/* Category accent bar */}
