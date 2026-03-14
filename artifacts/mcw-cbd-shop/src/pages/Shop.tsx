@@ -38,6 +38,7 @@ export default function Shop() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
+  const [selectedVariants, setSelectedVariants] = useState<Record<string, number>>({});
 
   useState(() => subscribe(() => setCartState([...cartItems])));
 
@@ -238,6 +239,24 @@ export default function Shop() {
                     </div>
                   </div>
 
+                  {/* GRAM SELECTOR: only for products with variants */}
+                  {product.variants && (
+                    <div className="px-5 pb-2 shrink-0">
+                      <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1.5">Select grams</p>
+                      <div className="flex gap-1.5 flex-wrap">
+                        {product.variants.map((v, vi) => (
+                          <button
+                            key={v.label}
+                            onClick={(e) => { e.preventDefault(); setSelectedVariants(prev => ({ ...prev, [product.id]: vi })); }}
+                            className={`text-[10px] font-bold px-2.5 py-1 border transition-colors ${(selectedVariants[product.id] ?? 0) === vi ? 'bg-black text-white border-black' : 'bg-white text-black/50 border-black/20 hover:border-black/60'}`}
+                          >
+                            {v.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* BOTTOM ROW: CTA + price */}
                   <div className="px-5 pb-5 flex items-center justify-between shrink-0 mt-2">
                     <button
@@ -249,7 +268,9 @@ export default function Shop() {
                     </button>
                     <div className="text-right">
                       <p className="text-[9px] font-bold uppercase tracking-widest text-black/30 leading-none mb-0.5">Price</p>
-                      <span className="font-bebas text-4xl text-black leading-none">€{product.price.toFixed(2)}</span>
+                      <span className="font-bebas text-4xl text-black leading-none">
+                        €{(product.variants ? product.variants[selectedVariants[product.id] ?? 0].price : product.price).toFixed(2)}
+                      </span>
                     </div>
                   </div>
 

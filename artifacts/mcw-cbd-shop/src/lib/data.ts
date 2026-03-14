@@ -17,6 +17,7 @@ import pTHCVPenGMOCookies from "@assets/48e10bc7365b1f5179c98c10b37ef7b2-canntro
 import pVolcanoHybrid from "@assets/d62d023fd59c28deb95ee65bfb961776-volcano-hybrid-vaporizer-sto_1773531278009.webp";
 import pPaxFlow from "@assets/467582908f657e91635ec12fb3eb25a4-flow-onyx-hero-1024x1024_1773531362359.webp";
 import pSmart800AllFlavours from "@assets/vl0NgP98-scaled_1773531442437.jpeg";
+import pKushMintz from "@assets/d65cf3bbea016713dbd0fe19863c0bd2-canntropy-cbd-flowers-kush-mi_1773532347950.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -41,6 +42,7 @@ export interface Product {
   isNew?: boolean;
   isPopular?: boolean;
   imageFit?: "cover" | "contain";
+  variants?: { label: string; price: number }[];
 }
 
 export const BRANDS = [
@@ -88,7 +90,7 @@ export const PRODUCTS: Product[] = [
   { id: "52", name: "CBD Capsules", brand: "Sensi Seeds", category: "CBD Oils", subCategory: "CBD Capsules", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pCream1 },
 
   // CBD Flowers
-  { id: "7", name: "Gelato", brand: "Jeeter", category: "CBD Flowers", subCategory: "CBD Flowers", price: 20.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRoll1 },
+  { id: "7", name: "CBD Flowers Kush Mintz CBD 30%", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Energizing", cannabinoid: "CBD", image: pKushMintz, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "8", name: "OG Kush", brand: "Jungle Boys", category: "CBD Flowers", subCategory: "CBD Flowers", price: 22.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isNew: true },
   { id: "9", name: "White Widow", brand: "STIIIZY", category: "CBD Flowers", subCategory: "CBD Flowers", price: 19.00, effect: "Focus", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "10", name: "Amnesia Haze", brand: "Barona", category: "CBD Flowers", subCategory: "CBD Flowers", price: 15.00, effect: "Energizing", cannabinoid: "CBD", image: pFlower1 },
