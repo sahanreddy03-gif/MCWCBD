@@ -1,6 +1,6 @@
 import pOil1500 from "@assets/IMG_9897_1773459848147.webp";
 import pOil500 from "@assets/IMG_9898_1773460947867.webp";
-import pSleepDrops from "@assets/IMG_9899_1773461154950.jpeg";
+import pSleepDrops from "@assets/pexels-gb-the-green-brand-1259697174-29612816_1773461557894.jpg";
 
 export type Category = 
   | "CBD Oils" | "CBD Flowers" | "CBD Hash" | "CBD Pre-Rolls" 
