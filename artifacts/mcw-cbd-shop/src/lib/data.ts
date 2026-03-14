@@ -8,6 +8,7 @@ import pChurchill from "@assets/Cigar-Review-Cohiba-Siglo-IV-3_1773527461627.web
 import pHouseCigar from "@assets/92343873_1602319463249512_8897552270137229312_o_9B9C63F9-5056-_1773527919139.jpg";
 import pBambooMat from "@assets/RAWBambooRollingMat_900x_1773528012276.webp";
 import pCBDPreRolls from "@assets/nno-Euphoria-H4CBD-JOINT-BOX-New-A-04-PACKSHOT_1773528952421.png";
+import pH4CBDVapePen from "@assets/auj-H4CBD-VAPE-PEN-DISPLAY-Juicy-Blueberry-A-01-FINAL_1773529171969.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
@@ -89,7 +90,7 @@ export const PRODUCTS: Product[] = [
   { id: "43", name: "Premium Hash", brand: "Amsterdam Gold", category: "CBD Flowers", subCategory: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pEdible4 },
 
   // CBD Vapes
-  { id: "14", name: "Pod OG Kush", brand: "STIIIZY", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Relaxing", cannabinoid: "CBD", image: pVape1, isPopular: true },
+  { id: "14", name: "H4CBD Disposable Vape Pen", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapePen, isPopular: true },
   { id: "15", name: "Vape Pen Gelato", brand: "Cookies", category: "CBD Vapes", subCategory: "CBD Vapes", price: 40.00, effect: "Energizing", cannabinoid: "CBD", image: pVape2 },
   { id: "16", name: "Disposable Blue Razz", brand: "Tyson 2.0", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true },
   { id: "17", name: "Battery Starter Kit", brand: "STIIIZY", category: "CBD Vapes", subCategory: "CBD Vapes", price: 25.00, cannabinoid: "None", image: pVape1 },
