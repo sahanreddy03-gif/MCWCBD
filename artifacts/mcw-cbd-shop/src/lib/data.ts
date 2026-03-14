@@ -2,6 +2,7 @@ import pOil1500 from "@assets/IMG_9897_1773459848147.webp";
 import pOil500 from "@assets/IMG_9898_1773460947867.webp";
 import pSleepDrops from "@assets/pexels-gb-the-green-brand-1259697174-29612816_1773461557894.jpg";
 import pPreRollGelato from "@assets/OIP_(2)_1773526968325.webp";
+import pPreRollOG from "@assets/3ffe1785-a0b0-4fcc-af29-2416964c110f_1773527217089.jpeg";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 
 export type Category = 
@@ -107,7 +108,7 @@ export const PRODUCTS: Product[] = [
   // Pre-Rolls
   { id: "23", name: "Baby Pre-Rolls Pack", brand: "Jeeter", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 45.00, effect: "Relaxing", cannabinoid: "CBD", image: pBabyPreRolls, isPopular: true },
   { id: "24", name: "Pre-Roll Gelato", brand: "Cookies", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 15.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRollGelato },
-  { id: "25", name: "Pre-Roll OG", brand: "Jungle Boys", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 18.00, effect: "Focus", cannabinoid: "CBD", image: pPreRoll1 },
+  { id: "25", name: "Pre-Roll OG", brand: "Jungle Boys", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 18.00, effect: "Focus", cannabinoid: "CBD", image: pPreRollOG },
   { id: "26", name: "House Pre-Roll", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 8.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll2 },
   { id: "47", name: "Pre-Roll Pack", brand: "Haze", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 28.00, effect: "Energizing", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "36", name: "Siglo IV Cigar", brand: "Cohiba", category: "Pre-Rolls", subCategory: "Cigars", price: 35.00, cannabinoid: "None", image: pPreRoll1 },
