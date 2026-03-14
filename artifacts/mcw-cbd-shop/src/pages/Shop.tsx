@@ -231,7 +231,7 @@ export default function Shop() {
                         alt={`${product.name} – ${product.brand} – Buy CBD in Malta`}
                         width={300}
                         height={300}
-                        className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
+                        className={`absolute inset-0 w-full h-full ${product.imageFit === 'contain' ? 'object-contain scale-110' : 'object-cover'} ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />

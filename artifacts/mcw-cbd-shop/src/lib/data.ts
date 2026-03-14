@@ -31,6 +31,7 @@ export interface Product {
   image: string;
   isNew?: boolean;
   isPopular?: boolean;
+  imageFit?: "cover" | "contain";
 }
 
 export const BRANDS = [
@@ -91,8 +92,8 @@ export const PRODUCTS: Product[] = [
 
   // CBD Vapes
   { id: "14", name: "H4CBD Disposable Vape Pen", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapePen, isPopular: true },
-  { id: "15", name: "E-Cigarette 800 Puffs", brand: "SMART800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 40.00, effect: "Energizing", cannabinoid: "CBD", image: pVape2 },
-  { id: "16", name: "Disposable Blue Razz", brand: "Tyson 2.0", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true },
+  { id: "15", name: "E-Cigarette 800 Puffs", brand: "SMART800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 40.00, effect: "Energizing", cannabinoid: "CBD", image: pVape2, imageFit: "contain" },
+  { id: "16", name: "E-Cigarette 1000 Puffs", brand: "Pod Salt Onyx", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true, imageFit: "contain" },
   { id: "17", name: "Battery Starter Kit", brand: "STIIIZY", category: "CBD Vapes", subCategory: "CBD Vapes", price: 25.00, cannabinoid: "None", image: pVape1 },
   { id: "18", name: "Live Resin Cartridge", brand: "Raw Garden", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "CBD", image: pVape2 },
   { id: "44", name: "Pod Blue Dream", brand: "STIIIZY", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pVape3 },
