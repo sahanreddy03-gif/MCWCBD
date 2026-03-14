@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
   { id: "38", name: "House Cigar", brand: "MCW", category: "Pre-Rolls", subCategory: "Cigars", price: 15.00, cannabinoid: "None", image: pHouseCigar },
   { id: "31", name: "Black Papers King Size", brand: "RAW", category: "Pre-Rolls", subCategory: "Papers & Filters", price: 2.50, cannabinoid: "None", image: pPreRoll2 },
   { id: "35", name: "Bamboo Rolling Mat", brand: "RAW", category: "Pre-Rolls", subCategory: "Accessories", price: 8.00, cannabinoid: "None", image: pBambooMat },
-  { id: "58", name: "Rolling Tray", brand: "Jungle Boys", category: "Pre-Rolls", subCategory: "Accessories", price: 25.00, cannabinoid: "None", image: pIncense1 },
+  { id: "58", name: "Infused Cannabis Sticks", brand: "Multiple Brands Available", category: "Pre-Rolls", subCategory: "Accessories", price: 25.00, cannabinoid: "None", image: pIncense1 },
 
   // Lifestyle
   { id: "32", name: "4-Part Grinder", brand: "Grass King", category: "Lifestyle", subCategory: "Grinders", price: 25.00, cannabinoid: "None", image: pGrinder1 },
