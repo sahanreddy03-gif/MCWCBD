@@ -22,6 +22,7 @@ import pZkittlesRainbowRide from "@assets/4edfa8e5ff524dbc76428c6e046a7957-hemni
 import pWhiteWidow from "@assets/072b7dcf5a289b7b2acfa2ae20c49f6f-canntropy-h4cbd-flowers-white_1773533220254.png";
 import pAmnesiaHaze from "@assets/2d42923672ab15f415cf8f8d581caf03-canntropy-thcd-flower-amnesi_1773533624162.webp";
 import pBlueLotus from "@assets/ee605ab54ea8b5fc0cb5718ffdc7afee-blue-lotus-resin-hash_1773534586095.webp";
+import pKushHash from "@assets/5958650de7cb445db2808753c3cb46cc-euphoria-cbd-hash-kush_1773534895509.webp";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -102,7 +103,7 @@ export const PRODUCTS: Product[] = [
   { id: "10", name: "THCD Flower Amnesia Haze", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Energizing", cannabinoid: "CBD", image: pAmnesiaHaze, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "11", name: "MCW Pre-Rolls", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 12.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, strainOptions: ["CBD", "H4CBD", "THCV", "THCJD"], flavourOptions: ["OG Kush", "Gelato", "Blue Dream", "Gorilla Glue #4", "Wedding Cake", "Lemon Haze", "Sour Diesel", "Pineapple Express", "Grandaddy Purple", "The Procrastinator", "Couch Crasher", "Giggle Gas", "Munchie Madness", "Nap King 3000", "Sunday Snoozefest"] },
   { id: "12", name: "Hash Blue Lotus Soft Resin", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Hash", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
-  { id: "13", name: "Tropicana Cookies", brand: "CBX", category: "CBD Flowers", subCategory: "CBD Flowers", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1 },
+  { id: "13", name: "CBD Hash 6% Kush", brand: "Euphoria", category: "CBD Flowers", subCategory: "CBD Hash", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushHash },
   { id: "42", name: "Hash Rosin", brand: "Cookies", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
   { id: "43", name: "Premium Hash", brand: "Amsterdam Gold", category: "CBD Flowers", subCategory: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pEdible4 },
 
