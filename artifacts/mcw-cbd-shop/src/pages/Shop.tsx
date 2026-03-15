@@ -39,6 +39,8 @@ export default function Shop() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
   const [selectedVariants, setSelectedVariants] = useState<Record<string, number>>({});
+  const [selectedStrains, setSelectedStrains] = useState<Record<string, string>>({});
+  const [selectedFlavours, setSelectedFlavours] = useState<Record<string, string>>({});
 
   useState(() => subscribe(() => setCartState([...cartItems])));
 
@@ -238,6 +240,34 @@ export default function Shop() {
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
                     </div>
                   </div>
+
+                  {/* STRAIN + FLAVOUR DROPDOWNS: only for products with strainOptions */}
+                  {product.strainOptions && (
+                    <div className="px-5 pb-3 shrink-0 space-y-2">
+                      <div>
+                        <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1">Strain Type</p>
+                        <select
+                          value={selectedStrains[product.id] || product.strainOptions[0]}
+                          onChange={(e) => setSelectedStrains(prev => ({ ...prev, [product.id]: e.target.value }))}
+                          className="w-full text-[11px] font-bold uppercase tracking-wide border border-black/20 bg-white text-black px-2.5 py-1.5 appearance-none cursor-pointer hover:border-black/50 transition-colors focus:outline-none focus:border-black"
+                        >
+                          {product.strainOptions.map(s => <option key={s} value={s}>{s}</option>)}
+                        </select>
+                      </div>
+                      {product.flavourOptions && (
+                        <div>
+                          <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1">Flavour</p>
+                          <select
+                            value={selectedFlavours[product.id] || product.flavourOptions[0]}
+                            onChange={(e) => setSelectedFlavours(prev => ({ ...prev, [product.id]: e.target.value }))}
+                            className="w-full text-[11px] font-bold border border-black/20 bg-white text-black px-2.5 py-1.5 appearance-none cursor-pointer hover:border-black/50 transition-colors focus:outline-none focus:border-black"
+                          >
+                            {product.flavourOptions.map(f => <option key={f} value={f}>{f}</option>)}
+                          </select>
+                        </div>
+                      )}
+                    </div>
+                  )}
 
                   {/* GRAM SELECTOR: only for products with variants */}
                   {product.variants && (

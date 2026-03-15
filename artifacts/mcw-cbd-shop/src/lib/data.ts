@@ -46,6 +46,8 @@ export interface Product {
   isPopular?: boolean;
   imageFit?: "cover" | "contain";
   variants?: { label: string; price: number }[];
+  strainOptions?: string[];
+  flavourOptions?: string[];
 }
 
 export const BRANDS = [
@@ -97,7 +99,7 @@ export const PRODUCTS: Product[] = [
   { id: "8", name: "CBD Flowers Zkittles - Rainbow Ride", brand: "Hemnia", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pZkittlesRainbowRide, isNew: true, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "9", name: "H4CBD White Widow", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Focus", cannabinoid: "H4CBD", image: pWhiteWidow, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "10", name: "THCD Flower Amnesia Haze", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Energizing", cannabinoid: "CBD", image: pAmnesiaHaze, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
-  { id: "11", name: "House Blend Indica", brand: "MCW", category: "CBD Flowers", subCategory: "CBD Flowers", price: 12.00, effect: "Sleeping", cannabinoid: "CBD", image: pPreRoll1 },
+  { id: "11", name: "MCW Pre-Rolls", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 12.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, strainOptions: ["CBD", "H4CBD", "THCV", "THCJD"], flavourOptions: ["OG Kush", "Gelato", "Blue Dream", "Gorilla Glue #4", "Wedding Cake", "Lemon Haze", "Sour Diesel", "Pineapple Express", "Grandaddy Purple", "The Procrastinator", "Couch Crasher", "Giggle Gas", "Munchie Madness", "Nap King 3000", "Sunday Snoozefest"] },
   { id: "12", name: "Blue Dream", brand: "Dutch Gold", category: "CBD Flowers", subCategory: "CBD Flowers", price: 16.00, effect: "Focus", cannabinoid: "CBD", image: pFlower1 },
   { id: "13", name: "Tropicana Cookies", brand: "CBX", category: "CBD Flowers", subCategory: "CBD Flowers", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "42", name: "Hash Rosin", brand: "Cookies", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
