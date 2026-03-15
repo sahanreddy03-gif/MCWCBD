@@ -104,7 +104,7 @@ export const PRODUCTS: Product[] = [
   { id: "11", name: "MCW Pre-Rolls", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 12.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, strainOptions: ["CBD", "H4CBD", "THCV", "THCJD"], flavourOptions: ["OG Kush", "Gelato", "Blue Dream", "Gorilla Glue #4", "Wedding Cake", "Lemon Haze", "Sour Diesel", "Pineapple Express", "Grandaddy Purple", "The Procrastinator", "Couch Crasher", "Giggle Gas", "Munchie Madness", "Nap King 3000", "Sunday Snoozefest"] },
   { id: "12", name: "Hash Blue Lotus Soft Resin", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Hash", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
   { id: "13", name: "CBD Hash 6% Kush", brand: "Euphoria", category: "CBD Flowers", subCategory: "CBD Hash", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushHash },
-  { id: "42", name: "Hash Rosin", brand: "Cookies", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
+  { id: "42", name: "Chocolate Hash Rosin", brand: "MCW", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
   { id: "43", name: "Premium Hash", brand: "Amsterdam Gold", category: "CBD Flowers", subCategory: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pEdible4 },
 
   // CBD Vapes
