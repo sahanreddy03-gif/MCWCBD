@@ -19,6 +19,7 @@ import pPaxFlow from "@assets/467582908f657e91635ec12fb3eb25a4-flow-onyx-hero-10
 import pSmart800AllFlavours from "@assets/vl0NgP98-scaled_1773531442437.jpeg";
 import pKushMintz from "@assets/d65cf3bbea016713dbd0fe19863c0bd2-canntropy-cbd-flowers-kush-mi_1773532347950.png";
 import pZkittlesRainbowRide from "@assets/4edfa8e5ff524dbc76428c6e046a7957-hemnia-cbd-flowers-zkittles-_1773532885096.webp";
+import pWhiteWidow from "@assets/072b7dcf5a289b7b2acfa2ae20c49f6f-canntropy-h4cbd-flowers-white_1773533220254.png";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -93,7 +94,7 @@ export const PRODUCTS: Product[] = [
   // CBD Flowers
   { id: "7", name: "CBD Flowers Kush Mintz CBD 30%", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Energizing", cannabinoid: "CBD", image: pKushMintz, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "8", name: "CBD Flowers Zkittles - Rainbow Ride", brand: "Hemnia", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pZkittlesRainbowRide, isNew: true, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
-  { id: "9", name: "White Widow", brand: "STIIIZY", category: "CBD Flowers", subCategory: "CBD Flowers", price: 19.00, effect: "Focus", cannabinoid: "CBD", image: pPreRoll1 },
+  { id: "9", name: "Canntropy H4CBD White Widow", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Focus", cannabinoid: "H4CBD", image: pWhiteWidow, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "10", name: "Amnesia Haze", brand: "Barona", category: "CBD Flowers", subCategory: "CBD Flowers", price: 15.00, effect: "Energizing", cannabinoid: "CBD", image: pFlower1 },
   { id: "11", name: "House Blend Indica", brand: "MCW", category: "CBD Flowers", subCategory: "CBD Flowers", price: 12.00, effect: "Sleeping", cannabinoid: "CBD", image: pPreRoll1 },
   { id: "12", name: "Blue Dream", brand: "Dutch Gold", category: "CBD Flowers", subCategory: "CBD Flowers", price: 16.00, effect: "Focus", cannabinoid: "CBD", image: pFlower1 },
