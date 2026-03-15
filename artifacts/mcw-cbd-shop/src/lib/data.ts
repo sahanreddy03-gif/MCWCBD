@@ -23,6 +23,7 @@ import pWhiteWidow from "@assets/072b7dcf5a289b7b2acfa2ae20c49f6f-canntropy-h4cb
 import pAmnesiaHaze from "@assets/2d42923672ab15f415cf8f8d581caf03-canntropy-thcd-flower-amnesi_1773533624162.webp";
 import pBlueLotus from "@assets/ee605ab54ea8b5fc0cb5718ffdc7afee-blue-lotus-resin-hash_1773534586095.webp";
 import pKushHash from "@assets/5958650de7cb445db2808753c3cb46cc-euphoria-cbd-hash-kush_1773534895509.webp";
+import pAfghanHash from "@assets/8c9ea316b68878eed2c6faeb62f3ae12-euphoria-cbd-hash-afghan_1773535319415.webp";
 import pBabyPreRolls from "@assets/OIP_(1)_1773526730292.webp";
 import pH4CBDVapeGrapeMint from "@assets/saj-H4CBD-VAPE-PEN-DISPLAY-Grape-mint-A-01-FINAL.213439910.174_1773530080982.png";
 
@@ -105,7 +106,7 @@ export const PRODUCTS: Product[] = [
   { id: "12", name: "Hash Blue Lotus Soft Resin", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Hash", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
   { id: "13", name: "CBD Hash 6% Kush", brand: "Euphoria", category: "CBD Flowers", subCategory: "CBD Hash", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushHash },
   { id: "42", name: "Chocolate Hash Rosin", brand: "MCW", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
-  { id: "43", name: "Premium Hash", brand: "Amsterdam Gold", category: "CBD Flowers", subCategory: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pEdible4 },
+  { id: "43", name: "CBD Hash Afghan 25% CBD", brand: "Euphoria", category: "CBD Flowers", subCategory: "CBD Hash", price: 30.00, effect: "Energizing", cannabinoid: "CBD", image: pAfghanHash, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
 
   // CBD Vapes
   { id: "14", name: "H4CBD Disposable Vape Pen", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapePen, isPopular: true },
