@@ -55,13 +55,24 @@ export default function Shop() {
     });
   }, [activeCategory, activeSubCategory, search]);
 
+  const DELIVERY_FEE = 3.50;
+  const FREE_DELIVERY_THRESHOLD = 50;
+  const getDeliveryFee = () => getCartTotal() >= FREE_DELIVERY_THRESHOLD ? 0 : DELIVERY_FEE;
+  const getOrderTotal = () => getCartTotal() + getDeliveryFee();
+
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
-    let text = "Hello MCW, I would like to order:\n\n";
+    const subtotal = getCartTotal();
+    const delivery = getDeliveryFee();
+    const total = getOrderTotal();
+    let text = "Hello MCW! 👋 I would like to place an order:\n\n";
     cartItems.forEach(item => {
-      text += `- ${item.quantity}x ${item.product.name} (€${item.product.price.toFixed(2)})\n`;
+      text += `• ${item.quantity}x ${item.product.name} — €${item.product.price.toFixed(2)}\n`;
     });
-    text += `\nTotal: €${getCartTotal().toFixed(2)}\n\nPlease let me know how to pay!`;
+    text += `\nSubtotal: €${subtotal.toFixed(2)}`;
+    text += `\nDelivery: ${delivery === 0 ? "FREE 🎉" : `€${delivery.toFixed(2)}`}`;
+    text += `\n*TOTAL: €${total.toFixed(2)}*`;
+    text += `\n\nPayment options:\n1. Revolut link (preferred)\n2. Cash on delivery\n\nPlease confirm my order and send payment details. Thank you!`;
     window.open(`https://wa.me/35699999999?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -369,16 +380,38 @@ export default function Shop() {
               </div>
 
               <div className="p-6 border-t-4 border-black bg-[#f8f8f8]">
-                <div className="flex justify-between items-end mb-6">
+                {/* Free delivery progress */}
+                {cartState.length > 0 && getCartTotal() < FREE_DELIVERY_THRESHOLD && (
+                  <div className="mb-4 bg-black text-white px-4 py-2.5 text-xs font-black uppercase tracking-widest text-center">
+                    Add €{(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} more for FREE delivery!
+                  </div>
+                )}
+                {cartState.length > 0 && getCartTotal() >= FREE_DELIVERY_THRESHOLD && (
+                  <div className="mb-4 bg-[#22C55E] text-black px-4 py-2.5 text-xs font-black uppercase tracking-widest text-center">
+                    🎉 You qualify for FREE delivery!
+                  </div>
+                )}
+                <div className="flex justify-between items-center mb-2">
                   <span className="font-black uppercase tracking-widest text-sm text-black/50">SUBTOTAL</span>
-                  <span className="font-bebas text-5xl text-black leading-none">€{getCartTotal().toFixed(2)}</span>
+                  <span className="font-bebas text-3xl text-black leading-none">€{getCartTotal().toFixed(2)}</span>
                 </div>
+                <div className="flex justify-between items-center mb-4 pb-4 border-b-2 border-black/10">
+                  <span className="font-black uppercase tracking-widest text-sm text-black/50">DELIVERY</span>
+                  <span className="font-bebas text-3xl leading-none" style={{ color: getDeliveryFee() === 0 ? '#22C55E' : '#000' }}>
+                    {getDeliveryFee() === 0 ? 'FREE' : `€${getDeliveryFee().toFixed(2)}`}
+                  </span>
+                </div>
+                <div className="flex justify-between items-end mb-6">
+                  <span className="font-black uppercase tracking-widest text-sm text-black">TOTAL</span>
+                  <span className="font-bebas text-5xl text-black leading-none">€{getOrderTotal().toFixed(2)}</span>
+                </div>
+                <p className="text-[10px] text-black/40 uppercase tracking-wider font-bold text-center mb-4">Pay via Revolut link or Cash on Delivery</p>
                 <button 
                   onClick={handleCheckout}
                   disabled={cartState.length === 0}
                   className="w-full py-5 bg-[#22C55E] text-black border-4 border-black font-black uppercase tracking-widest text-lg hover:bg-[#4ade80] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1"
                 >
-                  CHECKOUT VIA WHATSAPP
+                  ORDER VIA WHATSAPP
                 </button>
               </div>
             </motion.div>
