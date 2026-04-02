@@ -559,73 +559,134 @@ No card machine, no fuss. Just great CBD and friendly service.
 Come and visit us in Gzira — we're open every single day until late.`,
   },
   {
-    slug: "cbd-shop-mellieha-bugibba-malta",
-    title: "CBD in Mellieha & Bugibba: MCW's North Malta Stores",
-    excerpt: "MCW CBD Relax Shop has two locations serving North Malta — Mellieha and Bugibba. Here's what you'll find and why locals love us.",
+    slug: "cbd-shop-mellieha-malta",
+    title: "CBD Shop in Mellieha, Malta: MCW's North Malta Location",
+    excerpt: "Looking for CBD in Mellieha? MCW CBD Relax Shop serves North Malta with premium oils, flowers, vapes, and gummies — open daily until 11:30 pm.",
     publishedAt: "2025-04-10",
     category: "Local",
-    readingTime: 4,
+    readingTime: 5,
     featuredColor: "#22c55e",
-    content: `North Malta deserves premium CBD too. MCW CBD Relax Shop has two dedicated locations in North Malta — Mellieha and Bugibba — serving northern communities, tourists, and the St Paul's Bay area with our full range of legal CBD products. Both stores are open daily until 11:30 pm, with same-day delivery across the entire island.
+    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — open every day until 11:30 pm, with same-day delivery across the entire island.
 
 ## MCW Mellieha: North Malta's CBD Shop
 
 **Location:** Mellieha, North Malta
 **Phone:** +356 9953 6248
 **Hours:** Open daily, closes 11:30 pm
+**WhatsApp:** wa.me/35699536248
 
-Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, it's a destination for both Maltese families and international tourists. Our Mellieha store has become the go-to spot for North Malta residents who want premium CBD without having to make the trip south to Sliema or Gzira.
+Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, and a gateway for visitors heading to and from Gozo. Our Mellieha store has become the go-to spot for North Malta residents and tourists who want premium CBD without having to travel south to Sliema or Gzira.
 
-The Mellieha store carries our most popular products, with stock rotated regularly to keep things fresh. Whether you're a Mellieha local, a tourist staying at one of the nearby hotels, or a visitor heading to or from Gozo, you'll find exactly what you need here.
+## Why Mellieha?
+
+Mellieha is the jewel of North Malta. With its iconic bay, stunning hillside streets, and large residential and expat community, it's both a peaceful retreat and a vibrant local hub. Mellieha Bay is also one of Malta's most popular tourist destinations, meaning our store serves a diverse, international clientele — from curious first-timers to experienced CBD users.
+
+MCW Mellieha was opened specifically to give North Malta its own dedicated CBD destination. You shouldn't have to drive 30 minutes to Sliema to get quality products.
+
+## What's In Stock at MCW Mellieha?
+
+Our Mellieha store carries our most popular and in-demand products, with stock updated weekly:
+
+- **CBD Oils** — Full spectrum and broad spectrum from 500mg to 1500mg. MCW Originals and leading brands including Canapuff and Endoca
+- **CBD Flowers** — Premium indoor strains always available. Ask the team what's freshest — we rotate stock weekly and bring in seasonal exclusives
+- **CBD Vapes** — H4CBD disposable pens, standard CBD cartridges, and starter vape kits for new users
+- **CBD Gummies** — Sleep formulas, full spectrum variety packs, Canapuff 20mg, Tyson 2.0, and MCW Sleep Gummies with natural melatonin
+- **Pre-Rolls** — MCW house pre-rolls (1g and 2g), branded options, and infused varieties for experienced users
+- **MCW Originals** — Our exclusive in-house range of oils, flowers, and accessories, available at all 4 stores
+
+For the widest range — including rare strains, H4CBD concentrates, THCV products, and specialist items — our Sliema flagship carries the most comprehensive selection. But for everyday CBD needs, Mellieha has everything you need.
+
+## Visiting Malta? Mellieha Is a Perfect Stop
+
+Malta is a beloved European holiday destination, and Mellieha is one of its most visited areas. We see a lot of tourist visitors — from the UK, Germany, the Netherlands, Italy, and Scandinavia — who are curious about Malta's CBD scene or simply want to stock up while on holiday.
+
+MCW is 100% legal, fully English-speaking, and welcoming to all. Our staff takes time to explain what's available, how to use it, and what to expect. No pressure, no rushing — just good advice and honest information.
+
+**Note for tourists:** Always check your home country's CBD regulations before travelling home with products. While CBD is legal across most of the EU, rules vary. We're happy to advise.
+
+## Lab-Tested. Malta-Legal. Every Time.
+
+Every product at MCW Mellieha:
+
+- Contains less than 0.2% THC (fully legal in Malta under EU hemp regulations)
+- Is third-party lab tested by an independent EU laboratory
+- Comes with a Certificate of Analysis (COA) available on request at the counter
+
+We display COAs openly and encourage customers to ask. Transparency is part of how we operate.
+
+## Same-Day Delivery to Mellieha and North Malta
+
+Can't make it in? WhatsApp us on +356 9953 6248 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
+
+Delivery costs €3.50. Free delivery on all orders over €50. Orders are discreetly packaged with no external markings.
+
+We're open every single day until 11:30 pm. Walk in or message us — North Malta is fully covered.`,
+  },
+  {
+    slug: "cbd-shop-bugibba-malta",
+    title: "CBD Shop in Bugibba & St Paul's Bay: MCW's North Coast Location",
+    excerpt: "MCW CBD Relax Shop has a dedicated Bugibba location serving St Paul's Bay with premium CBD oils, flowers, vapes, and gummies — open daily until 11:30 pm.",
+    publishedAt: "2025-04-12",
+    category: "Local",
+    readingTime: 5,
+    featuredColor: "#7B4FFF",
+    content: `Bugibba is one of Malta's most energetic and tourist-friendly towns, and MCW CBD Relax Shop is proud to have a dedicated location serving the entire St Paul's Bay area. If you're searching for CBD in Bugibba, Qawra, or the surrounding coastline, you'll find us open every day until 11:30 pm.
 
 ## MCW Bugibba: St Paul's Bay CBD Destination
 
-**Location:** Bugibba, St Paul's Bay
+**Location:** Bugibba, St Paul's Bay, Malta
 **Phone:** +356 9953 6248
 **Hours:** Open daily, closes 11:30 pm
+**WhatsApp:** wa.me/35699536248
 
-Bugibba is one of Malta's most energetic tourist hubs — packed with seafront restaurants, bars, dive shops, and hotels throughout the year. Our Bugibba store is perfectly positioned to serve the thousands of residents, expats, and visitors who call St Paul's Bay home or holiday destination.
+Bugibba is packed with seafront restaurants, dive shops, bars, and hotels. It attracts thousands of visitors every year alongside a growing permanent resident and expat community. MCW Bugibba is positioned to serve both — tourists curious about legal CBD in Malta, and locals who want a quality, reliable shop nearby.
 
-If you're based in Bugibba, Qawra, Salina, or anywhere across the St Paul's Bay area, MCW Bugibba is your local CBD shop.
+## Why Bugibba Needed Its Own MCW Store
 
-## What's In Stock at Both North Malta Locations?
+St Paul's Bay is one of Malta's largest residential and tourist zones. For years, residents in Bugibba, Qawra, and Salina had to travel south to access quality CBD products. MCW opened the Bugibba location specifically to fix that gap — bringing the same premium products, lab certification, and expert service that made our Sliema flagship famous, right to the north coast.
 
-Both the Mellieha and Bugibba stores carry a curated selection of MCW's most popular and in-demand products:
+## What's Available at MCW Bugibba?
 
-- **CBD Oils** — Full spectrum and broad spectrum options from 500mg to 1500mg. MCW Originals and top import brands always in stock
-- **CBD Flowers** — Our top-selling strains are always available. Ask the team what's freshest — we rotate stock weekly
-- **CBD Vapes** — Disposable pens and premium vape cartridges. H4CBD and standard CBD options. All lab-certified
-- **CBD Gummies** — Pre-measured doses for every goal: general wellness, anxiety, sleep, or energy. 10mg to 25mg per piece
-- **Pre-Rolls** — MCW house pre-rolls and branded options. Great for on-the-go or for tourists wanting something convenient
-- **MCW Originals** — Our exclusive in-house product range, available at all four stores
+Our Bugibba store is stocked with our core range, refreshed weekly:
 
-For the absolute widest selection — including rarer strains, concentrates, and specialist products — our Sliema flagship is the most complete. But for everyday needs, both North Malta stores are fully stocked.
+- **CBD Oils** — Multiple strengths from 500mg to 1500mg. Full spectrum and broad spectrum options. Suitable for beginners and experienced users alike
+- **CBD Flowers** — Always in stock: our top-selling indoor and greenhouse strains. Ask the team for what's fresh this week
+- **CBD Vapes** — Disposable H4CBD pens, standard CBD cartridges, and beginner-friendly starter kits
+- **CBD Gummies** — Pre-measured and easy-to-use. We stock Canapuff full spectrum, MCW Sleep Gummies (with natural melatonin), Tyson 2.0 Knockout Gummies, and seasonal flavour packs
+- **Pre-Rolls** — MCW house pre-rolls (1g), branded Jeeter-style options, and infused varieties for experienced users
+- **MCW Originals** — Our own lab-tested in-house range available at all four MCW locations
+- **Accessories** — Rolling papers, grinders, glass storage jars, and lifestyle extras
 
-## Tourists: You're Welcome Here
+## Tourists in Bugibba: Here's What You Need to Know
 
-Malta is a popular holiday destination and we get a lot of tourist visitors who are curious about CBD — especially visitors from the UK, Germany, Italy, Scandinavia, and beyond. MCW is 100% legal, English-speaking, and welcoming to all.
+Bugibba is one of Malta's biggest tourist magnets and we welcome visitors from across Europe and beyond. CBD is 100% legal in Malta for adults, and all our products are clearly labelled with cannabinoid content and lab certificates.
 
-Our staff will explain everything: what's legal, how to use CBD, what to expect, and how to make the most of your purchase. We take a gentle, education-first approach — no pressure, just honest advice.
+Our staff can help with:
+- Recommending the right product for your holiday (relaxation, sleep, energy)
+- Explaining dosing for first-time users
+- Advising on travel considerations if you're heading home with products
 
-Please note: CBD laws vary by country. It's always wise to check your home country's regulations if you're planning to take products back home.
+We speak English fluently and are accustomed to helping international visitors.
 
-## Are the Products Safe and Legal?
+## Payment and Convenience
 
-Yes. Every product sold at MCW Mellieha and MCW Bugibba:
+In-store at MCW Bugibba:
+- **Cash** — Always accepted
+- **Revolut** — Transfer in-store using our Revolut account
 
-- Contains less than 0.2% THC (fully legal in Malta under EU hemp regulations)
-- Has been third-party lab tested by an independent EU laboratory
-- Comes with a Certificate of Analysis (COA) available on request in-store
+For WhatsApp delivery orders:
+- **Cash on Delivery (COD)**
+- **Revolut transfer**
 
-We don't cut corners. Your safety and trust matter to us.
+No card machine needed. Simple and fast.
 
-## North Malta Same-Day Delivery
+## Same-Day Delivery: Bugibba, Qawra, Salina and Beyond
 
-Can't make it to the store? WhatsApp us on +356 9953 6248 and we'll arrange same-day delivery anywhere in North Malta: Mellieha, Bugibba, St Paul's Bay, Qawra, Mosta, Naxxar, Rabat, and beyond.
+Don't want to leave your hotel or apartment? WhatsApp us on +356 9953 6248 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
 
-Delivery is €3.50 per order, with free delivery on all orders over €50. Discreet packaging, no external markings.
+Delivery: €3.50 flat fee. Free for all orders over €50. Discreet packaging, no external branding.
 
-North Malta is fully covered. We're here every day until 11:30 pm — walk in or message us.`,
+MCW Bugibba is here every day until 11:30 pm. Come visit us — or just send a message.`,
   },
 ];
 
