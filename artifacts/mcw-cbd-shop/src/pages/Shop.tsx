@@ -1,11 +1,12 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Filter, X, Search } from "lucide-react";
+import { Link, useSearch } from "wouter";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
-import { useSearch } from "wouter";
+import MCWOriginalsCard from "@/components/MCWOriginalsCard";
 
-const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle"];
+const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle", "MCW Originals"];
 
 const SUB_CATEGORIES = Array.from(new Set(PRODUCTS.map(p => p.subCategory))).sort();
 
@@ -96,6 +97,7 @@ export default function Shop() {
       case "CBD Gummies": return "#FF3366";
       case "Pre-Rolls": return "#00C8C8";
       case "Lifestyle": return "#FFB800";
+      case "MCW Originals": return "#FFD700";
       default: return "#1a1a1a";
     }
   };
@@ -116,6 +118,7 @@ export default function Shop() {
     "CBD Gummies": { title: "CBD Gummies Malta", description: "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Delicious options with same day delivery." },
     "Pre-Rolls": { title: "CBD Pre-Rolls Malta", description: "Browse premium CBD pre-rolls and accessories available in Malta. Ready to enjoy with same day delivery." },
     "Lifestyle": { title: "Lifestyle & Accessories Malta", description: "Shop CBD lifestyle products, grinders, accessories, clothing and merch in Malta. Same day delivery across Malta." },
+    "MCW Originals": { title: "MCW Originals — Exclusive House Collection", description: "Shop MCW's own exclusive line of CBD oils, flowers, vapes and accessories. Premium house-brand products, lab tested and Malta legal." },
   };
 
   const seoTitle = activeCategory ? categoryMeta[activeCategory]?.title || "Shop the Collection" : "Shop the Collection";
@@ -126,12 +129,12 @@ export default function Shop() {
       <SEO title={seoTitle} {...(seoDescription ? { description: seoDescription } : {})} />
       
       {/* SHOP HEADER */}
-      <div className="pt-32 pb-16 bg-gradient-to-r from-[#FF6B35] to-[#FFB800] relative overflow-hidden border-b-4 border-black">
+      <div className="pt-32 pb-10 bg-gradient-to-r from-[#FF6B35] to-[#FFB800] relative overflow-hidden border-b-4 border-black">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-7xl md:text-9xl font-bebas tracking-tight text-black mb-2 leading-none">
             THE MCW COLLECTION
           </h1>
-          <p className="text-black/80 font-black tracking-widest uppercase text-lg mb-12">
+          <p className="text-black/80 font-black tracking-widest uppercase text-lg mb-8">
             PRODUCTS
           </p>
           
@@ -161,6 +164,49 @@ export default function Shop() {
                 <ShoppingBag size={18} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CATEGORY PILLS NAV */}
+      <div className="bg-[#0d0d0d] border-b border-white/10 overflow-x-auto">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-2 py-4 whitespace-nowrap">
+            <Link
+              href="/shop"
+              className={`px-5 py-2.5 text-[11px] font-black uppercase tracking-widest border-2 transition-all shrink-0 ${
+                !activeCategory
+                  ? "bg-white text-black border-white"
+                  : "bg-transparent text-white/50 border-white/20 hover:text-white hover:border-white/50"
+              }`}
+            >
+              ALL
+            </Link>
+            {PRIMARY_CATEGORIES.map((cat) => {
+              const isActive = activeCategory === cat;
+              const isOriginals = cat === "MCW Originals";
+              return (
+                <Link
+                  key={cat}
+                  href={`/shop?category=${encodeURIComponent(cat)}`}
+                  className="px-5 py-2.5 text-[11px] font-black uppercase tracking-widest border-2 transition-all shrink-0"
+                  style={isActive
+                    ? {
+                        background: isOriginals ? "linear-gradient(135deg, #B8860B, #FFD700)" : getCategoryColor(cat),
+                        color: "#000",
+                        borderColor: isOriginals ? "#FFD700" : getCategoryColor(cat),
+                      }
+                    : {
+                        background: "transparent",
+                        color: isOriginals ? "rgba(255,215,0,0.6)" : "rgba(255,255,255,0.4)",
+                        borderColor: isOriginals ? "rgba(255,215,0,0.3)" : "rgba(255,255,255,0.15)",
+                      }
+                  }
+                >
+                  {isOriginals ? "★ MCW ORIGINALS" : cat}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -215,6 +261,22 @@ export default function Shop() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
               {filteredProducts.map((product, i) => (
+                product.logoCard ? (
+                  <motion.div
+                    key={product.id}
+                    layout
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: (i % 6) * 0.05 }}
+                  >
+                    <MCWOriginalsCard
+                      product={product}
+                      onAddToCart={addToCart}
+                      selectedVariant={selectedVariants[product.id] ?? 0}
+                      onVariantChange={(vi) => setSelectedVariants(prev => ({ ...prev, [product.id]: vi }))}
+                    />
+                  </motion.div>
+                ) : (
                 <motion.div 
                   key={product.id}
                   layout
@@ -318,6 +380,7 @@ export default function Shop() {
                   {/* Category accent bar */}
                   <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
                 </motion.div>
+                )
               ))}
             </div>
           )}

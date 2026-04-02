@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { BRANDS, PRODUCTS, pPreRoll1, pVape1, pVape2, pFlower1, pGummy2, pDrink1, pGummy4, pEdible4 } from "@/lib/data";
+import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 
 const SHOWCASE_CARDS = [
   { id: '01', cat: "PRE-ROLLS", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: pPreRoll1, link: "/shop?category=Pre-Rolls" },
@@ -10,7 +11,8 @@ const SHOWCASE_CARDS = [
   { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: pEdible4, link: "/shop?category=CBD+Flowers" },
   { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: pGummy2, link: "/shop?category=CBD+Gummies" },
   { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: pDrink1, link: "/shop?category=CBD+Oils" },
-  { id: '06', cat: "LIFESTYLE", name: "LIFESTYLE", sub: "GRINDERS · MERCH · SPIRITS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4, link: "/shop?category=Lifestyle" }
+  { id: '06', cat: "LIFESTYLE", name: "LIFESTYLE", sub: "GRINDERS · MERCH · SPIRITS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4, link: "/shop?category=Lifestyle" },
+  { id: '07', cat: "MCW ORIGINALS", name: "MCW\nORIGINALS", sub: "OUR EXCLUSIVE HOUSE RANGE", bg: "bg-[#0d0d0d]", text: "text-white", gradFrom: "#0d0d0d", img: logoSrc, link: "/shop?category=MCW+Originals", isOriginals: true },
 ];
 
 export default function Home() {
@@ -154,45 +156,104 @@ export default function Home() {
         </div>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {SHOWCASE_CARDS.map((card, i) => (
-              <Link key={card.id} href={card.link} className="block group">
-                <div className={`relative w-full min-h-[360px] rounded-3xl overflow-hidden ${card.bg} flex flex-row shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
-                  
-                  {/* LEFT: Text — fixed 55%, never overlapped */}
-                  <div className={`relative z-10 flex flex-col justify-between p-8 md:p-10 shrink-0 w-[55%] ${card.text}`}>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-black opacity-40 tracking-widest">{card.id}</span>
-                      <span className="text-[11px] font-black tracking-[0.2em] uppercase opacity-70">{card.cat}</span>
-                    </div>
-                    <div className="flex flex-col py-4">
-                      <h3 className="font-bebas text-[3.2rem] md:text-[4.5rem] leading-[0.85] tracking-tighter mb-2">{card.name}</h3>
-                      <p className="text-[11px] font-bold tracking-[0.2em] uppercase opacity-80">{card.sub}</p>
-                    </div>
-                    <div className={`flex items-center gap-2 font-black text-xs uppercase tracking-widest border-b-2 pb-1 w-fit ${card.text === 'text-white' ? 'border-white' : 'border-black'}`}>
-                      SHOP NOW <ArrowRight size={14} />
-                    </div>
-                  </div>
+            {SHOWCASE_CARDS.map((card, i) => {
+              const isOriginals = 'isOriginals' in card && card.isOriginals;
+              return (
+              <Link
+                key={card.id}
+                href={card.link}
+                className={`block group${isOriginals ? ' md:col-span-2' : ''}`}
+              >
+                {isOriginals ? (
+                  /* ── MCW ORIGINALS — full-width gold showcase card ── */
+                  <div
+                    className="relative w-full min-h-[320px] md:min-h-[280px] rounded-3xl overflow-hidden flex flex-row shadow-2xl transition-transform duration-300 group-hover:-translate-y-2"
+                    style={{
+                      background: 'linear-gradient(135deg, #0d0d0d 0%, #1a1100 45%, #0f0900 70%, #0d0d0d 100%)',
+                      border: '2px solid rgba(212,175,55,0.4)',
+                      boxShadow: '0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,55,0.15)',
+                    }}
+                  >
+                    {/* Gold shimmer top edge */}
+                    <div className="absolute top-0 left-0 w-full h-[2px] pointer-events-none" style={{ background: 'linear-gradient(90deg, transparent, #FFD700, #B8860B, #FFD700, transparent)' }} />
 
-                  {/* RIGHT: Image — fixed 45%, strictly contained */}
-                  <div className="relative w-[45%] shrink-0 overflow-hidden">
-                    <img
-                      src={card.img}
-                      alt={card.name}
-                      className={`absolute inset-0 w-full h-full object-cover object-center ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
-                      loading="lazy"
-                    />
-                    {/* Gradient fade — blends image into card color on the left edge */}
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{ background: `linear-gradient(to right, ${card.gradFrom} 0%, transparent 45%)` }}
-                    />
-                  </div>
+                    {/* LEFT: Text */}
+                    <div className="relative z-10 flex flex-col justify-between p-8 md:p-10 shrink-0 w-[55%] md:w-[45%] text-white">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-black opacity-30 tracking-widest">{card.id}</span>
+                        <span className="text-[11px] font-black tracking-[0.2em] uppercase" style={{ color: 'rgba(255,215,0,0.75)' }}>{card.cat}</span>
+                      </div>
+                      <div className="flex flex-col py-4">
+                        <h3
+                          className="font-bebas text-[3.2rem] md:text-[5rem] leading-[0.85] tracking-tighter mb-3 whitespace-pre-line"
+                          style={{ background: 'linear-gradient(135deg, #FFD700, #DAA520, #FFD700)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
+                        >
+                          {card.name}
+                        </h3>
+                        <p className="text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: 'rgba(255,215,0,0.6)' }}>{card.sub}</p>
+                      </div>
+                      <div className="flex items-center gap-2 font-black text-xs uppercase tracking-widest border-b-2 pb-1 w-fit" style={{ borderColor: 'rgba(255,215,0,0.5)', color: '#FFD700' }}>
+                        SHOP NOW <ArrowRight size={14} />
+                      </div>
+                    </div>
 
-                  {/* Bottom dark strip */}
-                  <div className="absolute bottom-0 left-0 w-full h-[5px] bg-black/25 z-20" />
-                </div>
+                    {/* RIGHT: Logo centred */}
+                    <div className="relative flex-1 shrink-0 overflow-hidden flex items-center justify-center">
+                      {/* faint bg glow */}
+                      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.10) 0%, transparent 70%)' }} />
+                      <img
+                        src={card.img}
+                        alt="MCW Originals"
+                        className="relative z-10 w-48 h-48 md:w-56 md:h-56 object-contain drop-shadow-2xl animate-float-product"
+                        loading="lazy"
+                        style={{ filter: 'drop-shadow(0 0 30px rgba(212,175,55,0.4)) brightness(1.05)' }}
+                      />
+                    </div>
+
+                    {/* Gold bottom strip */}
+                    <div className="absolute bottom-0 left-0 w-full h-[4px] z-20" style={{ background: 'linear-gradient(90deg, transparent, #B8860B, #FFD700, #B8860B, transparent)' }} />
+                  </div>
+                ) : (
+                  /* ── Standard category card ── */
+                  <div className={`relative w-full min-h-[360px] rounded-3xl overflow-hidden ${card.bg} flex flex-row shadow-2xl transition-transform duration-300 group-hover:-translate-y-2`}>
+                    
+                    {/* LEFT: Text — fixed 55%, never overlapped */}
+                    <div className={`relative z-10 flex flex-col justify-between p-8 md:p-10 shrink-0 w-[55%] ${card.text}`}>
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-black opacity-40 tracking-widest">{card.id}</span>
+                        <span className="text-[11px] font-black tracking-[0.2em] uppercase opacity-70">{card.cat}</span>
+                      </div>
+                      <div className="flex flex-col py-4">
+                        <h3 className="font-bebas text-[3.2rem] md:text-[4.5rem] leading-[0.85] tracking-tighter mb-2">{card.name}</h3>
+                        <p className="text-[11px] font-bold tracking-[0.2em] uppercase opacity-80">{card.sub}</p>
+                      </div>
+                      <div className={`flex items-center gap-2 font-black text-xs uppercase tracking-widest border-b-2 pb-1 w-fit ${card.text === 'text-white' ? 'border-white' : 'border-black'}`}>
+                        SHOP NOW <ArrowRight size={14} />
+                      </div>
+                    </div>
+
+                    {/* RIGHT: Image — fixed 45%, strictly contained */}
+                    <div className="relative w-[45%] shrink-0 overflow-hidden">
+                      <img
+                        src={card.img}
+                        alt={card.name}
+                        className={`absolute inset-0 w-full h-full object-cover object-center ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
+                        loading="lazy"
+                      />
+                      {/* Gradient fade — blends image into card color on the left edge */}
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ background: `linear-gradient(to right, ${card.gradFrom} 0%, transparent 45%)` }}
+                      />
+                    </div>
+
+                    {/* Bottom dark strip */}
+                    <div className="absolute bottom-0 left-0 w-full h-[5px] bg-black/25 z-20" />
+                  </div>
+                )}
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

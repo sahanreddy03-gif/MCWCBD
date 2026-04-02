@@ -131,4 +131,14 @@
     from { transform: translateX(-50%); } 
     to { transform: translateX(0); } 
   }
+
+  @keyframes mcw-float {
+    0%, 100% { transform: translateY(0px) rotate3d(1, 0.5, 0, 0deg); }
+    25% { transform: translateY(-7px) rotate3d(1, 0.5, 0, 1.2deg); }
+    50% { transform: translateY(-4px) rotate3d(-0.5, 1, 0, -0.8deg); }
+    75% { transform: translateY(-9px) rotate3d(0.5, -0.5, 0, 1deg); }
+  }
+  .animate-mcw-float {
+    animation: mcw-float 5.5s ease-in-out infinite;
+  }
 }
