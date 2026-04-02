@@ -154,9 +154,16 @@ export default function BlogPost() {
     );
   }
 
-  const related = BLOG_POSTS.filter(
-    (p) => p.slug !== slug && (p.category === post.category || Math.random() > 0.5)
-  ).slice(0, 3);
+  const sortedAll = [...BLOG_POSTS].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+  const sameCategory = sortedAll.filter(
+    (p) => p.slug !== slug && p.category === post.category
+  );
+  const otherCategory = sortedAll.filter(
+    (p) => p.slug !== slug && p.category !== post.category
+  );
+  const related = [...sameCategory, ...otherCategory].slice(0, 3);
 
   const color = categoryColors[post.category] ?? "#22c55e";
 

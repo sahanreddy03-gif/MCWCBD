@@ -141,39 +141,39 @@ export default function Blog() {
         </div>
 
         {/* Featured Post */}
-        {activeCategory === "All" && BLOG_POSTS[0] && (
+        {activeCategory === "All" && sorted[0] && (
           <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-6">
               Featured Article
             </p>
-            <Link href={`/blog/${BLOG_POSTS[0].slug}`} className="group block">
+            <Link href={`/blog/${sorted[0].slug}`} className="group block">
               <div className="relative bg-[#0d0d0d] border border-white/10 rounded-3xl overflow-hidden hover:border-green-500/30 transition-all duration-300">
                 <div
                   className="absolute top-0 left-0 h-1 w-full"
-                  style={{ background: categoryColors[BLOG_POSTS[0].category] }}
+                  style={{ background: categoryColors[sorted[0].category] }}
                 />
                 <div className="p-8 md:p-12 lg:p-16 max-w-3xl">
                   <span
                     className="inline-block text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-6"
                     style={{
                       background:
-                        categoryColors[BLOG_POSTS[0].category] + "22",
-                      color: categoryColors[BLOG_POSTS[0].category],
-                      border: `1px solid ${categoryColors[BLOG_POSTS[0].category]}44`,
+                        categoryColors[sorted[0].category] + "22",
+                      color: categoryColors[sorted[0].category],
+                      border: `1px solid ${categoryColors[sorted[0].category]}44`,
                     }}
                   >
-                    {BLOG_POSTS[0].category}
+                    {sorted[0].category}
                   </span>
                   <h2 className="font-bebas text-4xl md:text-6xl tracking-wide text-white mb-4 leading-tight group-hover:text-green-400 transition-colors">
-                    {BLOG_POSTS[0].title}
+                    {sorted[0].title}
                   </h2>
                   <p className="text-gray-400 text-base leading-relaxed mb-6">
-                    {BLOG_POSTS[0].excerpt}
+                    {sorted[0].excerpt}
                   </p>
                   <div className="flex items-center gap-6">
                     <span className="flex items-center gap-1.5 text-sm text-gray-500">
                       <Clock size={13} />
-                      {BLOG_POSTS[0].readingTime} min read
+                      {sorted[0].readingTime} min read
                     </span>
                     <span className="flex items-center gap-1.5 text-sm font-bold text-green-400 group-hover:gap-3 transition-all">
                       Read Article <ArrowRight size={14} />
@@ -194,7 +194,7 @@ export default function Blog() {
             </p>
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(activeCategory === "All" ? BLOG_POSTS.slice(1) : filtered).map(
+            {(activeCategory === "All" ? sorted.slice(1) : filtered).map(
               (post, i) => (
                 <BlogCard key={post.slug} post={post} index={i} />
               )
