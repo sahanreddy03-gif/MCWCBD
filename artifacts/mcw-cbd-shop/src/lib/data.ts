@@ -282,10 +282,9 @@ export const PRODUCTS: Product[] = [
   { id: "m11", name: "MCW Pre-Roll OG Kush Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 11.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
   { id: "m12", name: "MCW CBD Baby Pre-Rolls Pack", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
   // CBD Gummies (bg: pGummy1 category mapping)
-  { id: "m18", name: "MCW CBD Gummies Mixed Fruit 10mg", brand: "MCW", category: "MCW Originals", subCategory: "CBD Gummies", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pGummy1, logoCard: true },
-  // Lifestyle / Accessories (bg: pGrinder1 category mapping; bundle variants)
-  { id: "m13", name: "MCW Volcano Hybrid Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 179.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "Solo", price: 179.99 }, { label: "+ Bag Kit", price: 209.99 }, { label: "+ Easy Valve", price: 199.99 }] },
-  { id: "m14", name: "MCW PAX Flow Portable Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 99.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "Standard", price: 99.99 }, { label: "+ 2 Pods", price: 119.99 }] },
-  { id: "m15", name: "MCW RAW Bamboo Rolling Mat", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 14.99, cannabinoid: "None", image: pGrinder1, logoCard: true },
-  { id: "m17", name: "MCW Branded Grinder 4-Piece", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 24.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "50mm", price: 24.99 }, { label: "63mm", price: 29.99 }] },
+  { id: "m17", name: "MCW CBD Gummies Mixed Fruit 10mg", brand: "MCW", category: "MCW Originals", subCategory: "CBD Gummies", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pGummy1, logoCard: true },
+  // Lifestyle / Accessories (bg: pEdible1 category mapping; bundle variants)
+  { id: "m13", name: "MCW Volcano Hybrid Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 179.99, cannabinoid: "None", image: pEdible1, logoCard: true, variants: [{ label: "Solo", price: 179.99 }, { label: "+ Bag Kit", price: 209.99 }, { label: "+ Easy Valve", price: 199.99 }] },
+  { id: "m14", name: "MCW PAX Flow Portable Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 99.99, cannabinoid: "None", image: pEdible1, logoCard: true, variants: [{ label: "Standard", price: 99.99 }, { label: "+ 2 Pods", price: 119.99 }] },
+  { id: "m15", name: "MCW RAW Bamboo Rolling Mat", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 14.99, cannabinoid: "None", image: pEdible1, logoCard: true },
 ];
