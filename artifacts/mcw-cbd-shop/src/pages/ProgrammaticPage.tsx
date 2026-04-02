@@ -18,6 +18,7 @@ import { lazy, Suspense } from "react";
 import { useParams, Link } from "wouter";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES_BY_SLUG } from "@/lib/seoPages";
+import { buildSchema } from "@/lib/schemaBuilders";
 import SeoPage from "./SeoPage";
 
 const pageModules = import.meta.glob<{ default: React.ComponentType }>(
@@ -31,30 +32,6 @@ for (const [path, loader] of Object.entries(pageModules)) {
   pageRegistry[slug] = lazy(loader);
 }
 
-const LOCAL_BIZ_SCHEMA = (slug: string, label: string) => ({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: `MCW CBD Relax Shop — ${label}`,
-  url: `https://mcwrelaxshop.com/guides/${slug}`,
-  telephone: "+35699536248",
-  openingHours: "Mo-Su 09:00-23:30",
-  priceRange: "€€",
-  address: { "@type": "PostalAddress", addressCountry: "MT" },
-  parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
-});
-
-const ARTICLE_SCHEMA = (slug: string, headline: string) => ({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline,
-  url: `https://mcwrelaxshop.com/guides/${slug}`,
-  publisher: {
-    "@type": "Organization",
-    name: "MCW CBD Relax Shop",
-    url: "https://mcwrelaxshop.com",
-  },
-  mainEntityOfPage: `https://mcwrelaxshop.com/guides/${slug}`,
-});
 
 const Spinner = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -92,9 +69,7 @@ export default function ProgrammaticPage() {
     );
   }
 
-  const schemaData = meta?.schemaType === "LocalBusiness"
-    ? LOCAL_BIZ_SCHEMA(slug, meta.label)
-    : ARTICLE_SCHEMA(slug, meta?.label ?? slug);
+  const schemaData = buildSchema(slug, meta?.label ?? slug, meta?.schemaType ?? "Article");
 
   return (
     <>

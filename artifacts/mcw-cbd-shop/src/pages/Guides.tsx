@@ -5,6 +5,8 @@ import { ArrowRight, Search } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES, SEO_PAGE_CATS } from "@/lib/seoPages";
 
+const GUIDE_COUNT = SEO_PAGES.length;
+
 const catColors: Record<string, string> = {
   Location: "#22c55e",
   Benefits: "#7B4FFF",
@@ -32,8 +34,8 @@ export default function Guides() {
   return (
     <>
       <SEO
-        title="CBD Guides Malta — 163 Resources"
-        description="Browse 163 CBD guides covering every product, city, and topic in Malta. CBD oil in Sliema, CBD flower in Gzira, legal guides, how-to articles and more."
+        title={`CBD Guides Malta — ${GUIDE_COUNT} Resources`}
+        description={`Browse ${GUIDE_COUNT} CBD guides covering every product, city, and topic in Malta. CBD oil in Sliema, CBD flower in Gzira, legal guides, how-to articles and more.`}
       />
 
       <div className="min-h-screen bg-[#080808]">
@@ -42,7 +44,7 @@ export default function Guides() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(34,197,94,0.1)_0%,transparent_60%)]" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-              <p className="text-green-400 font-black uppercase tracking-[0.4em] text-xs mb-4">163 Resources</p>
+              <p className="text-green-400 font-black uppercase tracking-[0.4em] text-xs mb-4">{GUIDE_COUNT} Resources</p>
               <h1 className="text-7xl md:text-[9rem] font-bebas tracking-tight text-white leading-[0.85] mb-6">
                 CBD GUIDES
                 <br />

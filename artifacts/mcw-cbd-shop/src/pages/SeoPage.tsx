@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, CheckCircle, Lock, Truck, Star, ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES_BY_SLUG } from "@/lib/seoPages";
+import { buildSchema } from "@/lib/schemaBuilders";
 
 const catColors: Record<string, string> = {
   Location: "#22c55e",
@@ -26,34 +27,6 @@ const catEmoji: Record<string, string> = {
   About: "🌿",
 };
 
-const LOCAL_BIZ_SCHEMA = (slug: string, name: string) => ({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: `MCW CBD Relax Shop — ${name}`,
-  url: `https://mcwrelaxshop.com/guides/${slug}`,
-  telephone: "+35699536248",
-  openingHours: "Mo-Su 09:00-23:30",
-  priceRange: "€€",
-  currenciesAccepted: "EUR",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "MT",
-  },
-  parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
-});
-
-const ARTICLE_SCHEMA = (slug: string, headline: string) => ({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline,
-  url: `https://mcwrelaxshop.com/guides/${slug}`,
-  publisher: {
-    "@type": "Organization",
-    name: "MCW CBD Relax Shop",
-    url: "https://mcwrelaxshop.com",
-  },
-  mainEntityOfPage: `https://mcwrelaxshop.com/guides/${slug}`,
-});
 
 const CATEGORY_LINKS: Record<string, { href: string; label: string }[]> = {
   Location: [
@@ -133,9 +106,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
     );
   }
 
-  const schemaData = page.schemaType === "LocalBusiness"
-    ? LOCAL_BIZ_SCHEMA(slug, page.h1)
-    : ARTICLE_SCHEMA(slug, page.h1);
+  const schemaData = buildSchema(slug, page.h1, page.schemaType);
 
   const accentColor = catColors[page.cat] ?? "#22c55e";
 
