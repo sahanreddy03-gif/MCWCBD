@@ -126,7 +126,7 @@ export default function Shop() {
 
   return (
     <>
-      <SEO title={seoTitle} {...(seoDescription ? { description: seoDescription } : {})} />
+      <SEO title={seoTitle} description={seoDescription ?? "Shop Malta's best CBD products at MCW — premium CBD oils, flowers, vapes, gummies, pre-rolls, and accessories. 4 stores island-wide. Same-day delivery available."} />
       
       {/* SHOP HEADER */}
       <div className="pt-32 pb-10 bg-gradient-to-r from-[#FF6B35] to-[#FFB800] relative overflow-hidden border-b-4 border-black">

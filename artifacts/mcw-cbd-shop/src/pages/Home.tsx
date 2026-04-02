@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="Premium Cannabis & CBD Destination" />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Cannabis & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Gzira, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
