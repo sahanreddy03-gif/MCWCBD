@@ -1,6 +1,7 @@
 import { useParams, Link } from "wouter";
-import { motion } from "framer-motion";
-import { ArrowLeft, Clock, ArrowRight, MessageCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, Clock, ArrowRight, MessageCircle, ChevronDown } from "lucide-react";
+import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blogData";
 
@@ -11,6 +12,75 @@ const categoryColors: Record<string, string> = {
   Products: "#FFB800",
   Lifestyle: "#00C8C8",
 };
+
+const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
+  Legal: [
+    { q: "Is CBD legal to buy in Malta?", a: "Yes. CBD products containing less than 0.2% THC are fully legal in Malta under EU and national hemp regulations. You do not need a prescription." },
+    { q: "Can I travel with CBD from Malta?", a: "Within the EU, CBD products (clearly labelled, <0.2% THC) are generally permitted in hand luggage. Always check the destination country's specific rules before travelling." },
+    { q: "Do MCW products comply with Maltese law?", a: "Yes. Every product sold at MCW has third-party lab certificates confirming THC content is below 0.2%. Certificates are available on request at any store." },
+  ],
+  Guides: [
+    { q: "How do I find the right CBD product for me?", a: "Visit any MCW store and speak to our staff. We'll ask about your goals (sleep, stress, pain, focus), preferred method of use, and experience level to recommend the best starting point." },
+    { q: "How long before I feel the effects of CBD?", a: "Vapes and flowers: 1–10 minutes. CBD oils (sublingual): 15–30 minutes. Gummies and edibles: 30–90 minutes. Duration varies 2–8 hours depending on the method." },
+    { q: "Should I consult a doctor before using CBD?", a: "If you take prescription medication or have a medical condition, yes — CBD can interact with some medications. For general wellness use, CBD is considered safe by the WHO." },
+  ],
+  Local: [
+    { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Our team is on WhatsApp throughout store hours for same-day delivery orders." },
+    { q: "Do you offer same-day delivery in Malta?", a: "Yes. Order via WhatsApp (+356 9953 6248) and we deliver same-day island-wide. Delivery is €3.50 for orders under €50, and FREE for orders €50+." },
+    { q: "How do I pay for my order?", a: "We accept Revolut transfer and Cash on Delivery (COD) for delivery orders. In-store you can pay cash or Revolut." },
+  ],
+  Products: [
+    { q: "Are your products third-party lab tested?", a: "Yes. Every MCW product comes with a Certificate of Analysis (COA) from an independent EU laboratory confirming cannabinoid profile, THC content (<0.2%), and absence of pesticides and heavy metals." },
+    { q: "What is the difference between CBD, H4CBD, and THCV?", a: "CBD is the classic non-psychoactive cannabinoid. H4CBD is a hydrogenated CBD with enhanced bioavailability. THCV is a rare cannabinoid with energising, appetite-suppressing properties — all are legal in Malta at MCW." },
+    { q: "How do I store CBD products?", a: "Store CBD oils, gummies, and flowers in a cool, dark place away from direct sunlight. Glass jars are ideal for flowers. Oils and gummies keep best in a cupboard or fridge." },
+  ],
+  Lifestyle: [
+    { q: "Can I use CBD every day?", a: "Yes. CBD is non-addictive and considered safe for daily use by the WHO. Many customers use CBD oils, gummies, or flowers as part of their daily wellness routine." },
+    { q: "Will CBD show up on a drug test?", a: "Standard workplace drug tests screen for THC. Our products contain <0.2% THC which is below detection thresholds for most tests. For high-stakes testing, we recommend CBD isolate products." },
+    { q: "What is the best time of day to take CBD?", a: "It depends on your goal. For sleep: 30–60 minutes before bed. For anxiety/stress: morning or as needed. For pain: before or after activity. Experiment to find your ideal timing." },
+  ],
+};
+
+function FAQAccordion({ faqs, color }: { faqs: { q: string; a: string }[]; color: string }) {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div className="mt-16 mb-8">
+      <h2 className="font-bebas text-4xl md:text-5xl tracking-wide text-white mb-8">FREQUENTLY ASKED QUESTIONS</h2>
+      <div className="space-y-px">
+        {faqs.map((faq, i) => (
+          <div key={i} className="border-b border-white/10">
+            <button
+              onClick={() => setOpen(open === i ? null : i)}
+              className="w-full flex items-center justify-between py-5 text-left gap-6 hover:opacity-80 transition-opacity"
+            >
+              <span className={`text-sm md:text-base font-medium transition-colors ${open === i ? "text-green-400" : "text-gray-300"}`}>
+                {faq.q}
+              </span>
+              <ChevronDown
+                className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+                style={{ color }}
+                strokeWidth={1.5}
+              />
+            </button>
+            <AnimatePresence initial={false}>
+              {open === i && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-gray-400 text-sm leading-relaxed pb-5">{faq.a}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function renderContent(content: string) {
   const lines = content.split("\n");
@@ -181,6 +251,11 @@ export default function BlogPost() {
           <div className="prose max-w-none">
             {renderContent(post.content)}
           </div>
+
+          {/* FAQ Accordion */}
+          {CATEGORY_FAQS[post.category] && (
+            <FAQAccordion faqs={CATEGORY_FAQS[post.category]} color={color} />
+          )}
 
           {/* WhatsApp CTA */}
           <motion.div

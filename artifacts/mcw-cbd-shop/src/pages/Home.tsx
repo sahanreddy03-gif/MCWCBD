@@ -380,7 +380,7 @@ export default function Home() {
               { stat: "4", label: "Stores Island-Wide", sub: "Sliema · Gzira · Mellieha · Bugibba" },
               { stat: "200+", label: "Premium Products", sub: "Curated from world-leading brands" },
               { stat: "5+", label: "Years in Malta", sub: "Malta's original CBD destination" },
-              { stat: "100%", label: "Lab Tested", sub: "Every product certified <0.2% THC" },
+              { stat: "100%", label: "Malta Legal", sub: "Every product certified <0.2% THC" },
             ].map((item, i) => (
               <motion.div
                 key={item.label}
@@ -412,7 +412,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+            {[...BLOG_POSTS].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()).slice(0, 3).map((post, i) => (
               <motion.div
                 key={post.slug}
                 initial={{ opacity: 0, y: 30 }}

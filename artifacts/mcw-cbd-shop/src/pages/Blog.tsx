@@ -72,10 +72,14 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
+  const sorted = [...BLOG_POSTS].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
   const filtered =
     activeCategory === "All"
-      ? BLOG_POSTS
-      : BLOG_POSTS.filter((p) => p.category === activeCategory);
+      ? sorted
+      : sorted.filter((p) => p.category === activeCategory);
 
   return (
     <>
