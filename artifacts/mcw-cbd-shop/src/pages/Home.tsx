@@ -1,7 +1,8 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { BLOG_POSTS } from "@/lib/blogData";
 import { BRANDS, PRODUCTS, pPreRoll1, pVape1, pVape2, pFlower1, pGummy2, pDrink1, pGummy4, pEdible4 } from "@/lib/data";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 
@@ -361,12 +362,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BY THE NUMBERS — Authority Stats */}
+      <section className="py-20 bg-[#080808] border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <h2 className="text-5xl md:text-7xl font-bebas tracking-tight text-white mb-2">BY THE NUMBERS</h2>
+            <p className="text-gray-500 text-sm uppercase tracking-widest">Malta's most trusted CBD retailer</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { stat: "4", label: "Stores Island-Wide", sub: "Sliema · Gzira · Mellieha · Bugibba" },
+              { stat: "200+", label: "Premium Products", sub: "Curated from world-leading brands" },
+              { stat: "5+", label: "Years in Malta", sub: "Malta's original CBD destination" },
+              { stat: "100%", label: "Lab Tested", sub: "Every product certified <0.2% THC" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="bg-[#0d0d0d] border border-white/8 rounded-2xl p-6 md:p-8 text-center"
+              >
+                <div className="text-5xl md:text-7xl font-bebas text-green-400 mb-2">{item.stat}</div>
+                <div className="font-black uppercase tracking-wider text-white text-sm mb-1">{item.label}</div>
+                <div className="text-gray-600 text-xs">{item.sub}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FROM OUR BLOG */}
+      <section className="py-24 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <p className="text-green-400 font-black uppercase tracking-[0.3em] text-xs mb-2">Knowledge Hub</p>
+              <h2 className="text-5xl md:text-7xl font-bebas tracking-tight text-white">FROM OUR BLOG</h2>
+            </div>
+            <Link href="/blog" className="hidden md:flex items-center gap-2 text-sm font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+              All Articles <ArrowRight size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+              >
+                <Link href={`/blog/${post.slug}`} className="block group h-full">
+                  <div className="h-full bg-[#0d0d0d] border border-white/8 rounded-2xl overflow-hidden hover:border-green-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col">
+                    <div className="h-1.5 w-full" style={{ background: post.featuredColor }} />
+                    <div className="p-6 flex flex-col flex-1">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-3">{post.category}</span>
+                      <h3 className="font-bebas text-2xl text-white group-hover:text-green-400 transition-colors leading-tight mb-3">{post.title}</h3>
+                      <p className="text-gray-500 text-sm leading-relaxed flex-1 line-clamp-2 mb-4">{post.excerpt}</p>
+                      <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/5">
+                        <span className="flex items-center gap-1 text-xs text-gray-600"><Clock size={11} /> {post.readingTime} min</span>
+                        <span className="flex items-center gap-1 text-xs font-bold text-green-400 group-hover:gap-2 transition-all">Read <ArrowRight size={11} /></span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+          <div className="md:hidden text-center mt-8">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+              View All Articles <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER CTA BANNER */}
       <section className="py-32 bg-[#00C8C8] text-black text-center px-4 flex flex-col items-center justify-center border-t-4 border-black">
         <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">ORDER ON WHATSAPP</h2>
         <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">SAME DAY DELIVERY</p>
         <a 
-          href="https://wa.me/35699999999" 
+          href="https://wa.me/35699536248" 
           target="_blank" 
           rel="noreferrer" 
           className="inline-block px-16 py-6 bg-black text-white font-black text-xl md:text-2xl uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:translate-y-2 hover:translate-x-2"

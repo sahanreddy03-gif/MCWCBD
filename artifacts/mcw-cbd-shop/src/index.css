@@ -172,4 +172,14 @@
   .mcw-smoke-b { width: 90px; height: 90px; animation: smoke-drift 5.5s ease-in infinite 1.4s; bottom: 18%; }
   .mcw-smoke-c { width: 55px; height: 55px; animation: smoke-wisp  4.2s ease-in infinite 2.7s; bottom: 25%; }
   .mcw-smoke-d { width: 110px; height: 110px; animation: smoke-rise 6.2s ease-in infinite 0.8s; bottom: 15%; filter: blur(20px); }
+
+  @keyframes blob {
+    0%   { transform: translate(0px, 0px)   scale(1);    }
+    33%  { transform: translate(30px, -20px) scale(1.1); }
+    66%  { transform: translate(-20px, 10px) scale(0.9); }
+    100% { transform: translate(0px, 0px)   scale(1);    }
+  }
+  .animate-blob { animation: blob 7s infinite; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
 }

@@ -15,6 +15,8 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "Shop", path: "/shop" },
   { name: "Brands", path: "/brands" },
+  { name: "Blog", path: "/blog" },
+  { name: "Guides", path: "/guides" },
   { name: "Trust", path: "/trust" },
   { name: "Stores", path: "/store-locator" },
   { name: "FAQ", path: "/faq" },
@@ -156,6 +158,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bebas text-base tracking-widest text-green-400 mb-5">Discover</h3>
               <ul className="space-y-3">
                 {[
+                  ["CBD Blog", "/blog"],
+                  ["163 Guides", "/guides"],
                   ["Trust & Quality", "/trust"],
                   ["Store Locator", "/store-locator"],
                   ["FAQ", "/faq"],

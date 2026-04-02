@@ -11,8 +11,11 @@ import Trust from "@/pages/Trust";
 import StoreLocator from "@/pages/StoreLocator";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+import Guides from "@/pages/Guides";
+import ProgrammaticPage from "@/pages/ProgrammaticPage";
 
-// Fallback 404
 function NotFound() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4">
@@ -42,6 +45,10 @@ function Router() {
         <Route path="/store-locator" component={StoreLocator} />
         <Route path="/contact" component={Contact} />
         <Route path="/faq" component={FAQ} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/guides" component={Guides} />
+        <Route path="/guides/:slug" component={ProgrammaticPage} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
