@@ -1,0 +1,347 @@
+// ADD THESE PRODUCTS TO YOUR EXISTING PRODUCTS ARRAY IN src/lib/data.ts
+
+// ===== CBD OILS - PREMIUM RANGE =====
+{
+  id: 'cbd-oil-premium-1000mg',
+  name: 'MCW Premium CBD Oil 1000mg',
+  category: 'CBD Oils',
+  subcategory: 'CBD Oils',
+  price: 89.99,
+  image: pOilPremium1000mg, // You'll need to import this image
+  description: 'Premium full-spectrum CBD oil with 1000mg of pure CBD. Extracted from premium EU hemp. Perfect for daily wellness and relaxation.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Not intended to diagnose, treat, cure, or prevent disease. Consult healthcare provider before use. Lab tested and verified.',
+  labReport: 'Available upon request',
+  potency: '1000mg CBD',
+  volume: '30ml',
+  servings: '30 servings',
+  dosage: '~33mg per serving',
+  ingredients: 'Full-spectrum CBD extract, MCT oil, natural flavoring',
+  filterTags: ['full-spectrum', 'premium', 'daily-use'],
+  variants: [
+    { name: '500mg', price: 49.99 },
+    { name: '1000mg', price: 89.99 },
+    { name: '2000mg', price: 159.99 }
+  ]
+},
+
+{
+  id: 'cbd-oil-isolate-500mg',
+  name: 'MCW CBD Isolate Oil 500mg',
+  category: 'CBD Oils',
+  subcategory: 'CBD Oils',
+  price: 45.99,
+  image: pOilIsolate500mg,
+  description: 'Pure CBD isolate oil with 500mg of 99% pure CBD. Zero THC, zero taste. Ideal for those seeking pure CBD without other cannabinoids.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. 99% pure CBD isolate. Legal in Malta. For adults 18+. Not intended to diagnose, treat, cure, or prevent disease. Lab tested and verified.',
+  labReport: 'Available upon request',
+  potency: '500mg CBD',
+  volume: '30ml',
+  servings: '30 servings',
+  dosage: '~16.7mg per serving',
+  ingredients: 'Pure CBD isolate, MCT oil',
+  filterTags: ['isolate', 'pure-cbd', 'zero-thc'],
+  variants: [
+    { name: '250mg', price: 24.99 },
+    { name: '500mg', price: 45.99 },
+    { name: '1000mg', price: 84.99 }
+  ]
+},
+
+{
+  id: 'cbd-oil-cream-500mg',
+  name: 'MCW CBD Cream 500mg',
+  category: 'CBD Oils',
+  subcategory: 'CBD Creams',
+  price: 39.99,
+  image: pCreamCBD500mg,
+  description: 'Luxurious CBD-infused cream with 500mg of CBD. Perfect for targeted relief and skin care. Rich, moisturizing formula with natural ingredients.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. For topical use only. Legal in Malta. For adults 18+. Lab tested and verified. Not intended to diagnose, treat, cure, or prevent disease.',
+  labReport: 'Available upon request',
+  potency: '500mg CBD',
+  volume: '100ml',
+  ingredients: 'CBD extract, shea butter, coconut oil, vitamin E, natural essential oils',
+  filterTags: ['topical', 'cream', 'skincare'],
+  variants: [
+    { name: '250mg', price: 24.99 },
+    { name: '500mg', price: 39.99 },
+    { name: '1000mg', price: 69.99 }
+  ]
+},
+
+// ===== CBD FLOWERS - PREMIUM STRAINS =====
+{
+  id: 'cbd-flower-cherry-wine',
+  name: 'MCW CBD Flower - Cherry Wine',
+  category: 'CBD Flowers',
+  subcategory: 'CBD Flowers',
+  price: 12.99,
+  image: pFlowerCherryWine,
+  description: 'Premium Cherry Wine CBD flower with fruity aroma and smooth taste. High CBD content with <0.2% THC. Perfect for vaping or smoking.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. For consumption only. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '18-20% CBD',
+  thcContent: '<0.2%',
+  weight: '1g',
+  aroma: 'Fruity, sweet, earthy',
+  filterTags: ['flower', 'premium-strain', 'high-cbd'],
+  gramOptions: [1, 3, 5, 10],
+  variants: [
+    { name: '1g', price: 12.99 },
+    { name: '3g', price: 34.99 },
+    { name: '5g', price: 54.99 },
+    { name: '10g', price: 99.99 }
+  ]
+},
+
+{
+  id: 'cbd-flower-sour-space-candy',
+  name: 'MCW CBD Flower - Sour Space Candy',
+  category: 'CBD Flowers',
+  subcategory: 'CBD Flowers',
+  price: 14.99,
+  image: pFlowerSourSpaceCandy,
+  description: 'Legendary Sour Space Candy CBD flower with unique terpene profile. Sweet and sour notes with premium quality buds.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '19-21% CBD',
+  thcContent: '<0.2%',
+  weight: '1g',
+  aroma: 'Sweet, sour, fruity',
+  filterTags: ['flower', 'premium-strain', 'high-cbd', 'terpene-rich'],
+  gramOptions: [1, 3, 5, 10],
+  variants: [
+    { name: '1g', price: 14.99 },
+    { name: '3g', price: 39.99 },
+    { name: '5g', price: 64.99 },
+    { name: '10g', price: 119.99 }
+  ]
+},
+
+{
+  id: 'cbd-hash-premium',
+  name: 'MCW CBD Hash - Premium',
+  category: 'CBD Flowers',
+  subcategory: 'CBD Hash',
+  price: 24.99,
+  image: pHashPremium,
+  description: 'Premium CBD hash made from finest CBD flowers. Concentrated cannabinoids with rich flavor profile. Perfect for vaping or smoking.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '25-30% CBD',
+  thcContent: '<0.2%',
+  weight: '1g',
+  filterTags: ['hash', 'concentrate', 'high-potency'],
+  gramOptions: [1, 3, 5],
+  variants: [
+    { name: '1g', price: 24.99 },
+    { name: '3g', price: 69.99 },
+    { name: '5g', price: 109.99 }
+  ]
+},
+
+// ===== CBD VAPES =====
+{
+  id: 'cbd-vape-disposable-500mg',
+  name: 'MCW CBD Vape Disposable 500mg',
+  category: 'CBD Vapes',
+  subcategory: 'CBD Vapes',
+  price: 29.99,
+  image: pVapeDisposable500mg,
+  description: 'Premium disposable CBD vape pen with 500mg of CBD. Ready to use, no refilling needed. Smooth vapor, great taste.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Not intended for medical use. Lab tested and verified.',
+  labReport: 'Available upon request',
+  potency: '500mg CBD',
+  puffs: '~300 puffs',
+  flavor: 'Mixed berries',
+  filterTags: ['vape', 'disposable', 'convenient'],
+  variants: [
+    { name: 'Mixed Berries', price: 29.99 },
+    { name: 'Tropical', price: 29.99 },
+    { name: 'Mint', price: 29.99 }
+  ]
+},
+
+{
+  id: 'cbd-vape-cartridge-1ml',
+  name: 'MCW CBD Vape Cartridge 1ml',
+  category: 'CBD Vapes',
+  subcategory: 'CBD Vapes',
+  price: 34.99,
+  image: pVapeCartridge1ml,
+  description: 'Refillable CBD vape cartridge with 1ml of premium CBD vape oil. Compatible with standard 510 batteries.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Not intended for medical use. Lab tested and verified.',
+  labReport: 'Available upon request',
+  potency: '500mg CBD per cartridge',
+  volume: '1ml',
+  filterTags: ['vape', 'cartridge', 'refillable'],
+  variants: [
+    { name: 'Lemon Haze', price: 34.99 },
+    { name: 'Strawberry Cough', price: 34.99 },
+    { name: 'Blue Dream', price: 34.99 }
+  ]
+},
+
+// ===== PRE-ROLLS =====
+{
+  id: 'cbd-preroll-joint-1g',
+  name: 'MCW CBD Pre-Roll Joint 1g',
+  category: 'Pre-Rolls',
+  subcategory: 'CBD Pre-Rolls',
+  price: 8.99,
+  image: pPreRollJoint1g,
+  description: 'Premium CBD pre-rolled joint with 1g of high-quality CBD flower. Ready to smoke, perfectly rolled.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '18-20% CBD',
+  thcContent: '<0.2%',
+  weight: '1g',
+  filterTags: ['preroll', 'joint', 'ready-to-use'],
+  variants: [
+    { name: 'Single', price: 8.99 },
+    { name: 'Pack of 3', price: 24.99 },
+    { name: 'Pack of 5', price: 39.99 }
+  ]
+},
+
+{
+  id: 'cbd-preroll-blunt-2g',
+  name: 'MCW CBD Pre-Roll Blunt 2g',
+  category: 'Pre-Rolls',
+  subcategory: 'CBD Pre-Rolls',
+  price: 14.99,
+  image: pPreRollBlunt2g,
+  description: 'Premium CBD blunt with 2g of premium CBD flower. Slow burn, smooth smoke, perfect flavor.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '18-20% CBD',
+  thcContent: '<0.2%',
+  weight: '2g',
+  filterTags: ['preroll', 'blunt', 'premium'],
+  variants: [
+    { name: 'Single', price: 14.99 },
+    { name: 'Pack of 3', price: 39.99 }
+  ]
+},
+
+// ===== GUMMIES & EDIBLES =====
+{
+  id: 'cbd-gummies-mixed-fruit-10mg',
+  name: 'MCW CBD Gummies Mixed Fruit 10mg',
+  category: 'CBD Gummies',
+  subcategory: 'CBD Gummies',
+  price: 24.99,
+  image: pGummiesMixedFruit,
+  description: 'Delicious CBD gummies with 10mg CBD per gummy. Mixed fruit flavors, easy to dose, perfect for beginners.',
+  disclaimer: '⚠️ LEGAL NOTICE: Contains <0.2% THC. Legal in Malta. For adults 18+. Keep out of reach of children. Lab tested and verified. Not intended for medical use.',
+  labReport: 'Available upon request',
+  potency: '10mg CBD per gummy',
+  servings: '30 gummies (300mg total)',
+  flavor: 'Mixed fruit',
+  filterTags: ['gummies', 'edible', 'easy-dose'],
+  variants: [
+    { name: '300mg (30 gummies)', price: 24.99 },
+    { name: '600mg (60 gummies)', price: 44.99 }
+  ]
+},
+
+// ===== ACCESSORIES =====
+{
+  id: 'grinder-4-piece-aluminum',
+  name: 'MCW 4-Piece Aluminum Grinder',
+  category: 'Accessories',
+  subcategory: 'Grinders',
+  price: 19.99,
+  image: pGrinderAluminum4Piece,
+  description: 'Premium 4-piece aluminum grinder with magnetic lid. Perfect for grinding CBD flowers. Durable and long-lasting.',
+  disclaimer: '⚠️ For use with legal CBD products only. Not for medical use.',
+  filterTags: ['grinder', 'accessory', 'essential'],
+  variants: [
+    { name: 'Silver', price: 19.99 },
+    { name: 'Black', price: 19.99 },
+    { name: 'Gold', price: 21.99 }
+  ]
+},
+
+{
+  id: 'rolling-papers-organic',
+  name: 'MCW Organic Rolling Papers',
+  category: 'Accessories',
+  subcategory: 'Papers & Filters',
+  price: 3.99,
+  image: pRollingPapersOrganic,
+  description: 'Premium organic rolling papers made from natural materials. Slow burn, no chemicals.',
+  disclaimer: '⚠️ For use with legal CBD products only.',
+  filterTags: ['rolling-papers', 'accessory'],
+  variants: [
+    { name: 'Single Pack', price: 3.99 },
+    { name: 'Box of 10', price: 34.99 }
+  ]
+},
+
+{
+  id: 'vaporizer-portable-premium',
+  name: 'MCW Premium Portable Vaporizer',
+  category: 'Accessories',
+  subcategory: 'Vaporizers',
+  price: 129.99,
+  image: pVaporizerPortablePremium,
+  description: 'Premium portable vaporizer for CBD flowers and concentrates. Precise temperature control, long battery life.',
+  disclaimer: '⚠️ For use with legal CBD products only. Not for medical use.',
+  filterTags: ['vaporizer', 'accessory', 'premium'],
+  variants: [
+    { name: 'Black', price: 129.99 },
+    { name: 'Silver', price: 129.99 }
+  ]
+},
+
+// ===== LIFESTYLE =====
+{
+  id: 'mcw-branded-tshirt',
+  name: 'MCW Branded T-Shirt',
+  category: 'Lifestyle',
+  subcategory: 'Clothing',
+  price: 24.99,
+  image: pTShirtMCW,
+  description: 'Premium MCW branded t-shirt. Comfortable, stylish, perfect for CBD enthusiasts.',
+  disclaimer: '⚠️ For adults 18+.',
+  filterTags: ['lifestyle', 'clothing'],
+  variants: [
+    { name: 'S', price: 24.99 },
+    { name: 'M', price: 24.99 },
+    { name: 'L', price: 24.99 },
+    { name: 'XL', price: 26.99 }
+  ]
+},
+
+{
+  id: 'mcw-storage-box',
+  name: 'MCW Premium Storage Box',
+  category: 'Lifestyle',
+  subcategory: 'Storage Solutions',
+  price: 34.99,
+  image: pStorageBoxMCW,
+  description: 'Airtight storage box perfect for keeping CBD products fresh. Stylish design, odor-proof.',
+  disclaimer: '⚠️ For storage of legal CBD products only.',
+  filterTags: ['lifestyle', 'storage'],
+  variants: [
+    { name: 'Small', price: 24.99 },
+    { name: 'Medium', price: 34.99 },
+    { name: 'Large', price: 44.99 }
+  ]
+},
+
+{
+  id: 'mcw-branded-lighter',
+  name: 'MCW Branded Lighter',
+  category: 'Lifestyle',
+  subcategory: 'Accessories',
+  price: 7.99,
+  image: pLighterMCW,
+  description: 'MCW branded refillable lighter. Reliable, stylish, perfect for any collection.',
+  disclaimer: '⚠️ For use with legal products only.',
+  filterTags: ['lifestyle', 'accessory'],
+  variants: [
+    { name: 'Single', price: 7.99 },
+    { name: 'Pack of 3', price: 19.99 }
+  ]
+}
