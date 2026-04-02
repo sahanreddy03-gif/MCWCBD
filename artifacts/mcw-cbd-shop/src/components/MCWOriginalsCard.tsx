@@ -147,6 +147,14 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
         }}
       />
 
+      {/* Smoke / mist rising effect — always visible, behind content */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-[3]" aria-hidden>
+        <div className="mcw-smoke mcw-smoke-a" />
+        <div className="mcw-smoke mcw-smoke-b" />
+        <div className="mcw-smoke mcw-smoke-c" />
+        <div className="mcw-smoke mcw-smoke-d" />
+      </div>
+
       {/* Gold diagonal ribbon — top-left corner */}
       <div
         className="absolute pointer-events-none z-10"

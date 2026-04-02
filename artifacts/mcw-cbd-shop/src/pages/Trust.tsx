@@ -1,137 +1,177 @@
-import { CheckCircle, Award, Leaf, Shield } from 'lucide-react';
+import { CheckCircle, Award, Leaf, Shield, FlaskConical, MapPin } from "lucide-react";
+import { Link } from "wouter";
+import { motion } from "framer-motion";
+
+const fadeUp = { hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
+
+const pillars = [
+  {
+    icon: CheckCircle,
+    title: "Legal Compliance",
+    body: "All products contain less than 0.2% THC — fully compliant with Maltese law. We never stock banned substances like HHC, HHCp, or THCP.",
+  },
+  {
+    icon: Award,
+    title: "Premium Quality",
+    body: "Sourced exclusively from trusted international brands. Every batch is tested and verified for potency, purity, and safety.",
+  },
+  {
+    icon: Leaf,
+    title: "100% Natural",
+    body: "Our CBD is derived from premium-grade hemp and cannabis plants — nothing synthetic, nothing artificial.",
+  },
+  {
+    icon: Shield,
+    title: "Customer Protection",
+    body: "Secure ordering, multiple payment options, fast WhatsApp support, and a 7-day satisfaction guarantee.",
+  },
+];
+
+const labChecks = [
+  "Accurate cannabinoid profiles (CBD, THC, CBN, H4CBD, THCV)",
+  "Pesticide & heavy metal screening",
+  "Microbial contamination analysis",
+  "Solvent residue testing",
+  "Potency verification on every batch",
+];
+
+const commitments = [
+  { title: "Transparency", body: "Complete product info — lab reports, cannabinoid profiles, and sourcing details for every item in our catalogue." },
+  { title: "Quality Assurance", body: "Our team personally evaluates every product batch before it hits the shelf. Zero compromise on standards." },
+  { title: "Legal Compliance", body: "Strictly Malta-law-aligned. Every product sold is fully legal for purchase and consumption on the island." },
+  { title: "Expert Support", body: "Questions about effects, dosage, or products? Our knowledgeable team is a WhatsApp message away." },
+];
+
+const stores = [
+  { name: "Sliema", sub: "Main Branch · Triq Bisazza" },
+  { name: "Gzira", sub: "Open Daily" },
+  { name: "Mellieha", sub: "Open Daily" },
+  { name: "Bugibba", sub: "Open Daily" },
+  { name: "Valletta", sub: "Coming Soon" },
+];
 
 export default function Trust() {
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-b from-green-900 to-black py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Building Trust Through Quality</h1>
-          <p className="text-xl text-gray-300">MCW CBD Relax Shop - Your Trusted Partner in Premium CBD Products</p>
+
+      {/* Hero */}
+      <div className="relative py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">MCW CBD Relax Shop</p>
+          <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">
+            TRUST &amp; QUALITY
+          </h1>
+          <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
+            Malta's most trusted CBD destination — premium products, lab-verified quality, full legal compliance.
+          </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 pb-24 space-y-24">
+
         {/* Why Trust MCW */}
-        <section className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-green-400">Why Trust MCW?</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 p-8 rounded-lg border border-green-500">
-              <CheckCircle className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Legal Compliance</h3>
-              <p className="text-gray-300">All products contain less than 0.2% THC, fully compliant with Malta regulations. We never sell banned substances like HHC, HHCp, or THCP.</p>
-            </div>
-
-            <div className="bg-gray-900 p-8 rounded-lg border border-green-500">
-              <Award className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Premium Quality</h3>
-              <p className="text-gray-300">We source only from trusted international brands. Every product is tested and verified for potency and purity.</p>
-            </div>
-
-            <div className="bg-gray-900 p-8 rounded-lg border border-green-500">
-              <Leaf className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Natural Products</h3>
-              <p className="text-gray-300">We believe in the power of nature. All our CBD products are derived from premium hemp and cannabis plants.</p>
-            </div>
-
-            <div className="bg-gray-900 p-8 rounded-lg border border-green-500">
-              <Shield className="w-12 h-12 text-green-400 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Customer Protection</h3>
-              <p className="text-gray-300">Your satisfaction is guaranteed. We offer secure checkout, multiple payment options, and responsive customer support.</p>
-            </div>
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ show: { transition: { staggerChildren: 0.1 } } }}>
+          <motion.h2 variants={fadeUp} className="font-bebas text-5xl md:text-6xl tracking-widest text-white mb-10">
+            Why Trust <span className="text-green-400">MCW?</span>
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {pillars.map(({ icon: Icon, title, body }) => (
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                className="group bg-[#080808] border border-gray-800 hover:border-green-600/50 p-8 transition-all duration-300"
+              >
+                <Icon className="w-10 h-10 text-green-500 mb-5" strokeWidth={1.5} />
+                <h3 className="font-bebas text-2xl tracking-widest text-white mb-3">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
 
-        {/* Lab Reports */}
-        <section className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-green-400">Lab Testing & Reports</h2>
-          <div className="bg-gray-900 p-8 rounded-lg border border-green-500">
-            <p className="text-gray-300 mb-4">Every product in our catalog comes with verified lab reports. We partner with accredited testing facilities to ensure:</p>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-center"><CheckCircle className="w-5 h-5 text-green-400 mr-3" /> Accurate cannabinoid profiles (CBD, THC, CBN, etc.)</li>
-              <li className="flex items-center"><CheckCircle className="w-5 h-5 text-green-400 mr-3" /> Pesticide and heavy metal testing</li>
-              <li className="flex items-center"><CheckCircle className="w-5 h-5 text-green-400 mr-3" /> Microbial contamination screening</li>
-              <li className="flex items-center"><CheckCircle className="w-5 h-5 text-green-400 mr-3" /> Solvent residue analysis</li>
-              <li className="flex items-center"><CheckCircle className="w-5 h-5 text-green-400 mr-3" /> Potency verification</li>
+        {/* Lab Testing */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ show: { transition: { staggerChildren: 0.1 } } }}>
+          <motion.div variants={fadeUp} className="flex items-end gap-4 mb-10">
+            <FlaskConical className="w-8 h-8 text-green-500 mb-1" strokeWidth={1.5} />
+            <h2 className="font-bebas text-5xl md:text-6xl tracking-widest text-white leading-none">
+              Lab Testing <span className="text-green-400">&amp; Reports</span>
+            </h2>
+          </motion.div>
+          <motion.div variants={fadeUp} className="bg-[#080808] border border-gray-800 p-8 md:p-10">
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Every product comes with verified lab reports from accredited third-party testing facilities.
+            </p>
+            <ul className="space-y-4">
+              {labChecks.map((check) => (
+                <li key={check} className="flex items-center gap-4 text-sm text-gray-300">
+                  <CheckCircle className="w-5 h-5 text-green-500 shrink-0" strokeWidth={1.5} />
+                  {check}
+                </li>
+              ))}
             </ul>
+          </motion.div>
+        </motion.section>
+
+        {/* Commitments */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ show: { transition: { staggerChildren: 0.09 } } }}>
+          <motion.h2 variants={fadeUp} className="font-bebas text-5xl md:text-6xl tracking-widest text-white mb-10">
+            Our <span className="text-green-400">Commitment</span>
+          </motion.h2>
+          <div className="space-y-px">
+            {commitments.map(({ title, body }) => (
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                className="flex gap-6 md:gap-10 py-7 border-b border-gray-900 group"
+              >
+                <div className="w-1 shrink-0 bg-green-900 group-hover:bg-green-500 transition-colors mt-1" />
+                <div>
+                  <h3 className="font-bebas text-xl tracking-widest text-white mb-2">{title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
 
-        {/* Our Commitment */}
-        <section className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-green-400">Our Commitment to You</h2>
-          <div className="space-y-6">
-            <div className="border-l-4 border-green-500 pl-6">
-              <h3 className="text-2xl font-bold mb-2">Transparency</h3>
-              <p className="text-gray-300">We provide complete product information, including lab reports, cannabinoid profiles, and sourcing details for every item.</p>
-            </div>
-
-            <div className="border-l-4 border-green-500 pl-6">
-              <h3 className="text-2xl font-bold mb-2">Quality Assurance</h3>
-              <p className="text-gray-300">Our team personally tests and verifies every product batch. We maintain strict quality control standards.</p>
-            </div>
-
-            <div className="border-l-4 border-green-500 pl-6">
-              <h3 className="text-2xl font-bold mb-2">Legal Compliance</h3>
-              <p className="text-gray-300">We strictly adhere to all Malta regulations. All products are legal for sale and consumption in Malta.</p>
-            </div>
-
-            <div className="border-l-4 border-green-500 pl-6">
-              <h3 className="text-2xl font-bold mb-2">Customer Support</h3>
-              <p className="text-gray-300">Our team is available to answer questions about products, effects, and usage. Contact us via WhatsApp or visit our stores.</p>
-            </div>
+        {/* Legal notice */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp}>
+          <div className="border border-yellow-900/50 bg-yellow-950/10 p-8">
+            <p className="text-[11px] text-gray-600 uppercase tracking-widest mb-3 font-bold">Important Legal Information</p>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              All products sold by MCW CBD Relax Shop contain less than 0.2% THC and are legal for sale and consumption in Malta.
+              For adults 18+ only. CBD and cannabinoids are not intended to diagnose, treat, cure, or prevent any disease.
+              Consult a healthcare professional before use — especially if pregnant, nursing, or taking medications.
+              Sedqa Helpline: <strong className="text-gray-400">1930</strong>.
+            </p>
           </div>
-        </section>
+        </motion.section>
 
-        {/* Legal Disclaimer */}
-        <section className="bg-gray-900 p-8 rounded-lg border border-yellow-600 mb-16">
-          <h2 className="text-2xl font-bold mb-4 text-yellow-400">Important Legal Information</h2>
-          <p className="text-gray-300 text-sm leading-relaxed">
-            All products sold by MCW CBD Relax Shop contain less than 0.2% THC and are legal for sale and consumption in Malta. 
-            These products are for adults 18+ only. CBD and other cannabinoids are not intended to diagnose, treat, cure, or prevent any disease. 
-            Consult with a healthcare professional before using CBD products, especially if you are pregnant, nursing, or taking medications. 
-            For support and information about substance use, contact Sedqa Helpline: 1930.
-          </p>
-        </section>
-
-        {/* Store Locations */}
-        <section>
-          <h2 className="text-4xl font-bold mb-8 text-green-400">Visit Our Stores</h2>
-          <p className="text-gray-300 mb-8">Experience MCW CBD Relax Shop in person at any of our locations across Malta:</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gray-900 p-6 rounded-lg border border-green-500">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Sliema (Main Branch)</h3>
-              <p className="text-gray-300">Triq Bisazza, Tas-Sliema SLM 1641</p>
-              <p className="text-gray-300">📞 9953 6248</p>
-              <p className="text-gray-300">Open - Closes 11:30 pm</p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded-lg border border-green-500">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Gzira</h3>
-              <p className="text-gray-300">Visit us for premium CBD products</p>
-              <p className="text-gray-300">📞 9953 6248</p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded-lg border border-green-500">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Mellieha</h3>
-              <p className="text-gray-300">Visit us for premium CBD products</p>
-              <p className="text-gray-300">📞 9953 6248</p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded-lg border border-green-500">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Bugibba</h3>
-              <p className="text-gray-300">Visit us for premium CBD products</p>
-              <p className="text-gray-300">📞 9953 6248</p>
-            </div>
-
-            <div className="bg-gray-900 p-6 rounded-lg border border-green-500 md:col-span-2">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Valletta (Coming Soon)</h3>
-              <p className="text-gray-300">New location opening soon</p>
-              <p className="text-gray-300">📞 9953 6248</p>
-            </div>
+        {/* Stores */}
+        <motion.section initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={{ show: { transition: { staggerChildren: 0.08 } } }}>
+          <motion.div variants={fadeUp} className="flex items-end gap-4 mb-10">
+            <MapPin className="w-7 h-7 text-green-500 mb-1" strokeWidth={1.5} />
+            <h2 className="font-bebas text-5xl md:text-6xl tracking-widest text-white leading-none">
+              Visit Our <span className="text-green-400">Stores</span>
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {stores.map(({ name, sub }) => (
+              <motion.div key={name} variants={fadeUp}>
+                <Link
+                  href="/store-locator"
+                  className="block bg-[#080808] border border-gray-800 hover:border-green-600/50 p-5 text-center transition-all duration-300 group"
+                >
+                  <p className="font-bebas text-xl tracking-widest text-white group-hover:text-green-400 transition-colors mb-1">{name}</p>
+                  <p className="text-[10px] text-gray-700 uppercase tracking-widest">{sub}</p>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
+
       </div>
     </div>
   );

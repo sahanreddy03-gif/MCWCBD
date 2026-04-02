@@ -1,199 +1,186 @@
-import { Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
-import { useState } from 'react';
+import { Phone, MapPin, MessageCircle, Clock } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
+
+const contactItems = [
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "9953 6248",
+    sub: "Available during store hours",
+    href: "tel:+35699536248",
+  },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "Message us instantly",
+    sub: "Fastest response guaranteed",
+    href: "https://wa.me/35699536248",
+    external: true,
+  },
+  {
+    icon: MapPin,
+    label: "Main Store",
+    value: "Sliema Branch",
+    sub: "Triq Bisazza, Tas-Sliema SLM 1641",
+    href: "https://maps.google.com/?q=35.3378,14.3008",
+    external: true,
+  },
+  {
+    icon: Clock,
+    label: "Store Hours",
+    value: "Open · Closes 11:30 pm",
+    sub: "Every day, all locations",
+  },
+];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [sent, setSent] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/35699999999?text=${encodedMessage}`, '_blank');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    const msg = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
+    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(msg)}`, "_blank");
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    setSent(true);
+    setTimeout(() => setSent(false), 4000);
   };
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-b from-green-900 to-black py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
-          <p className="text-xl text-gray-300">We're here to help. Contact MCW CBD Relax Shop today</p>
+
+      {/* Hero */}
+      <div className="relative py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">MCW CBD Relax Shop</p>
+          <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">
+            GET IN TOUCH
+          </h1>
+          <p className="text-gray-400 text-lg max-w-lg mx-auto leading-relaxed">
+            We're here to help. Reach us via WhatsApp for the fastest response.
+          </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
+      <div className="max-w-6xl mx-auto px-4 pb-24">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+
           {/* Contact Info */}
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-green-400">Contact Information</h2>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          >
+            <motion.h2 variants={fadeUp} className="font-bebas text-4xl md:text-5xl tracking-widest text-white mb-8">
+              Contact <span className="text-green-400">Info</span>
+            </motion.h2>
 
-            {/* Main Phone */}
-            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
-              <div className="flex items-start">
-                <Phone className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-bold mb-2">Phone</h3>
-                  <a href="tel:+35699999999" className="text-green-400 hover:text-green-300 text-lg">
-                    9953 6248
-                  </a>
-                  <p className="text-gray-400 text-sm mt-1">Available during store hours</p>
-                </div>
-              </div>
+            <div className="space-y-4">
+              {contactItems.map(({ icon: Icon, label, value, sub, href, external }) => {
+                const Wrapper = href ? "a" : "div";
+                const wrapperProps = href
+                  ? { href, ...(external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
+                  : {};
+                return (
+                  <motion.div key={label} variants={fadeUp}>
+                    <Wrapper
+                      {...(wrapperProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+                      className="flex items-start gap-5 bg-[#080808] border border-gray-800 hover:border-green-700/50 p-6 transition-all duration-300 group block"
+                    >
+                      <div className="w-10 h-10 border border-gray-800 group-hover:border-green-800 flex items-center justify-center shrink-0 transition-colors">
+                        <Icon className="w-5 h-5 text-green-600" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-700 uppercase tracking-widest mb-1">{label}</p>
+                        <p className="text-white text-sm font-medium group-hover:text-green-400 transition-colors">{value}</p>
+                        <p className="text-gray-600 text-xs mt-0.5">{sub}</p>
+                      </div>
+                    </Wrapper>
+                  </motion.div>
+                );
+              })}
             </div>
 
-            {/* WhatsApp */}
-            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
-              <div className="flex items-start">
-                <MessageCircle className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
-                  <a
-                    href="https://wa.me/35699999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-400 hover:text-green-300 text-lg"
-                  >
-                    Message us on WhatsApp
-                  </a>
-                  <p className="text-gray-400 text-sm mt-1">Fast response guaranteed</p>
-                </div>
+            {/* Locations strip */}
+            <motion.div variants={fadeUp} className="mt-8">
+              <p className="text-[10px] text-gray-700 uppercase tracking-widest mb-4">Our Locations</p>
+              <div className="grid grid-cols-5 gap-2">
+                {["Sliema", "Gzira", "Mellieha", "Bugibba", "Valletta"].map((loc) => (
+                  <div key={loc} className="border border-gray-800 py-3 text-center">
+                    <p className="font-bebas text-[13px] tracking-widest text-gray-500">{loc}</p>
+                  </div>
+                ))}
               </div>
-            </div>
-
-            {/* Main Store */}
-            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
-              <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-bold mb-2">Main Store - Sliema</h3>
-                  <p className="text-gray-300">Triq Bisazza, Tas-Sliema SLM 1641</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="p-6 bg-gray-900 rounded-lg border border-green-500">
-              <div className="flex items-start">
-                <Clock className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-bold mb-2">Store Hours</h3>
-                  <p className="text-gray-300">Open - Closes 11:30 pm</p>
-                  <p className="text-gray-300">Daily</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-green-400">Send us a Message</h2>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
+            <h2 className="font-bebas text-4xl md:text-5xl tracking-widest text-white mb-8">
+              Send a <span className="text-green-400">Message</span>
+            </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-bold mb-2">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold mb-2">Phone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
-                  placeholder="Your phone number"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {[
+                { name: "name", label: "Name", type: "text", placeholder: "Your name", required: true },
+                { name: "email", label: "Email", type: "email", placeholder: "your@email.com", required: true },
+                { name: "phone", label: "Phone (optional)", type: "tel", placeholder: "Your phone number", required: false },
+              ].map(({ name, label, type, placeholder, required }) => (
+                <div key={name}>
+                  <label className="block text-[10px] text-gray-600 uppercase tracking-widest mb-2">{label}</label>
+                  <input
+                    type={type}
+                    name={name}
+                    value={formData[name as keyof typeof formData]}
+                    onChange={handleChange}
+                    required={required}
+                    placeholder={placeholder}
+                    className="w-full bg-[#080808] border border-gray-800 focus:border-green-700 text-white text-sm px-4 py-3 outline-none transition-colors placeholder:text-gray-800"
+                  />
+                </div>
+              ))}
 
               <div>
-                <label className="block text-sm font-bold mb-2">Message</label>
+                <label className="block text-[10px] text-gray-600 uppercase tracking-widest mb-2">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400 resize-none"
                   placeholder="Your message..."
+                  className="w-full bg-[#080808] border border-gray-800 focus:border-green-700 text-white text-sm px-4 py-3 outline-none resize-none transition-colors placeholder:text-gray-800"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-6 rounded-lg transition-colors"
+                className="w-full bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest py-4 transition-colors flex items-center justify-center gap-2"
               >
-                Send Message via WhatsApp
+                <MessageCircle size={16} />
+                {sent ? "Sent! Opening WhatsApp..." : "Send via WhatsApp"}
               </button>
             </form>
 
-            <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-yellow-600">
-              <p className="text-sm text-gray-300">
-                <strong>Note:</strong> Messages are sent via WhatsApp for faster response. You can also visit us in person at any of our store locations.
-              </p>
-            </div>
-          </div>
-        </div>
+            <p className="text-gray-700 text-xs mt-5 leading-relaxed">
+              Your message opens in WhatsApp for instant delivery to our team. Typical response time: under 30 minutes during store hours.
+            </p>
+          </motion.div>
 
-        {/* All Locations */}
-        <div className="mt-16 pt-16 border-t border-gray-700">
-          <h2 className="text-3xl font-bold mb-8 text-green-400">All Locations</h2>
-          <div className="grid md:grid-cols-5 gap-4">
-            {[
-              { name: 'Sliema', status: 'Main' },
-              { name: 'Gzira', status: 'Open' },
-              { name: 'Mellieha', status: 'Open' },
-              { name: 'Bugibba', status: 'Open' },
-              { name: 'Valletta', status: 'Coming' },
-            ].map((location) => (
-              <div key={location.name} className="bg-gray-900 p-4 rounded-lg border border-green-500 text-center">
-                <h3 className="font-bold text-green-400 mb-2">{location.name}</h3>
-                <span className={`inline-block px-3 py-1 rounded-full text-sm font-bold ${
-                  location.status === 'Main' ? 'bg-green-500 text-black' :
-                  location.status === 'Coming' ? 'bg-yellow-600 text-white' :
-                  'bg-gray-700 text-gray-300'
-                }`}>
-                  {location.status}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
