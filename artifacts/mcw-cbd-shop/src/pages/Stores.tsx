@@ -40,7 +40,7 @@ const STORES = [
 export default function Stores() {
   return (
     <>
-      <SEO title="Our Store Locations" />
+      <SEO title="MCW CBD Shop Locations — Sliema, Gzira, Mellieha & Bugibba" description="Find MCW CBD Relax Shop near you. 4 stores across Malta: Sliema (flagship), Gzira, Mellieha, and Bugibba. Open daily until 11:30 pm. Same-day island-wide delivery." />
       
       <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

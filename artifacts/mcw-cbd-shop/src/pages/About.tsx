@@ -19,7 +19,7 @@ export default function About() {
 
   return (
     <>
-      <SEO title="About & FAQ" />
+      <SEO title="About MCW — Malta's #1 CBD Shop" description="Learn about MCW CBD Relax Shop — Malta's leading cannabis and CBD retailer with 4 stores in Sliema, Gzira, Mellieha, and Bugibba. Premium products, expert staff, lab-tested quality." />
       
       <div className="pt-28 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
