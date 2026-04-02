@@ -1,6 +1,7 @@
 import { CheckCircle, Award, Leaf, Shield, FlaskConical, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const fadeUp = { hidden: { opacity: 0, y: 28 }, show: { opacity: 1, y: 0, transition: { duration: 0.55 } } };
 
@@ -50,8 +51,23 @@ const stores = [
   { name: "Valletta", sub: "Coming Soon" },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
+    { "@type": "ListItem", position: 2, name: "Trust & Quality", item: "https://mcwrelaxshop.com/trust" },
+  ],
+};
+
 export default function Trust() {
   return (
+    <>
+      <SEO
+        title="Trust & Quality — Lab-Tested CBD Malta"
+        description="Every MCW product is third-party lab tested, legally compliant (<0.2% THC), and certified. Malta's most trusted CBD retailer since day one."
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
 
       {/* Hero */}
@@ -174,5 +190,6 @@ export default function Trust() {
 
       </div>
     </div>
+    </>
   );
 }

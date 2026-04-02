@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
@@ -36,8 +37,23 @@ const stores = [
   },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
+    { "@type": "ListItem", position: 2, name: "Store Locator", item: "https://mcwrelaxshop.com/store-locator" },
+  ],
+};
+
 export default function StoreLocator() {
   return (
+    <>
+      <SEO
+        title="Find a CBD Store in Malta — MCW Locations"
+        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Gzira, Mellieha, and Bugibba. Open daily until 11:30 pm. Same-day delivery available."
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
 
       {/* Hero */}
@@ -160,5 +176,6 @@ export default function StoreLocator() {
 
       </div>
     </div>
+    </>
   );
 }

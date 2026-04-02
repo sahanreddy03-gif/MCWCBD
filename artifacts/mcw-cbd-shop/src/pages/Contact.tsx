@@ -1,6 +1,7 @@
 import { Phone, MapPin, MessageCircle, Clock } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
@@ -52,7 +53,22 @@ export default function Contact() {
     setTimeout(() => setSent(false), 4000);
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://mcwrelaxshop.com/contact" },
+    ],
+  };
+
   return (
+    <>
+      <SEO
+        title="Contact MCW — CBD Shop Malta"
+        description="Get in touch with MCW CBD Relax Shop. Order via WhatsApp, call us, or visit one of our 4 Malta locations in Sliema, Gzira, Mellieha, or Bugibba."
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
 
       {/* Hero */}
@@ -184,5 +200,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    </>
   );
 }

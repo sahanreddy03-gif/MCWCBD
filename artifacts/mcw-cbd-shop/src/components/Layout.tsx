@@ -7,6 +7,95 @@ import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mcwrelaxshop.com/#organization",
+      name: "MCW CBD Relax Shop",
+      url: "https://mcwrelaxshop.com",
+      logo: "https://mcwrelaxshop.com/logo.png",
+      sameAs: [
+        "https://instagram.com/mcwrelaxshop",
+        "https://wa.me/35699536248",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+35699536248",
+        contactType: "customer service",
+        availableLanguage: ["English", "Maltese"],
+      },
+    },
+    {
+      "@type": ["LocalBusiness", "Store"],
+      "@id": "https://mcwrelaxshop.com/#sliema",
+      name: "MCW CBD Relax Shop — Sliema",
+      description: "Malta's #1 cannabis and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
+      url: "https://mcwrelaxshop.com",
+      telephone: "+35699536248",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Triq Bisazza",
+        addressLocality: "Sliema",
+        postalCode: "SLM 1641",
+        addressCountry: "MT",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 35.9131,
+        longitude: 14.5027,
+      },
+      openingHours: "Mo-Su 09:00-23:30",
+      priceRange: "€€",
+      hasMap: "https://maps.google.com/?q=MCW+CBD+Relax+Shop+Sliema+Malta",
+      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+    },
+    {
+      "@type": ["LocalBusiness", "Store"],
+      "@id": "https://mcwrelaxshop.com/#gzira",
+      name: "MCW CBD Relax Shop — Gzira",
+      url: "https://mcwrelaxshop.com/store-locator",
+      telephone: "+35699536248",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Gzira",
+        addressCountry: "MT",
+      },
+      openingHours: "Mo-Su 09:00-23:30",
+      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+    },
+    {
+      "@type": ["LocalBusiness", "Store"],
+      "@id": "https://mcwrelaxshop.com/#mellieha",
+      name: "MCW CBD Relax Shop — Mellieha",
+      url: "https://mcwrelaxshop.com/store-locator",
+      telephone: "+35699536248",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mellieha",
+        addressCountry: "MT",
+      },
+      openingHours: "Mo-Su 09:00-23:30",
+      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+    },
+    {
+      "@type": ["LocalBusiness", "Store"],
+      "@id": "https://mcwrelaxshop.com/#bugibba",
+      name: "MCW CBD Relax Shop — Bugibba",
+      url: "https://mcwrelaxshop.com/store-locator",
+      telephone: "+35699536248",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bugibba",
+        addressCountry: "MT",
+      },
+      openingHours: "Mo-Su 09:00-23:30",
+      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+    },
+  ],
+};
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -29,6 +118,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+      />
       <AgeGate />
 
       {/* Navigation */}

@@ -1,6 +1,7 @@
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const faqs = [
   { q: "Is CBD legal in Malta?", a: "Yes. CBD products with less than 0.2% THC are fully legal in Malta. Every MCW product complies with this regulation." },
@@ -23,7 +24,33 @@ const faqs = [
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
+      { "@type": "ListItem", position: 2, name: "FAQ", item: "https://mcwrelaxshop.com/faq" },
+    ],
+  };
+
   return (
+    <>
+      <SEO
+        title="FAQ — CBD Malta"
+        description="Got questions about CBD in Malta? Find answers on legality, products, delivery, and more. MCW CBD Relax Shop — Malta's #1 CBD destination."
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
 
       {/* Hero */}
@@ -99,5 +126,6 @@ export default function FAQ() {
 
       </div>
     </div>
+    </>
   );
 }
