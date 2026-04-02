@@ -17,65 +17,95 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
   const [shimmer, setShimmer] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+  const [selectedFlavour, setSelectedFlavour] = useState(0);
 
   useEffect(() => {
     setIsMobile(window.matchMedia("(pointer: coarse)").matches);
     return () => cancelAnimationFrame(rafRef.current);
   }, []);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current || isMobile) return;
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = requestAnimationFrame(() => {
-        if (!cardRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = (e.clientX - cx) / (rect.width / 2);
-        const dy = (e.clientY - cy) / (rect.height / 2);
-        setTilt({ x: -dy * 10, y: dx * 10 });
-        setShimmer({
-          x: ((e.clientX - rect.left) / rect.width) * 100,
-          y: ((e.clientY - rect.top) / rect.height) * 100,
-        });
+  const applyTilt = useCallback((clientX: number, clientY: number) => {
+    if (!cardRef.current) return;
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (clientX - cx) / (rect.width / 2);
+      const dy = (clientY - cy) / (rect.height / 2);
+      setTilt({ x: -dy * 10, y: dx * 10 });
+      setShimmer({
+        x: ((clientX - rect.left) / rect.width) * 100,
+        y: ((clientY - rect.top) / rect.height) * 100,
       });
+    });
+  }, []);
+
+  const handlePointerMove = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      applyTilt(e.clientX, e.clientY);
     },
-    [isMobile]
+    [applyTilt]
   );
 
-  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
-  const handleMouseLeave = useCallback(() => {
+  const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") {
+      setIsTouching(true);
+      setIsHovered(true);
+    }
+  }, []);
+
+  const handlePointerUp = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "touch") {
+      cancelAnimationFrame(rafRef.current);
+      setTilt({ x: 0, y: 0 });
+      setIsTouching(false);
+      setIsHovered(false);
+    }
+  }, []);
+
+  const handlePointerEnter = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "touch") setIsHovered(true);
+  }, []);
+
+  const handlePointerLeave = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
     cancelAnimationFrame(rafRef.current);
     setTilt({ x: 0, y: 0 });
     setIsHovered(false);
+    if (e.pointerType === "touch") setIsTouching(false);
   }, []);
+
+  const floatActive = isMobile && !isTouching;
 
   const price = product.variants ? product.variants[selectedVariant]?.price ?? product.price : product.price;
 
   return (
     <div
       ref={cardRef}
-      className={`relative overflow-hidden rounded-2xl flex flex-col min-h-[340px] cursor-pointer select-none ${isMobile ? "animate-mcw-float" : ""}`}
+      className={`relative overflow-hidden rounded-2xl flex flex-col min-h-[340px] cursor-pointer select-none ${floatActive ? "animate-mcw-float" : ""}`}
       style={{
         background: "linear-gradient(135deg, #0d0d0d 0%, #1a1100 40%, #0f0a00 70%, #0d0d0d 100%)",
         border: "1px solid rgba(212,175,55,0.35)",
-        ...(isMobile
-          ? {}
-          : {
-              transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(${isHovered ? "-6px" : "0px"})`,
-              willChange: "transform",
-              transition: isHovered
-                ? "transform 0.06s linear, box-shadow 0.15s ease"
-                : "transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease",
-            }),
+        transform: floatActive
+          ? undefined
+          : `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(${isHovered ? "-6px" : "0px"})`,
+        willChange: "transform",
+        transition: floatActive
+          ? undefined
+          : isHovered
+          ? "transform 0.06s linear, box-shadow 0.15s ease"
+          : "transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s ease",
         boxShadow: isHovered
           ? "0 24px 60px rgba(212,175,55,0.22), 0 0 0 1px rgba(212,175,55,0.5), inset 0 0 40px rgba(212,175,55,0.06)"
           : "0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.15)",
       }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onPointerMove={handlePointerMove}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     >
       {/* Faded category-matched background image */}
       <img
@@ -97,20 +127,18 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
         }}
       />
 
-      {/* Shimmer — follows cursor on desktop */}
-      {!isMobile && (
-        <div
-          className="absolute inset-0 pointer-events-none rounded-2xl"
-          style={{
-            background: isHovered
-              ? `radial-gradient(circle at ${shimmer.x}% ${shimmer.y}%, rgba(255,215,0,0.16) 0%, rgba(212,175,55,0.07) 40%, transparent 65%)`
-              : "none",
-            transition: "background 0.07s linear",
-          }}
-        />
-      )}
+      {/* Shimmer — follows pointer (mouse + touch) */}
+      <div
+        className="absolute inset-0 pointer-events-none rounded-2xl"
+        style={{
+          background: isHovered
+            ? `radial-gradient(circle at ${shimmer.x}% ${shimmer.y}%, rgba(255,215,0,0.16) 0%, rgba(212,175,55,0.07) 40%, transparent 65%)`
+            : "none",
+          transition: "background 0.07s linear",
+        }}
+      />
 
-      {/* Inner glow ring on hover */}
+      {/* Inner glow ring on hover/touch */}
       <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
@@ -174,7 +202,7 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
         </p>
       </div>
 
-      {/* Variant selector */}
+      {/* Gram / size variant selector */}
       {product.variants && (
         <div className="relative z-10 px-4 pb-2">
           <div className="flex gap-1.5 flex-wrap justify-center">
@@ -196,6 +224,35 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
                 }}
               >
                 {v.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Flavour selector (vapes + products with flavourOptions) */}
+      {product.flavourOptions && product.flavourOptions.length > 0 && (
+        <div className="relative z-10 px-4 pb-2">
+          <p className="text-[8px] text-yellow-400/50 uppercase tracking-widest text-center mb-1">Flavour</p>
+          <div className="flex gap-1.5 flex-wrap justify-center">
+            {product.flavourOptions.map((f, fi) => (
+              <button
+                key={f}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedFlavour(fi);
+                }}
+                className="text-[9px] font-bold px-2 py-1 border transition-all"
+                style={{
+                  background: selectedFlavour === fi ? "#FFD700" : "transparent",
+                  color: selectedFlavour === fi ? "#000" : "rgba(255,215,0,0.65)",
+                  borderColor:
+                    selectedFlavour === fi
+                      ? "#FFD700"
+                      : "rgba(212,175,55,0.35)",
+                }}
+              >
+                {f}
               </button>
             ))}
           </div>

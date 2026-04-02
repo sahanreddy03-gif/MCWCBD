@@ -263,21 +263,29 @@ export const PRODUCTS: Product[] = [
   { id: "124", name: "ONYX 1000 Nicotine Vape", brand: "Pod Salt", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Firefly_Product.png", isNew: true },
 
   // ── MCW ORIGINALS — Exclusive House Collection ──
-  { id: "m1", name: "MCW CBD Oil Full Spectrum 10%", brand: "MCW", category: "MCW Originals", subCategory: "CBD Oils", price: 19.99, effect: "Relaxing", cannabinoid: "CBD", image: pOil500, logoCard: true },
+  // CBD Oils (bg: pOil1500 category mapping)
+  { id: "m1", name: "MCW CBD Oil Full Spectrum 10%", brand: "MCW", category: "MCW Originals", subCategory: "CBD Oils", price: 19.99, effect: "Relaxing", cannabinoid: "CBD", image: pOil1500, logoCard: true },
   { id: "m2", name: "MCW CBD Oil Full Spectrum 20%", brand: "MCW", category: "MCW Originals", subCategory: "CBD Oils", price: 34.99, effect: "Relaxing", cannabinoid: "CBD", image: pOil1500, logoCard: true },
-  { id: "m3", name: "MCW CBD Sleep Drops CBN 5%", brand: "MCW", category: "MCW Originals", subCategory: "CBD Oils", price: 24.99, effect: "Sleeping", cannabinoid: "CBN", image: pSleepDrops, logoCard: true },
+  { id: "m3", name: "MCW CBD Sleep Drops CBN 5%", brand: "MCW", category: "MCW Originals", subCategory: "CBD Oils", price: 24.99, effect: "Sleeping", cannabinoid: "CBN", image: pOil1500, logoCard: true },
+  // CBD Flowers (bg: pKushMintz category mapping)
   { id: "m4", name: "MCW CBD Flower Kush Mintz", brand: "MCW", category: "MCW Originals", subCategory: "CBD Flowers", price: 8.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushMintz, logoCard: true, variants: [{ label: "1g", price: 8.00 }, { label: "3g", price: 22.00 }, { label: "5g", price: 34.99 }] },
-  { id: "m5", name: "MCW H4CBD Flower White Widow", brand: "MCW", category: "MCW Originals", subCategory: "CBD Flowers", price: 9.00, effect: "Energizing", cannabinoid: "H4CBD", image: pWhiteWidow, logoCard: true, variants: [{ label: "1g", price: 9.00 }, { label: "3g", price: 24.99 }, { label: "5g", price: 39.99 }] },
-  { id: "m6", name: "MCW CBD Flower Amnesia Haze", brand: "MCW", category: "MCW Originals", subCategory: "CBD Flowers", price: 8.50, effect: "Energizing", cannabinoid: "CBD", image: pAmnesiaHaze, logoCard: true, variants: [{ label: "1g", price: 8.50 }, { label: "3g", price: 23.50 }, { label: "5g", price: 37.00 }] },
+  { id: "m5", name: "MCW H4CBD Flower White Widow", brand: "MCW", category: "MCW Originals", subCategory: "CBD Flowers", price: 9.00, effect: "Energizing", cannabinoid: "H4CBD", image: pKushMintz, logoCard: true, variants: [{ label: "1g", price: 9.00 }, { label: "3g", price: 24.99 }, { label: "5g", price: 39.99 }] },
+  { id: "m6", name: "MCW CBD Flower Amnesia Haze", brand: "MCW", category: "MCW Originals", subCategory: "CBD Flowers", price: 8.50, effect: "Energizing", cannabinoid: "CBD", image: pKushMintz, logoCard: true, variants: [{ label: "1g", price: 8.50 }, { label: "3g", price: 23.50 }, { label: "5g", price: 37.00 }] },
+  // CBD Hash (bg: pBlueLotus category mapping)
   { id: "m7", name: "MCW Blue Lotus CBD Hash", brand: "MCW", category: "MCW Originals", subCategory: "CBD Hash", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, logoCard: true, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
-  { id: "m8", name: "MCW H4CBD Vape Pen Blueberry", brand: "MCW", category: "MCW Originals", subCategory: "CBD Vapes", price: 34.99, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapePen, logoCard: true },
-  { id: "m9", name: "MCW H4CBD Vape Pen Mango", brand: "MCW", category: "MCW Originals", subCategory: "CBD Vapes", price: 34.99, effect: "Energizing", cannabinoid: "H4CBD", image: pH4CBDVapeMango, logoCard: true },
-  { id: "m10", name: "MCW Pre-Roll Gelato Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 12.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRollGelato, logoCard: true },
-  { id: "m11", name: "MCW Pre-Roll OG Kush Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 11.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRollOG, logoCard: true },
-  { id: "m12", name: "MCW CBD Baby Pre-Rolls Pack", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pBabyPreRolls, logoCard: true },
-  { id: "m13", name: "MCW Volcano Hybrid Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 179.99, cannabinoid: "None", image: pVolcanoHybrid, logoCard: true },
-  { id: "m14", name: "MCW PAX Flow Portable Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 99.99, cannabinoid: "None", image: pPaxFlow, logoCard: true },
-  { id: "m15", name: "MCW RAW Bamboo Rolling Mat", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 14.99, cannabinoid: "None", image: pBambooMat, logoCard: true },
-  { id: "m16", name: "MCW Kush Hash Premium CBD", brand: "MCW", category: "MCW Originals", subCategory: "CBD Hash", price: 9.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushHash, logoCard: true, variants: [{ label: "1g", price: 9.00 }, { label: "3g", price: 25.00 }, { label: "5g", price: 40.00 }] },
-  { id: "m17", name: "MCW THCV Vape Cartridge Gelato", brand: "MCW", category: "MCW Originals", subCategory: "THCV", price: 44.99, effect: "Focus", cannabinoid: "THCV", image: pTHCVCartridgeGelato, logoCard: true },
+  { id: "m16", name: "MCW Kush Hash Premium CBD", brand: "MCW", category: "MCW Originals", subCategory: "CBD Hash", price: 9.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, logoCard: true, variants: [{ label: "1g", price: 9.00 }, { label: "3g", price: 25.00 }, { label: "5g", price: 40.00 }] },
+  // CBD Vapes (bg: pH4CBDVapePen category mapping; flavour variants)
+  { id: "m8", name: "MCW H4CBD Vape Pen", brand: "MCW", category: "MCW Originals", subCategory: "CBD Vapes", price: 34.99, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapePen, logoCard: true, flavourOptions: ["Blueberry", "Mango", "Grape Mint"] },
+  { id: "m9", name: "MCW THCV Vape Cartridge", brand: "MCW", category: "MCW Originals", subCategory: "THCV", price: 44.99, effect: "Focus", cannabinoid: "THCV", image: pH4CBDVapePen, logoCard: true, flavourOptions: ["Gelato", "Blue Dream", "GMO Cookies"] },
+  // Pre-Rolls (bg: pPreRoll1 category mapping)
+  { id: "m10", name: "MCW Pre-Roll Gelato Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 12.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
+  { id: "m11", name: "MCW Pre-Roll OG Kush Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 11.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
+  { id: "m12", name: "MCW CBD Baby Pre-Rolls Pack", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
+  // CBD Gummies (bg: pGummy1 category mapping)
+  { id: "m18", name: "MCW CBD Gummies Mixed Fruit 10mg", brand: "MCW", category: "MCW Originals", subCategory: "CBD Gummies", price: 14.99, effect: "Relaxing", cannabinoid: "CBD", image: pGummy1, logoCard: true },
+  // Lifestyle / Accessories (bg: pGrinder1 category mapping; bundle variants)
+  { id: "m13", name: "MCW Volcano Hybrid Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 179.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "Solo", price: 179.99 }, { label: "+ Bag Kit", price: 209.99 }, { label: "+ Easy Valve", price: 199.99 }] },
+  { id: "m14", name: "MCW PAX Flow Portable Vaporizer", brand: "MCW", category: "MCW Originals", subCategory: "Vaporizers", price: 99.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "Standard", price: 99.99 }, { label: "+ 2 Pods", price: 119.99 }] },
+  { id: "m15", name: "MCW RAW Bamboo Rolling Mat", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 14.99, cannabinoid: "None", image: pGrinder1, logoCard: true },
+  { id: "m17", name: "MCW Branded Grinder 4-Piece", brand: "MCW", category: "MCW Originals", subCategory: "Accessories", price: 24.99, cannabinoid: "None", image: pGrinder1, logoCard: true, variants: [{ label: "50mm", price: 24.99 }, { label: "63mm", price: 29.99 }] },
 ];
