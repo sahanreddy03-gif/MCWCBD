@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import Trust from "@/pages/Trust";
 import StoreLocator from "@/pages/StoreLocator";
 import Contact from "@/pages/Contact";
+import FAQ from "@/pages/FAQ";
 
 // Fallback 404
 function NotFound() {
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/trust" component={Trust} />
         <Route path="/store-locator" component={StoreLocator} />
         <Route path="/contact" component={Contact} />
+        <Route path="/faq" component={FAQ} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

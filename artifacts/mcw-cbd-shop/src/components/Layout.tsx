@@ -36,7 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
     { name: "Shop", href: "/shop" },
     { name: "Brands", href: "/brands" },
     { name: "Stores", href: "/stores" },
-    { name: "About & FAQ", href: "/about" },
+    { name: "About", href: "/about" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
