@@ -6,6 +6,7 @@ import Shop from "@/pages/Shop";
 import Stores from "@/pages/Stores";
 import Brands from "@/pages/Brands";
 import About from "@/pages/About";
+import Trust from "@/pages/Trust";
 
 // Fallback 404
 function NotFound() {
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/stores" component={Stores} />
         <Route path="/brands" component={Brands} />
         <Route path="/about" component={About} />
+        <Route path="/trust" component={Trust} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
