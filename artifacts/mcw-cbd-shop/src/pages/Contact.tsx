@@ -1,0 +1,201 @@
+import { Mail, Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
+import { useState } from 'react';
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/35699999999?text=${encodedMessage}`, '_blank');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-b from-green-900 to-black py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold mb-4">Get In Touch</h1>
+          <p className="text-xl text-gray-300">We're here to help. Contact MCW CBD Relax Shop today</p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <div>
+            <h2 className="text-3xl font-bold mb-8 text-green-400">Contact Information</h2>
+
+            {/* Main Phone */}
+            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
+              <div className="flex items-start">
+                <Phone className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Phone</h3>
+                  <a href="tel:+35699999999" className="text-green-400 hover:text-green-300 text-lg">
+                    9953 6248
+                  </a>
+                  <p className="text-gray-400 text-sm mt-1">Available during store hours</p>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
+              <div className="flex items-start">
+                <MessageCircle className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
+                  <a
+                    href="https://wa.me/35699999999"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 hover:text-green-300 text-lg"
+                  >
+                    Message us on WhatsApp
+                  </a>
+                  <p className="text-gray-400 text-sm mt-1">Fast response guaranteed</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Main Store */}
+            <div className="mb-8 p-6 bg-gray-900 rounded-lg border border-green-500">
+              <div className="flex items-start">
+                <MapPin className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Main Store - Sliema</h3>
+                  <p className="text-gray-300">Triq Bisazza, Tas-Sliema SLM 1641</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="p-6 bg-gray-900 rounded-lg border border-green-500">
+              <div className="flex items-start">
+                <Clock className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-2">Store Hours</h3>
+                  <p className="text-gray-300">Open - Closes 11:30 pm</p>
+                  <p className="text-gray-300">Daily</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div>
+            <h2 className="text-3xl font-bold mb-8 text-green-400">Send us a Message</h2>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-sm font-bold mb-2">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold mb-2">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold mb-2">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400"
+                  placeholder="Your phone number"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full bg-gray-900 border border-green-500 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-green-400 resize-none"
+                  placeholder="Your message..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-6 rounded-lg transition-colors"
+              >
+                Send Message via WhatsApp
+              </button>
+            </form>
+
+            <div className="mt-8 p-6 bg-gray-900 rounded-lg border border-yellow-600">
+              <p className="text-sm text-gray-300">
+                <strong>Note:</strong> Messages are sent via WhatsApp for faster response. You can also visit us in person at any of our store locations.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* All Locations */}
+        <div className="mt-16 pt-16 border-t border-gray-700">
+          <h2 className="text-3xl font-bold mb-8 text-green-400">All Locations</h2>
+          <div className="grid md:grid-cols-5 gap-4">
+            {[
+              { name: 'Sliema', status: 'Main' },
+              { name: 'Gzira', status: 'Open' },
+              { name: 'Mellieha', status: 'Open' },
+              { name: 'Bugibba', status: 'Open' },
+              { name: 'Valletta', status: 'Coming' },
+            ].map((location) => (
+              <div key={location.name} className="bg-gray-900 p-4 rounded-lg border border-green-500 text-center">
+                <h3 className="font-bold text-green-400 mb-2">{location.name}</h3>
+                <span className={`inline-block px-3 py-1 rounded-full text-sm font-bold ${
+                  location.status === 'Main' ? 'bg-green-500 text-black' :
+                  location.status === 'Coming' ? 'bg-yellow-600 text-white' :
+                  'bg-gray-700 text-gray-300'
+                }`}>
+                  {location.status}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
