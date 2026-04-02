@@ -55,7 +55,58 @@ const ARTICLE_SCHEMA = (slug: string, headline: string) => ({
   mainEntityOfPage: `https://mcwrelaxshop.com/guides/${slug}`,
 });
 
-const RELATED_LINKS = [
+const CATEGORY_LINKS: Record<string, { href: string; label: string }[]> = {
+  Location: [
+    { href: "/shop", label: "Shop All CBD Products" },
+    { href: "/store-locator", label: "Find Your Nearest Store" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+  City: [
+    { href: "/shop", label: "Shop All CBD Products" },
+    { href: "/store-locator", label: "Find Your Nearest Store" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/blog", label: "CBD Education Blog" },
+  ],
+  Benefits: [
+    { href: "/shop", label: "Shop CBD Oils" },
+    { href: "/shop", label: "Shop CBD Gummies" },
+    { href: "/guides", label: "CBD Dosage Guide" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+  Comparisons: [
+    { href: "/shop", label: "Shop All Products" },
+    { href: "/brands", label: "Our Brand Partners" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+  Guides: [
+    { href: "/shop", label: "Shop CBD Products" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/store-locator", label: "Find a Store" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+  Education: [
+    { href: "/shop", label: "Shop Lab-Tested CBD" },
+    { href: "/brands", label: "Our Brand Partners" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+  Lifestyle: [
+    { href: "/shop", label: "Shop All Products" },
+    { href: "/guides", label: "Browse All Guides" },
+    { href: "/blog", label: "Read Our Blog" },
+    { href: "/store-locator", label: "Find a Store" },
+  ],
+  About: [
+    { href: "/about", label: "About MCW" },
+    { href: "/shop", label: "Shop All Products" },
+    { href: "/store-locator", label: "Find a Store" },
+    { href: "/blog", label: "Read Our Blog" },
+  ],
+};
+
+const FALLBACK_LINKS = [
   { href: "/shop", label: "Shop All Products" },
   { href: "/guides", label: "Browse All Guides" },
   { href: "/blog", label: "Read Our Blog" },
@@ -237,14 +288,14 @@ export default function SeoPage({ slug }: SeoPageProps) {
           </section>
         )}
 
-        {/* Related links */}
+        {/* Related links — category-aware */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h2 className="text-3xl font-bebas tracking-wide text-white mb-6">
             Explore More
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-            {RELATED_LINKS.map(({ href, label }) => (
-              <Link key={href} href={href} className="group flex items-center justify-between bg-[#0d0d0d] border border-white/5 rounded-xl p-4 hover:border-green-500/30 transition-all hover:-translate-y-0.5">
+            {(CATEGORY_LINKS[page.cat] ?? FALLBACK_LINKS).map(({ href, label }) => (
+              <Link key={label} href={href} className="group flex items-center justify-between bg-[#0d0d0d] border border-white/5 rounded-xl p-4 hover:border-green-500/30 transition-all hover:-translate-y-0.5">
                 <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{label}</span>
                 <ArrowRight size={14} className="text-gray-600 group-hover:text-green-400 transition-colors" />
               </Link>

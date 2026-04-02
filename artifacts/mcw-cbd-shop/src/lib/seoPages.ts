@@ -109,12 +109,12 @@ function buildComparisonContent(label: string): { h1: string; intro: string; bod
   const [a, b] = label.split(" vs ").map((s) => s.trim());
   return {
     h1: `${a} vs ${b} — Which is Right for You?`,
-    intro: `Choosing between ${a} and ${b} can be confusing, especially if you're new to CBD. This guide from MCW CBD Relax Shop breaks down the key differences to help you make the right choice.`,
+    intro: `Choosing between ${a} and ${b} can be confusing, especially if you're new to CBD. This guide from MCW CBD Relax Shop breaks down the key differences to help you make the right choice for your lifestyle.`,
     bodyParagraphs: [
-      `${a} and ${b} are both popular options at MCW CBD Relax Shop. The right choice depends on your experience level, lifestyle, and what you're looking to achieve with CBD.`,
-      `${a} is often preferred for its [specific characteristics], while ${b} appeals to customers who want [different characteristics]. Both products are available at all MCW locations in Sliema, Gzira, Mellieha, and Bugibba.`,
-      `At MCW, we carry both ${a} and ${b} from Malta's most trusted CBD brands. All our products are lab-tested, legally compliant with Malta's regulations, and backed by our expert customer service.`,
-      `Not sure which to choose? Visit any MCW CBD Relax Shop or contact us on WhatsApp at 9953 6248 — our team will help you find the perfect product for your needs.`,
+      `${a} and ${b} are both popular products available at all four MCW CBD Relax Shop locations (Sliema, Gzira, Mellieha, Bugibba). The best choice depends on your personal preferences, desired effects, and how you prefer to use CBD.`,
+      `When comparing ${a} and ${b}, consider factors like onset time, duration, ease of use, and your daily routine. Both options have their merits: some customers love the convenience of one, while others prefer the experience of the other. Our staff can walk you through the differences in person.`,
+      `At MCW, we carry both ${a} and ${b} from Malta's most trusted CBD brands. All products are independently lab-tested, contain less than 0.2% THC, and are fully legal under Malta's current regulations.`,
+      `Not sure which to choose? Visit any MCW CBD Relax Shop or contact us on WhatsApp at 9953 6248 — our knowledgeable team will help you find the perfect product for your needs and budget.`,
     ],
   };
 }
