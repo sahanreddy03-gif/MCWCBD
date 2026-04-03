@@ -58,24 +58,13 @@ export default function B2BElitePartnership() {
         <div className="absolute inset-0 bg-gradient-radial from-green-500 to-transparent blur-3xl opacity-20 animate-pulse"></div>
       </div>
 
-      {/* ===== HERO SECTION — Video Background ===== */}
+      {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-24 sm:py-28 overflow-hidden z-10">
-        {/* Video Background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/b2b-hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
-
-        {/* Dark overlay — heavier at top/bottom for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/80 pointer-events-none" />
-        {/* Green tint overlay */}
-        <div className="absolute inset-0 bg-green-950/20 pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute -bottom-8 left-20 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob" style={{ animationDelay: '4s' }}></div>
+        </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center w-full">
           <div className="inline-block mb-5 sm:mb-6 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full text-xs sm:text-sm font-bold text-black animate-pulse">
@@ -111,7 +100,7 @@ export default function B2BElitePartnership() {
             ].map((metric, i) => (
               <div
                 key={i}
-                className="bg-black/50 backdrop-blur-sm border border-green-500/70 rounded-lg p-2 sm:p-4 hover:scale-110 transition-transform duration-300"
+                className="bg-gradient-to-br from-green-900 to-emerald-900 border border-green-500 rounded-lg p-2 sm:p-4 hover:scale-110 transition-transform duration-300"
                 style={{ animation: `b2bSlideUp 0.6s ease-out ${i * 0.1}s both` }}
               >
                 <div className="text-xl sm:text-3xl font-black text-green-400">{metric.number}</div>

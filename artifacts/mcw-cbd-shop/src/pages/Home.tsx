@@ -32,6 +32,19 @@ export default function Home() {
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
+        {/* Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/b2b-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/65 pointer-events-none" />
         {/* Abstract Gradient Atmosphere */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(34,197,94,0.15)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.05)_0%,transparent_50%)]" />
