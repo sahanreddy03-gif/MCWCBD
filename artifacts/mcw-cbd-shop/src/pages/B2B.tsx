@@ -58,21 +58,32 @@ export default function B2BElitePartnership() {
         <div className="absolute inset-0 bg-gradient-radial from-green-500 to-transparent blur-3xl opacity-20 animate-pulse"></div>
       </div>
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden z-10">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute -bottom-8 left-20 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob" style={{ animationDelay: '4s' }}></div>
-        </div>
+      {/* ===== HERO SECTION — Video Background ===== */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-24 sm:py-28 overflow-hidden z-10">
+        {/* Video Background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/b2b-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        />
 
-        <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <div className="inline-block mb-6 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full text-sm font-bold text-black animate-pulse">
+        {/* Dark overlay — heavier at top/bottom for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/80 pointer-events-none" />
+        {/* Green tint overlay */}
+        <div className="absolute inset-0 bg-green-950/20 pointer-events-none" />
+
+        <div className="relative z-10 max-w-6xl mx-auto text-center w-full">
+          <div className="inline-block mb-5 sm:mb-6 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full text-xs sm:text-sm font-bold text-black animate-pulse">
             🚀 EUROPE'S PREMIER B2B PLATFORM
           </div>
 
           <h1
-            className="text-6xl md:text-8xl font-black mb-6 leading-tight"
+            className="text-4xl sm:text-6xl md:text-8xl font-black mb-4 sm:mb-6 leading-tight"
             style={{
               background: 'linear-gradient(135deg, #22c55e 0%, #10b981 50%, #06b6d4 100%)',
               WebkitBackgroundClip: 'text',
@@ -88,11 +99,11 @@ export default function B2BElitePartnership() {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-b2b-fade-up">
+          <p className="text-base sm:text-xl md:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-b2b-fade-up px-2">
             Connect with Europe's most trusted CBD wholesale network. We've solved the problem for 100+ retailers and distributors.
           </p>
 
-          <div className="grid grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-12 max-w-xs sm:max-w-2xl mx-auto">
             {[
               { number: '100+', label: 'Partners' },
               { number: '50+', label: 'Manufacturers' },
@@ -100,40 +111,40 @@ export default function B2BElitePartnership() {
             ].map((metric, i) => (
               <div
                 key={i}
-                className="bg-gradient-to-br from-green-900 to-emerald-900 border border-green-500 rounded-lg p-4 hover:scale-110 transition-transform duration-300"
+                className="bg-black/50 backdrop-blur-sm border border-green-500/70 rounded-lg p-2 sm:p-4 hover:scale-110 transition-transform duration-300"
                 style={{ animation: `b2bSlideUp 0.6s ease-out ${i * 0.1}s both` }}
               >
-                <div className="text-3xl font-black text-green-400">{metric.number}</div>
-                <div className="text-sm text-gray-300">{metric.label}</div>
+                <div className="text-xl sm:text-3xl font-black text-green-400">{metric.number}</div>
+                <div className="text-xs sm:text-sm text-gray-300">{metric.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-12 px-4 sm:px-0">
             <a
               href="https://wa.me/35699536248"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base"
             >
-              Start Partnership <ArrowRight className="w-5 h-5" />
+              Start Partnership <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a
               href="#journey"
-              className="px-8 py-4 border-2 border-green-500 text-green-400 font-bold rounded-lg hover:bg-green-500 hover:text-black transition-all duration-300 flex items-center justify-center"
+              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-green-500 text-green-400 font-bold rounded-lg hover:bg-green-500 hover:text-black transition-all duration-300 flex items-center justify-center text-sm sm:text-base backdrop-blur-sm"
             >
               Learn Process
             </a>
           </div>
 
           <div className="animate-bounce">
-            <ChevronDown className="w-8 h-8 text-green-400 mx-auto" />
+            <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mx-auto" />
           </div>
         </div>
       </section>
 
       {/* ===== HERO IMAGE SECTION ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div data-parallax="0.05">
@@ -145,7 +156,7 @@ export default function B2BElitePartnership() {
               />
             </div>
             <div className="animate-b2b-fade-left">
-              <h2 className="text-5xl font-black mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-black mb-6 leading-tight">
                 Connected to <span className="text-green-400">Every Manufacturer</span> in Europe
               </h2>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
@@ -165,9 +176,9 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== PROBLEM vs SOLUTION ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-10 sm:mb-16">
             The Problem We <span className="text-green-400">Solve</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -198,14 +209,14 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== THE JOURNEY (6-STEP PROCESS) ===== */}
-      <section id="journey" className="relative py-20 px-4 z-10">
+      <section id="journey" className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-10 sm:mb-16">
             Your Path to <span className="text-green-400">Success</span>
           </h2>
           <div className="relative">
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-emerald-500 transform -translate-y-1/2"></div>
-            <div className="grid md:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
               {[
                 { number: '01', title: 'Connect', desc: 'Schedule consultation', icon: '🤝' },
                 { number: '02', title: 'Strategy', desc: 'Custom business plan', icon: '📋' },
@@ -229,12 +240,12 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== PRODUCT CATEGORIES WITH IMAGES ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-10 sm:mb-16">
             Premium Product <span className="text-green-400">Categories</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { title: 'CBD Oils', image: imgOils },
               { title: 'CBD Flowers', image: imgFlowers },
@@ -262,9 +273,9 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== BUSINESS OPERATIONS ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-10 sm:mb-16">
             How We <span className="text-green-400">Operate</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -290,11 +301,11 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== SUCCESS METRICS ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-5xl font-black mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-black mb-6 leading-tight">
                 Proven <span className="text-green-400">Results</span>
               </h2>
               <p className="text-gray-300 text-lg mb-8">
@@ -327,9 +338,9 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-10 sm:mb-16">
             What Our <span className="text-green-400">Partners Say</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -360,14 +371,14 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== WAREHOUSE SHOWCASE ===== */}
-      <section className="relative py-20 px-4 z-10">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
         <div className="max-w-6xl mx-auto">
           <div className="rounded-2xl overflow-hidden relative">
-            <img src={imgHero2} alt="MCW Wholesale Facility" className="w-full h-80 object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center px-12">
+            <img src={imgHero2} alt="MCW Wholesale Facility" className="w-full h-52 sm:h-80 object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex items-center px-6 sm:px-12">
               <div>
-                <h2 className="text-4xl md:text-5xl font-black mb-4">Scale With <span className="text-green-400">Confidence</span></h2>
-                <p className="text-gray-300 text-lg max-w-md">State-of-the-art facilities and proven logistics infrastructure ready to support your growth.</p>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-2 sm:mb-4">Scale With <span className="text-green-400">Confidence</span></h2>
+                <p className="text-gray-300 text-sm sm:text-lg max-w-md">State-of-the-art facilities and proven logistics infrastructure ready to support your growth.</p>
               </div>
             </div>
           </div>
@@ -375,20 +386,20 @@ export default function B2BElitePartnership() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="relative py-20 px-4 z-10">
-        <div className="max-w-4xl mx-auto bg-gradient-to-r from-green-900 via-emerald-900 to-teal-900 border-2 border-green-500 rounded-3xl p-12 text-center">
-          <h2 className="text-5xl font-black mb-6">
+      <section className="relative py-12 sm:py-20 px-4 z-10">
+        <div className="max-w-4xl mx-auto bg-gradient-to-r from-green-900 via-emerald-900 to-teal-900 border-2 border-green-500 rounded-3xl p-6 sm:p-12 text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6">
             Ready to Transform Your <span className="text-green-400">Business?</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-8">
             Join 100+ successful partners across Europe. Let's build something great together.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="https://wa.me/35699536248"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
             >
               Start Your Partnership
             </a>
@@ -396,7 +407,7 @@ export default function B2BElitePartnership() {
               href="https://wa.me/35699536248"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 border-2 border-green-500 text-green-400 font-bold rounded-lg hover:bg-green-500 hover:text-black transition-all duration-300"
+              className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-green-500 text-green-400 font-bold rounded-lg hover:bg-green-500 hover:text-black transition-all duration-300 text-sm sm:text-base"
             >
               Schedule Consultation
             </a>
