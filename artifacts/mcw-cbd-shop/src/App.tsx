@@ -1,20 +1,23 @@
+import { lazy, Suspense } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "@/components/Layout";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Home from "@/pages/Home";
-import Shop from "@/pages/Shop";
-import Stores from "@/pages/Stores";
-import Brands from "@/pages/Brands";
-import About from "@/pages/About";
-import Trust from "@/pages/Trust";
-import StoreLocator from "@/pages/StoreLocator";
-import Contact from "@/pages/Contact";
-import FAQ from "@/pages/FAQ";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import Guides from "@/pages/Guides";
-import ProgrammaticPage from "@/pages/ProgrammaticPage";
+
+const Shop = lazy(() => import("@/pages/Shop"));
+const Stores = lazy(() => import("@/pages/Stores"));
+const Brands = lazy(() => import("@/pages/Brands"));
+const About = lazy(() => import("@/pages/About"));
+const Trust = lazy(() => import("@/pages/Trust"));
+const StoreLocator = lazy(() => import("@/pages/StoreLocator"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const FAQ = lazy(() => import("@/pages/FAQ"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
+const Guides = lazy(() => import("@/pages/Guides"));
+const ProgrammaticPage = lazy(() => import("@/pages/ProgrammaticPage"));
+const B2B = lazy(() => import("@/pages/B2B"));
 
 function NotFound() {
   return (
@@ -35,22 +38,25 @@ function Router() {
   return (
     <Layout>
       <ScrollToTop />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/shop" component={Shop} />
-        <Route path="/stores" component={Stores} />
-        <Route path="/brands" component={Brands} />
-        <Route path="/about" component={About} />
-        <Route path="/trust" component={Trust} />
-        <Route path="/store-locator" component={StoreLocator} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/faq" component={FAQ} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/blog/:slug" component={BlogPost} />
-        <Route path="/guides" component={Guides} />
-        <Route path="/guides/:slug" component={ProgrammaticPage} />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<div className="min-h-screen bg-black" />}>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/stores" component={Stores} />
+          <Route path="/brands" component={Brands} />
+          <Route path="/about" component={About} />
+          <Route path="/trust" component={Trust} />
+          <Route path="/store-locator" component={StoreLocator} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/blog/:slug" component={BlogPost} />
+          <Route path="/guides" component={Guides} />
+          <Route path="/guides/:slug" component={ProgrammaticPage} />
+          <Route path="/b2b" component={B2B} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </Layout>
   );
 }

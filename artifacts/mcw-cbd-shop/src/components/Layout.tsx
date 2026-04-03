@@ -107,6 +107,7 @@ const navLinks = [
   { name: "Blog", path: "/blog" },
   { name: "Guides", path: "/guides" },
   { name: "Trust", path: "/trust" },
+  { name: "Wholesale", path: "/b2b" },
   { name: "Stores", path: "/store-locator" },
   { name: "FAQ", path: "/faq" },
   { name: "Contact", path: "/contact" },
