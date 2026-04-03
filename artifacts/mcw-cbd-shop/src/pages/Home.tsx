@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
@@ -17,6 +18,19 @@ const SHOWCASE_CARDS = [
 ];
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const start = () => { video.play().catch(() => {}); };
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(start, { timeout: 2000 });
+    } else {
+      setTimeout(start, 300);
+    }
+  }, []);
+
   const lineVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -32,15 +46,15 @@ export default function Home() {
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
-        {/* Video Background */}
+        {/* Video Background — lazy loaded after page is interactive */}
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           src="/b2b-hero.mp4"
-          autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           aria-hidden="true"
         />
         {/* Dark overlay for text readability */}
@@ -97,7 +111,7 @@ export default function Home() {
       <div className="flex flex-col relative z-20">
         <div className="bg-black py-4 overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee text-xs font-black uppercase tracking-[0.25em] text-white">
-            {[...Array(6)].map((_, i) => (
+            {[...Array(3)].map((_, i) => (
               <div key={`top-${i}`} className="flex items-center">
                 <span className="mx-8">100% Legal in Malta</span>
                 <span className="text-white/30">◆</span>
@@ -111,7 +125,7 @@ export default function Home() {
         </div>
         <div className="bg-gradient-to-r from-[#22c55e] via-[#4ade80] to-[#22c55e] py-4 overflow-hidden border-y border-black">
           <div className="flex whitespace-nowrap animate-marquee-reverse text-xs font-black uppercase tracking-[0.25em] text-black">
-            {[...Array(6)].map((_, i) => (
+            {[...Array(3)].map((_, i) => (
               <div key={`bottom-${i}`} className="flex items-center">
                 <span className="mx-8">Same-Day Delivery</span>
                 <span className="text-black/50">◆</span>
@@ -151,7 +165,9 @@ export default function Home() {
                     <img 
                       src={p.image} 
                       className={`absolute inset-0 w-full h-full object-cover ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
-                      alt={p.name} 
+                      alt={p.name}
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-40% pointer-events-none" />
                   </div>
