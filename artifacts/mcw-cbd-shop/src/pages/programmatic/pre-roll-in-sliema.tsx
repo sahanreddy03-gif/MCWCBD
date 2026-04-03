@@ -1,7 +1,7 @@
 import { MapPin, Phone, ShoppingCart, CheckCircle, Star, Truck, Lock } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Pre-RollInSliema() {
+export default function PreRollInSliema() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

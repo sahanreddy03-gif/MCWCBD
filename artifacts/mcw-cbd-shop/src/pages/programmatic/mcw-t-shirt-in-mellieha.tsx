@@ -1,7 +1,7 @@
 import { MapPin, Phone, ShoppingCart, CheckCircle, Star, Truck, Lock } from 'lucide-react';
 import { useState } from 'react';
 
-export default function MCWT-ShirtInMellieha() {
+export default function MCWTShirtInMellieha() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

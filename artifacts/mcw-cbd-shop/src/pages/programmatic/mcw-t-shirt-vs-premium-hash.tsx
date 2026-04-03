@@ -1,6 +1,6 @@
 import { CheckCircle, XCircle } from 'lucide-react';
 
-export default function MCWT-ShirtvsPremiumHash() {
+export default function MCWTShirtvsPremiumHash() {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="bg-gradient-to-b from-green-900 to-black py-16 px-4">
