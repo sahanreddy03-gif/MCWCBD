@@ -213,22 +213,39 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-green-900/30 pt-16 pb-8 px-4 mt-16">
-        <div className="max-w-7xl mx-auto">
+      <footer className="bg-[#080808] border-t-4 border-[#22c55e] mt-16">
+        <div className="max-w-7xl mx-auto px-4 pt-14 pb-0">
+
           {/* Brand Header */}
-          <div className="flex flex-col items-center mb-14">
-            <img src={logoSrc} alt="MCW" className="h-16 w-16 rounded-full object-contain mb-4" />
-            <h2 className="font-bebas text-3xl md:text-4xl tracking-widest text-white">
-              MCW <span className="text-green-400">CBD RELAX SHOP</span>
+          <div className="flex flex-col items-center mb-12 text-center">
+            <img src={logoSrc} alt="MCW" className="h-20 w-20 rounded-full object-contain mb-5 ring-2 ring-[#22c55e]/30" />
+            <h2 className="font-bebas text-5xl md:text-7xl tracking-widest text-white leading-none">
+              MCW <span className="text-[#22c55e]">CBD</span> RELAX SHOP
             </h2>
-            <p className="text-gray-600 text-xs tracking-widest uppercase mt-2">Malta's #1 Cannabis &amp; CBD Destination</p>
+            <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-3">Malta's #1 Cannabis &amp; CBD Destination</p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <a
+                href="https://wa.me/35699536248"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3 bg-[#22c55e] text-black font-black text-xs uppercase tracking-widest hover:bg-green-400 transition-colors"
+              >
+                Order on WhatsApp
+              </a>
+              <a
+                href="tel:+35699536248"
+                className="px-7 py-3 border-2 border-white/20 text-white font-black text-xs uppercase tracking-widest hover:border-[#22c55e] hover:text-[#22c55e] transition-colors"
+              >
+                Call: 9953 6248
+              </a>
+            </div>
           </div>
 
           {/* 4-Column Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 border-t border-gray-900 pt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-0 border-t-2 border-white/10 pt-12 pb-14">
             {/* Shop */}
             <div>
-              <h3 className="font-bebas text-base tracking-widest text-green-400 mb-5">Shop</h3>
+              <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Shop</h3>
               <ul className="space-y-3">
                 {[
                   ["CBD Oils", "/shop?category=CBD+Oils"],
@@ -239,7 +256,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   ["MCW Originals", "/shop?category=MCW+Originals"],
                 ].map(([label, href]) => (
                   <li key={label}>
-                    <Link href={href} className="text-gray-500 hover:text-green-400 text-sm transition-colors">
+                    <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
                       {label}
                     </Link>
                   </li>
@@ -247,9 +264,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
 
-            {/* Pages */}
+            {/* Discover */}
             <div>
-              <h3 className="font-bebas text-base tracking-widest text-green-400 mb-5">Discover</h3>
+              <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Discover</h3>
               <ul className="space-y-3">
                 {[
                   ["CBD Blog", "/blog"],
@@ -261,7 +278,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   ["Brands", "/brands"],
                 ].map(([label, href]) => (
                   <li key={label}>
-                    <Link href={href} className="text-gray-500 hover:text-green-400 text-sm transition-colors">
+                    <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
                       {label}
                     </Link>
                   </li>
@@ -271,18 +288,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Stores */}
             <div>
-              <h3 className="font-bebas text-base tracking-widest text-green-400 mb-5">Our Stores</h3>
+              <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Our Stores</h3>
               <ul className="space-y-3">
                 {[
-                  "Sliema (Main Branch)",
-                  "Gzira",
-                  "Mellieha",
-                  "Bugibba",
-                  "Valletta (Coming Soon)",
-                ].map((store) => (
-                  <li key={store}>
-                    <Link href="/store-locator" className="text-gray-500 hover:text-green-400 text-sm transition-colors">
-                      {store}
+                  ["Sliema (Flagship)", "/store-locator"],
+                  ["Gzira", "/store-locator"],
+                  ["Mellieha", "/store-locator"],
+                  ["Bugibba", "/store-locator"],
+                  ["Valletta — Coming Soon", "/store-locator"],
+                ].map(([label, href]) => (
+                  <li key={label}>
+                    <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {label}
                     </Link>
                   </li>
                 ))}
@@ -291,47 +308,50 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
             {/* Connect */}
             <div>
-              <h3 className="font-bebas text-base tracking-widest text-green-400 mb-5">Connect</h3>
-              <ul className="space-y-3">
+              <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Connect</h3>
+              <ul className="space-y-4">
                 <li>
-                  <a href="tel:+35699536248" className="text-gray-500 hover:text-green-400 text-sm transition-colors flex items-center gap-2">
-                    <span className="text-green-900">📞</span> 9953 6248
+                  <a href="tel:+35699536248" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                    <span className="text-[#22c55e] text-base">📞</span>
+                    <span>9953 6248</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-400 text-sm transition-colors flex items-center gap-2">
-                    <span className="text-green-900">💬</span> WhatsApp Order
+                  <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                    <span className="text-[#22c55e] text-base">💬</span>
+                    <span>WhatsApp Order</span>
                   </a>
                 </li>
-                <li className="text-gray-600 text-sm flex items-start gap-2">
-                  <span className="text-green-900 shrink-0">📍</span> Triq Bisazza, Sliema
+                <li className="text-gray-400 text-sm flex items-start gap-3">
+                  <span className="text-[#22c55e] text-base shrink-0">📍</span>
+                  <span>Triq Bisazza, Sliema</span>
                 </li>
-                <li className="text-gray-600 text-sm flex items-start gap-2">
-                  <span className="text-green-900 shrink-0">🕐</span> Open · Closes 11:30 pm
+                <li className="text-gray-400 text-sm flex items-start gap-3">
+                  <span className="text-[#22c55e] text-base shrink-0">🕐</span>
+                  <span>Open Daily · 9am – 11:30pm</span>
                 </li>
               </ul>
-              <div className="mt-5 pt-5 border-t border-gray-900">
-                <p className="text-gray-700 text-[10px] uppercase tracking-widest">Payment</p>
-                <p className="text-gray-600 text-xs mt-1.5">Revolut · Cash on Delivery</p>
+              <div className="mt-6 pt-5 border-t border-white/10">
+                <p className="text-[#22c55e] font-bebas text-sm tracking-widest">Payment</p>
+                <p className="text-gray-400 text-xs mt-1.5">Revolut · Cash on Delivery</p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-900 pt-8 text-center space-y-4">
-            <p className="text-gray-700 text-[10px] leading-relaxed max-w-3xl mx-auto">
-              All MCW CBD products contain less than 0.2% THC and are legal for sale in Malta. For adults 18+ only.
-              CBD products are not intended to diagnose, treat, cure, or prevent any disease.
-              Consult a healthcare professional before use. Sedqa Helpline: <strong>1930</strong>.
+        {/* Bold Bottom Bar */}
+        <div className="bg-[#22c55e]">
+          <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+            <span className="font-bebas text-2xl tracking-widest text-black">
+              © {new Date().getFullYear()} MCW CBD Relax Shop Malta
+            </span>
+            <p className="text-black/70 text-[10px] uppercase tracking-widest text-center max-w-sm">
+              All products &lt;0.2% THC · Legal in Malta · Adults 18+ · Sedqa: <strong>1930</strong>
             </p>
-            <div className="flex items-center justify-center gap-6 text-gray-800 text-[10px] uppercase tracking-widest">
-              <span>© {new Date().getFullYear()} MCW CBD Relax Shop Malta</span>
-              <span className="w-px h-3 bg-gray-800" />
-              <a href="#" className="hover:text-gray-600 transition-colors">Terms</a>
-              <span className="w-px h-3 bg-gray-800" />
-              <a href="#" className="hover:text-gray-600 transition-colors">Privacy</a>
-              <span className="w-px h-3 bg-gray-800" />
-              <a href="#" className="hover:text-gray-600 transition-colors">Shipping</a>
+            <div className="flex gap-5 font-black text-xs uppercase tracking-widest text-black">
+              <a href="#" className="hover:opacity-70 transition-opacity">Terms</a>
+              <a href="#" className="hover:opacity-70 transition-opacity">Privacy</a>
+              <a href="#" className="hover:opacity-70 transition-opacity">Shipping</a>
             </div>
           </div>
         </div>

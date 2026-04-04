@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import heroBrandsImg from "../assets/hero-brands.png";
 import { motion } from "framer-motion";
 import { ArrowRight, Globe2 } from "lucide-react";
 import { SEO } from "@/components/SEO";
@@ -32,10 +33,27 @@ export default function Brands() {
   return (
     <>
       <SEO title="Premium CBD Brands in Malta — MCW Shop" description="Shop Malta's best CBD brands at MCW — Jeeter, Canapuff, Cookies, Tyson 2.0, H4CBD, THCV and more. 4 stores across Malta with same-day delivery available." />
+
+      {/* Photo Hero */}
+      <div className="relative h-72 sm:h-[420px] overflow-hidden">
+        <img
+          src={heroBrandsImg}
+          alt="MCW CBD Brands Malta"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
+        <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-12 pb-10 max-w-7xl mx-auto w-full">
+          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">50+ Global Brands · Malta Exclusive</p>
+          <h1 className="font-bebas text-6xl sm:text-8xl md:text-[9rem] tracking-tight text-white leading-none drop-shadow-2xl">
+            OUR BRANDS
+          </h1>
+        </div>
+      </div>
       
-      <div className="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="pt-16 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-7xl font-bebas tracking-wide mb-6">Our Brand Family</h1>
+          <h2 className="text-5xl md:text-7xl font-bebas tracking-wide mb-6">Our Brand Family</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             The world's best, right here in Malta. We partner directly with legendary cultivators to ensure authenticity and quality.
           </p>

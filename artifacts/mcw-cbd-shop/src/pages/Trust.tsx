@@ -1,4 +1,5 @@
 import { CheckCircle, Award, Leaf, Shield, FlaskConical, MapPin } from "lucide-react";
+import heroTrustImg from "../assets/hero-trust.jpeg";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
@@ -70,18 +71,20 @@ export default function Trust() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
 
-      {/* Hero */}
-      <div className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-black/80 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">MCW CBD Relax Shop</p>
-          <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">
+      {/* Photo Hero */}
+      <div className="relative h-72 sm:h-[420px] overflow-hidden">
+        <img
+          src={heroTrustImg}
+          alt="MCW CBD — Trust & Quality"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black" />
+        <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-12 pb-10 max-w-7xl mx-auto w-full">
+          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">Lab-Tested · EU Certified</p>
+          <h1 className="font-bebas text-6xl sm:text-8xl md:text-[9rem] tracking-tight text-white leading-none drop-shadow-2xl">
             TRUST &amp; QUALITY
           </h1>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
-            Malta's most trusted CBD destination — premium products, lab-verified quality, full legal compliance.
-          </p>
         </div>
       </div>
 
