@@ -60,6 +60,16 @@ export default function B2BElitePartnership() {
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-24 sm:py-28 overflow-hidden z-10">
+        {/* Full-screen background photo */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src={imgHero2}
+            alt="MCW B2B Wholesale"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+        </div>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 left-10 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob"></div>
           <div className="absolute top-40 right-10 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-b2b-blob" style={{ animationDelay: '2s' }}></div>
