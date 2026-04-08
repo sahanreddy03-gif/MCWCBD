@@ -66,7 +66,7 @@ export default function StorageBoxInMellieha() {
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <ShoppingCart className="w-5 h-5" />
-                    Order Now via WhatsApp
+                    Enquire via WhatsApp
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition"></div>
                 </a>

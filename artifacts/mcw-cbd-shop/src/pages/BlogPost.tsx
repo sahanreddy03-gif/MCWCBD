@@ -288,7 +288,7 @@ export default function BlogPost() {
               className="inline-flex items-center gap-2 px-10 py-4 bg-green-500 text-black font-black uppercase tracking-widest text-sm hover:bg-green-400 transition-colors"
             >
               <MessageCircle size={16} />
-              Order on WhatsApp
+              Enquire via WhatsApp
             </a>
           </motion.div>
         </section>

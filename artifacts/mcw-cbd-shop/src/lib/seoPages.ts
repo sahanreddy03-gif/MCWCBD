@@ -72,7 +72,7 @@ function buildLocationContent(product: string, location: string): { h1: string; 
     bodyParagraphs: [
       `Our ${product.toLowerCase()} selection in ${location} includes products from Malta's most trusted brands. Every product is independently lab-tested and contains less than 0.2% THC, making them fully legal to purchase and use in Malta.`,
       `Whether you're new to CBD or an experienced user, our knowledgeable staff at the ${location} store can help you find the right product and dosage. We provide personalised recommendations based on your needs and lifestyle.`,
-      `Can't make it to our ${location} store? Order via WhatsApp and get same-day delivery anywhere in ${location} and across Malta. Contact us at 9953 6248 for orders and expert advice.`,
+      `Can't make it to our ${location} store? Enquire via WhatsApp and get same-day delivery anywhere in ${location} and across Malta. Contact us at 9953 6248 for product enquiries and expert advice.`,
       `MCW has served the ${location} community since 2021, building a reputation for quality, transparency, and exceptional customer service. All our products come with full lab reports so you know exactly what you're buying.`,
     ],
   };

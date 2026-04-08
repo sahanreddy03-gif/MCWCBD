@@ -214,7 +214,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                   className="flex items-center justify-center gap-2 w-full py-3 bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest rounded-xl transition-all mb-3"
                 >
                   <MessageCircle size={16} />
-                  Order on WhatsApp
+                  Enquire via WhatsApp
                 </a>
 
                 <div className="flex items-center gap-2 text-xs text-gray-500 justify-center">

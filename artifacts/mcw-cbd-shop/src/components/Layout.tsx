@@ -238,7 +238,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 rel="noopener noreferrer"
                 className="px-7 py-3 bg-[#22c55e] text-black font-black text-xs uppercase tracking-widest hover:bg-green-400 transition-colors"
               >
-                Order on WhatsApp
+                Enquire on WhatsApp
               </a>
               <a
                 href="tel:+35699536248"

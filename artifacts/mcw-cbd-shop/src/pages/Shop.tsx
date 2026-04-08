@@ -24,6 +24,11 @@ const CATEGORY_DISCLAIMERS: Partial<Record<Category, string>> = {
 
 const SUB_CATEGORIES = Array.from(new Set(PRODUCTS.map(p => p.subCategory))).sort();
 
+const SUB_CATEGORY_DISPLAY: Record<string, string> = {
+  "HHC Products": "Novel Cannabinoid Products (Legal Status May Vary)",
+  "THCV": "Novel Cannabinoid Products (Legal Status May Vary)",
+};
+
 let cartItems: { product: Product, quantity: number }[] = [];
 let cartListeners: (() => void)[] = [];
 const subscribe = (listener: () => void) => {
@@ -273,7 +278,7 @@ export default function Shop() {
                   }`}
                   style={{ borderRadius: 0 }}
                 >
-                  {sub}
+                  {SUB_CATEGORY_DISPLAY[sub] || sub}
                 </button>
               ))}
             </div>
@@ -344,6 +349,12 @@ export default function Shop() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
+                      {/* Hemp Product overlay for flower category */}
+                      {product.category === "CBD Flowers" && (
+                        <div className="absolute bottom-2 right-1 bg-purple-700/80 text-white text-[7px] font-black uppercase tracking-widest px-1.5 py-0.5">
+                          Hemp Product
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -412,14 +423,14 @@ export default function Shop() {
 
                   {/* Category accent bar */}
                   <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
-                  {/* Compliance micro-badge */}
+                  {/* Compliance micro-badge trio */}
                   {product.cannabinoid !== "None" && (
-                    <div className="px-5 py-1.5 flex items-center gap-2 bg-gray-50 border-t border-gray-100">
+                    <div className="px-5 py-1.5 flex items-center gap-2 bg-gray-50 border-t border-gray-100 flex-wrap">
                       <span className="text-[8px] font-black uppercase tracking-widest text-green-700">✓ ≤0.2% THC</span>
                       <span className="text-gray-300">·</span>
-                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-400">Lab Tested</span>
+                      <span className="text-[8px] font-black uppercase tracking-widest text-blue-600">Non-Psychoactive</span>
                       <span className="text-gray-300">·</span>
-                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-400">Legal Malta</span>
+                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-500">COA Available</span>
                     </div>
                   )}
                 </motion.div>
