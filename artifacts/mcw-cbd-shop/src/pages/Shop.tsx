@@ -528,7 +528,7 @@ export default function Shop() {
                   disabled={cartState.length === 0}
                   className="w-full py-5 bg-[#22C55E] text-black border-4 border-black font-black uppercase tracking-widest text-lg hover:bg-[#4ade80] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1"
                 >
-                  ORDER VIA WHATSAPP
+                  ENQUIRE VIA WHATSAPP
                 </button>
               </div>
             </motion.div>
