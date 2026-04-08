@@ -177,7 +177,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-40% pointer-events-none" />
                     {isNovelCannabinoid(p) && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <span className="bg-black/70 text-white text-[8px] font-black uppercase tracking-widest px-2 py-1 text-center leading-tight">18+<br/>Novel Cannabinoid</span>
+                        <span className="bg-black/70 text-white text-[8px] font-black uppercase tracking-widest px-2 py-1 text-center leading-tight">18+ · Novel Cannabinoid</span>
                       </div>
                     )}
                   </div>
