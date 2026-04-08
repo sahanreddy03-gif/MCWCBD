@@ -168,8 +168,14 @@ export default function Home() {
                       alt={p.name}
                       loading="lazy"
                       decoding="async"
+                      style={/^THC/i.test(p.name) || p.cannabinoid === "THCV" ? { filter: 'blur(2px)' } : undefined}
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-40% pointer-events-none" />
+                    {(/^THC/i.test(p.name) || p.cannabinoid === "THCV") && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <span className="bg-black/70 text-white text-[8px] font-black uppercase tracking-widest px-2 py-1 text-center leading-tight">18+<br/>Novel Cannabinoid</span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="h-[4px] w-full rounded-b-2xl" style={{ background: '#FF3366' }} />
@@ -242,6 +248,12 @@ export default function Home() {
 
                     {/* Gold bottom strip */}
                     <div className="absolute bottom-0 left-0 w-full h-[4px] z-20" style={{ background: 'linear-gradient(90deg, transparent, #B8860B, #FFD700, #B8860B, transparent)' }} />
+                    {/* Safety badges */}
+                    <div className="absolute top-3 right-3 z-30 flex flex-col gap-1 items-end pointer-events-none">
+                      <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#CC0000] text-white text-[9px] font-black border border-white/30 shadow">18+</span>
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#22C55E] text-black text-[7px] font-black uppercase tracking-wider shadow">CBD</span>
+                      <span className="px-1.5 py-0.5 rounded-full bg-white/90 text-black text-[6px] font-black uppercase tracking-wider shadow">≤0.2% THC</span>
+                    </div>
                   </div>
                 ) : (
                   /* ── Standard category card ── */
@@ -279,6 +291,12 @@ export default function Home() {
 
                     {/* Bottom dark strip */}
                     <div className="absolute bottom-0 left-0 w-full h-[5px] bg-black/25 z-20" />
+                    {/* Safety badges */}
+                    <div className="absolute top-3 right-3 z-30 flex flex-col gap-1 items-end pointer-events-none">
+                      <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#CC0000] text-white text-[9px] font-black border border-white/30 shadow">18+</span>
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#22C55E] text-black text-[7px] font-black uppercase tracking-wider shadow">CBD</span>
+                      <span className="px-1.5 py-0.5 rounded-full bg-white/90 text-black text-[6px] font-black uppercase tracking-wider shadow">≤0.2% THC</span>
+                    </div>
                   </div>
                 )}
               </Link>

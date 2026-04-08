@@ -347,12 +347,19 @@ export default function Shop() {
                         height={300}
                         className={`absolute inset-0 w-full h-full ${product.imageFit === 'contain' ? 'object-contain scale-110' : 'object-cover'} ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
                         loading="lazy"
+                        style={/^THC/i.test(product.name) || product.cannabinoid === "THCV" ? { filter: 'blur(2px)' } : undefined}
                       />
                       <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
                       {/* Hemp Product overlay for flower category */}
                       {product.category === "CBD Flowers" && (
                         <div className="absolute bottom-2 right-1 bg-purple-700/80 text-white text-[7px] font-black uppercase tracking-widest px-1.5 py-0.5">
                           Hemp Product
+                        </div>
+                      )}
+                      {/* Novel cannabinoid warning overlay */}
+                      {(/^THC/i.test(product.name) || product.cannabinoid === "THCV") && (
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <span className="bg-black/70 text-white text-[8px] font-black uppercase tracking-widest px-2 py-1 text-center leading-tight">18+<br/>Novel Cannabinoid</span>
                         </div>
                       )}
                     </div>
