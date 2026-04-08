@@ -125,6 +125,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       />
       <AgeGate />
 
+      {/* Compliance Disclaimer Bar */}
+      <div className="w-full bg-green-950 text-green-200 text-center text-[11px] py-2 px-4 border-b border-green-900/60 leading-tight">
+        This website sells hemp-derived CBD products compliant with EU regulations (&lt;0.2% THC). Not intended for recreational or psychoactive use.
+      </div>
+
       {/* Navigation */}
       <nav className="bg-black/95 backdrop-blur-md border-b border-green-900/40 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -163,7 +168,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               className="hidden md:flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] tracking-widest uppercase px-4 py-2 transition-colors"
             >
               <MessageCircle size={13} />
-              Order Now
+              View Range
             </a>
             <button
               className="md:hidden text-gray-300 hover:text-white"
@@ -339,6 +344,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
+        {/* Compliance Statement */}
+        <div className="border-t border-white/10 px-4 py-5 text-center">
+          <p className="text-gray-500 text-[10px] leading-relaxed max-w-3xl mx-auto">
+            MCW CBD Relax Shop does not sell cannabis or THC products exceeding legal limits. All products comply with EU Directive 2019/515 and Maltese law (≤0.2% THC). Products are hemp-derived food supplements or collectibles and are not medicines. Adults 18+ only.
+          </p>
+        </div>
+
         {/* Bold Bottom Bar */}
         <div className="bg-[#22c55e]">
           <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
@@ -349,9 +361,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               All products &lt;0.2% THC · Legal in Malta · Adults 18+ · Sedqa: <strong>1930</strong>
             </p>
             <div className="flex gap-5 font-black text-xs uppercase tracking-widest text-black">
-              <a href="#" className="hover:opacity-70 transition-opacity">Terms</a>
-              <a href="#" className="hover:opacity-70 transition-opacity">Privacy</a>
-              <a href="#" className="hover:opacity-70 transition-opacity">Shipping</a>
+              <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
+              <a href="/privacy" className="hover:opacity-70 transition-opacity">Privacy</a>
+              <a href="/compliance" className="hover:opacity-70 transition-opacity">Compliance</a>
             </div>
           </div>
         </div>

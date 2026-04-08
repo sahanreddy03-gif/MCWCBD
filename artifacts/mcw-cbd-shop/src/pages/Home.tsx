@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Cannabis & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Gzira, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Gzira, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -72,7 +72,7 @@ export default function Home() {
                 MALTA'S <span className="text-outline-green">#1</span>
               </motion.span>
               <motion.span custom={1} variants={lineVariants} className="text-7xl md:text-[10rem] lg:text-[12rem] font-bebas leading-[0.8] tracking-tighter text-white">
-                CANNABIS <span className="text-white">&</span>
+                HEMP <span className="text-white">&</span>
               </motion.span>
               <motion.span custom={2} variants={lineVariants} className="text-7xl md:text-[10rem] lg:text-[12rem] font-bebas leading-[0.8] tracking-tighter text-outline">
                 CBD DESTINATION

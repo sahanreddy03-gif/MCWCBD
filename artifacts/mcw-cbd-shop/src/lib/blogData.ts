@@ -97,7 +97,7 @@ Research and user reports suggest CBD may help with:
 If you're new to CBD, we suggest starting with:
 1. **CBD Oil 500mg or 1000mg** — Easy to dose, fast-acting
 2. **CBD Gummies** — Pre-measured doses, great taste
-3. **CBD Flower** — For those who prefer smoking/vaping
+3. **CBD Flower** — For those who prefer vaporizing hemp flower
 
 Visit any of our 4 Malta stores and our staff will help you find the right product for your needs.`,
   },
@@ -158,18 +158,18 @@ We carry premium CBD oils from international brands and our own MCW Originals ra
     category: "Products",
     readingTime: 6,
     featuredColor: "#22c55e",
-    content: `CBD flowers (also called hemp flowers) are the dried buds of the hemp plant, bred to be high in CBD and very low in THC (below 0.2%). They look, smell, and smoke very similarly to regular cannabis — but without the psychoactive effects.
+    content: `CBD flowers (also called hemp flowers) are the dried buds of the hemp plant, bred to be high in CBD and very low in THC (below 0.2%). They look and smell very similar to regular cannabis varieties — but without any psychoactive effects.
 
 ## Why Do People Choose CBD Flowers?
 
-- **Fastest-acting** — Smoking or vaping CBD flower produces effects within minutes
+- **Fast-acting when vaporized** — CBD hemp flower can be used in a vaporizer for rapid effect onset
 - **Full entourage effect** — All terpenes, cannabinoids, and flavonoids intact
-- **Most similar to traditional cannabis** — Popular with people transitioning from recreational cannabis
-- **Variety** — Dozens of strains with different flavour profiles and effects
+- **Hemp aromatic variety** — Widely used by people exploring hemp wellness products
+- **Variety** — Dozens of strains with different aroma profiles and effects
 
 ## Popular CBD Flower Strains at MCW
 
-**Kush Mintz** — Our best-seller. Sweet mint and cookie dough aroma with a smooth smoke.
+**Kush Mintz** — Our best-seller. Sweet mint and cookie dough aroma with a complex terpene profile.
 
 **Blue Lotus** — Earthy, floral notes. Relaxing and calming.
 
@@ -205,7 +205,7 @@ Find our full range of CBD flowers at any of our 4 Malta stores.`,
     category: "Local",
     readingTime: 4,
     featuredColor: "#FF3366",
-    content: `MCW CBD Relax Shop was born in Sliema, Malta, with a simple mission: bring the world's finest CBD and cannabis products to Maltese customers — legally, safely, and with genuine care.
+    content: `MCW CBD Relax Shop was born in Sliema, Malta, with a simple mission: bring the world's finest CBD and hemp products to Maltese customers — legally, safely, and with genuine care.
 
 ## From One Store to Four
 
@@ -218,7 +218,7 @@ What started as a single shop has grown to become Malta's most trusted CBD retai
 
 ## Why MCW?
 
-We are the official distributors of some of the world's most sought-after cannabis and CBD brands — brands you'd normally only find in Amsterdam, Barcelona, or California. Names like Cookies, STIIIZY, Canapuff, and more.
+We are the official distributors of some of the world's most sought-after hemp and CBD brands — brands you'd normally only find in Amsterdam, Barcelona, or California. Names like Cookies, STIIIZY, Canapuff, and more.
 
 But we don't just stock the big brands. We also create our own. **MCW Originals** is our in-house premium range, crafted specifically for the Maltese market, with locally inspired products and MCW's signature quality standards.
 
@@ -262,7 +262,7 @@ At MCW, the most popular sleep-support products are:
 
 - **CBD Oil (taken 30-60 minutes before bed)** — Sublingual administration is fast and reliable
 - **CBD Gummies** — Pre-dosed, tasty, and easy to incorporate into a bedtime routine
-- **CBD Hash** — For those who prefer smoking; fast-acting effects
+- **CBD Hash** — For those who prefer vaporizing; fast-acting effects
 
 ## Dosing for Sleep
 
@@ -290,7 +290,7 @@ Our MCW Originals 1500mg CBD oil is the most consistent, high-quality CBD oil we
 
 ## Best CBD Flower: Kush Mintz
 
-Consistently our #1 selling strain since we launched it. Kush Mintz delivers smooth, creamy smoke with a sweet mint-cookie aroma. The CBD content is exceptional and the cure is perfect.
+Consistently our #1 selling strain since we launched it. Kush Mintz delivers complex terpene character with a sweet mint-cookie aroma. The CBD content is exceptional and the cure is perfect.
 
 ## Best CBD Vape: H4CBD Disposable Pen
 

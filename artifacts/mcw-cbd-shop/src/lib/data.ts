@@ -128,7 +128,7 @@ export const PRODUCTS: Product[] = [
   { id: "34", name: "Pax Flow Vaporizer", brand: "Pax", category: "CBD Vapes", subCategory: "Vaporizers", price: 180.00, cannabinoid: "None", image: pPaxFlow },
 
   // CBD Gummies
-  { id: "6", name: "H4 Lemon Gummies", brand: "Cannabis", category: "CBD Gummies", subCategory: "CBD Gummies", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isPopular: true },
+  { id: "6", name: "H4 Lemon Gummies", brand: "Hemp Bakehouse", category: "CBD Gummies", subCategory: "CBD Gummies", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pFlower1, isPopular: true },
   { id: "19", name: "Sleep Gummies 300mg", brand: "MCW", category: "CBD Gummies", subCategory: "CBD Gummies", price: 25.00, effect: "Sleeping", cannabinoid: "CBD", image: pGummy1, isPopular: true },
   { id: "20", name: "CBD Gummies Mixed Fruit", brand: "Euphoria", category: "CBD Gummies", subCategory: "CBD Gummies", price: 18.00, effect: "Relaxing", cannabinoid: "CBD", image: pGummy2 },
   { id: "21", name: "Knockout Gummies", brand: "Tyson 2.0", category: "CBD Gummies", subCategory: "CBD Gummies", price: 30.00, effect: "Sleeping", cannabinoid: "CBD", image: pGummy3, isNew: true },
@@ -147,7 +147,7 @@ export const PRODUCTS: Product[] = [
   { id: "38", name: "House Cigar", brand: "MCW", category: "Pre-Rolls", subCategory: "Cigars", price: 15.00, cannabinoid: "None", image: pHouseCigar },
   { id: "31", name: "Black Papers King Size", brand: "RAW", category: "Pre-Rolls", subCategory: "Papers & Filters", price: 2.50, cannabinoid: "None", image: "https://images.unsplash.com/photo-1584017911-1a8fa5c8f72d?auto=format&fit=crop&w=400&q=80" },
   { id: "35", name: "Bamboo Rolling Mat", brand: "RAW", category: "Pre-Rolls", subCategory: "Accessories", price: 8.00, cannabinoid: "None", image: pBambooMat },
-  { id: "58", name: "Infused Cannabis Sticks", brand: "Multiple Brands Available", category: "Pre-Rolls", subCategory: "Accessories", price: 25.00, cannabinoid: "None", image: pIncense1 },
+  { id: "58", name: "Infused Hemp Sticks", brand: "Multiple Brands Available", category: "Pre-Rolls", subCategory: "Accessories", price: 25.00, cannabinoid: "None", image: pIncense1 },
 
   // Lifestyle
   { id: "32", name: "4-Part Grinder", brand: "Grass King", category: "Lifestyle", subCategory: "Grinders", price: 25.00, cannabinoid: "None", image: pGrinder1 },
@@ -178,7 +178,7 @@ export const PRODUCTS: Product[] = [
   { id: "216", name: "Premium Ceramic Ashtray", brand: "MCW", category: "Lifestyle", subCategory: "Accessories", price: 22.00, cannabinoid: "None", image: "https://images.unsplash.com/photo-1565155930813-e79a18afe7a2?auto=format&fit=crop&w=400&q=80" },
   { id: "217", name: "Digital Mini Scale 0.01g", brand: "AWS", category: "Lifestyle", subCategory: "Accessories", price: 19.00, cannabinoid: "None", image: "https://images.unsplash.com/photo-1611174797136-5c9d7cee5f90?auto=format&fit=crop&w=400&q=80" },
   { id: "218", name: "MCW Logo T-Shirt", brand: "MCW", category: "Lifestyle", subCategory: "Clothing & Merch", price: 30.00, cannabinoid: "None", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80" },
-  { id: "219", name: "Cannabis Cap", brand: "MCW", category: "Lifestyle", subCategory: "Clothing & Merch", price: 25.00, cannabinoid: "None", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80" },
+  { id: "219", name: "Hemp Cap", brand: "MCW", category: "Lifestyle", subCategory: "Clothing & Merch", price: 25.00, cannabinoid: "None", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=400&q=80" },
 
   // Canapuff CBD Flowers
   { id: "61", name: "CBD Flowers Amnesia 69%", brand: "Canapuff", category: "CBD Flowers", subCategory: "CBD Flowers", price: 5.99, effect: "Relaxing", cannabinoid: "CBD", image: "https://cdn.shopify.com/s/files/1/0622/2623/5559/files/amns_cbd.png?width=1200" },

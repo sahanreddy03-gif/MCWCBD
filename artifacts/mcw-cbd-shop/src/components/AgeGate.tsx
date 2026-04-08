@@ -47,7 +47,7 @@ export function AgeGate() {
             <h2 className="text-7xl md:text-[8rem] leading-[0.8] font-bebas tracking-tight text-white mb-6">ARE YOU 18+?</h2>
             
             <p className="text-muted-foreground font-medium mb-12 max-w-md mx-auto leading-relaxed">
-              You must be of legal smoking age in your jurisdiction to enter this site. By entering, you verify that you are at least 18 years of age.
+              This site sells hemp-derived CBD products for adults only. By entering, you confirm you are at least 18 years of age.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

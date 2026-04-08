@@ -8,10 +8,10 @@ const BRAND_REGIONS = [
   {
     region: "USA Premium Imports",
     brands: [
-      { name: "STIIIZY", desc: "Award-winning vaporizers and premium indoor cannabis.", products: 15 },
-      { name: "Cookies", desc: "The most globally recognized cannabis lifestyle brand.", products: 24 },
+      { name: "STIIIZY", desc: "Award-winning vaporizers and premium indoor hemp products.", products: 15 },
+      { name: "Cookies", desc: "The most globally recognized hemp lifestyle brand.", products: 24 },
       { name: "Jeeter", desc: "The #1 pre-roll brand in the United States.", products: 12 },
-      { name: "Tyson 2.0", desc: "Mike Tyson's premium undisputed cannabis brand.", products: 8 },
+      { name: "Tyson 2.0", desc: "Mike Tyson's premium hemp wellness brand.", products: 8 },
       { name: "Jungle Boys", desc: "Cult cultivators from Los Angeles.", products: 10 },
       { name: "Raw Garden", desc: "Clean Green Certified live resin products.", products: 14 }
     ]

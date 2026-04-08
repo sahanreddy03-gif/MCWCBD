@@ -81,7 +81,7 @@ function buildLocationContent(product: string, location: string): { h1: string; 
 function buildCityContent(city: string): { h1: string; intro: string; bodyParagraphs: string[] } {
   return {
     h1: `CBD Shop in ${city}, Malta — MCW CBD Relax Shop`,
-    intro: `MCW CBD Relax Shop is ${city}'s premier CBD and cannabis accessories destination. With a full range of CBD oils, flowers, vapes, hash, gummies, and lifestyle accessories, we have everything you need for a relaxed lifestyle.`,
+    intro: `MCW CBD Relax Shop is ${city}'s premier CBD and hemp accessories destination. With a full range of CBD oils, flowers, vapes, hash, gummies, and lifestyle accessories, we have everything you need for a relaxed lifestyle.`,
     bodyParagraphs: [
       `Our ${city} customers enjoy access to Malta's widest selection of premium CBD products, all independently lab-tested and 100% legal. From starter kits to premium oils, we cater to every budget and experience level.`,
       `MCW CBD Relax Shop serves ${city} with both in-store shopping and same-day WhatsApp delivery. Our store is open daily until 11:30 pm so you can shop when it suits you.`,
@@ -161,7 +161,7 @@ function buildLifestyleContent(label: string): { h1: string; intro: string; body
 function buildAboutContent(label: string): { h1: string; intro: string; bodyParagraphs: string[] } {
   return {
     h1: `${label} — MCW CBD Relax Shop`,
-    intro: `${label}: learn more about MCW CBD Relax Shop, Malta's #1 cannabis and CBD destination. Since opening in 2021, we've grown into a trusted community institution with four locations across Malta.`,
+    intro: `${label}: learn more about MCW CBD Relax Shop, Malta's #1 hemp and CBD destination. Since opening in 2021, we've grown into a trusted community institution with four locations across Malta.`,
     bodyParagraphs: [
       `MCW CBD Relax Shop was founded with a simple mission: to provide Maltese residents with access to premium, lab-tested CBD products and the education they need to use them confidently.`,
       `Today, MCW operates four stores in Sliema, Gzira, Mellieha, and Bugibba — serving customers from all walks of life, from wellness enthusiasts to curious first-timers. All stores are open daily until 11:30 pm.`,
@@ -263,7 +263,7 @@ function generatePageContent(slug: string, label: string, cat: string): {
     const { h1, intro, bodyParagraphs } = buildAboutContent(label);
     return {
       title: `${label} — MCW CBD Relax Shop Malta`,
-      metaDescription: `${label}: learn more about MCW CBD Relax Shop, Malta's #1 cannabis and CBD destination with 4 stores in Sliema, Gzira, Mellieha, and Bugibba.`,
+      metaDescription: `${label}: learn more about MCW CBD Relax Shop, Malta's #1 hemp and CBD destination with 4 stores in Sliema, Gzira, Mellieha, and Bugibba.`,
       h1,
       intro,
       bodyParagraphs,
@@ -387,7 +387,7 @@ const RAW_SLUGS: { slug: string; label: string; cat: string }[] = [
   { slug: "cbd-bugibba", label: "CBD in Bugibba", cat: "City" },
   { slug: "cbd-valletta", label: "CBD in Valletta", cat: "City" },
   { slug: "how-to-use-cbd-oil", label: "How to Use CBD Oil", cat: "Guides" },
-  { slug: "how-to-smoke-cbd-flower", label: "How to Smoke CBD Flower", cat: "Guides" },
+  { slug: "how-to-use-cbd-flower", label: "How to Use CBD Flower", cat: "Guides" },
   { slug: "how-to-vape-cbd", label: "How to Vape CBD", cat: "Guides" },
   { slug: "cbd-dosage-guide", label: "CBD Dosage Guide", cat: "Guides" },
   { slug: "cbd-for-beginners", label: "CBD for Beginners", cat: "Guides" },

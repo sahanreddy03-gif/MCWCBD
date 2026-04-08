@@ -20,7 +20,7 @@ const pillars = [
   {
     icon: Leaf,
     title: "100% Natural",
-    body: "Our CBD is derived from premium-grade hemp and cannabis plants — nothing synthetic, nothing artificial.",
+    body: "Our CBD is derived from premium-grade EU-certified hemp plants — nothing synthetic, nothing artificial.",
   },
   {
     icon: Shield,

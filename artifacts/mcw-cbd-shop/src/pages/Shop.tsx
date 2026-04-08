@@ -8,6 +8,20 @@ import MCWOriginalsCard from "@/components/MCWOriginalsCard";
 
 const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle", "MCW Originals"];
 
+const CATEGORY_DISPLAY_LABELS: Record<string, string> = {
+  "Pre-Rolls": "Hemp Herbal Sticks",
+  "CBD Flowers": "Hemp Aromatic Flowers",
+  "CBD Vapes": "CBD Vape Devices",
+  "CBD Gummies": "CBD Edibles & Gummies",
+};
+
+const CATEGORY_DISCLAIMERS: Partial<Record<Category, string>> = {
+  "CBD Flowers": "Hemp aromatic flowers are sold as collectibles. All products ≤0.2% THC. Lab-tested.",
+  "Pre-Rolls": "Hemp herbal sticks are sold as collectibles and not intended for consumption. All products ≤0.2% THC.",
+  "CBD Vapes": "CBD vape products are for adult use only. All products ≤0.2% THC. Lab-tested.",
+  "CBD Gummies": "CBD edibles are food supplements and not medicines. All products ≤0.2% THC.",
+};
+
 const SUB_CATEGORIES = Array.from(new Set(PRODUCTS.map(p => p.subCategory))).sort();
 
 let cartItems: { product: Product, quantity: number }[] = [];
@@ -74,7 +88,7 @@ export default function Shop() {
     text += `\nDelivery: ${delivery === 0 ? "FREE 🎉" : `€${delivery.toFixed(2)}`}`;
     text += `\n*TOTAL: €${total.toFixed(2)}*`;
     text += `\n\nPayment options:\n1. Revolut link (preferred)\n2. Cash on delivery\n\nPlease confirm my order and send payment details. Thank you!`;
-    window.open(`https://wa.me/35699999999?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   const getCategorySEODescription = (cat: Category): string => {
@@ -83,9 +97,9 @@ export default function Shop() {
       case "CBD Flowers": return "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Indoor grown, lab tested and delivered to your door.";
       case "CBD Vapes": return "Discover CBD, CBG9 and THCv vape pens, cartridges and disposables in Malta. Premium brands with fast delivery.";
       case "CBD Gummies": return "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Tasty, lab tested and discreet.";
-      case "Pre-Rolls": return "Buy ready-to-smoke CBD pre-rolls in Malta. Infused joints, classic rolls and premium packs delivered same day.";
+      case "Pre-Rolls": return "Browse hemp herbal sticks and pre-rolled collectibles in Malta. Premium brands, lab-tested, delivered same day.";
       case "Lifestyle": return "Browse CBD lifestyle accessories, grinders, incense, merch and more available in Malta. Everything you need in one place.";
-      default: return "Malta's #1 Cannabis & CBD Destination. Shop the world's best brands with same day delivery across Malta.";
+      default: return "Malta's #1 Hemp & CBD Destination. Shop the world's best brands with same day delivery across Malta.";
     }
   };
 
@@ -116,7 +130,7 @@ export default function Shop() {
     "CBD Flowers": { title: "CBD Flowers Malta", description: "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Top quality strains with same day delivery across Malta." },
     "CBD Vapes": { title: "CBD Vapes Malta", description: "Shop CBD, CBG9 and THCv vape cartridges and disposables in Malta. Premium brands with same day delivery." },
     "CBD Gummies": { title: "CBD Gummies Malta", description: "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Delicious options with same day delivery." },
-    "Pre-Rolls": { title: "CBD Pre-Rolls Malta", description: "Browse premium CBD pre-rolls and accessories available in Malta. Ready to enjoy with same day delivery." },
+    "Pre-Rolls": { title: "Hemp Herbal Sticks Malta", description: "Browse premium hemp herbal sticks and rolling accessories available in Malta. Same day delivery." },
     "Lifestyle": { title: "Lifestyle & Accessories Malta", description: "Shop CBD lifestyle products, grinders, accessories, clothing and merch in Malta. Same day delivery across Malta." },
     "MCW Originals": { title: "MCW Originals — Exclusive House Collection", description: "Shop MCW's own exclusive line of CBD oils, flowers, vapes and accessories. Premium house-brand products, lab tested and Malta legal." },
   };
@@ -185,6 +199,7 @@ export default function Shop() {
             {PRIMARY_CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat;
               const isOriginals = cat === "MCW Originals";
+              const displayLabel = CATEGORY_DISPLAY_LABELS[cat] || cat;
               return (
                 <Link
                   key={cat}
@@ -203,13 +218,31 @@ export default function Shop() {
                       }
                   }
                 >
-                  {isOriginals ? "★ MCW ORIGINALS" : cat}
+                  {isOriginals ? "★ MCW ORIGINALS" : displayLabel}
                 </Link>
               );
             })}
           </div>
         </div>
       </div>
+
+      {/* CATEGORY DISCLAIMER BANNER */}
+      {activeCategory && CATEGORY_DISCLAIMERS[activeCategory] && (
+        <div className="bg-green-950/70 border-b border-green-900/50 py-3 px-4">
+          <p className="max-w-[1400px] mx-auto text-green-300 text-[11px] font-medium tracking-wide text-center">
+            ✓ {CATEGORY_DISCLAIMERS[activeCategory]}
+          </p>
+        </div>
+      )}
+
+      {/* HHC / THCV INFO BANNER */}
+      {activeCategory && (activeCategory === "CBD Vapes" || activeCategory === "CBD Gummies") && (
+        <div className="bg-yellow-950/60 border-b border-yellow-800/40 py-3 px-4">
+          <p className="max-w-[1400px] mx-auto text-yellow-300 text-[11px] font-medium tracking-wide text-center">
+            ⚠ Products containing THCV are legal hemp-derived isolates. HHC, HHCp and THCP are not sold at MCW. All cannabinoids listed comply with Maltese law.
+          </p>
+        </div>
+      )}
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12 bg-[#0a0a0a]">
         
@@ -379,6 +412,16 @@ export default function Shop() {
 
                   {/* Category accent bar */}
                   <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
+                  {/* Compliance micro-badge */}
+                  {product.cannabinoid !== "None" && (
+                    <div className="px-5 py-1.5 flex items-center gap-2 bg-gray-50 border-t border-gray-100">
+                      <span className="text-[8px] font-black uppercase tracking-widest text-green-700">✓ ≤0.2% THC</span>
+                      <span className="text-gray-300">·</span>
+                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-400">Lab Tested</span>
+                      <span className="text-gray-300">·</span>
+                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-400">Legal Malta</span>
+                    </div>
+                  )}
                 </motion.div>
                 )
               ))}
