@@ -5,7 +5,7 @@ interface SEOProps {
   description?: string;
 }
 
-export function SEO({ title, description = "Malta's #1 Cannabis & CBD Destination. Shop the world's best brands including STIIIZY, Cookies, and more. Same day delivery across Malta." }: SEOProps) {
+export function SEO({ title, description = "Malta's #1 Hemp & CBD Destination. Shop the world's best brands including STIIIZY, Cookies, and more. Same day delivery across Malta." }: SEOProps) {
   useEffect(() => {
     document.title = `${title} | MCW — CBD Relax Shop`;
     

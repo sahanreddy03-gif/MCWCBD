@@ -388,6 +388,7 @@ const RAW_SLUGS: { slug: string; label: string; cat: string }[] = [
   { slug: "cbd-valletta", label: "CBD in Valletta", cat: "City" },
   { slug: "how-to-use-cbd-oil", label: "How to Use CBD Oil", cat: "Guides" },
   { slug: "how-to-use-cbd-flower", label: "How to Use CBD Flower", cat: "Guides" },
+  { slug: "how-to-smoke-cbd-flower", label: "How to Use CBD Hemp Flower (Guide)", cat: "Guides" },
   { slug: "how-to-vape-cbd", label: "How to Vape CBD", cat: "Guides" },
   { slug: "cbd-dosage-guide", label: "CBD Dosage Guide", cat: "Guides" },
   { slug: "cbd-for-beginners", label: "CBD for Beginners", cat: "Guides" },

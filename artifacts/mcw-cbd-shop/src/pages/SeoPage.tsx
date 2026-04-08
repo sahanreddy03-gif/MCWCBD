@@ -199,12 +199,12 @@ export default function SeoPage({ slug }: SeoPageProps) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <p className="text-xs font-black uppercase tracking-widest text-green-400 mb-3">Order Now</p>
+                <p className="text-xs font-black uppercase tracking-widest text-green-400 mb-3">Enquire Now</p>
                 <h3 className="text-xl font-bebas tracking-wide text-white mb-3">
                   Get {page.label} delivered today
                 </h3>
                 <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                  Order via WhatsApp for same-day delivery anywhere in Malta. Open daily until 11:30 pm.
+                  Enquire via WhatsApp for same-day delivery anywhere in Malta. Open daily until 11:30 pm.
                 </p>
 
                 <a

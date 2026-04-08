@@ -67,7 +67,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact MCW — CBD Shop Malta"
-        description="Get in touch with MCW CBD Relax Shop. Order via WhatsApp, call us, or visit one of our 4 Malta locations in Sliema, Gzira, Mellieha, or Bugibba."
+        description="Get in touch with MCW CBD Relax Shop. Enquire via WhatsApp, call us, or visit one of our 4 Malta locations in Sliema, Gzira, Mellieha, or Bugibba."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">

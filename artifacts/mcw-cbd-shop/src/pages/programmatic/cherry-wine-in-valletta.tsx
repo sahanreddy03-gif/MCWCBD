@@ -27,7 +27,7 @@ export default function CherryWineInValletta() {
                 </div>
               </div>
               <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-4 rounded-lg transition-colors text-center block">
-                Order via WhatsApp
+                Enquire via WhatsApp
               </a>
             </div>
           </div>

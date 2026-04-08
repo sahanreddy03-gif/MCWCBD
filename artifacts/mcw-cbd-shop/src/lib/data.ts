@@ -261,7 +261,7 @@ export const PRODUCTS: Product[] = [
   { id: "120", name: "CBD Pre-rolls", brand: "Euphoria", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 9.99, effect: "Relaxing", cannabinoid: "CBD", image: pCBDPreRolls, isNew: true },
 
   // Lifestyle / Accessories
-  { id: "121", name: "Cannabis Incense Sticks", brand: "Multitrance", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Incense.png", isNew: true },
+  { id: "121", name: "Hemp Incense Sticks", brand: "Multitrance", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Cannabis_Incense.png", isNew: true },
   { id: "122", name: "Pre-roll Tube Holder", brand: "MCW", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Joint_Holder.png", isNew: true },
   { id: "123", name: "Octopus Grinder", brand: "OCTORINDER", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/OCTORINDER.png", isNew: true },
   { id: "124", name: "ONYX 1000 Nicotine Vape", brand: "Pod Salt", category: "Lifestyle", subCategory: "Accessories", price: 9.99, cannabinoid: "None", image: "https://static.manus.im/file/mcw-cbd-shop/Firefly_Product.png", isNew: true },
