@@ -84,7 +84,7 @@ export default function Blog() {
   return (
     <>
       <SEO
-        title="CBD Blog — Malta's Cannabis & CBD Guide"
+        title="CBD Blog — Malta's Hemp & CBD Guide"
         description="Expert guides on CBD legality in Malta, product reviews, how-to articles, and local CBD news. Everything you need to know about CBD in Malta."
       />
 

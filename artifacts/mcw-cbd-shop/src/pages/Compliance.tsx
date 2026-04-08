@@ -55,7 +55,7 @@ export default function Compliance() {
                 "Every CBD product sold at MCW is third-party lab tested for cannabinoid profile, heavy metals, pesticides, and microbials.",
                 "Lab certificates (CoA — Certificate of Analysis) are available on request for any product.",
                 "Products are sourced from licensed EU hemp farmers operating under EU Common Agricultural Policy regulations.",
-                "We do not sell HHC, HHCp, THCP, THCO, or any substance classified as a banned drug in Malta.",
+                "We do not sell HHCp, THCP, THCO, or any substance classified as a banned drug in Malta. Any HHC products stocked are minor cannabinoids compliant with current Maltese legislation.",
                 "THCV products sold at MCW are minor cannabinoid isolates legal under current Maltese and EU law.",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">

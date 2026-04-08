@@ -14,7 +14,7 @@ const faqs = [
   { q: "What payment methods do you accept?", a: "Revolut transfer and Cash on Delivery (COD). You can also pay in person at any store location." },
   { q: "Do you offer delivery?", a: "Yes. Delivery is €3.50 for orders under €50, and FREE for orders €50 and above. Order via WhatsApp." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
-  { q: "Do you sell HHC, HHCp, or THCP?", a: "No. These are banned substances in Malta. MCW only sells legal CBD products with <0.2% THC." },
+  { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },
   { q: "How do I contact customer support?", a: "WhatsApp or call 9953 6248, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
   { q: "What is your return policy?", a: "Contact us within 7 days of purchase if you're not satisfied. We will find a solution." },
   { q: "Are there age restrictions?", a: "Yes — all products are strictly 18+. Age verification is required online and in store." },

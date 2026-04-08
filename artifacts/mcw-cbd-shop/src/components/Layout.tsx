@@ -31,7 +31,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       "@type": ["LocalBusiness", "Store"],
       "@id": "https://mcwrelaxshop.com/#sliema",
       name: "MCW CBD Relax Shop — Sliema",
-      description: "Malta's #1 cannabis and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
+      description: "Malta's #1 hemp and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
       url: "https://mcwrelaxshop.com",
       telephone: "+35699536248",
       address: {
@@ -125,13 +125,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       />
       <AgeGate />
 
-      {/* Compliance Disclaimer Bar */}
-      <div className="w-full bg-green-950 text-green-200 text-center text-[11px] py-2 px-4 border-b border-green-900/60 leading-tight">
-        This website sells hemp-derived CBD products compliant with EU regulations (&lt;0.2% THC). Not intended for recreational or psychoactive use.
-      </div>
+      {/* Sticky header: disclaimer + nav */}
+      <div className="sticky top-0 z-50">
+        {/* Compliance Disclaimer Bar */}
+        <div className="w-full bg-green-950 text-green-200 text-center text-[11px] py-2 px-4 border-b border-green-900/60 leading-tight">
+          This website sells hemp-derived CBD products compliant with EU regulations (&lt;0.2% THC). Not intended for recreational or psychoactive use.
+        </div>
 
-      {/* Navigation */}
-      <nav className="bg-black/95 backdrop-blur-md border-b border-green-900/40 sticky top-0 z-40">
+        {/* Navigation */}
+        <nav className="bg-black/95 backdrop-blur-md border-b border-green-900/40">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -207,12 +209,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <MessageCircle size={16} />
-                Order via WhatsApp
+                View Range via WhatsApp
               </a>
             </div>
           </div>
         )}
-      </nav>
+        </nav>
+      </div>{/* end sticky header wrapper */}
 
       {/* Main Content */}
       <main className="flex-1">{children}</main>
@@ -227,7 +230,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <h2 className="font-bebas text-5xl md:text-7xl tracking-widest text-white leading-none">
               MCW <span className="text-[#22c55e]">CBD</span> RELAX SHOP
             </h2>
-            <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-3">Malta's #1 Cannabis &amp; CBD Destination</p>
+            <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-3">Malta's #1 Hemp &amp; CBD Destination</p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <a
                 href="https://wa.me/35699536248"
@@ -363,6 +366,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex gap-5 font-black text-xs uppercase tracking-widest text-black">
               <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
               <a href="/privacy" className="hover:opacity-70 transition-opacity">Privacy</a>
+              <a href="#" className="hover:opacity-70 transition-opacity">Shipping</a>
               <a href="/compliance" className="hover:opacity-70 transition-opacity">Compliance</a>
             </div>
           </div>

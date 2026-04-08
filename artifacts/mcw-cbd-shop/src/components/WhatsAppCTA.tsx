@@ -2,8 +2,8 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function WhatsAppCTA() {
-  const message = encodeURIComponent("Hello MCW, I'd like to make an order!");
-  const url = `https://wa.me/35699999999?text=${message}`;
+  const message = encodeURIComponent("Hello MCW! I'd like to enquire about your CBD product range.");
+  const url = `https://wa.me/35699536248?text=${message}`;
 
   return (
     <motion.a
@@ -20,7 +20,7 @@ export function WhatsAppCTA() {
     >
       <MessageCircle size={32} />
       <span className="absolute -top-10 right-0 bg-card border border-border text-xs px-3 py-1 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-medium">
-        Order via WhatsApp
+        Enquire via WhatsApp
       </span>
     </motion.a>
   );

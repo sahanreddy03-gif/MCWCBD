@@ -19,13 +19,13 @@ export default function About() {
 
   return (
     <>
-      <SEO title="About MCW — Malta's #1 CBD Shop" description="Learn about MCW CBD Relax Shop — Malta's leading cannabis and CBD retailer with 4 stores in Sliema, Gzira, Mellieha, and Bugibba. Premium products, expert staff, lab-tested quality." />
+      <SEO title="About MCW — Malta's #1 CBD Shop" description="Learn about MCW CBD Relax Shop — Malta's leading hemp and CBD retailer with 4 stores in Sliema, Gzira, Mellieha, and Bugibba. Premium products, expert staff, lab-tested quality." />
       
       <div className="pt-28 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bebas tracking-wide mb-8">Malta's Home for the World's Best</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            MCW started in Sliema with a simple belief — Maltese people deserve access to the world's finest, safest, and legal cannabis and CBD products. 
+            MCW started in Sliema with a simple belief — Maltese people deserve access to the world's finest, safest, and legal hemp and CBD products. 
             We grew to four locations because we do it right: real products from real brands, with real education and real staff who care.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function About() {
                 <Users size={32} />
               </div>
               <h3 className="text-2xl font-bebas tracking-wide mb-4">Community First</h3>
-              <p className="text-muted-foreground">We aren't just a store; we are part of the Maltese cannabis community. Education, transparency, and service are our core pillars.</p>
+              <p className="text-muted-foreground">We aren't just a store; we are part of the Maltese CBD community. Education, transparency, and service are our core pillars.</p>
             </div>
             <div className="bg-card p-8 rounded-2xl border border-border text-center">
               <div className="w-16 h-16 mx-auto bg-primary/20 text-primary rounded-full flex items-center justify-center mb-6">

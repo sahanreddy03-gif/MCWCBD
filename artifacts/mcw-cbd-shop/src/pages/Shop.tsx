@@ -239,7 +239,7 @@ export default function Shop() {
       {activeCategory && (activeCategory === "CBD Vapes" || activeCategory === "CBD Gummies") && (
         <div className="bg-yellow-950/60 border-b border-yellow-800/40 py-3 px-4">
           <p className="max-w-[1400px] mx-auto text-yellow-300 text-[11px] font-medium tracking-wide text-center">
-            ⚠ Products containing THCV are legal hemp-derived isolates. HHC, HHCp and THCP are not sold at MCW. All cannabinoids listed comply with Maltese law.
+            ⚠ Products containing THCV and HHC are legal hemp-derived minor cannabinoids. All cannabinoids listed comply with current Maltese law. HHCp and THCP are not sold at MCW.
           </p>
         </div>
       )}
