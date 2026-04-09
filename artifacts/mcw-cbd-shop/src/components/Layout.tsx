@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, Instagram, Facebook } from "lucide-react";
 import { useState } from "react";
 import { WhatsAppCTA } from "./WhatsAppCTA";
 import { AgeGate } from "./AgeGate";
@@ -12,12 +12,13 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://mcwrelaxshop.com/#organization",
+      "@id": "https://mcwcbd.com/#organization",
       name: "MCW CBD Relax Shop",
-      url: "https://mcwrelaxshop.com",
-      logo: "https://mcwrelaxshop.com/logo.png",
+      url: "https://mcwcbd.com",
+      logo: "https://mcwcbd.com/images/favicon.png",
       sameAs: [
-        "https://instagram.com/mcwrelaxshop",
+        "https://www.instagram.com/cbd_paterson/",
+        "https://www.facebook.com/profile.php?id=61580762071984",
         "https://wa.me/35699536248",
       ],
       contactPoint: {
@@ -29,10 +30,10 @@ const LOCAL_BUSINESS_SCHEMA = {
     },
     {
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwrelaxshop.com/#sliema",
+      "@id": "https://mcwcbd.com/#sliema",
       name: "MCW CBD Relax Shop — Sliema",
       description: "Malta's #1 hemp and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
-      url: "https://mcwrelaxshop.com",
+      url: "https://mcwcbd.com",
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
@@ -49,13 +50,13 @@ const LOCAL_BUSINESS_SCHEMA = {
       openingHours: "Mo-Su 09:00-23:30",
       priceRange: "€€",
       hasMap: "https://maps.google.com/?q=MCW+CBD+Relax+Shop+Sliema+Malta",
-      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
     },
     {
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwrelaxshop.com/#gzira",
+      "@id": "https://mcwcbd.com/#gzira",
       name: "MCW CBD Relax Shop — Gzira",
-      url: "https://mcwrelaxshop.com/store-locator",
+      url: "https://mcwcbd.com/store-locator",
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
@@ -63,13 +64,13 @@ const LOCAL_BUSINESS_SCHEMA = {
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
     },
     {
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwrelaxshop.com/#mellieha",
+      "@id": "https://mcwcbd.com/#mellieha",
       name: "MCW CBD Relax Shop — Mellieha",
-      url: "https://mcwrelaxshop.com/store-locator",
+      url: "https://mcwcbd.com/store-locator",
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
@@ -77,13 +78,13 @@ const LOCAL_BUSINESS_SCHEMA = {
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
     },
     {
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwrelaxshop.com/#bugibba",
+      "@id": "https://mcwcbd.com/#bugibba",
       name: "MCW CBD Relax Shop — Bugibba",
-      url: "https://mcwrelaxshop.com/store-locator",
+      url: "https://mcwcbd.com/store-locator",
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
@@ -91,7 +92,7 @@ const LOCAL_BUSINESS_SCHEMA = {
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
     },
   ],
 };
@@ -328,6 +329,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
                     <span className="text-[#22c55e] text-base">💬</span>
                     <span>WhatsApp Order</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/cbd_paterson/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#22c55e] text-sm transition-colors flex items-center gap-3">
+                    <Instagram size={16} className="text-[#22c55e] shrink-0" />
+                    <span>@cbd_paterson</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=61580762071984" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#22c55e] text-sm transition-colors flex items-center gap-3">
+                    <Facebook size={16} className="text-[#22c55e] shrink-0" />
+                    <span>MCW on Facebook</span>
                   </a>
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">

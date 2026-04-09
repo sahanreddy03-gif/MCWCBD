@@ -38,8 +38,8 @@ export default function FAQ() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
-      { "@type": "ListItem", position: 2, name: "FAQ", item: "https://mcwrelaxshop.com/faq" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwcbd.com/" },
+      { "@type": "ListItem", position: 2, name: "FAQ", item: "https://mcwcbd.com/faq" },
     ],
   };
 

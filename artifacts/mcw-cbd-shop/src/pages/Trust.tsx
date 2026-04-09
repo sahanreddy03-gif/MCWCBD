@@ -56,8 +56,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwrelaxshop.com/" },
-    { "@type": "ListItem", position: 2, name: "Trust & Quality", item: "https://mcwrelaxshop.com/trust" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://mcwcbd.com/" },
+    { "@type": "ListItem", position: 2, name: "Trust & Quality", item: "https://mcwcbd.com/trust" },
   ],
 };
 

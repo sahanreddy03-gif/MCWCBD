@@ -190,7 +190,7 @@ export default function BlogPost() {
             publisher: {
               "@type": "Organization",
               name: "MCW CBD Relax Shop",
-              url: "https://mcwrelaxshop.com",
+              url: "https://mcwcbd.com",
             },
           }),
         }}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mcwrelaxshop.com/sitemap.xml
+Sitemap: https://mcwcbd.com/sitemap.xml

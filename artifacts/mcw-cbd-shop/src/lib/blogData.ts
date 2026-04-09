@@ -306,7 +306,7 @@ For topical use — muscle recovery, joint support, or general skincare — our 
 
 ## Where to Get These Products
 
-All of these products are available at our 4 Malta stores and via WhatsApp delivery. New products arrive regularly — follow us on Instagram @mcwrelaxshop or ask in-store what's new.`,
+All of these products are available at our 4 Malta stores and via WhatsApp delivery. New products arrive regularly — follow us on Instagram @cbd_paterson or ask in-store what's new.`,
   },
   {
     slug: "how-to-use-cbd-vapes",

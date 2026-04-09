@@ -3,12 +3,12 @@ export function localBizSchema(slug: string, label: string) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: `MCW CBD Relax Shop — ${label}`,
-    url: `https://mcwrelaxshop.com/guides/${slug}`,
+    url: `https://mcwcbd.com/guides/${slug}`,
     telephone: "+35699536248",
     openingHours: "Mo-Su 09:00-23:30",
     priceRange: "€€",
     address: { "@type": "PostalAddress", addressCountry: "MT" },
-    parentOrganization: { "@id": "https://mcwrelaxshop.com/#organization" },
+    parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
   };
 }
 
@@ -17,13 +17,13 @@ export function articleSchema(slug: string, headline: string) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline,
-    url: `https://mcwrelaxshop.com/guides/${slug}`,
+    url: `https://mcwcbd.com/guides/${slug}`,
     publisher: {
       "@type": "Organization",
       name: "MCW CBD Relax Shop",
-      url: "https://mcwrelaxshop.com",
+      url: "https://mcwcbd.com",
     },
-    mainEntityOfPage: `https://mcwrelaxshop.com/guides/${slug}`,
+    mainEntityOfPage: `https://mcwcbd.com/guides/${slug}`,
   };
 }
 
