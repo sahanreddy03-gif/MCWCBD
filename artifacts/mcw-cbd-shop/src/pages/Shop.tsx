@@ -48,6 +48,13 @@ const removeFromCart = (id: string) => {
   cartItems = cartItems.filter(i => i.product.id !== id);
   cartListeners.forEach(l => l());
 };
+const decrementCart = (id: string) => {
+  const existing = cartItems.find(i => i.product.id === id);
+  if (!existing) return;
+  if (existing.quantity <= 1) cartItems = cartItems.filter(i => i.product.id !== id);
+  else existing.quantity--;
+  cartListeners.forEach(l => l());
+};
 const getCartTotal = () => cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
 
 export default function Shop() {
@@ -251,6 +258,17 @@ export default function Shop() {
           </p>
         </div>
       )}
+
+      {/* FREE DELIVERY ANNOUNCEMENT STRIP */}
+      <div className="bg-[#22C55E] border-b-2 border-black/20 py-2.5 px-4 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-center">
+          <span className="text-[11px] font-black uppercase tracking-widest text-black">🚚 FREE delivery on orders over €50</span>
+          <span className="hidden sm:inline text-black/40 font-black">·</span>
+          <span className="text-[11px] font-black uppercase tracking-widest text-black">📍 Same-day delivery across Malta</span>
+          <span className="hidden sm:inline text-black/40 font-black">·</span>
+          <span className="text-[11px] font-black uppercase tracking-widest text-black">🕙 Open daily until 11:30pm</span>
+        </div>
+      </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12 bg-[#0a0a0a]">
         
@@ -492,12 +510,19 @@ export default function Shop() {
                           <h4 className="font-bold text-sm text-black line-clamp-2 mt-1 uppercase">{item.product.name}</h4>
                         </div>
                         <div className="flex justify-between items-center mt-2">
-                          <span className="font-bebas text-3xl text-black">€{item.product.price.toFixed(2)}</span>
-                          <div className="flex items-center gap-4 border-2 border-black px-3 py-1 bg-white">
-                            <span className="text-[10px] font-black tracking-widest text-black">QTY {item.quantity}</span>
-                            <button onClick={() => removeFromCart(item.product.id)} className="text-black/50 hover:text-red-500 transition-colors">
-                              <X size={16} />
-                            </button>
+                          <span className="font-bebas text-3xl text-black">€{(item.product.price * item.quantity).toFixed(2)}</span>
+                          <div className="flex items-center border-2 border-black bg-white">
+                            <button
+                              onClick={() => decrementCart(item.product.id)}
+                              className="px-3 py-1.5 text-black hover:bg-red-500 hover:text-white transition-colors font-black text-base leading-none"
+                              aria-label="Decrease quantity"
+                            >−</button>
+                            <span className="px-3 py-1.5 text-[11px] font-black tracking-widest text-black border-x-2 border-black min-w-[2.5rem] text-center">{item.quantity}</span>
+                            <button
+                              onClick={() => addToCart(item.product)}
+                              className="px-3 py-1.5 text-black hover:bg-[#22C55E] hover:text-black transition-colors font-black text-base leading-none"
+                              aria-label="Increase quantity"
+                            >+</button>
                           </div>
                         </div>
                       </div>
@@ -507,7 +532,25 @@ export default function Shop() {
               </div>
 
               <div className="p-6 border-t-4 border-black bg-[#f8f8f8]">
-                {/* Free delivery progress */}
+                {/* Free delivery progress bar */}
+                {cartState.length > 0 && (
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-1.5">
+                      <span className="text-[9px] font-black uppercase tracking-widest text-black/40">FREE DELIVERY PROGRESS</span>
+                      <span className="text-[9px] font-black uppercase tracking-widest text-black/40">€{Math.min(getCartTotal(), FREE_DELIVERY_THRESHOLD).toFixed(2)} / €{FREE_DELIVERY_THRESHOLD}</span>
+                    </div>
+                    <div className="h-2.5 bg-black/10 rounded-full overflow-hidden border border-black/20">
+                      <div
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{
+                          width: `${Math.min(100, (getCartTotal() / FREE_DELIVERY_THRESHOLD) * 100)}%`,
+                          background: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800',
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+                {/* Free delivery status message */}
                 {cartState.length > 0 && getCartTotal() < FREE_DELIVERY_THRESHOLD && (
                   <div className="mb-4 bg-black text-white px-4 py-2.5 text-xs font-black uppercase tracking-widest text-center">
                     Add €{(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} more for FREE delivery!
