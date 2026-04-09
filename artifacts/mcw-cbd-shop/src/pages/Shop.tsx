@@ -270,29 +270,29 @@ export default function Shop() {
         </div>
       </div>
 
-      {/* SHOP-PAGE FREE DELIVERY PROGRESS BAR */}
-      {cartState.length > 0 && (
-        <div className={`px-4 py-3 border-b-2 ${getCartTotal() >= FREE_DELIVERY_THRESHOLD ? 'bg-[#22C55E]/20 border-[#22C55E]/40' : 'bg-[#0d0d0d] border-white/10'}`}>
-          <div className="max-w-[1400px] mx-auto">
-            <div className="flex items-center gap-4">
-              <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full rounded-full transition-all duration-500"
-                  style={{
-                    width: `${Math.min(100, (getCartTotal() / FREE_DELIVERY_THRESHOLD) * 100)}%`,
-                    background: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800',
-                  }}
-                />
-              </div>
-              <span className="text-[11px] font-black uppercase tracking-widest shrink-0 whitespace-nowrap" style={{ color: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800' }}>
-                {getCartTotal() >= FREE_DELIVERY_THRESHOLD
-                  ? '🎉 FREE delivery unlocked!'
-                  : `€${(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} away from FREE delivery`}
-              </span>
+      {/* SHOP-PAGE FREE DELIVERY PROGRESS BAR — always visible */}
+      <div className={`px-4 py-3 border-b-2 transition-colors duration-500 ${getCartTotal() >= FREE_DELIVERY_THRESHOLD ? 'bg-[#22C55E]/15 border-[#22C55E]/40' : 'bg-[#0d0d0d] border-white/10'}`}>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex items-center gap-4">
+            <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-500"
+                style={{
+                  width: `${Math.min(100, (getCartTotal() / FREE_DELIVERY_THRESHOLD) * 100)}%`,
+                  background: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800',
+                }}
+              />
             </div>
+            <span className="text-[11px] font-black uppercase tracking-widest shrink-0 whitespace-nowrap" style={{ color: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : 'rgba(255,255,255,0.5)' }}>
+              {getCartTotal() >= FREE_DELIVERY_THRESHOLD
+                ? '🎉 FREE delivery unlocked!'
+                : cartState.length === 0
+                  ? `Spend €${FREE_DELIVERY_THRESHOLD} for FREE delivery`
+                  : `€${(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} away from FREE delivery`}
+            </span>
           </div>
         </div>
-      )}
+      </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12 bg-[#0a0a0a]">
         
