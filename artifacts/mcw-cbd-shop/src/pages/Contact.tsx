@@ -26,8 +26,8 @@ const contactItems = [
     icon: MapPin,
     label: "Main Store",
     value: "Sliema Branch",
-    sub: "Triq Bisazza, Tas-Sliema SLM 1641",
-    href: "https://maps.google.com/?q=35.3378,14.3008",
+    sub: "Triq Bisazza, Sliema SLM 1641",
+    href: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x130e45d73f5403ff:0x366de4b0f4ff050e",
     external: true,
   },
   {

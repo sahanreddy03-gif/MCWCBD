@@ -7,41 +7,49 @@ const STORES = [
   {
     id: "sliema",
     name: "MCW Sliema",
-    address: "Triq Bisazza, Sliema SLM 1640",
-    hours: "Mon-Sun 09:00 - 22:00",
-    phone: "+356 2134 0001",
+    address: "Triq Bisazza, Sliema SLM 1641",
+    hours: "Open daily · Closes 11:30 pm",
+    phone: "+356 99536248",
     mapQuery: "Triq+Bisazza,+Sliema,+Malta"
   },
   {
     id: "gzira",
     name: "MCW Gzira",
-    address: "Main Street, Gzira GZR 1234",
-    hours: "Mon-Sun 09:00 - 22:00",
-    phone: "+356 2133 0002",
-    mapQuery: "Gzira,+Malta"
+    address: "348, Manuel Dimech Street, Gzira",
+    hours: "Open daily · Closes 11:30 pm",
+    phone: "+356 99536248",
+    mapQuery: "348+Manuel+Dimech+Street,+Gzira,+Malta"
   },
   {
     id: "mellieha",
     name: "MCW Mellieha",
-    address: "Main Street, Mellieha MLH 1000",
-    hours: "Mon-Sun 10:00 - 21:00",
-    phone: "+356 2152 0003",
-    mapQuery: "Mellieha,+Malta"
+    address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
+    hours: "Open daily · Closes 11:30 pm",
+    phone: "+356 99536248",
+    mapQuery: "51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta"
   },
   {
     id: "bugibba",
     name: "MCW Bugibba",
-    address: "Dawret il-Gżejjer, Bugibba SPB 2000",
-    hours: "Mon-Sun 10:00 - 21:00",
-    phone: "+356 2157 0004",
-    mapQuery: "Bugibba,+Malta"
+    address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
+    hours: "Open daily · Closes 11:30 pm",
+    phone: "+356 99536248",
+    mapQuery: "Bugibba+Square,+St+Pauls+Bay,+Malta"
+  },
+  {
+    id: "valletta",
+    name: "MCW Valletta",
+    address: "94 First Floor, Triq San Gwann, Valletta VLT",
+    hours: "Open daily · Closes 11:30 pm",
+    phone: "+356 99536248",
+    mapQuery: "94+Triq+San+Gwann,+Valletta,+Malta"
   }
 ];
 
 export default function Stores() {
   return (
     <>
-      <SEO title="MCW CBD Shop Locations — Sliema, Gzira, Mellieha & Bugibba" description="Find MCW CBD Relax Shop near you. 4 stores across Malta: Sliema (flagship), Gzira, Mellieha, and Bugibba. Open daily until 11:30 pm. Same-day island-wide delivery." />
+      <SEO title="MCW CBD Shop Locations — Sliema, Gzira, Mellieha, Bugibba & Valletta" description="Find MCW CBD Relax Shop near you. 5 stores across Malta: Sliema (flagship), Gzira, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Same-day island-wide delivery." />
 
       {/* Photo Hero */}
       <div className="relative h-72 sm:h-[420px] overflow-hidden">
@@ -53,7 +61,7 @@ export default function Stores() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-12 pb-10 max-w-7xl mx-auto w-full">
-          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">Sliema · Gzira · Mellieha · Bugibba</p>
+          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">Sliema · Gzira · Mellieha · Bugibba · Valletta</p>
           <h1 className="font-bebas text-6xl sm:text-8xl md:text-[9rem] tracking-tight text-white leading-none drop-shadow-2xl">
             FIND A STORE
           </h1>

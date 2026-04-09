@@ -27,12 +27,7 @@ export default function Home() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const start = () => { video.play().catch(() => {}); };
-    if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(start, { timeout: 2000 });
-    } else {
-      setTimeout(start, 300);
-    }
+    video.play().catch(() => {});
   }, []);
 
   const lineVariants = {
@@ -46,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Gzira, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 5 locations in Sliema, Gzira, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -54,11 +49,12 @@ export default function Home() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          src="/b2b-hero.mp4"
+          src="/brand-hero.mp4"
           muted
+          autoPlay
           loop
           playsInline
-          preload="none"
+          preload="auto"
           aria-hidden="true"
         />
         {/* Dark overlay for text readability */}
@@ -89,6 +85,7 @@ export default function Home() {
                 <span>● Gzira</span>
                 <span>● Mellieha</span>
                 <span>● Bugibba</span>
+                <span>● Valletta</span>
               </p>
               
               <div className="flex gap-4">

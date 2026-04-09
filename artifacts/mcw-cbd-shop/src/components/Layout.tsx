@@ -44,12 +44,12 @@ const LOCAL_BUSINESS_SCHEMA = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 35.9131,
-        longitude: 14.5027,
+        latitude: 35.3378,
+        longitude: 14.3008,
       },
       openingHours: "Mo-Su 09:00-23:30",
       priceRange: "€€",
-      hasMap: "https://maps.google.com/?q=MCW+CBD+Relax+Shop+Sliema+Malta",
+      hasMap: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x130e45d73f5403ff:0x366de4b0f4ff050e",
       parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
     },
     {
@@ -60,6 +60,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "348, Manuel Dimech Street",
         addressLocality: "Gzira",
         addressCountry: "MT",
       },
@@ -74,7 +75,9 @@ const LOCAL_BUSINESS_SCHEMA = {
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Mellieha",
+        streetAddress: "51 Triq Gorg Borg Olivier",
+        addressLocality: "Mellieħa",
+        postalCode: "MLH 1025",
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
@@ -88,7 +91,24 @@ const LOCAL_BUSINESS_SCHEMA = {
       telephone: "+35699536248",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Bugibba",
+        streetAddress: "Bugibba Square",
+        addressLocality: "San Pawl il-Baħar",
+        postalCode: "SPB 2510",
+        addressCountry: "MT",
+      },
+      openingHours: "Mo-Su 09:00-23:30",
+      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
+    },
+    {
+      "@type": ["LocalBusiness", "Store"],
+      "@id": "https://mcwcbd.com/#valletta",
+      name: "MCW CBD Relax Shop — Valletta",
+      url: "https://mcwcbd.com/store-locator",
+      telephone: "+35699536248",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "94 First Floor, Triq San Gwann",
+        addressLocality: "Valletta",
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
@@ -304,7 +324,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   ["Gzira", "/store-locator"],
                   ["Mellieha", "/store-locator"],
                   ["Bugibba", "/store-locator"],
-                  ["Valletta — Coming Soon", "/store-locator"],
+                  ["Valletta", "/store-locator"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
@@ -345,7 +365,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">📍</span>
-                  <span>Triq Bisazza, Sliema</span>
+                  <span>Triq Bisazza, Sliema SLM 1641</span>
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">🕐</span>

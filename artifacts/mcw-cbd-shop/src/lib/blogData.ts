@@ -447,8 +447,8 @@ Ask our staff for the latest stock. New gummy flavours and brands arrive regular
 
 ## MCW Sliema: Our Flagship Location
 
-**Address:** Triq Bisazza, Tas-Sliema SLM 1641
-**Phone:** +356 9953 6248
+**Address:** Triq Bisazza, Sliema SLM 1641
+**Phone:** +356 99536248
 **Hours:** Open daily, closes 11:30 pm
 **WhatsApp:** wa.me/35699536248
 
@@ -507,8 +507,8 @@ Sliema is Malta's most cosmopolitan neighbourhood, and MCW fits right in. Whethe
 
 ## MCW Gzira: Central Malta's CBD Destination
 
-**Location:** Gzira, Malta (near the Gzira waterfront)
-**Phone:** +356 9953 6248
+**Address:** 348, Manuel Dimech Street, Gzira, Malta
+**Phone:** +356 99536248
 **Hours:** Open daily, closes 11:30 pm
 **WhatsApp:** wa.me/35699536248
 
@@ -570,8 +570,8 @@ Come and visit us in Gzira — we're open every single day until late.`,
 
 ## MCW Mellieha: North Malta's CBD Shop
 
-**Location:** Mellieha, North Malta
-**Phone:** +356 9953 6248
+**Address:** 51 Triq Gorg Borg Olivier, Mellieħa MLH 1025
+**Phone:** +356 99536248
 **Hours:** Open daily, closes 11:30 pm
 **WhatsApp:** wa.me/35699536248
 
@@ -634,8 +634,8 @@ We're open every single day until 11:30 pm. Walk in or message us — North Malt
 
 ## MCW Bugibba: St Paul's Bay CBD Destination
 
-**Location:** Bugibba, St Paul's Bay, Malta
-**Phone:** +356 9953 6248
+**Address:** Bugibba Square, San Pawl il-Baħar SPB 2510
+**Phone:** +356 99536248
 **Hours:** Open daily, closes 11:30 pm
 **WhatsApp:** wa.me/35699536248
 

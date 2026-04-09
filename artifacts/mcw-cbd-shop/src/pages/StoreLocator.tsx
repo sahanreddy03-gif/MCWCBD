@@ -7,33 +7,33 @@ const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transi
 const stores = [
   {
     id: 1, name: "Sliema", tag: "Main Branch",
-    address: "Triq Bisazza, Tas-Sliema SLM 1641",
-    phone: "9953 6248", hours: "Open · Closes 11:30 pm",
+    address: "Triq Bisazza, Sliema SLM 1641",
+    phone: "99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.3378, lng: 14.3008, featured: true,
   },
   {
     id: 2, name: "Gzira", tag: null,
-    address: "Gzira, Malta",
-    phone: "9953 6248", hours: "Open · Closes 11:30 pm",
+    address: "348, Manuel Dimech Street, Gzira",
+    phone: "99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.342, lng: 14.298, featured: false,
   },
   {
     id: 3, name: "Mellieha", tag: null,
-    address: "Mellieha, Malta",
-    phone: "9953 6248", hours: "Open · Closes 11:30 pm",
+    address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
+    phone: "99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.37, lng: 14.34, featured: false,
   },
   {
     id: 4, name: "Bugibba", tag: null,
-    address: "Bugibba, Malta",
-    phone: "9953 6248", hours: "Open · Closes 11:30 pm",
+    address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
+    phone: "99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.585, lng: 14.42, featured: false,
   },
   {
-    id: 5, name: "Valletta", tag: "Coming Soon",
-    address: "Valletta, Malta",
-    phone: "9953 6248", hours: "Opening Soon",
-    lat: 35.8989, lng: 14.5146, featured: false, comingSoon: true,
+    id: 5, name: "Valletta", tag: null,
+    address: "94 First Floor, Triq San Gwann, Valletta VLT",
+    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    lat: 35.8989, lng: 14.5146, featured: false,
   },
 ];
 
@@ -102,8 +102,6 @@ export default function StoreLocator() {
               className={`group relative bg-[#080808] border p-8 transition-all duration-300 ${
                 store.featured
                   ? "border-green-700/60 hover:border-green-500"
-                  : store.comingSoon
-                  ? "border-gray-800 opacity-60"
                   : "border-gray-800 hover:border-green-700/50"
               }`}
             >
@@ -136,8 +134,7 @@ export default function StoreLocator() {
                 </div>
               </div>
 
-              {!store.comingSoon && (
-                <div className="flex gap-3">
+              <div className="flex gap-3">
                   <a
                     href="https://wa.me/35699536248"
                     target="_blank"
@@ -156,7 +153,6 @@ export default function StoreLocator() {
                     Directions
                   </a>
                 </div>
-              )}
             </motion.div>
           ))}
         </motion.div>
