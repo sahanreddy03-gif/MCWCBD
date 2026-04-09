@@ -266,7 +266,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 href="tel:+35699536248"
                 className="px-7 py-3 border-2 border-white/20 text-white font-black text-xs uppercase tracking-widest hover:border-[#22c55e] hover:text-[#22c55e] transition-colors"
               >
-                Call: 9953 6248
+                Call: +356 99536248
               </a>
             </div>
           </div>

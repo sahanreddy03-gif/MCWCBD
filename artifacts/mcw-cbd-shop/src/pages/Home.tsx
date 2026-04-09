@@ -321,7 +321,7 @@ export default function Home() {
               <span className="text-xl font-bold uppercase tracking-[0.2em] text-black">Global Brands</span>
             </div>
             <div className="p-12 md:p-20 flex flex-col items-center justify-center text-center">
-              <span className="text-[8rem] md:text-[10rem] font-bebas text-[#22c55e] leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '2px #000' }}>4</span>
+              <span className="text-[8rem] md:text-[10rem] font-bebas text-[#22c55e] leading-none tracking-tighter mb-4" style={{ WebkitTextStroke: '2px #000' }}>5</span>
               <span className="text-xl font-bold uppercase tracking-[0.2em] text-black">Malta Locations</span>
             </div>
           </div>
@@ -425,7 +425,7 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { stat: "4", label: "Stores Island-Wide", sub: "Sliema · Gzira · Mellieha · Bugibba" },
+              { stat: "5", label: "Stores Island-Wide", sub: "Sliema · Gzira · Mellieha · Bugibba · Valletta" },
               { stat: "200+", label: "Premium Products", sub: "Curated from world-leading brands" },
               { stat: "5+", label: "Years in Malta", sub: "Malta's original CBD destination" },
               { stat: "100%", label: "Malta Legal", sub: "Every product certified <0.2% THC" },
