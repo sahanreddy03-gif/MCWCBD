@@ -16,7 +16,7 @@ const categoryColors: Record<string, string> = {
 const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
   Legal: [
     { q: "Is CBD legal to buy in Malta?", a: "Yes. CBD products containing less than 0.2% THC are fully legal in Malta under EU and national hemp regulations. You do not need a prescription." },
-    { q: "Can I travel with CBD from Malta?", a: "Within the EU, CBD products (clearly labelled, &lt;0.2% THC) are generally permitted in hand luggage. Always check the destination country's specific rules before travelling." },
+    { q: "Can I travel with CBD from Malta?", a: "Within the EU, CBD products (clearly labelled, <0.2% THC) are generally permitted in hand luggage. Always check the destination country's specific rules before travelling." },
     { q: "Do MCW products comply with Maltese law?", a: "Yes. Every product sold at MCW has third-party lab certificates confirming THC content is below 0.2%. Certificates are available on request at any store." },
   ],
   Guides: [
@@ -30,13 +30,13 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
     { q: "How do I pay for my order?", a: "We accept Revolut transfer and Cash on Delivery (COD) for delivery orders. In-store you can pay cash or Revolut." },
   ],
   Products: [
-    { q: "Are your products third-party lab tested?", a: "Yes. Every MCW product comes with a Certificate of Analysis (COA) from an independent EU laboratory confirming cannabinoid profile, THC content (&lt;0.2%), and absence of pesticides and heavy metals." },
+    { q: "Are your products third-party lab tested?", a: "Yes. Every MCW product comes with a Certificate of Analysis (COA) from an independent EU laboratory confirming cannabinoid profile, THC content (<0.2%), and absence of pesticides and heavy metals." },
     { q: "What is the difference between CBD, H4CBD, and THCV?", a: "CBD is the classic non-psychoactive cannabinoid. H4CBD is a hydrogenated CBD with enhanced bioavailability. THCV is a rare cannabinoid with energising, appetite-suppressing properties — all are legal in Malta at MCW." },
     { q: "How do I store CBD products?", a: "Store CBD oils, gummies, and flowers in a cool, dark place away from direct sunlight. Glass jars are ideal for flowers. Oils and gummies keep best in a cupboard or fridge." },
   ],
   Lifestyle: [
     { q: "Can I use CBD every day?", a: "Yes. CBD is non-addictive and considered safe for daily use by the WHO. Many customers use CBD oils, gummies, or flowers as part of their daily wellness routine." },
-    { q: "Will CBD show up on a drug test?", a: "Standard workplace drug tests screen for THC. Our products contain &lt;0.2% THC which is below detection thresholds for most tests. For high-stakes testing, we recommend CBD isolate products." },
+    { q: "Will CBD show up on a drug test?", a: "Standard workplace drug tests screen for THC. Our products contain <0.2% THC which is below detection thresholds for most tests. For high-stakes testing, we recommend CBD isolate products." },
     { q: "What is the best time of day to take CBD?", a: "It depends on your goal. For sleep: 30–60 minutes before bed. For anxiety/stress: morning or as needed. For pain: before or after activity. Experiment to find your ideal timing." },
   ],
 };

@@ -66,7 +66,7 @@ export default function Trust() {
     <>
       <SEO
         title="Trust & Quality — Lab-Tested CBD Malta"
-        description="Every MCW product is third-party lab tested, legally compliant (&lt;0.2% THC), and certified. Malta's most trusted CBD retailer since day one."
+        description="Every MCW product is third-party lab tested, legally compliant (<0.2% THC), and certified. Malta's most trusted CBD retailer since day one."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
