@@ -5,7 +5,7 @@ import { SEO } from "@/components/SEO";
 
 const faqs = [
   { q: "Is CBD legal in Malta?", a: "Yes. CBD products with less than 0.2% THC are fully legal in Malta. Every MCW product complies with this regulation." },
-  { q: "What is the difference between CBD and THC?", a: "CBD (Cannabidiol) is non-intoxicating. THC (Tetrahydrocannabinol) produces a 'high'. Our products contain minimal THC (<0.2%) — safe for daily use." },
+  { q: "What is the difference between CBD and THC?", a: "CBD (Cannabidiol) is non-intoxicating. THC (Tetrahydrocannabinol) produces a 'high'. Our products contain minimal THC (&lt;0.2%) — safe for daily use." },
   { q: "Will CBD products make me high?", a: "No. Our products contain less than 0.2% THC — not nearly enough to produce any psychoactive effect." },
   { q: "How do I use CBD flowers?", a: "CBD hemp flowers can be vaporized, used aromatically, or brewed as an herbal tea. Start small to find what works for you." },
   { q: "What are the benefits of CBD?", a: "Many users report relaxation, stress relief, and improved sleep. CBD interacts with the endocannabinoid system. Always consult a healthcare professional before use." },

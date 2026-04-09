@@ -106,7 +106,7 @@ export default function PreRollInGzira() {
               { icon: '✓', title: 'Premium Quality', desc: 'Sourced from finest EU hemp' },
               { icon: '🔬', title: 'Lab Tested', desc: 'Verified purity & potency' },
               { icon: '⚡', title: 'Fast Delivery', desc: 'Quick shipping in Gzira' },
-              { icon: '🛡️', title: 'Legal Compliant', desc: '<0.2% THC guaranteed' },
+              { icon: '🛡️', title: 'Legal Compliant', desc: '&lt;0.2% THC guaranteed' },
               { icon: '💚', title: 'Expert Support', desc: 'Knowledgeable team' },
               { icon: '🌍', title: 'Sustainable', desc: 'Eco-friendly practices' },
             ].map((feature, idx) => (

@@ -7,7 +7,7 @@ export default function SourSpaceCandyInMellieha() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-bold mb-4">Premium Sour Space Candy in Mellieha</h1>
           <p className="text-xl text-gray-300">
-            Buy high-quality Sour Space Candy in Mellieha, Malta. Legal, lab-tested, <0.2% THC.
+            Buy high-quality Sour Space Candy in Mellieha, Malta. Legal, lab-tested, &lt;0.2% THC.
           </p>
         </div>
       </div>
@@ -24,7 +24,7 @@ export default function SourSpaceCandyInMellieha() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                  <span>Legal in Malta (<0.2% THC)</span>
+                  <span>Legal in Malta (&lt;0.2% THC)</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3" />

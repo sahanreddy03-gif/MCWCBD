@@ -15,7 +15,7 @@ export default function CBDMellieha() {
           <h2 className="text-3xl font-bold text-green-400 mb-6">MCW CBD Shop in Mellieha</h2>
           <p className="text-gray-300 mb-6">
             Welcome to MCW CBD Shop in Mellieha! We offer a premium selection of legal CBD products including flowers, oils, vapes, and accessories. 
-            All products are lab-tested and contain <0.2% THC.
+            All products are lab-tested and contain &lt;0.2% THC.
           </p>
 
           <div className="space-y-4 mb-8">

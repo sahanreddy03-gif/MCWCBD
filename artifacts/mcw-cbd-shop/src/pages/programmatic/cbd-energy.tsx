@@ -30,7 +30,7 @@ export default function CBDEnergy() {
               <CheckCircle className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-bold text-green-300 mb-2">Legal & Safe</h3>
-                <p className="text-gray-300">All MCW CBD products are <0.2% THC and fully legal in Malta.</p>
+                <p className="text-gray-300">All MCW CBD products are &lt;0.2% THC and fully legal in Malta.</p>
               </div>
             </div>
             <div className="flex items-start">

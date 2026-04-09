@@ -25,7 +25,7 @@ export default function CherryWinevsCBDLighter() {
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                <p className="text-gray-300"><0.2% THC</p>
+                <p className="text-gray-300">&lt;0.2% THC</p>
               </div>
             </div>
             <a href="/shop" className="mt-6 block w-full bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg transition-colors text-center">
@@ -46,7 +46,7 @@ export default function CherryWinevsCBDLighter() {
               </div>
               <div className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
-                <p className="text-gray-300"><0.2% THC</p>
+                <p className="text-gray-300">&lt;0.2% THC</p>
               </div>
             </div>
             <a href="/shop" className="mt-6 block w-full bg-green-500 hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg transition-colors text-center">

@@ -5,7 +5,7 @@ import { SEO } from "@/components/SEO";
 
 const FAQS = [
   { q: "Is CBD legal in Malta?", a: "Yes, CBD is legal in Malta provided it contains less than 0.2% THC. All MCW products are fully compliant with Maltese and EU regulations." },
-  { q: "What's the difference between CBD and THC?", a: "CBD (Cannabidiol) is non-psychoactive and is known for relaxing and therapeutic effects. THC is the psychoactive compound. Our products contain <0.2% THC and will not get you 'high'." },
+  { q: "What's the difference between CBD and THC?", a: "CBD (Cannabidiol) is non-psychoactive and is known for relaxing and therapeutic effects. THC is the psychoactive compound. Our products contain &lt;0.2% THC and will not get you 'high'." },
   { q: "Are your products lab tested?", a: "Absolutely. Every single product we stock undergoes rigorous third-party EU laboratory testing for cannabinoid profile, heavy metals, and pesticides." },
   { q: "Can tourists buy from MCW?", a: "Yes! As long as you are 18 years or older, you can purchase from any of our stores. Please bring valid ID." },
   { q: "Do you deliver?", a: "Yes, we offer same-day delivery across the entire island of Malta for orders placed via WhatsApp before 4:00 PM." },

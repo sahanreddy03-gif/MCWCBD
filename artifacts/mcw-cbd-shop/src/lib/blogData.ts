@@ -25,7 +25,7 @@ export const BLOG_POSTS: BlogPost[] = [
 All of the following are legal to buy, sell, and possess in Malta:
 
 - **CBD Oils & Tinctures** — All strengths from 500mg to 5000mg
-- **CBD Flowers** — Dried hemp flowers with <0.2% THC
+- **CBD Flowers** — Dried hemp flowers with &lt;0.2% THC
 - **CBD Vapes & Cartridges** — Legal for adults 18+
 - **CBD Gummies & Edibles** — Food-grade CBD products
 - **CBD Hash & Concentrates** — Legal as long as THC is below the limit
@@ -88,7 +88,7 @@ Research and user reports suggest CBD may help with:
 
 ## Full Spectrum vs. Isolate
 
-- **Full Spectrum CBD** contains all cannabinoids including trace THC (<0.2%), terpenes, and flavonoids. Many users prefer this for the "entourage effect."
+- **Full Spectrum CBD** contains all cannabinoids including trace THC (&lt;0.2%), terpenes, and flavonoids. Many users prefer this for the "entourage effect."
 - **Broad Spectrum** has THC removed but keeps other cannabinoids.
 - **CBD Isolate** is pure CBD — no other compounds.
 
@@ -399,7 +399,7 @@ A good starting protocol: 1 × 10mg gummy per day for one week. If you need more
 
 ## Full Spectrum vs. Broad Spectrum vs. Isolate Gummies
 
-**Full spectrum** gummies contain all the cannabinoids and terpenes from the hemp plant, including trace THC (<0.2%). The "entourage effect" — where compounds work together — makes these the most potent and holistic option.
+**Full spectrum** gummies contain all the cannabinoids and terpenes from the hemp plant, including trace THC (&lt;0.2%). The "entourage effect" — where compounds work together — makes these the most potent and holistic option.
 
 **Broad spectrum** gummies contain multiple cannabinoids but have had the THC fully removed. Great if you want the entourage effect without any THC exposure.
 
@@ -473,7 +473,7 @@ Our Sliema flagship carries the widest selection of any MCW branch, updated week
 
 ## Are Our Products Lab-Tested?
 
-Every single product at MCW Sliema comes with a Certificate of Analysis (COA) from an independent EU laboratory. These certificates confirm the exact cannabinoid content, THC level (<0.2%), and absence of pesticides, heavy metals, and other contaminants. You can request the COA for any product at the counter.
+Every single product at MCW Sliema comes with a Certificate of Analysis (COA) from an independent EU laboratory. These certificates confirm the exact cannabinoid content, THC level (&lt;0.2%), and absence of pesticides, heavy metals, and other contaminants. You can request the COA for any product at the counter.
 
 All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 

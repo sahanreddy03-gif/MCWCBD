@@ -52,7 +52,7 @@ export default function HowLongDoesCbdLast() {
                 <div>
                   <p className="text-green-300 font-bold">Important Note:</p>
                   <p className="text-sm text-gray-300 mt-1">
-                    All MCW CBD products contain <0.2% THC and are legal in Malta. This guide is for educational purposes only.
+                    All MCW CBD products contain &lt;0.2% THC and are legal in Malta. This guide is for educational purposes only.
                   </p>
                 </div>
               </div>

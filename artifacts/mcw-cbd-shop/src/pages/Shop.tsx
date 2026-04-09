@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { Link, useSearch } from "wouter";
@@ -64,6 +64,7 @@ export default function Shop() {
 
   const activeCategory: Category | null = PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : null;
   const [activeSubCategory, setActiveSubCategory] = useState<string | null>(null);
+  const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -73,6 +74,11 @@ export default function Shop() {
   const [selectedFlavours, setSelectedFlavours] = useState<Record<string, string>>({});
 
   useState(() => subscribe(() => setCartState([...cartItems])));
+
+  useEffect(() => {
+    const timer = setTimeout(() => setSearch(searchInput), 300);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
 
   const availableSubCategories = SUB_CATEGORIES;
 
@@ -137,6 +143,7 @@ export default function Shop() {
 
   const clearAllFilters = () => {
     setActiveSubCategory(null);
+    setSearchInput("");
     setSearch("");
   };
 
@@ -173,8 +180,8 @@ export default function Shop() {
               <input 
                 type="text" 
                 placeholder="SEARCH PRODUCTS OR BRANDS..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
+                value={searchInput}
+                onChange={e => setSearchInput(e.target.value)}
                 className="w-full bg-white border-4 border-black py-4 pl-12 pr-4 focus:outline-none focus:ring-4 focus:ring-black/20 transition-all text-black font-black tracking-widest text-sm uppercase placeholder:text-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
               />
             </div>
