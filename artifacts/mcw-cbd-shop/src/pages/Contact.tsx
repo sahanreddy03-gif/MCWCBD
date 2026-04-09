@@ -10,7 +10,7 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "9953 6248",
+    value: "+356 99536248",
     sub: "Available during store hours",
     href: "tel:+35699536248",
   },
@@ -67,7 +67,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact MCW — CBD Shop Malta"
-        description="Get in touch with MCW CBD Relax Shop. Enquire via WhatsApp, call us, or visit one of our 4 Malta locations in Sliema, Gzira, Mellieha, or Bugibba."
+        description="Get in touch with MCW CBD Relax Shop. Enquire via WhatsApp, call us, or visit one of our 5 Malta locations in Sliema, Gzira, Mellieha, Bugibba, or Valletta."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">

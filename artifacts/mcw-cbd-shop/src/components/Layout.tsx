@@ -342,7 +342,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <a href="tel:+35699536248" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
                     <span className="text-[#22c55e] text-base">📞</span>
-                    <span>9953 6248</span>
+                    <span>+356 99536248</span>
                   </a>
                 </li>
                 <li>

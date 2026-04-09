@@ -8,31 +8,31 @@ const stores = [
   {
     id: 1, name: "Sliema", tag: "Main Branch",
     address: "Triq Bisazza, Sliema SLM 1641",
-    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.3378, lng: 14.3008, featured: true,
   },
   {
     id: 2, name: "Gzira", tag: null,
     address: "348, Manuel Dimech Street, Gzira",
-    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.342, lng: 14.298, featured: false,
   },
   {
     id: 3, name: "Mellieha", tag: null,
     address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
-    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.37, lng: 14.34, featured: false,
   },
   {
     id: 4, name: "Bugibba", tag: null,
     address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
-    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.585, lng: 14.42, featured: false,
   },
   {
     id: 5, name: "Valletta", tag: null,
     address: "94 First Floor, Triq San Gwann, Valletta VLT",
-    phone: "99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.8989, lng: 14.5146, featured: false,
   },
 ];
@@ -51,7 +51,7 @@ export default function StoreLocator() {
     <>
       <SEO
         title="Find a CBD Store in Malta — MCW Locations"
-        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Gzira, Mellieha, and Bugibba. Open daily until 11:30 pm. Same-day delivery available."
+        description="MCW CBD Relax Shop has 5 locations across Malta: Sliema, Gzira, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Same-day delivery available."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -61,7 +61,7 @@ export default function StoreLocator() {
         <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-black/80 to-black pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
         <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Malta · 4 Locations</p>
+          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Malta · 5 Locations</p>
           <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">
             FIND US
           </h1>
@@ -124,7 +124,7 @@ export default function StoreLocator() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-green-700 shrink-0" strokeWidth={1.5} />
-                  <a href={`tel:+356${store.phone.replace(" ", "")}`} className="text-gray-500 hover:text-green-400 text-sm transition-colors">
+                  <a href={`tel:${store.phone.replace(/\s/g, "")}`} className="text-gray-500 hover:text-green-400 text-sm transition-colors">
                     {store.phone}
                   </a>
                 </div>
