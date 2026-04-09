@@ -45,7 +45,7 @@ export default function Home() {
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
-        {/* Video Background — lazy loaded after page is interactive */}
+        {/* Video Background — preloaded and autoplays immediately */}
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
@@ -130,7 +130,7 @@ export default function Home() {
               <div key={`bottom-${i}`} className="flex items-center">
                 <span className="mx-8">Same-Day Delivery</span>
                 <span className="text-black/50">◆</span>
-                <span className="mx-8">4 Locations Island-Wide</span>
+                <span className="mx-8">5 Locations Island-Wide</span>
                 <span className="text-black/50">◆</span>
                 <span className="mx-8">Top International Brands</span>
                 <span className="text-black/50">◆</span>

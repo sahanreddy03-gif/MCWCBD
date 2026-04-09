@@ -109,6 +109,7 @@ const LOCAL_BUSINESS_SCHEMA = {
         "@type": "PostalAddress",
         streetAddress: "94 First Floor, Triq San Gwann",
         addressLocality: "Valletta",
+        postalCode: "VLT",
         addressCountry: "MT",
       },
       openingHours: "Mo-Su 09:00-23:30",
