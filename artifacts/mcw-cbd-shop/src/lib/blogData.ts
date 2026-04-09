@@ -479,7 +479,7 @@ All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 
 ## Same-Day Delivery from Sliema
 
-Can't make it to the store? Message us on WhatsApp (+356 9953 6248) and we'll organise same-day delivery anywhere in Malta. Delivery costs €3.50 and is completely free on orders over €50. Most deliveries arrive within 2-3 hours of ordering.
+Can't make it to the store? Message us on WhatsApp (+356 99536248) and we'll organise same-day delivery anywhere in Malta. Delivery costs €3.50 and is completely free on orders over €50. Most deliveries arrive within 2-3 hours of ordering.
 
 We deliver to Sliema, St Julian's, Valletta, Birkirkara, Mosta, Naxxar, Attard, and every other corner of the island.
 
@@ -543,7 +543,7 @@ No guesswork. No mystery. Every cannabinoid content confirmed.
 
 ## Same-Day Delivery to Gzira and Nearby Areas
 
-Rather order from your sofa? WhatsApp us on +356 9953 6248 and we'll arrange same-day delivery directly to your door in Gzira, Msida, Birkirkara, Ta' Xbiex, Sliema, Valletta, or anywhere across Malta.
+Rather order from your sofa? WhatsApp us on +356 99536248 and we'll arrange same-day delivery directly to your door in Gzira, Msida, Birkirkara, Ta' Xbiex, Sliema, Valletta, or anywhere across Malta.
 
 Delivery costs €3.50, with free delivery on all orders over €50. Most deliveries arrive within 1-3 hours of your message.
 
@@ -616,7 +616,7 @@ We display COAs openly and encourage customers to ask. Transparency is part of h
 
 ## Same-Day Delivery to Mellieha and North Malta
 
-Can't make it in? WhatsApp us on +356 9953 6248 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
+Can't make it in? WhatsApp us on +356 99536248 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
 
 Delivery costs €3.50. Free delivery on all orders over €50. Orders are discreetly packaged with no external markings.
 
@@ -682,7 +682,7 @@ No card machine needed. Simple and fast.
 
 ## Same-Day Delivery: Bugibba, Qawra, Salina and Beyond
 
-Don't want to leave your hotel or apartment? WhatsApp us on +356 9953 6248 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
+Don't want to leave your hotel or apartment? WhatsApp us on +356 99536248 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
 
 Delivery: €3.50 flat fee. Free for all orders over €50. Discreet packaging, no external branding.
 
