@@ -11,9 +11,7 @@ import pCBDPreRolls from "@assets/nno-Euphoria-H4CBD-JOINT-BOX-New-A-04-PACKSHOT
 import pH4CBDVapePen from "@assets/auj-H4CBD-VAPE-PEN-DISPLAY-Juicy-Blueberry-A-01-FINAL_1773529171969.png";
 import pCBDCartridgeEnergize from "@assets/a7z-euphoria-cbd-cartridge-energize.213439910.1724832076_1773529665223.jpg";
 import pH4CBDVapeMango from "@assets/fn8-H4CBD-VAPE-PEN-DISPLAY-Mango-A-01-FINAL.213439910.17440180_1773529874366.png";
-import pTHCVCartridgeGelato from "@assets/ji4-Euphoria-THCV-CARTRIDGES-Gelato-1ML-A-01-PACKSHOT.21343991_1773530664453.png";
-import pTHCVCartridgeBlueDream from "@assets/b85cde0f833d1008003b3f2f210a53ad-thcv-cartridge-blue-dream-1m_1773530958967.webp";
-import pTHCVPenGMOCookies from "@assets/48e10bc7365b1f5179c98c10b37ef7b2-canntropy-thcv-pen-cartdige-_1773531116168.webp";
+
 import pVolcanoHybrid from "@assets/d62d023fd59c28deb95ee65bfb961776-volcano-hybrid-vaporizer-sto_1773531278009.webp";
 import pPaxFlow from "@assets/467582908f657e91635ec12fb3eb25a4-flow-onyx-hero-1024x1024_1773531362359.webp";
 import pSmart800AllFlavours from "@assets/vl0NgP98-scaled_1773531442437.jpeg";
@@ -97,7 +95,7 @@ export const PRODUCTS: Product[] = [
   { id: "5", name: "Pure CBD Extract", brand: "Sensi Seeds", category: "CBD Oils", subCategory: "CBD Oils", price: 120.00, effect: "Relaxing", cannabinoid: "CBD", image: pDrink1 },
   { id: "41", name: "Sleep Tincture 500mg", brand: "MCW", category: "CBD Oils", subCategory: "CBD Oils", price: 40.00, effect: "Sleeping", cannabinoid: "CBD", image: pCream1 },
   { id: "27", name: "H4CBD Oil 1000mg", brand: "MCW", category: "CBD Oils", subCategory: "H4CBD", price: 75.00, effect: "Pain Relief", cannabinoid: "H4CBD", image: pGummy3, isNew: true },
-  { id: "48", name: "THCV Tincture", brand: "Barona", category: "CBD Oils", subCategory: "THCV", price: 85.00, effect: "Focus", cannabinoid: "THCV", image: pGummy3, isNew: true },
+
   { id: "50", name: "Muscle Cream 1000mg", brand: "MCW", category: "CBD Oils", subCategory: "CBD Creams", price: 55.00, effect: "Pain Relief", cannabinoid: "CBD", image: pCream1 },
   { id: "51", name: "CBD Balm", brand: "Euphoria", category: "CBD Oils", subCategory: "CBD Creams", price: 35.00, effect: "Pain Relief", cannabinoid: "CBD", image: pCream2 },
   { id: "52", name: "CBD Capsules", brand: "Sensi Seeds", category: "CBD Oils", subCategory: "CBD Capsules", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pCream1 },
@@ -107,7 +105,7 @@ export const PRODUCTS: Product[] = [
   { id: "8", name: "CBD Flowers Zkittles - Rainbow Ride", brand: "Hemnia", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pZkittlesRainbowRide, isNew: true, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "9", name: "H4CBD White Widow", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Focus", cannabinoid: "H4CBD", image: pWhiteWidow, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
   { id: "10", name: "THCD Flower Amnesia Haze", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Flowers", price: 10.00, effect: "Energizing", cannabinoid: "CBD", image: pAmnesiaHaze, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }, { label: "10g", price: 78.00 }] },
-  { id: "11", name: "MCW Pre-Rolls", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 12.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, strainOptions: ["CBD", "H4CBD", "THCV", "THCJD"], flavourOptions: ["OG Kush", "Gelato", "Blue Dream", "Gorilla Glue #4", "Wedding Cake", "Lemon Haze", "Sour Diesel", "Pineapple Express", "Grandaddy Purple", "The Procrastinator", "Couch Crasher", "Giggle Gas", "Munchie Madness", "Nap King 3000", "Sunday Snoozefest"] },
+  { id: "11", name: "MCW Pre-Rolls", brand: "MCW", category: "Pre-Rolls", subCategory: "CBD Pre-Rolls", price: 12.00, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, strainOptions: ["CBD", "H4CBD", "THCJD"], flavourOptions: ["OG Kush", "Gelato", "Blue Dream", "Gorilla Glue #4", "Wedding Cake", "Lemon Haze", "Sour Diesel", "Pineapple Express", "Grandaddy Purple", "The Procrastinator", "Couch Crasher", "Giggle Gas", "Munchie Madness", "Nap King 3000", "Sunday Snoozefest"] },
   { id: "12", name: "Hash Blue Lotus Soft Resin", brand: "Canntropy", category: "CBD Flowers", subCategory: "CBD Hash", price: 10.00, effect: "Relaxing", cannabinoid: "CBD", image: pBlueLotus, variants: [{ label: "1g", price: 10.00 }, { label: "3g", price: 27.00 }, { label: "5g", price: 42.00 }] },
   { id: "13", name: "CBD Hash 6% Kush", brand: "Euphoria", category: "CBD Flowers", subCategory: "CBD Hash", price: 24.00, effect: "Relaxing", cannabinoid: "CBD", image: pKushHash },
   { id: "42", name: "Chocolate Hash Rosin", brand: "MCW", category: "CBD Flowers", subCategory: "CBD Hash", price: 55.00, effect: "Relaxing", cannabinoid: "CBD", image: pEdible4 },
@@ -118,12 +116,11 @@ export const PRODUCTS: Product[] = [
   { id: "15", name: "E-Cigarette 800 Puffs", brand: "SMART800", category: "CBD Vapes", subCategory: "CBD Vapes", price: 40.00, effect: "Energizing", cannabinoid: "CBD", image: pVape2, imageFit: "contain" },
   { id: "16", name: "E-Cigarette 1000 Puffs", brand: "Pod Salt Onyx", category: "CBD Vapes", subCategory: "CBD Vapes", price: 45.00, effect: "Focus", cannabinoid: "CBD", image: pVape3, isNew: true, imageFit: "contain" },
 
-  { id: "18", name: "THCV Cartridge Gelato 1ml", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 38.00, effect: "Pain Relief", cannabinoid: "THCV", image: pTHCVCartridgeGelato },
+
   { id: "44", name: "CBD Cartridge Energize", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 35.00, effect: "Focus", cannabinoid: "CBD", image: pCBDCartridgeEnergize },
   { id: "45", name: "H4CBD Vape Pen Mango", brand: "Euphoria", category: "CBD Vapes", subCategory: "CBD Vapes", price: 42.00, effect: "Relaxing", cannabinoid: "CBD", image: pH4CBDVapeMango },
   { id: "28", name: "H4CBD Vape Cartridge Grape Mint", brand: "Euphoria", category: "CBD Vapes", subCategory: "H4CBD", price: 42.00, effect: "Relaxing", cannabinoid: "H4CBD", image: pH4CBDVapeGrapeMint },
-  { id: "29", name: "THCV Cartridge Blue Dream", brand: "Canntropy", category: "CBD Vapes", subCategory: "THCV", price: 50.00, effect: "Energizing", cannabinoid: "THCV", image: pTHCVCartridgeBlueDream, isPopular: true },
-  { id: "49", name: "THCV Pen + Cartridge GMO Cookies", brand: "Canntropy", category: "CBD Vapes", subCategory: "THCV", price: 60.00, effect: "Energizing", cannabinoid: "THCV", image: pTHCVPenGMOCookies },
+
   { id: "33", name: "Volcano Hybrid Vaporizer", brand: "Storz & Bickel", category: "CBD Vapes", subCategory: "Vaporizers", price: 450.00, cannabinoid: "None", image: pVolcanoHybrid },
   { id: "34", name: "Pax Flow Vaporizer", brand: "Pax", category: "CBD Vapes", subCategory: "Vaporizers", price: 180.00, cannabinoid: "None", image: pPaxFlow },
 
@@ -280,7 +277,7 @@ export const PRODUCTS: Product[] = [
   { id: "m16", name: "MCW Kush Hash Premium CBD", brand: "MCW", category: "MCW Originals", subCategory: "CBD Hash", price: 9.00, effect: "Relaxing", cannabinoid: "CBD", image: pMCWFlowers, logoCard: true, variants: [{ label: "1g", price: 9.00 }, { label: "3g", price: 25.00 }, { label: "5g", price: 40.00 }] },
   // CBD Vapes
   { id: "m8", name: "MCW H4CBD Vape Pen", brand: "MCW", category: "MCW Originals", subCategory: "CBD Vapes", price: 34.99, effect: "Relaxing", cannabinoid: "H4CBD", image: pMCWVapes, logoCard: true, flavourOptions: ["Blueberry", "Mango", "Grape Mint"] },
-  { id: "m9", name: "MCW THCV Vape Cartridge", brand: "MCW", category: "MCW Originals", subCategory: "THCV", price: 44.99, effect: "Focus", cannabinoid: "THCV", image: pMCWVapes, logoCard: true, flavourOptions: ["Gelato", "Blue Dream", "GMO Cookies"] },
+
   // Pre-Rolls
   { id: "m10", name: "MCW Pre-Roll Gelato Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 12.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
   { id: "m11", name: "MCW Pre-Roll OG Kush Joint", brand: "MCW", category: "MCW Originals", subCategory: "CBD Pre-Rolls", price: 11.99, effect: "Relaxing", cannabinoid: "CBD", image: pPreRoll1, logoCard: true },
