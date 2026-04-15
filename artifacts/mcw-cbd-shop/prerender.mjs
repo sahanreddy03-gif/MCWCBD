@@ -12,11 +12,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(__dirname, "dist");
+const DIST = path.resolve(__dirname, "dist/public");
 const BASE = "https://mcwcbd.com";
 
 if (!fs.existsSync(DIST)) {
-  console.error("dist/ not found. Run vite build first.");
+  console.error("dist/public/ not found. Run vite build first.");
   process.exit(1);
 }
 
