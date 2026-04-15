@@ -3,22 +3,60 @@ import { useEffect } from "react";
 interface SEOProps {
   title: string;
   description?: string;
+  canonical?: string;
+  schema?: object | object[];
 }
 
-export function SEO({ title, description = "Malta's #1 Hemp & CBD Destination. Shop the world's best brands including STIIIZY, Cookies, and more. Same day delivery across Malta." }: SEOProps) {
+const DEFAULT_DESC = "Malta's #1 Hemp & CBD Destination. 5 stores: Sliema, Gzira, Mellieħa, Bugibba, Valletta. Shop premium CBD oils, flowers, vapes, gummies. Same-day delivery.";
+
+export function SEO({ title, description = DEFAULT_DESC, canonical, schema }: SEOProps) {
   useEffect(() => {
     document.title = `${title} | MCW — CBD Relax Shop`;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
+
+    const setMeta = (selector: string, attr: string, value: string) => {
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement("meta");
+        document.head.appendChild(el);
+      }
+      el.setAttribute(attr, value);
+    };
+
+    setMeta('meta[name="description"]', "content", description);
+
+    const fullTitle = `${title} | MCW — CBD Relax Shop`;
+    setMeta('meta[property="og:title"]', "content", fullTitle);
+    setMeta('meta[property="og:description"]', "content", description);
+    setMeta('meta[name="twitter:title"]', "content", fullTitle);
+    setMeta('meta[name="twitter:description"]', "content", description);
+
+    if (canonical) {
+      const canonicalUrl = `https://mcwcbd.com${canonical}`;
+      let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      if (!link) {
+        link = document.createElement("link");
+        link.rel = "canonical";
+        document.head.appendChild(link);
+      }
+      link.href = canonicalUrl;
+      setMeta('meta[property="og:url"]', "content", canonicalUrl);
     }
-  }, [title, description]);
+
+    if (schema) {
+      const existing = document.getElementById("page-schema");
+      if (existing) existing.remove();
+      const script = document.createElement("script");
+      script.id = "page-schema";
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(Array.isArray(schema) ? { "@context": "https://schema.org", "@graph": schema } : schema);
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      const pageSchema = document.getElementById("page-schema");
+      if (pageSchema) pageSchema.remove();
+    };
+  }, [title, description, canonical, schema]);
 
   return null;
 }
