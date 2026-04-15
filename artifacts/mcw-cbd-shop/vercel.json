@@ -3,7 +3,6 @@
   "outputDirectory": "dist/public",
   "installCommand": "cd ../.. && pnpm install",
   "framework": null,
-  "domains": ["mcwcbd.com", "www.mcwcbd.com"],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
