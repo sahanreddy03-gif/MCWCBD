@@ -352,27 +352,17 @@ export default function Shop() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
               {filteredProducts.map((product, i) => (
                 product.logoCard ? (
-                  <motion.div
-                    key={product.id}
-                    layout
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: (i % 6) * 0.05 }}
-                  >
+                  <div key={product.id}>
                     <MCWOriginalsCard
                       product={product}
                       onAddToCart={addToCart}
                       selectedVariant={selectedVariants[product.id] ?? 0}
                       onVariantChange={(vi) => setSelectedVariants(prev => ({ ...prev, [product.id]: vi }))}
                     />
-                  </motion.div>
+                  </div>
                 ) : (
-                <motion.div 
+                <div
                   key={product.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: (i % 6) * 0.05 }}
                   className="bg-white rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 min-h-[300px]"
                 >
                   {/* TOP ROW: badges */}
@@ -484,15 +474,15 @@ export default function Shop() {
                   <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
                   {/* Compliance micro-badge trio */}
                   {product.cannabinoid !== "None" && (
-                    <div className="px-5 py-1.5 flex items-center gap-2 bg-gray-50 border-t border-gray-100 flex-wrap">
+                    <div className="px-5 py-2 flex items-center justify-between bg-gray-50 border-t border-gray-100">
                       <span className="text-[8px] font-black uppercase tracking-widest text-green-700">✓ ≤0.2% THC</span>
-                      <span className="text-gray-300">·</span>
+                      <span className="text-gray-300">|</span>
                       <span className="text-[8px] font-black uppercase tracking-widest text-blue-600">Non-Psychoactive</span>
-                      <span className="text-gray-300">·</span>
+                      <span className="text-gray-300">|</span>
                       <span className="text-[8px] font-black uppercase tracking-widest text-gray-500">COA Available</span>
                     </div>
                   )}
-                </motion.div>
+                </div>
                 )
               ))}
             </div>

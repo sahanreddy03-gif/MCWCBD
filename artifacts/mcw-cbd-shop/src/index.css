@@ -110,15 +110,15 @@
   .animate-marquee-slow { animation: marquee 40s linear infinite; }
 
   @keyframes float-product {
-    0%, 100% { transform: translateY(0px) rotate(-8deg); }
-    50% { transform: translateY(-20px) rotate(-5deg); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
   }
   @keyframes float-product-alt {
-    0%, 100% { transform: translateY(-10px) rotate(5deg); }
-    50% { transform: translateY(10px) rotate(8deg); }
+    0%, 100% { transform: translateY(-6px); }
+    50% { transform: translateY(6px); }
   }
-  .animate-float-product { animation: float-product 4s ease-in-out infinite; }
-  .animate-float-product-alt { animation: float-product-alt 4.5s ease-in-out infinite; }
+  .animate-float-product { animation: float-product 5s ease-in-out infinite; will-change: transform; }
+  .animate-float-product-alt { animation: float-product-alt 5.5s ease-in-out infinite; will-change: transform; }
 
   .product-card-light { background: #ffffff; color: #000000; border: 1px solid #e5e5e5; }
   .category-accent-bar { height: 4px; width: 100%; }
