@@ -1,8 +1,9 @@
 {
   "buildCommand": "cd ../.. && PORT=3000 BASE_PATH=/ pnpm --filter @workspace/mcw-cbd-shop run build",
-  "outputDirectory": "artifacts/mcw-cbd-shop/dist/public",
+  "outputDirectory": "dist/public",
   "installCommand": "cd ../.. && pnpm install",
   "framework": null,
+  "domains": ["mcwcbd.com", "www.mcwcbd.com"],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
