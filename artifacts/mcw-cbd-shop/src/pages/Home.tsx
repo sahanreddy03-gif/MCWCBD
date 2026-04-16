@@ -249,8 +249,8 @@ export default function Home() {
 
                     {/* Gold bottom strip */}
                     <div className="absolute bottom-0 left-0 w-full h-[4px] z-20" style={{ background: 'linear-gradient(90deg, transparent, #B8860B, #FFD700, #B8860B, transparent)' }} />
-                    {/* Safety badge strip — bottom-left */}
-                    <div className="absolute bottom-6 left-4 z-30 flex flex-row gap-1 items-center pointer-events-none">
+                    {/* Safety badge strip — top-right */}
+                    <div className="absolute top-3 right-3 z-30 flex flex-row gap-1.5 items-center pointer-events-none">
                       <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#CC0000] text-white text-[8px] font-black border border-white/40 shadow">18+</span>
                       <span className="px-1.5 py-0.5 rounded-full bg-[#22C55E] text-black text-[7px] font-black uppercase tracking-wider shadow">CBD</span>
                       <span className="px-1.5 py-0.5 rounded-full bg-white/90 text-black text-[6px] font-black uppercase tracking-wider shadow">≤0.2% THC</span>
@@ -292,8 +292,8 @@ export default function Home() {
 
                     {/* Bottom dark strip */}
                     <div className="absolute bottom-0 left-0 w-full h-[5px] bg-black/25 z-20" />
-                    {/* Safety badge strip — bottom-left */}
-                    <div className="absolute bottom-6 left-4 z-30 flex flex-row gap-1 items-center pointer-events-none">
+                    {/* Safety badge strip — top-right */}
+                    <div className="absolute top-3 right-3 z-30 flex flex-row gap-1.5 items-center pointer-events-none">
                       <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#CC0000] text-white text-[8px] font-black border border-white/40 shadow">18+</span>
                       <span className="px-1.5 py-0.5 rounded-full bg-[#22C55E] text-black text-[7px] font-black uppercase tracking-wider shadow">CBD</span>
                       <span className="px-1.5 py-0.5 rounded-full bg-white/90 text-black text-[6px] font-black uppercase tracking-wider shadow">≤0.2% THC</span>

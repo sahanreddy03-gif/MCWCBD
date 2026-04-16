@@ -10,7 +10,8 @@ const STORES = [
     address: "Triq Bisazza, Sliema SLM 1641",
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
-    mapQuery: "Triq+Bisazza,+Sliema,+Malta"
+    mapQuery: "Triq+Bisazza,+Sliema,+Malta",
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4977,35.9067,14.5077,35.9167&layer=mapnik&marker=35.9117,14.5027"
   },
   {
     id: "gzira",
@@ -18,7 +19,8 @@ const STORES = [
     address: "348, Manuel Dimech Street, Gzira",
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
-    mapQuery: "348+Manuel+Dimech+Street,+Gzira,+Malta"
+    mapQuery: "348+Manuel+Dimech+Street,+Gzira,+Malta",
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4930,35.9013,14.5030,35.9113&layer=mapnik&marker=35.9063,14.4980"
   },
   {
     id: "mellieha",
@@ -26,7 +28,8 @@ const STORES = [
     address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
-    mapQuery: "51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta"
+    mapQuery: "51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta",
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.3570,35.9547,14.3670,35.9647&layer=mapnik&marker=35.9597,14.3620"
   },
   {
     id: "bugibba",
@@ -34,7 +37,8 @@ const STORES = [
     address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
-    mapQuery: "Bugibba+Square,+St+Pauls+Bay,+Malta"
+    mapQuery: "Bugibba+Square,+St+Pauls+Bay,+Malta",
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4120,35.9458,14.4220,35.9558&layer=mapnik&marker=35.9508,14.4170"
   },
   {
     id: "valletta",
@@ -42,7 +46,8 @@ const STORES = [
     address: "94 First Floor, Triq San Gwann, Valletta VLT",
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
-    mapQuery: "94+Triq+San+Gwann,+Valletta,+Malta"
+    mapQuery: "94+Triq+San+Gwann,+Valletta,+Malta",
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.5095,35.8939,14.5195,35.9039&layer=mapnik&marker=35.8989,14.5145"
   }
 ];
 
@@ -84,13 +89,12 @@ export default function Stores() {
               className="bg-card border border-border rounded-2xl overflow-hidden flex flex-col"
             >
               <div className="h-64 bg-background relative border-b border-border">
-                {/* using the provided placeholder key for iframe */}
                 <iframe
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }} // Fake dark mode map
-                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=${store.mapQuery}`}
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
+                  src={store.osm_embed}
                   allowFullScreen
                   title={`Map to ${store.name}`}
                 ></iframe>
