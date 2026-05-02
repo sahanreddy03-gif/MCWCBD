@@ -3,6 +3,13 @@ import heroStoresImg from "../assets/hero-stores.png";
 import { MapPin, Clock, Phone, Navigation } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
+// To switch to Google Maps, change this to 'google'.
+// Requires the API key (AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY) to be
+// authorized for mcwcbd.com in Google Cloud Console → APIs & Services → Credentials.
+const MAPS_PROVIDER: "osm" | "google" = "osm";
+
+const GOOGLE_MAPS_API_KEY = "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY";
+
 const STORES = [
   {
     id: "sliema",
@@ -11,7 +18,8 @@ const STORES = [
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
     mapQuery: "Triq+Bisazza,+Sliema,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4977,35.9067,14.5077,35.9167&layer=mapnik&marker=35.9117,14.5027"
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4977,35.9067,14.5077,35.9167&layer=mapnik&marker=35.9117,14.5027",
+    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=Triq+Bisazza,+Sliema,+Malta`
   },
   {
     id: "gzira",
@@ -20,7 +28,8 @@ const STORES = [
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
     mapQuery: "348+Manuel+Dimech+Street,+Gzira,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4930,35.9013,14.5030,35.9113&layer=mapnik&marker=35.9063,14.4980"
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4930,35.9013,14.5030,35.9113&layer=mapnik&marker=35.9063,14.4980",
+    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=348+Manuel+Dimech+Street,+Gzira,+Malta`
   },
   {
     id: "mellieha",
@@ -29,7 +38,8 @@ const STORES = [
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
     mapQuery: "51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.3570,35.9547,14.3670,35.9647&layer=mapnik&marker=35.9597,14.3620"
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.3570,35.9547,14.3670,35.9647&layer=mapnik&marker=35.9597,14.3620",
+    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta`
   },
   {
     id: "bugibba",
@@ -38,7 +48,8 @@ const STORES = [
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
     mapQuery: "Bugibba+Square,+St+Pauls+Bay,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4120,35.9458,14.4220,35.9558&layer=mapnik&marker=35.9508,14.4170"
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4120,35.9458,14.4220,35.9558&layer=mapnik&marker=35.9508,14.4170",
+    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=Bugibba+Square,+St+Pauls+Bay,+Malta`
   },
   {
     id: "valletta",
@@ -47,7 +58,8 @@ const STORES = [
     hours: "Open daily · Closes 11:30 pm",
     phone: "+356 99536248",
     mapQuery: "94+Triq+San+Gwann,+Valletta,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.5095,35.8939,14.5195,35.9039&layer=mapnik&marker=35.8989,14.5145"
+    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.5095,35.8939,14.5195,35.9039&layer=mapnik&marker=35.8989,14.5145",
+    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=94+Triq+San+Gwann,+Valletta,+Malta`
   }
 ];
 
@@ -93,8 +105,8 @@ export default function Stores() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
-                  src={store.osm_embed}
+                  style={{ border: 0, filter: MAPS_PROVIDER === "osm" ? 'invert(90%) hue-rotate(180deg)' : undefined }}
+                  src={MAPS_PROVIDER === "google" ? store.google_embed : store.osm_embed}
                   allowFullScreen
                   title={`Map to ${store.name}`}
                 ></iframe>
