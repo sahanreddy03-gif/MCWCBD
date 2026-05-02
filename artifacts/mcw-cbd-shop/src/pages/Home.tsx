@@ -4,21 +4,28 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { BLOG_POSTS } from "@/lib/blogData";
-import { BRANDS, PRODUCTS, pPreRoll1, pVape1, pVape2, pFlower1, pGummy2, pDrink1, pGummy4, pEdible4 } from "@/lib/data";
+import { BRANDS, PRODUCTS } from "@/lib/data";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
+import scFlowers    from "@assets/IMG_1899_1777719017599.jpeg";
+import scGummies    from "@assets/IMG_1942_1777726690525.jpg";
+import scCrystal    from "@assets/IMG_1955_1777726690531.jpg";
+import scHash       from "@assets/IMG_1961_1777726690533.jpg";
+import scVapes      from "@assets/IMG_1967_1777726761654.jpg";
+import scELiquids   from "@assets/IMG_1979_1777726761659.jpg";
+import scVaporisers from "@assets/IMG_1991_1777726809911.jpg";
 import type { Product } from "@/lib/data";
 
-const isNovelCannabinoid = (p: Pick<Product, 'name' | 'cannabinoid'>) =>
-  /^THC/i.test(p.name) || p.cannabinoid === "THCV";
+const isNovelCannabinoid = (p: Pick<Product, 'name'>) =>
+  /^THCV|^THCJD|^THC/i.test(p.name);
 
 const SHOWCASE_CARDS = [
-  { id: '01', cat: "PRE-ROLLS", name: "PRE-ROLLS", sub: "INFUSED WITH LIVE RESIN", bg: "bg-[#00C8C8]", text: "text-black", gradFrom: "#00C8C8", img: pPreRoll1, link: "/shop?category=Pre-Rolls" },
-  { id: '02', cat: "CBD VAPES", name: "VAPES", sub: "PREMIUM DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: pVape2, link: "/shop?category=CBD+Vapes" },
-  { id: '03', cat: "CBD FLOWERS", name: "FLOWERS", sub: "INDOOR PREMIUM GROWN", bg: "bg-[#7B4FFF]", text: "text-white", gradFrom: "#7B4FFF", img: pEdible4, link: "/shop?category=CBD+Flowers" },
-  { id: '04', cat: "CBD GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#FF3366]", text: "text-white", gradFrom: "#FF3366", img: pGummy2, link: "/shop?category=CBD+Gummies" },
-  { id: '05', cat: "CBD OILS", name: "CBD OILS", sub: "ALL STRENGTHS AVAILABLE", bg: "bg-[#22C55E]", text: "text-black", gradFrom: "#22C55E", img: pDrink1, link: "/shop?category=CBD+Oils" },
-  { id: '06', cat: "LIFESTYLE", name: "LIFESTYLE", sub: "GRINDERS · MERCH · SPIRITS", bg: "bg-[#FFB800]", text: "text-black", gradFrom: "#FFB800", img: pGummy4, link: "/shop?category=Lifestyle" },
-  { id: '07', cat: "MCW ORIGINALS", name: "MCW\nORIGINALS", sub: "OUR EXCLUSIVE HOUSE RANGE", bg: "bg-[#0d0d0d]", text: "text-white", gradFrom: "#0d0d0d", img: logoSrc, link: "/shop?category=MCW+Originals", isOriginals: true },
+  { id: '01', cat: "FLOWERS", name: "FLOWERS", sub: "PREMIUM INDOOR GROWN", bg: "bg-[#166534]", text: "text-white", gradFrom: "#166534", img: scFlowers, link: "/shop?category=Flowers" },
+  { id: '02', cat: "VAPES", name: "VAPES", sub: "THCV · CBG9 · CBD DISPOSABLES", bg: "bg-[#FF6B35]", text: "text-black", gradFrom: "#FF6B35", img: scVapes, link: "/shop?category=Vapes" },
+  { id: '03', cat: "GUMMIES", name: "GUMMIES", sub: "FULL SPECTRUM EDIBLES", bg: "bg-[#be185d]", text: "text-white", gradFrom: "#be185d", img: scGummies, link: "/shop?category=Gummies" },
+  { id: '04', cat: "HASH", name: "HASH", sub: "PREMIUM HANDCRAFTED", bg: "bg-[#92400e]", text: "text-white", gradFrom: "#92400e", img: scHash, link: "/shop?category=Hash" },
+  { id: '05', cat: "CRYSTAL", name: "CRYSTAL", sub: "PURE CBG ISOLATE", bg: "bg-[#4c1d95]", text: "text-white", gradFrom: "#4c1d95", img: scCrystal, link: "/shop?category=Crystal" },
+  { id: '06', cat: "E-LIQUIDS", name: "E-LIQUIDS", sub: "THCV 85% · 96% LIVE RESIN", bg: "bg-[#164e63]", text: "text-white", gradFrom: "#164e63", img: scELiquids, link: "/shop?category=E-Liquids" },
+  { id: '07', cat: "VAPORISERS", name: "VAPORISERS", sub: "DRY HERB · POD DEVICES", bg: "bg-[#0d0d0d]", text: "text-white", gradFrom: "#0d0d0d", img: scVaporisers, link: "/shop?category=Vaporisers" },
 ];
 
 export default function Home() {

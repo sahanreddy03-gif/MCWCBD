@@ -4,43 +4,41 @@ import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { Link, useSearch } from "wouter";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
-import MCWOriginalsCard from "@/components/MCWOriginalsCard";
 
-const PRIMARY_CATEGORIES: Category[] = ["CBD Oils", "CBD Flowers", "CBD Vapes", "CBD Gummies", "Pre-Rolls", "Lifestyle", "MCW Originals"];
+const PRIMARY_CATEGORIES: Category[] = [
+  "Flowers", "Gummies", "Crystal", "Hash", "Vapes", "E-Liquids", "Vaporisers",
+];
 
-const CATEGORY_DISPLAY_LABELS: Record<string, string> = {
-  "Pre-Rolls": "Hemp Herbal Sticks",
-  "CBD Flowers": "Hemp Aromatic Flowers",
-  "CBD Vapes": "CBD Vape Devices",
-  "CBD Gummies": "CBD Edibles & Gummies",
+const CATEGORY_COLORS: Record<Category, string> = {
+  Flowers:     "#4ade80",
+  Gummies:     "#f472b6",
+  Crystal:     "#a78bfa",
+  Hash:        "#d97706",
+  Vapes:       "#fb923c",
+  "E-Liquids": "#22d3ee",
+  Vaporisers:  "#94a3b8",
 };
 
-const CATEGORY_DISCLAIMERS: Partial<Record<Category, string>> = {
-  "CBD Flowers": "Hemp aromatic flowers are sold as collectibles. All products ≤0.2% THC. Lab-tested.",
-  "Pre-Rolls": "Hemp herbal sticks are sold as collectibles and not intended for consumption. All products ≤0.2% THC.",
-  "CBD Vapes": "CBD vape products are for adult use only. All products ≤0.2% THC. Lab-tested.",
-  "CBD Gummies": "CBD edibles are food supplements and not medicines. All products ≤0.2% THC.",
+const CATEGORY_ICONS: Record<Category, string> = {
+  Flowers:     "🌿",
+  Gummies:     "🍬",
+  Crystal:     "💎",
+  Hash:        "🧱",
+  Vapes:       "💨",
+  "E-Liquids": "🔋",
+  Vaporisers:  "🔥",
 };
 
-const SUB_CATEGORIES = Array.from(new Set(PRODUCTS.map(p => p.subCategory))).sort();
-
-const SUB_CATEGORY_DISPLAY: Record<string, string> = {
-  "HHC Products": "Novel Cannabinoid Products (Legal Status May Vary)",
-  "THCV": "Novel Cannabinoid Products (Legal Status May Vary)",
-};
-
-const isNovelCannabinoid = (p: Pick<Product, 'name' | 'cannabinoid'>) =>
-  /^THC/i.test(p.name) || p.cannabinoid === "THCV";
-
-let cartItems: { product: Product, quantity: number }[] = [];
+/* ── Cart store ─────────────────────────────────────── */
+let cartItems: { product: Product; quantity: number }[] = [];
 let cartListeners: (() => void)[] = [];
-const subscribe = (listener: () => void) => {
-  cartListeners.push(listener);
-  return () => { cartListeners = cartListeners.filter(l => l !== listener) };
+const subscribeCart = (l: () => void) => {
+  cartListeners.push(l);
+  return () => { cartListeners = cartListeners.filter(x => x !== l); };
 };
 const addToCart = (product: Product) => {
-  const existing = cartItems.find(i => i.product.id === product.id);
-  if (existing) existing.quantity++;
+  const ex = cartItems.find(i => i.product.id === product.id);
+  if (ex) ex.quantity++;
   else cartItems.push({ product, quantity: 1 });
   cartListeners.forEach(l => l());
 };
@@ -49,198 +47,242 @@ const removeFromCart = (id: string) => {
   cartListeners.forEach(l => l());
 };
 const decrementCart = (id: string) => {
-  const existing = cartItems.find(i => i.product.id === id);
-  if (!existing) return;
-  if (existing.quantity <= 1) cartItems = cartItems.filter(i => i.product.id !== id);
-  else existing.quantity--;
+  const ex = cartItems.find(i => i.product.id === id);
+  if (!ex) return;
+  if (ex.quantity <= 1) cartItems = cartItems.filter(i => i.product.id !== id);
+  else ex.quantity--;
   cartListeners.forEach(l => l());
 };
-const getCartTotal = () => cartItems.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
+const getCartTotal = () => cartItems.reduce((acc, i) => acc + i.product.price * i.quantity, 0);
 
+/* ── Flip Card ──────────────────────────────────────── */
+function FlipCard({ product }: { product: Product }) {
+  const backImg = product.imageBack ?? product.image;
+  const color = CATEGORY_COLORS[product.category];
+
+  return (
+    <div className="group [perspective:1000px] h-[340px] cursor-pointer">
+      <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+        {/* ── FRONT ── */}
+        <div className="absolute inset-0 [backface-visibility:hidden] bg-black overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          {/* gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+          {/* badges */}
+          <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+            {product.isNew && (
+              <span className="bg-[#f472b6] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1">NEW</span>
+            )}
+            {product.isPopular && !product.isNew && (
+              <span className="bg-[#FFB800] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1">HOT</span>
+            )}
+          </div>
+          {/* bottom info */}
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-1" style={{ color }}>
+              {product.brand}
+            </p>
+            <h3 className="font-bebas text-2xl leading-tight text-white line-clamp-2">{product.name}</h3>
+            <div className="mt-2 flex items-center gap-2">
+              <div className="h-[2px] w-6 flex-none" style={{ backgroundColor: color }} />
+              <span className="text-white/40 text-[9px] font-black uppercase tracking-widest">Hover to see more</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ── BACK ── */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-black overflow-hidden">
+          <img
+            src={backImg}
+            alt={`${product.name} – detail`}
+            className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
+            loading="lazy"
+          />
+          {/* dark overlay */}
+          <div className="absolute inset-0 bg-black/55" />
+          {/* content */}
+          <div className="absolute inset-0 flex flex-col justify-between p-5">
+            <div>
+              <p className="text-[9px] font-black uppercase tracking-[0.2em] mb-1" style={{ color }}>
+                {product.category} · {product.brand}
+              </p>
+              <h3 className="font-bebas text-[1.6rem] leading-tight text-white">{product.name}</h3>
+            </div>
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Price</p>
+              <p className="font-bebas text-6xl text-white leading-none mb-4">€{product.price.toFixed(2)}</p>
+              <button
+                onClick={(e) => { e.stopPropagation(); addToCart(product); }}
+                className="w-full py-3.5 font-black uppercase tracking-widest text-sm text-black transition-all hover:brightness-110 active:scale-95"
+                style={{ backgroundColor: color }}
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+/* ── Main Page ──────────────────────────────────────── */
 export default function Shop() {
   const searchString = useSearch();
   const urlParams = new URLSearchParams(searchString);
   const urlCategory = urlParams.get("category");
 
-  const activeCategory: Category | null = PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : null;
+  const activeCategory: Category | null =
+    PRIMARY_CATEGORIES.includes(urlCategory as Category) ? (urlCategory as Category) : null;
+
   const [activeSubCategory, setActiveSubCategory] = useState<string | null>(null);
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartState, setCartState] = useState(cartItems);
-  const [selectedVariants, setSelectedVariants] = useState<Record<string, number>>({});
-  const [selectedStrains, setSelectedStrains] = useState<Record<string, string>>({});
-  const [selectedFlavours, setSelectedFlavours] = useState<Record<string, string>>({});
 
-  useState(() => subscribe(() => setCartState([...cartItems])));
+  useState(() => subscribeCart(() => setCartState([...cartItems])));
 
   useEffect(() => {
-    const timer = setTimeout(() => setSearch(searchInput), 300);
-    return () => clearTimeout(timer);
+    setActiveSubCategory(null);
+  }, [activeCategory]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setSearch(searchInput), 300);
+    return () => clearTimeout(t);
   }, [searchInput]);
 
-  const availableSubCategories = SUB_CATEGORIES;
+  const availableSubCategories = useMemo(() => {
+    const source = activeCategory
+      ? PRODUCTS.filter(p => p.category === activeCategory)
+      : PRODUCTS;
+    return Array.from(new Set(source.map(p => p.subCategory))).sort();
+  }, [activeCategory]);
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter(p => {
       const matchCat = !activeCategory || p.category === activeCategory;
       const matchSub = !activeSubCategory || p.subCategory === activeSubCategory;
-      const matchSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.brand.toLowerCase().includes(search.toLowerCase());
+      const matchSearch =
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        p.brand.toLowerCase().includes(search.toLowerCase());
       return matchCat && matchSub && matchSearch;
     });
   }, [activeCategory, activeSubCategory, search]);
 
   const DELIVERY_FEE = 3.50;
-  const FREE_DELIVERY_THRESHOLD = 50;
-  const getDeliveryFee = () => getCartTotal() >= FREE_DELIVERY_THRESHOLD ? 0 : DELIVERY_FEE;
-  const getOrderTotal = () => getCartTotal() + getDeliveryFee();
+  const FREE_THRESHOLD = 50;
+  const deliveryFee = () => (getCartTotal() >= FREE_THRESHOLD ? 0 : DELIVERY_FEE);
+  const orderTotal = () => getCartTotal() + deliveryFee();
 
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
-    const subtotal = getCartTotal();
-    const delivery = getDeliveryFee();
-    const total = getOrderTotal();
+    const sub = getCartTotal();
+    const del = deliveryFee();
+    const tot = orderTotal();
     let text = "Hello MCW! 👋 I would like to place an order:\n\n";
     cartItems.forEach(item => {
       text += `• ${item.quantity}x ${item.product.name} — €${item.product.price.toFixed(2)}\n`;
     });
-    text += `\nSubtotal: €${subtotal.toFixed(2)}`;
-    text += `\nDelivery: ${delivery === 0 ? "FREE 🎉" : `€${delivery.toFixed(2)}`}`;
-    text += `\n*TOTAL: €${total.toFixed(2)}*`;
+    text += `\nSubtotal: €${sub.toFixed(2)}`;
+    text += `\nDelivery: ${del === 0 ? "FREE 🎉" : `€${del.toFixed(2)}`}`;
+    text += `\n*TOTAL: €${tot.toFixed(2)}*`;
     text += `\n\nPayment options:\n1. Revolut link (preferred)\n2. Cash on delivery\n\nPlease confirm my order and send payment details. Thank you!`;
-    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(text)}`, "_blank");
   };
 
-  const getCategorySEODescription = (cat: Category): string => {
-    switch(cat) {
-      case "CBD Oils": return "Shop premium CBD oils, tinctures and creams available in Malta. Full spectrum, broad spectrum and isolate options with same day delivery.";
-      case "CBD Flowers": return "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Indoor grown, lab tested and delivered to your door.";
-      case "CBD Vapes": return "Discover CBD, CBG9 and THCv vape pens, cartridges and disposables in Malta. Premium brands with fast delivery.";
-      case "CBD Gummies": return "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Tasty, lab tested and discreet.";
-      case "Pre-Rolls": return "Browse hemp herbal sticks and pre-rolled collectibles in Malta. Premium brands, lab-tested, delivered same day.";
-      case "Lifestyle": return "Browse CBD lifestyle accessories, grinders, incense, merch and more available in Malta. Everything you need in one place.";
-      default: return "Malta's #1 Hemp & CBD Destination. Shop the world's best brands with same day delivery across Malta.";
-    }
-  };
-
-  const getCategoryColor = (cat: string) => {
-    switch(cat) {
-      case "CBD Oils": return "#22C55E";
-      case "CBD Flowers": return "#7B4FFF";
-      case "CBD Vapes": return "#FF6B35";
-      case "CBD Gummies": return "#FF3366";
-      case "Pre-Rolls": return "#00C8C8";
-      case "Lifestyle": return "#FFB800";
-      case "MCW Originals": return "#FFD700";
-      default: return "#1a1a1a";
-    }
-  };
-
-  const handleSubCategoryClick = (sub: string) => {
-    setActiveSubCategory(prev => prev === sub ? null : sub);
-  };
-
-  const clearAllFilters = () => {
+  const clearFilters = () => {
     setActiveSubCategory(null);
     setSearchInput("");
     setSearch("");
   };
 
-  const categoryMeta: Record<string, { title: string; description: string }> = {
-    "CBD Oils": { title: "CBD Oils Malta", description: "Browse premium CBD oils, tinctures and creams available in Malta. Full spectrum, broad spectrum and isolate options with same day delivery." },
-    "CBD Flowers": { title: "CBD Flowers Malta", description: "Browse premium CBD flowers, CBG9 buds and hash available in Malta. Top quality strains with same day delivery across Malta." },
-    "CBD Vapes": { title: "CBD Vapes Malta", description: "Shop CBD, CBG9 and THCv vape cartridges and disposables in Malta. Premium brands with same day delivery." },
-    "CBD Gummies": { title: "CBD Gummies Malta", description: "Shop CBD, CBG9 and THCv gummies, edibles, cookies and energy drinks in Malta. Delicious options with same day delivery." },
-    "Pre-Rolls": { title: "Hemp Herbal Sticks Malta", description: "Browse premium hemp herbal sticks and rolling accessories available in Malta. Same day delivery." },
-    "Lifestyle": { title: "Lifestyle & Accessories Malta", description: "Shop CBD lifestyle products, grinders, accessories, clothing and merch in Malta. Same day delivery across Malta." },
-    "MCW Originals": { title: "MCW Originals — Exclusive House Collection", description: "Shop MCW's own exclusive line of CBD oils, flowers, vapes and accessories. Premium house-brand products, lab tested and Malta legal." },
-  };
-
-  const seoTitle = activeCategory ? categoryMeta[activeCategory]?.title || "Shop the Collection" : "Shop the Collection";
-  const seoDescription = activeCategory ? categoryMeta[activeCategory]?.description : undefined;
+  const activeColor = activeCategory ? CATEGORY_COLORS[activeCategory] : "#FFB800";
 
   return (
     <>
-      <SEO title={seoTitle} description={seoDescription ?? "Shop Malta's best CBD products at MCW — premium CBD oils, flowers, vapes, gummies, pre-rolls, and accessories. 4 stores island-wide. Same-day delivery available."} />
-      
-      {/* SHOP HEADER */}
-      <div className="pt-32 pb-10 bg-gradient-to-r from-[#FF6B35] to-[#FFB800] relative overflow-hidden border-b-4 border-black">
+      <SEO
+        title={activeCategory ? `${activeCategory} Malta — MCW CBD Shop` : "Shop the Collection — MCW CBD Malta"}
+        description="Malta's #1 Hemp & CBD Destination. Real products, real photos. Same-day delivery across Malta."
+      />
+
+      {/* ── SHOP HEADER ── */}
+      <div className="pt-32 pb-10 bg-[#0a0a0a] border-b border-white/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-7xl md:text-9xl font-bebas tracking-tight text-black mb-2 leading-none">
+          <h1 className="text-7xl md:text-9xl font-bebas tracking-tight text-white mb-2 leading-none">
             THE MCW COLLECTION
           </h1>
-          <p className="text-black/80 font-black tracking-widest uppercase text-lg mb-8">
-            PRODUCTS
+          <p className="text-white/30 font-black tracking-widest uppercase text-sm mb-8">
+            65 Products · 7 Categories · Malta's Best
           </p>
-          
-          <div className="flex flex-col md:flex-row justify-between gap-6 items-end">
+
+          <div className="flex flex-col md:flex-row justify-between gap-4 items-end">
             <div className="relative w-full max-w-xl">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-black/50" size={20} />
-              <input 
-                type="text" 
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30" size={18} />
+              <input
+                type="text"
                 placeholder="SEARCH PRODUCTS OR BRANDS..."
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
-                className="w-full bg-white border-4 border-black py-4 pl-12 pr-4 focus:outline-none focus:ring-4 focus:ring-black/20 transition-all text-black font-black tracking-widest text-sm uppercase placeholder:text-black/30 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                className="w-full bg-white/5 border border-white/10 py-3.5 pl-11 pr-4 focus:outline-none focus:border-white/30 transition-all text-white font-black tracking-widest text-xs uppercase placeholder:text-white/20"
               />
             </div>
-            
-            <div className="flex gap-4 w-full md:w-auto">
-              <button 
+            <div className="flex gap-3 w-full md:w-auto">
+              <button
                 onClick={() => setIsFilterOpen(true)}
-                className="md:hidden flex-1 px-6 py-4 border-4 border-black bg-white flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                className="md:hidden flex-1 px-5 py-3.5 border border-white/20 bg-white/5 flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs text-white"
               >
-                <Filter size={18} /> Filters
+                <Filter size={15} /> Filters
               </button>
-              <button 
+              <button
                 onClick={() => setIsCartOpen(true)}
-                className="flex-1 md:flex-none px-8 py-4 bg-black text-white border-4 border-black flex items-center justify-center gap-2 font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]"
+                className="flex-1 md:flex-none px-7 py-3.5 bg-white text-black flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs hover:bg-[#FFB800] transition-colors"
               >
-                <ShoppingBag size={18} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
+                <ShoppingBag size={15} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* CATEGORY PILLS NAV */}
-      <div className="bg-[#0d0d0d] border-b border-white/10 overflow-x-auto">
+      {/* ── CATEGORY TABS ── */}
+      <div className="bg-[#0d0d0d] border-b border-white/10 overflow-x-auto sticky top-[72px] z-30">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-2 py-4 whitespace-nowrap">
+          <div className="flex gap-1 py-3 whitespace-nowrap">
             <Link
               href="/shop"
-              className={`px-5 py-2.5 text-[11px] font-black uppercase tracking-widest border-2 transition-all shrink-0 ${
+              className={`px-5 py-2 text-[11px] font-black uppercase tracking-widest border transition-all shrink-0 ${
                 !activeCategory
                   ? "bg-white text-black border-white"
-                  : "bg-transparent text-white/50 border-white/20 hover:text-white hover:border-white/50"
+                  : "bg-transparent text-white/40 border-white/10 hover:text-white hover:border-white/30"
               }`}
             >
               ALL
             </Link>
-            {PRIMARY_CATEGORIES.map((cat) => {
+            {PRIMARY_CATEGORIES.map(cat => {
               const isActive = activeCategory === cat;
-              const isOriginals = cat === "MCW Originals";
-              const displayLabel = CATEGORY_DISPLAY_LABELS[cat] || cat;
+              const color = CATEGORY_COLORS[cat];
               return (
                 <Link
                   key={cat}
                   href={`/shop?category=${encodeURIComponent(cat)}`}
-                  className="px-5 py-2.5 text-[11px] font-black uppercase tracking-widest border-2 transition-all shrink-0"
-                  style={isActive
-                    ? {
-                        background: isOriginals ? "linear-gradient(135deg, #B8860B, #FFD700)" : getCategoryColor(cat),
-                        color: "#000",
-                        borderColor: isOriginals ? "#FFD700" : getCategoryColor(cat),
-                      }
-                    : {
-                        background: "transparent",
-                        color: isOriginals ? "rgba(255,215,0,0.6)" : "rgba(255,255,255,0.4)",
-                        borderColor: isOriginals ? "rgba(255,215,0,0.3)" : "rgba(255,255,255,0.15)",
-                      }
+                  className="px-5 py-2 text-[11px] font-black uppercase tracking-widest border transition-all shrink-0"
+                  style={
+                    isActive
+                      ? { background: color, color: "#000", borderColor: color }
+                      : { background: "transparent", color: "rgba(255,255,255,0.4)", borderColor: "rgba(255,255,255,0.08)" }
                   }
                 >
-                  {isOriginals ? "★ MCW ORIGINALS" : displayLabel}
+                  {CATEGORY_ICONS[cat]} {cat}
                 </Link>
               );
             })}
@@ -248,361 +290,202 @@ export default function Shop() {
         </div>
       </div>
 
-      {/* CATEGORY DISCLAIMER BANNER */}
-      {activeCategory && CATEGORY_DISCLAIMERS[activeCategory] && (
-        <div className="bg-green-950/70 border-b border-green-900/50 py-3 px-4">
-          <p className="max-w-[1400px] mx-auto text-green-300 text-[11px] font-medium tracking-wide text-center">
-            ✓ {CATEGORY_DISCLAIMERS[activeCategory]}
-          </p>
-        </div>
-      )}
-
-      {/* HHC / THCV INFO BANNER */}
-      {activeCategory && (activeCategory === "CBD Vapes" || activeCategory === "CBD Gummies") && (
-        <div className="bg-yellow-950/60 border-b border-yellow-800/40 py-3 px-4">
-          <p className="max-w-[1400px] mx-auto text-yellow-300 text-[11px] font-medium tracking-wide text-center">
-            ⚠ Products containing THCV and HHC are legal hemp-derived minor cannabinoids. All cannabinoids listed comply with current Maltese law. HHCp and THCP are not sold at MCW.
-          </p>
-        </div>
-      )}
-
-      {/* FREE DELIVERY ANNOUNCEMENT STRIP — sticky below nav */}
-      <div className="sticky top-[88px] z-40 bg-[#22C55E] border-b-2 border-black/20 py-2.5 px-4 overflow-hidden shadow-sm">
+      {/* ── FREE DELIVERY STRIP ── */}
+      <div className="bg-[#111] border-b border-white/5 py-2.5 px-4">
         <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-center">
-          <span className="text-[11px] font-black uppercase tracking-widest text-black">🚚 FREE delivery on orders over €50</span>
-          <span className="hidden sm:inline text-black/40 font-black">·</span>
-          <span className="text-[11px] font-black uppercase tracking-widest text-black">📍 Same-day delivery across Malta</span>
-          <span className="hidden sm:inline text-black/40 font-black">·</span>
-          <span className="text-[11px] font-black uppercase tracking-widest text-black">🕙 Open daily until 11:30pm</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🚚 Free delivery over €50</span>
+          <span className="hidden sm:inline text-white/20 font-black">·</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">📍 Same-day across Malta</span>
+          <span className="hidden sm:inline text-white/20 font-black">·</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🕙 Open daily until 11:30pm</span>
         </div>
       </div>
 
-      {/* SHOP-PAGE FREE DELIVERY PROGRESS BAR — always visible */}
-      <div className={`px-4 py-3 border-b-2 transition-colors duration-500 ${getCartTotal() >= FREE_DELIVERY_THRESHOLD ? 'bg-[#22C55E]/15 border-[#22C55E]/40' : 'bg-[#0d0d0d] border-white/10'}`}>
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex items-center gap-4">
-            <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-              <div
-                className="h-full rounded-full transition-all duration-500"
-                style={{
-                  width: `${Math.min(100, (getCartTotal() / FREE_DELIVERY_THRESHOLD) * 100)}%`,
-                  background: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800',
-                }}
-              />
-            </div>
-            <span className="text-[11px] font-black uppercase tracking-widest shrink-0 whitespace-nowrap" style={{ color: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : 'rgba(255,255,255,0.5)' }}>
-              {getCartTotal() >= FREE_DELIVERY_THRESHOLD
-                ? '🎉 FREE delivery unlocked!'
-                : cartState.length === 0
-                  ? `Spend €${FREE_DELIVERY_THRESHOLD} for FREE delivery`
-                  : `€${(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} away from FREE delivery`}
-            </span>
+      {/* ── DELIVERY PROGRESS ── */}
+      <div className="bg-[#0d0d0d] border-b border-white/5 px-4 py-2.5">
+        <div className="max-w-[1400px] mx-auto flex items-center gap-4">
+          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-500"
+              style={{
+                width: `${Math.min(100, (getCartTotal() / FREE_THRESHOLD) * 100)}%`,
+                background: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : activeColor,
+              }}
+            />
           </div>
+          <span className="text-[10px] font-black uppercase tracking-widest shrink-0" style={{ color: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "rgba(255,255,255,0.3)" }}>
+            {getCartTotal() >= FREE_THRESHOLD
+              ? "🎉 FREE delivery!"
+              : cartState.length === 0
+                ? `€${FREE_THRESHOLD} = free delivery`
+                : `€${(FREE_THRESHOLD - getCartTotal()).toFixed(2)} to free delivery`}
+          </span>
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row gap-12 bg-[#0a0a0a]">
-        
-        {/* DESKTOP SIDEBAR */}
-        <div className="hidden md:block w-72 shrink-0">
-          <div className="sticky top-32">
-            <h3 className="font-bebas text-4xl tracking-widest mb-6 text-white">FILTERS</h3>
-            <div className="flex flex-col gap-2">
-              <button
-                onClick={clearAllFilters}
-                className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
-                  !activeSubCategory
-                    ? "bg-white text-black border-white"
-                    : "bg-transparent text-white/50 border-white/20 hover:bg-white/10 hover:text-white hover:border-white/50"
-                }`}
-                style={{ borderRadius: 0 }}
-              >
-                All Products
-              </button>
-              {availableSubCategories.map(sub => (
+      {/* ── MAIN CONTENT ── */}
+      <div className="bg-[#0a0a0a] min-h-screen">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col md:flex-row gap-10">
+
+          {/* ── DESKTOP SIDEBAR ── */}
+          <div className="hidden md:block w-56 shrink-0">
+            <div className="sticky top-36">
+              <h3 className="font-bebas text-3xl tracking-widest mb-4 text-white">Filter</h3>
+              <div className="flex flex-col gap-1.5">
                 <button
-                  key={sub}
-                  onClick={() => handleSubCategoryClick(sub)}
-                  className={`py-2 px-4 text-xs font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
-                    activeSubCategory === sub
+                  onClick={clearFilters}
+                  className={`py-2 px-3 text-[11px] font-black uppercase tracking-widest transition-all border text-left ${
+                    !activeSubCategory
                       ? "bg-white text-black border-white"
-                      : "bg-transparent text-white/70 border-white/10 hover:bg-white/10 hover:text-white hover:border-white/30"
+                      : "bg-transparent text-white/40 border-white/10 hover:text-white hover:border-white/30"
                   }`}
-                  style={{ borderRadius: 0 }}
                 >
-                  {SUB_CATEGORY_DISPLAY[sub] || sub}
+                  All
                 </button>
-              ))}
+                {availableSubCategories.map(sub => (
+                  <button
+                    key={sub}
+                    onClick={() => setActiveSubCategory(prev => (prev === sub ? null : sub))}
+                    className={`py-2 px-3 text-[11px] font-black uppercase tracking-widest transition-all border text-left ${
+                      activeSubCategory === sub
+                        ? "text-black border-transparent"
+                        : "bg-transparent text-white/40 border-white/10 hover:text-white hover:border-white/30"
+                    }`}
+                    style={activeSubCategory === sub ? { backgroundColor: activeColor, borderColor: activeColor } : {}}
+                  >
+                    {sub}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* PRODUCT GRID */}
-        <div className="flex-1">
-          <div className="mb-8 flex justify-between items-center text-sm font-black tracking-widest uppercase text-white/50">
-            <span>Showing {filteredProducts.length} results</span>
+          {/* ── PRODUCT GRID ── */}
+          <div className="flex-1">
+            <div className="mb-6 flex justify-between items-center">
+              <span className="text-[11px] font-black tracking-widest uppercase text-white/30">
+                Showing {filteredProducts.length} products
+              </span>
+              {(activeSubCategory || search) && (
+                <button onClick={clearFilters} className="text-[11px] font-black tracking-widest uppercase text-white/40 hover:text-white transition-colors underline underline-offset-4">
+                  Clear filters
+                </button>
+              )}
+            </div>
+
+            {filteredProducts.length === 0 ? (
+              <div className="py-32 text-center border border-white/10">
+                <p className="text-2xl text-white font-bebas tracking-widest mb-6">No products found.</p>
+                <button onClick={clearFilters} className="px-8 py-3.5 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-[#FFB800] transition-colors">
+                  Clear Filters
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {filteredProducts.map(product => (
+                  <FlipCard key={product.id} product={product} />
+                ))}
+              </div>
+            )}
           </div>
-
-          {filteredProducts.length === 0 ? (
-            <div className="py-32 text-center border-4 border-white/10 bg-white/5 rounded-3xl">
-              <p className="text-2xl text-white font-bebas tracking-widest">No products found.</p>
-              <button onClick={clearAllFilters} className="mt-6 px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors">Clear Filters</button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-              {filteredProducts.map((product, i) => (
-                product.logoCard ? (
-                  <div key={product.id}>
-                    <MCWOriginalsCard
-                      product={product}
-                      onAddToCart={addToCart}
-                      selectedVariant={selectedVariants[product.id] ?? 0}
-                      onVariantChange={(vi) => setSelectedVariants(prev => ({ ...prev, [product.id]: vi }))}
-                    />
-                  </div>
-                ) : (
-                <div
-                  key={product.id}
-                  className="bg-white rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 min-h-[300px]"
-                >
-                  {/* TOP ROW: badges */}
-                  <div className="px-5 pt-5 pb-3 flex items-start justify-between shrink-0">
-                    <div>
-                      {product.isNew && <span className="bg-[#FF3366] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">NEW</span>}
-                      {product.isPopular && !product.isNew && <span className="bg-[#FFB800] text-black text-[10px] font-black uppercase tracking-widest px-3 py-1.5 inline-block">HOT</span>}
-                    </div>
-                  </div>
-
-                  {/* MIDDLE ROW: name (left) + image (right), flex-row, contained */}
-                  <div className="flex flex-row flex-1 min-h-0 overflow-hidden">
-                    {/* Left: name + brand */}
-                    <div className="px-5 pb-4 flex flex-col justify-end w-[58%] shrink-0">
-                      <h3 className="font-bebas text-[2.4rem] leading-[0.88] tracking-tight text-black line-clamp-3">{product.name}</h3>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-black/35 mt-1">{product.brand}</span>
-                    </div>
-                    {/* Right: product image — strictly contained */}
-                    <div className="relative w-[42%] shrink-0 overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={`${product.name} – ${product.brand} – Buy CBD in Malta`}
-                        width={300}
-                        height={300}
-                        className={`absolute inset-0 w-full h-full ${product.imageFit === 'contain' ? 'object-contain scale-110' : 'object-cover'} ${i % 2 === 0 ? 'animate-float-product' : 'animate-float-product-alt'}`}
-                        loading="lazy"
-                        style={isNovelCannabinoid(product) ? { filter: 'blur(2px)' } : undefined}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-r from-white from-0% to-transparent to-35% pointer-events-none" />
-                      {/* Hemp Product overlay for flower category */}
-                      {product.category === "CBD Flowers" && (
-                        <div className="absolute bottom-2 right-1 bg-purple-700/80 text-white text-[7px] font-black uppercase tracking-widest px-1.5 py-0.5">
-                          Hemp Product
-                        </div>
-                      )}
-                      {/* Novel cannabinoid warning overlay */}
-                      {isNovelCannabinoid(product) && (
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <span className="bg-black/70 text-white text-[8px] font-black uppercase tracking-widest px-2 py-1 text-center leading-tight">18+ · Novel Cannabinoid</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* STRAIN + FLAVOUR DROPDOWNS: only for products with strainOptions */}
-                  {product.strainOptions && (
-                    <div className="px-5 pb-3 shrink-0 space-y-2">
-                      <div>
-                        <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1">Strain Type</p>
-                        <select
-                          value={selectedStrains[product.id] || product.strainOptions[0]}
-                          onChange={(e) => setSelectedStrains(prev => ({ ...prev, [product.id]: e.target.value }))}
-                          className="w-full text-[11px] font-bold uppercase tracking-wide border border-black/20 bg-white text-black px-2.5 py-1.5 appearance-none cursor-pointer hover:border-black/50 transition-colors focus:outline-none focus:border-black"
-                        >
-                          {product.strainOptions.map(s => <option key={s} value={s}>{s}</option>)}
-                        </select>
-                      </div>
-                      {product.flavourOptions && (
-                        <div>
-                          <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1">Flavour</p>
-                          <select
-                            value={selectedFlavours[product.id] || product.flavourOptions[0]}
-                            onChange={(e) => setSelectedFlavours(prev => ({ ...prev, [product.id]: e.target.value }))}
-                            className="w-full text-[11px] font-bold border border-black/20 bg-white text-black px-2.5 py-1.5 appearance-none cursor-pointer hover:border-black/50 transition-colors focus:outline-none focus:border-black"
-                          >
-                            {product.flavourOptions.map(f => <option key={f} value={f}>{f}</option>)}
-                          </select>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* GRAM SELECTOR: only for products with variants */}
-                  {product.variants && (
-                    <div className="px-5 pb-2 shrink-0">
-                      <p className="text-[8px] font-bold uppercase tracking-widest text-black/40 mb-1.5">Select grams</p>
-                      <div className="flex gap-1.5 flex-wrap">
-                        {product.variants.map((v, vi) => (
-                          <button
-                            key={v.label}
-                            onClick={(e) => { e.preventDefault(); setSelectedVariants(prev => ({ ...prev, [product.id]: vi })); }}
-                            className={`text-[10px] font-bold px-2.5 py-1 border transition-colors ${(selectedVariants[product.id] ?? 0) === vi ? 'bg-black text-white border-black' : 'bg-white text-black/50 border-black/20 hover:border-black/60'}`}
-                          >
-                            {v.label}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* BOTTOM ROW: CTA + price */}
-                  <div className="px-5 pb-5 flex items-center justify-between shrink-0 mt-2">
-                    <button
-                      onClick={(e) => { e.preventDefault(); addToCart(product); }}
-                      title="Add to cart"
-                      className="w-10 h-10 flex items-center justify-center bg-black text-white hover:bg-[#22c55e] hover:text-black transition-colors"
-                    >
-                      <ShoppingBag size={16} />
-                    </button>
-                    <div className="text-right">
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-black/30 leading-none mb-0.5">Price</p>
-                      <span className="font-bebas text-4xl text-black leading-none">
-                        €{(product.variants ? product.variants[selectedVariants[product.id] ?? 0].price : product.price).toFixed(2)}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Category accent bar */}
-                  <div className="h-[5px] w-full shrink-0" style={{ backgroundColor: getCategoryColor(product.category) }} />
-                  {/* Compliance micro-badge trio */}
-                  {product.cannabinoid !== "None" && (
-                    <div className="px-5 py-2 flex items-center justify-between bg-gray-50 border-t border-gray-100">
-                      <span className="text-[8px] font-black uppercase tracking-widest text-green-700">✓ ≤0.2% THC</span>
-                      <span className="text-gray-300">|</span>
-                      <span className="text-[8px] font-black uppercase tracking-widest text-blue-600">Non-Psychoactive</span>
-                      <span className="text-gray-300">|</span>
-                      <span className="text-[8px] font-black uppercase tracking-widest text-gray-500">COA Available</span>
-                    </div>
-                  )}
-                </div>
-                )
-              ))}
-            </div>
-          )}
         </div>
       </div>
 
-      {/* CART SIDEBAR */}
+      {/* ── CART SIDEBAR ── */}
       <AnimatePresence>
         {isCartOpen && (
           <>
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setIsCartOpen(false)}
               className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
             />
-            <motion.div 
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+            <motion.div
+              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l-4 border-black z-50 flex flex-col shadow-2xl"
+              className="fixed top-0 right-0 h-full w-full max-w-md bg-[#0d0d0d] border-l border-white/10 z-50 flex flex-col shadow-2xl"
             >
-              <div className="p-6 border-b-4 border-black flex justify-between items-center bg-[#FFB800]">
-                <h2 className="font-bebas text-5xl tracking-widest text-black leading-none">YOUR CART</h2>
-                <button onClick={() => setIsCartOpen(false)} className="p-2 text-black hover:bg-black hover:text-white transition-colors rounded-full">
-                  <X size={28} />
+              <div className="p-6 border-b border-white/10 flex justify-between items-center">
+                <h2 className="font-bebas text-5xl tracking-widest text-white leading-none">YOUR CART</h2>
+                <button onClick={() => setIsCartOpen(false)} className="p-2 text-white/50 hover:text-white transition-colors">
+                  <X size={24} />
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-white">
+              <div className="flex-1 overflow-y-auto p-6 space-y-4">
                 {cartState.length === 0 ? (
-                  <div className="text-center text-black/30 mt-32">
-                    <ShoppingBag size={64} className="mx-auto mb-6 opacity-20" />
-                    <p className="font-black uppercase tracking-widest text-lg">Your cart is empty.</p>
+                  <div className="text-center text-white/20 mt-32">
+                    <ShoppingBag size={56} className="mx-auto mb-6 opacity-20" />
+                    <p className="font-black uppercase tracking-widest">Your cart is empty.</p>
                   </div>
                 ) : (
                   cartState.map(item => (
-                    <div key={item.product.id} className="flex gap-4 bg-[#f8f8f8] p-3 border-2 border-black rounded-xl">
-                      <img src={item.product.image} className="w-24 h-24 object-cover rounded-lg border-2 border-black" alt={item.product.name} />
-                      <div className="flex-1 flex flex-col justify-between py-1">
+                    <div key={item.product.id} className="flex gap-4 bg-white/5 border border-white/10 p-3">
+                      <img src={item.product.image} className="w-20 h-20 object-cover shrink-0" alt={item.product.name} />
+                      <div className="flex-1 flex flex-col justify-between py-0.5">
                         <div>
-                          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-black/50">{item.product.brand}</p>
-                          <h4 className="font-bold text-sm text-black line-clamp-2 mt-1 uppercase">{item.product.name}</h4>
+                          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/40">{item.product.brand}</p>
+                          <h4 className="font-bold text-xs text-white line-clamp-2 mt-0.5 uppercase">{item.product.name}</h4>
                         </div>
                         <div className="flex justify-between items-center mt-2">
-                          <span className="font-bebas text-3xl text-black">€{(item.product.price * item.quantity).toFixed(2)}</span>
-                          <div className="flex items-center border-2 border-black bg-white">
-                            <button
-                              onClick={() => decrementCart(item.product.id)}
-                              className="px-3 py-1.5 text-black hover:bg-red-500 hover:text-white transition-colors font-black text-base leading-none"
-                              aria-label="Decrease quantity"
-                            >−</button>
-                            <span className="px-3 py-1.5 text-[11px] font-black tracking-widest text-black border-x-2 border-black min-w-[2.5rem] text-center">{item.quantity}</span>
-                            <button
-                              onClick={() => addToCart(item.product)}
-                              className="px-3 py-1.5 text-black hover:bg-[#22C55E] hover:text-black transition-colors font-black text-base leading-none"
-                              aria-label="Increase quantity"
-                            >+</button>
+                          <span className="font-bebas text-2xl text-white">€{(item.product.price * item.quantity).toFixed(2)}</span>
+                          <div className="flex items-center border border-white/20">
+                            <button onClick={() => decrementCart(item.product.id)} className="px-2.5 py-1 text-white/70 hover:text-white hover:bg-white/10 transition-colors font-black text-sm">−</button>
+                            <span className="px-2.5 py-1 text-[11px] font-black text-white border-x border-white/20 min-w-[2rem] text-center">{item.quantity}</span>
+                            <button onClick={() => addToCart(item.product)} className="px-2.5 py-1 text-white/70 hover:text-white hover:bg-white/10 transition-colors font-black text-sm">+</button>
                           </div>
                         </div>
                       </div>
+                      <button onClick={() => removeFromCart(item.product.id)} className="text-white/20 hover:text-red-400 transition-colors self-start mt-1">
+                        <X size={14} />
+                      </button>
                     </div>
                   ))
                 )}
               </div>
 
-              <div className="p-6 border-t-4 border-black bg-[#f8f8f8]">
-                {/* Free delivery progress bar */}
+              <div className="p-6 border-t border-white/10">
                 {cartState.length > 0 && (
                   <div className="mb-4">
-                    <div className="flex justify-between items-center mb-1.5">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-black/40">FREE DELIVERY PROGRESS</span>
-                      <span className="text-[9px] font-black uppercase tracking-widest text-black/40">€{Math.min(getCartTotal(), FREE_DELIVERY_THRESHOLD).toFixed(2)} / €{FREE_DELIVERY_THRESHOLD}</span>
-                    </div>
-                    <div className="h-2.5 bg-black/10 rounded-full overflow-hidden border border-black/20">
+                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-2">
                       <div
                         className="h-full rounded-full transition-all duration-500"
                         style={{
-                          width: `${Math.min(100, (getCartTotal() / FREE_DELIVERY_THRESHOLD) * 100)}%`,
-                          background: getCartTotal() >= FREE_DELIVERY_THRESHOLD ? '#22C55E' : '#FFB800',
+                          width: `${Math.min(100, (getCartTotal() / FREE_THRESHOLD) * 100)}%`,
+                          background: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "#FFB800",
                         }}
                       />
                     </div>
+                    {getCartTotal() < FREE_THRESHOLD ? (
+                      <p className="text-[10px] font-black uppercase tracking-widest text-white/30 text-center">
+                        Add €{(FREE_THRESHOLD - getCartTotal()).toFixed(2)} more for FREE delivery
+                      </p>
+                    ) : (
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#4ade80] text-center">🎉 Free delivery unlocked!</p>
+                    )}
                   </div>
                 )}
-                {/* Free delivery status message */}
-                {cartState.length > 0 && getCartTotal() < FREE_DELIVERY_THRESHOLD && (
-                  <div className="mb-4 bg-black text-white px-4 py-2.5 text-xs font-black uppercase tracking-widest text-center">
-                    Add €{(FREE_DELIVERY_THRESHOLD - getCartTotal()).toFixed(2)} more for FREE delivery!
-                  </div>
-                )}
-                {cartState.length > 0 && getCartTotal() >= FREE_DELIVERY_THRESHOLD && (
-                  <div className="mb-4 bg-[#22C55E] text-black px-4 py-2.5 text-xs font-black uppercase tracking-widest text-center">
-                    🎉 You qualify for FREE delivery!
-                  </div>
-                )}
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-black uppercase tracking-widest text-sm text-black/50">SUBTOTAL</span>
-                  <span className="font-bebas text-3xl text-black leading-none">€{getCartTotal().toFixed(2)}</span>
+                <div className="flex justify-between items-center mb-1.5">
+                  <span className="font-black uppercase tracking-widest text-xs text-white/40">Subtotal</span>
+                  <span className="font-bebas text-2xl text-white">€{getCartTotal().toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between items-center mb-4 pb-4 border-b-2 border-black/10">
-                  <span className="font-black uppercase tracking-widest text-sm text-black/50">DELIVERY</span>
-                  <span className="font-bebas text-3xl leading-none" style={{ color: getDeliveryFee() === 0 ? '#22C55E' : '#000' }}>
-                    {getDeliveryFee() === 0 ? 'FREE' : `€${getDeliveryFee().toFixed(2)}`}
+                <div className="flex justify-between items-center mb-4 pb-4 border-b border-white/10">
+                  <span className="font-black uppercase tracking-widest text-xs text-white/40">Delivery</span>
+                  <span className="font-bebas text-2xl" style={{ color: deliveryFee() === 0 ? "#4ade80" : "white" }}>
+                    {deliveryFee() === 0 ? "FREE" : `€${deliveryFee().toFixed(2)}`}
                   </span>
                 </div>
                 <div className="flex justify-between items-end mb-6">
-                  <span className="font-black uppercase tracking-widest text-sm text-black">TOTAL</span>
-                  <span className="font-bebas text-5xl text-black leading-none">€{getOrderTotal().toFixed(2)}</span>
+                  <span className="font-black uppercase tracking-widest text-sm text-white">Total</span>
+                  <span className="font-bebas text-5xl text-white">€{orderTotal().toFixed(2)}</span>
                 </div>
-                <p className="text-[10px] text-black/40 uppercase tracking-wider font-bold text-center mb-4">Pay via Revolut link or Cash on Delivery</p>
-                <button 
+                <p className="text-[9px] text-white/20 uppercase tracking-wider font-bold text-center mb-4">Pay via Revolut or Cash on Delivery</p>
+                <button
                   onClick={handleCheckout}
                   disabled={cartState.length === 0}
-                  className="w-full py-5 bg-[#22C55E] text-black border-4 border-black font-black uppercase tracking-widest text-lg hover:bg-[#4ade80] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-1 hover:translate-x-1"
+                  className="w-full py-4 bg-[#22C55E] text-black font-black uppercase tracking-widest text-sm hover:bg-[#4ade80] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                 >
-                  ENQUIRE VIA WHATSAPP
+                  Enquire via WhatsApp
                 </button>
               </div>
             </motion.div>
@@ -610,51 +493,45 @@ export default function Shop() {
         )}
       </AnimatePresence>
 
-      {/* MOBILE FILTER DRAWER */}
+      {/* ── MOBILE FILTER DRAWER ── */}
       <AnimatePresence>
         {isFilterOpen && (
           <>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setIsFilterOpen(false)}
-              className="fixed inset-0 bg-black/80 z-50 md:hidden backdrop-blur-sm"
+              className="fixed inset-0 bg-black/80 z-50 md:hidden"
             />
-            <motion.div 
+            <motion.div
               initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed bottom-0 left-0 w-full h-[85vh] bg-white border-t-4 border-black z-50 flex flex-col md:hidden rounded-t-3xl overflow-hidden"
+              className="fixed bottom-0 left-0 w-full h-[70vh] bg-[#0d0d0d] border-t border-white/10 z-50 flex flex-col md:hidden rounded-t-2xl overflow-hidden"
             >
-              <div className="p-6 border-b-4 border-black flex justify-between items-center bg-[#FFB800]">
-                <h2 className="font-bebas text-5xl tracking-widest text-black leading-none">FILTERS</h2>
-                <button onClick={() => setIsFilterOpen(false)} className="text-black bg-white/20 p-2 rounded-full"><X size={28} /></button>
+              <div className="p-5 border-b border-white/10 flex justify-between items-center shrink-0">
+                <h3 className="font-bebas text-3xl tracking-widest text-white">Filters</h3>
+                <button onClick={() => setIsFilterOpen(false)} className="text-white/50 hover:text-white"><X size={22} /></button>
               </div>
-              <div className="p-6 overflow-y-auto flex-1 bg-white">
-                <h3 className="text-sm font-black uppercase tracking-widest text-black/50 mb-4">CATEGORIES</h3>
-                <div className="flex flex-col gap-2">
+              <div className="flex-1 overflow-y-auto p-5 space-y-2">
+                <button
+                  onClick={() => { clearFilters(); setIsFilterOpen(false); }}
+                  className={`w-full py-2.5 px-4 text-[11px] font-black uppercase tracking-widest border text-left ${
+                    !activeSubCategory ? "bg-white text-black border-white" : "bg-transparent text-white/50 border-white/10"
+                  }`}
+                >
+                  All
+                </button>
+                {availableSubCategories.map(sub => (
                   <button
-                    onClick={() => { clearAllFilters(); setIsFilterOpen(false); }}
-                    className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
-                      !activeSubCategory
-                        ? "bg-black text-white border-black"
-                        : "bg-gray-100 text-black/50 border-gray-200"
+                    key={sub}
+                    onClick={() => { setActiveSubCategory(prev => prev === sub ? null : sub); setIsFilterOpen(false); }}
+                    className={`w-full py-2.5 px-4 text-[11px] font-black uppercase tracking-widest border text-left ${
+                      activeSubCategory === sub ? "text-black border-transparent" : "bg-transparent text-white/40 border-white/10"
                     }`}
+                    style={activeSubCategory === sub ? { backgroundColor: activeColor, borderColor: activeColor } : {}}
                   >
-                    All Products
+                    {sub}
                   </button>
-                  {availableSubCategories.map(sub => (
-                    <button
-                      key={sub}
-                      onClick={() => { handleSubCategoryClick(sub); setIsFilterOpen(false); }}
-                      className={`py-3 px-5 text-sm font-black uppercase tracking-widest transition-all duration-200 border-2 text-left ${
-                        activeSubCategory === sub
-                          ? "bg-black text-white border-black"
-                          : "bg-white text-black border-gray-200"
-                      }`}
-                    >
-                      {sub}
-                    </button>
-                  ))}
-                </div>
+                ))}
               </div>
             </motion.div>
           </>
