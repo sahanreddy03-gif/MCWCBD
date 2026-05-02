@@ -61,7 +61,7 @@ function FlipCard({ product }: { product: Product }) {
   const color = CATEGORY_COLORS[product.category];
 
   return (
-    <div className="group [perspective:1000px] h-[340px] cursor-pointer">
+    <div className="group [perspective:1200px] h-[460px] cursor-pointer">
       <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
         {/* ── FRONT ── */}
@@ -69,60 +69,67 @@ function FlipCard({ product }: { product: Product }) {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
             loading="lazy"
           />
-          {/* gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-          {/* badges */}
-          <div className="absolute top-3 left-3 flex flex-col gap-1.5">
+          {/* very subtle bottom fade only — image stays crisp */}
+          <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black via-black/60 to-transparent" />
+
+          {/* badges top-right */}
+          <div className="absolute top-3 right-3 flex flex-col gap-1.5 items-end">
             {product.isNew && (
-              <span className="bg-[#f472b6] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1">NEW</span>
+              <span className="bg-[#f472b6] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1 shadow-lg">NEW</span>
             )}
             {product.isPopular && !product.isNew && (
-              <span className="bg-[#FFB800] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1">HOT</span>
+              <span className="bg-[#FFB800] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1 shadow-lg">HOT</span>
             )}
           </div>
+
+          {/* colored accent line at top */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
+
           {/* bottom info */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-1" style={{ color }}>
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] mb-1" style={{ color }}>
               {product.brand}
             </p>
-            <h3 className="font-bebas text-2xl leading-tight text-white line-clamp-2">{product.name}</h3>
-            <div className="mt-2 flex items-center gap-2">
-              <div className="h-[2px] w-6 flex-none" style={{ backgroundColor: color }} />
-              <span className="text-white/40 text-[9px] font-black uppercase tracking-widest">Hover to see more</span>
-            </div>
+            <h3 className="font-bebas text-[1.65rem] leading-tight text-white">{product.name}</h3>
+            <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-white/30">flip for price →</p>
           </div>
         </div>
 
         {/* ── BACK ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-black overflow-hidden">
+          {/* image fills whole back, zooms in on hover */}
           <img
             src={backImg}
             alt={`${product.name} – detail`}
             className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
             loading="lazy"
           />
-          {/* dark overlay */}
-          <div className="absolute inset-0 bg-black/55" />
+          {/* gradient from bottom only — keep top of image clear */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10" />
+
+          {/* colored top bar */}
+          <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
+
           {/* content */}
-          <div className="absolute inset-0 flex flex-col justify-between p-5">
+          <div className="absolute inset-0 flex flex-col justify-between p-5 pt-6">
             <div>
-              <p className="text-[9px] font-black uppercase tracking-[0.2em] mb-1" style={{ color }}>
+              <p className="text-[9px] font-black uppercase tracking-[0.25em] mb-1" style={{ color }}>
                 {product.category} · {product.brand}
               </p>
-              <h3 className="font-bebas text-[1.6rem] leading-tight text-white">{product.name}</h3>
+              <h3 className="font-bebas text-[1.75rem] leading-tight text-white">{product.name}</h3>
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Price</p>
-              <p className="font-bebas text-6xl text-white leading-none mb-4">€{product.price.toFixed(2)}</p>
+              <p className="font-bebas text-7xl text-white leading-none mb-1">€{product.price.toFixed(2)}</p>
+              <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-4">incl. VAT · Malta delivery</p>
               <button
                 onClick={(e) => { e.stopPropagation(); addToCart(product); }}
-                className="w-full py-3.5 font-black uppercase tracking-widest text-sm text-black transition-all hover:brightness-110 active:scale-95"
+                className="w-full py-4 font-black uppercase tracking-widest text-sm text-black transition-all hover:brightness-110 active:scale-95 shadow-lg"
                 style={{ backgroundColor: color }}
               >
-                Add to Cart
+                + Add to Cart
               </button>
             </div>
           </div>

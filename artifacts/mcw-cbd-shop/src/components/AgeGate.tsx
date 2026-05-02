@@ -8,7 +8,8 @@ export function AgeGate() {
 
   useEffect(() => {
     const verified = sessionStorage.getItem("mcw_age_verified");
-    if (!verified) {
+    const preview = new URLSearchParams(window.location.search).get("preview");
+    if (!verified && !preview) {
       setIsOpen(true);
     }
     setHasChecked(true);
