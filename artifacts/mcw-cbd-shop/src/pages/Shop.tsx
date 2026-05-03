@@ -65,16 +65,30 @@ function FlipCard({ product }: { product: Product }) {
       <div className="relative w-full h-full transition-transform duration-[420ms] ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
         {/* ── FRONT ── */}
-        <div className="absolute inset-0 [backface-visibility:hidden] bg-black overflow-hidden">
-          {/* starts zoomed in, barely moves on hover */}
+        <div className="absolute inset-0 [backface-visibility:hidden] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
+
+          {/* studio radial spotlight — green glow centre */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            background: 'radial-gradient(ellipse 80% 65% at 50% 46%, rgba(34,100,44,0.38) 0%, transparent 72%)'
+          }} />
+
+          {/* product — fully visible, centred, slight hover lift */}
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-250"
+            className="absolute inset-0 w-full h-full object-contain p-5 group-hover:scale-[1.06] transition-transform duration-300 ease-out"
             loading="lazy"
           />
-          {/* bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black via-black/55 to-transparent" />
+
+          {/* edge vignette — pushes focus to centre */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            background: 'radial-gradient(ellipse 90% 85% at 50% 50%, transparent 45%, rgba(0,0,0,0.65) 100%)'
+          }} />
+
+          {/* bottom fade for text legibility */}
+          <div className="absolute bottom-0 left-0 right-0 h-[42%] pointer-events-none" style={{
+            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.88) 45%, transparent 100%)'
+          }} />
 
           {/* badges top-right */}
           <div className="absolute top-3 right-3 flex flex-col gap-1.5 items-end">
@@ -100,16 +114,30 @@ function FlipCard({ product }: { product: Product }) {
         </div>
 
         {/* ── BACK ── */}
-        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-black overflow-hidden">
-          {/* starts zoomed in, subtle additional zoom on hover */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
+
+          {/* studio spotlight on back */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(34,100,44,0.32) 0%, transparent 70%)'
+          }} />
+
+          {/* back image — fully visible, centred */}
           <img
             src={backImg}
             alt={`${product.name} – detail`}
-            className="w-full h-full object-cover scale-115 group-hover:scale-120 transition-transform duration-250"
+            className="absolute inset-0 w-full h-full object-contain p-5 group-hover:scale-[1.05] transition-transform duration-300 ease-out"
             loading="lazy"
           />
-          {/* gradient from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/10" />
+
+          {/* edge vignette */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            background: 'radial-gradient(ellipse 90% 85% at 50% 50%, transparent 40%, rgba(0,0,0,0.7) 100%)'
+          }} />
+
+          {/* bottom fade — stronger for price readability */}
+          <div className="absolute bottom-0 left-0 right-0 h-[55%] pointer-events-none" style={{
+            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.95) 50%, transparent 100%)'
+          }} />
 
           {/* colored top bar */}
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
