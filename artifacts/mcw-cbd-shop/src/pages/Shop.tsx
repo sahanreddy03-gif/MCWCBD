@@ -62,18 +62,19 @@ function FlipCard({ product }: { product: Product }) {
 
   return (
     <div className="group [perspective:1200px] h-[460px] cursor-pointer">
-      <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div className="relative w-full h-full transition-transform duration-[420ms] ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
         {/* ── FRONT ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] bg-black overflow-hidden">
+          {/* starts zoomed in, barely moves on hover */}
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+            className="w-full h-full object-cover scale-110 group-hover:scale-115 transition-transform duration-250"
             loading="lazy"
           />
-          {/* very subtle bottom fade only — image stays crisp */}
-          <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black via-black/60 to-transparent" />
+          {/* bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black via-black/55 to-transparent" />
 
           {/* badges top-right */}
           <div className="absolute top-3 right-3 flex flex-col gap-1.5 items-end">
@@ -94,21 +95,21 @@ function FlipCard({ product }: { product: Product }) {
               {product.brand}
             </p>
             <h3 className="font-bebas text-[1.65rem] leading-tight text-white">{product.name}</h3>
-            <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-white/30">flip for price →</p>
+            <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-white/30">hover for price →</p>
           </div>
         </div>
 
         {/* ── BACK ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-black overflow-hidden">
-          {/* image fills whole back, zooms in on hover */}
+          {/* starts zoomed in, subtle additional zoom on hover */}
           <img
             src={backImg}
             alt={`${product.name} – detail`}
-            className="w-full h-full object-cover scale-110 group-hover:scale-125 transition-transform duration-700"
+            className="w-full h-full object-cover scale-115 group-hover:scale-120 transition-transform duration-250"
             loading="lazy"
           />
-          {/* gradient from bottom only — keep top of image clear */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/10" />
+          {/* gradient from bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/10" />
 
           {/* colored top bar */}
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
