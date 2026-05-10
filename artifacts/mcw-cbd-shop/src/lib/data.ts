@@ -35,44 +35,44 @@ import fTHCVGC15Front       from "@assets/F4E33B09-BCA8-44F0-A6CF-B5B9081504B0_1
 import fTHCVGC15Back        from "@assets/IMG_1925_1777726614798.jpg";
 import fTHCVGC5gFront       from "@assets/IMG_1926_1777726614798.jpg";
 import fTHCVGC5gBack        from "@assets/IMG_1927_1777726614799.jpg";
-import fTHCVLH5gFront       from "@assets/IMG_1928_1777726614799.jpg";
+import fTHCVLH5gFront       from "@assets/EFFFF9B8-1EAA-4AF3-80E2-EA591C7A8017_1778431598513.png";
 import fTHCVLH5gBack        from "@assets/IMG_1929_1777726614800.jpg";
-import fMamaWWFront         from "@assets/IMG_1930_1777726614800.jpg";
+import fMamaWWFront         from "@assets/419397FE-6AF9-49C6-98E6-84D0DE67F572_1778431598513.png";
 import fMamaWWBack          from "@assets/IMG_1931_1777726614801.jpg";
-import fMamaRuntzFront      from "@assets/IMG_1932_1777726614802.jpg";
+import fMamaRuntzFront      from "@assets/A08B9226-F6BB-4496-B084-D6A696A624BF_1778431598513.png";
 import fMamaRuntzBack       from "@assets/IMG_1933_1777726614802.jpg";
-import fMamaAmnesiaFront    from "@assets/IMG_1934_1777726614803.jpg";
+import fMamaAmnesiaFront    from "@assets/58B70DC3-5DF5-48A6-ACAB-7FA0C43564A8_1778431598513.png";
 import fMamaAmnesiaBack     from "@assets/IMG_1935_1777726614803.jpg";
 import fEuphoriaCBDP        from "@assets/5f7541cd-3369-460d-af38-1403ba5d197b_1777726533795.JPG";
-import fSnus                from "@assets/f36051c9-e429-421c-a91c-74327fc71f78_1777726533796.JPG";
+import fSnus                from "@assets/1BF88910-73ED-44CC-8A81-6A6535CA9995_1778431598513.png";
 
 /* ─── GUMMIES ─────────────────────────────────────────── */
 import gLH95Front       from "@assets/IMG_1936_1777726614804.jpg";
 import gLH95Back        from "@assets/IMG_1937_1777726614804.jpg";
-import gLH60Front       from "@assets/IMG_1938_1777726614805.jpg";
+import gLH60Front       from "@assets/88F33581-0274-4253-8209-6554CA022C6F_1778431598513.png";
 import gLH60Back        from "@assets/IMG_1939_1777726614805.jpg";
-import gTHCVGrapeFront  from "@assets/IMG_1940_1777726614806.jpg";
+import gTHCVGrapeFront  from "@assets/381E56DE-ECE8-468A-A9A7-BC1B890287E2_1778431598513.png";
 import gTHCVGrapeBack   from "@assets/IMG_1941_1777726690523.jpg";
-import gAppleOGFront    from "@assets/IMG_1942_1777726690525.jpg";
+import gAppleOGFront    from "@assets/6841910F-476D-4AA3-923A-EAC819601CEC_1778431598513.png";
 import gAppleOGBack     from "@assets/IMG_1943_1777726690525.jpg";
-import gStrawberry      from "@assets/IMG_1944_1777726690526.jpg";
-import gTHCMix          from "@assets/IMG_1946_1777726690527.jpg";
-import gTHCPurple       from "@assets/IMG_1947_1777726690527.jpg";
-import gTHCYellow       from "@assets/IMG_1948_1777726690528.jpg";
-import gKushKatFront    from "@assets/IMG_1949_1777726690529.jpg";
+import gStrawberry      from "@assets/55ECE4D1-3D69-46C0-9B7A-88A1BA4F8A7F_1778431598513.png";
+import gTHCMix          from "@assets/885FC667-39BB-4249-8FBF-8B8EAEFB85DF_1778431598513.png";
+import gTHCPurple       from "@assets/BA31F3E0-3E03-49D5-86D5-0E291E67A6DA_1778431598513.png";
+import gTHCYellow       from "@assets/F9BDB0DE-3392-4EB5-B9D0-33F670333419_1778431598513.png";
+import gKushKatFront    from "@assets/1C14EF34-2941-44B4-A4DF-D6DC57C2D1C5_1778431598513.png";
 import gKushKatBack     from "@assets/IMG_1950_1777726690529.jpg";
 import gCBG9Front       from "@assets/IMG_1951_1777726690530.jpg";
 import gCBG9Back        from "@assets/IMG_1952_1777726690530.jpg";
-import gGoodNightFront  from "@assets/IMG_1953_1777726690530.jpg";
+import gGoodNightFront  from "@assets/4D53FA1C-D504-4F74-9D5F-F53723EDF6CB_1778431598513.png";
 import gGoodNightBack   from "@assets/IMG_1954_1777726690531.jpg";
 
 /* ─── CRYSTAL ─────────────────────────────────────────── */
-import cFront  from "@assets/IMG_1955_1777726690531.jpg";
-import cBack   from "@assets/IMG_1956_1777726690532.jpg";
-import c100mg  from "@assets/IMG_1960_1777726690532.jpg";
+import cFront  from "@assets/24A7AD46-78C0-481A-91EE-197E6D7C4682_1778431598513.png";
+import cBack   from "@assets/866CF67A-9DBD-4BA1-9508-CE3C5F698205_1778431598513.png";
+import c100mg  from "@assets/A8648E9A-2E51-48CA-B919-B10E0C3C1FC9_1778431598513.png";
 
 /* ─── HASH ────────────────────────────────────────────── */
-import hChipsAhoy   from "@assets/IMG_1961_1777726690533.jpg";
+import hChipsAhoy   from "@assets/A81E895E-9CE4-4E08-BD53-CE9926C8FE51_1778431598513.png";
 import hGorillagarz from "@assets/IMG_1962_1777726690534.jpg";
 import hGorillaBrth from "@assets/IMG_1963_1777726690534.jpg";
 
