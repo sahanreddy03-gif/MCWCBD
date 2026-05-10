@@ -73,28 +73,30 @@ import c100mg  from "@assets/A8648E9A-2E51-48CA-B919-B10E0C3C1FC9_1778431598513.
 
 /* ─── HASH ────────────────────────────────────────────── */
 import hChipsAhoy   from "@assets/A81E895E-9CE4-4E08-BD53-CE9926C8FE51_1778431598513.png";
-import hGorillagarz from "@assets/IMG_1962_1777726690534.jpg";
-import hGorillaBrth from "@assets/IMG_1963_1777726690534.jpg";
+import hGorillagarz from "@assets/D7888EEC-403A-42C9-9BDB-7D764B0DADBA_1778432616736.png";
+import hGorillaBrth from "@assets/1A02B12E-3DFB-4D40-911E-6836EB26AF34_1778432616736.png";
 
 /* ─── VAPES ───────────────────────────────────────────── */
-import vSkywalker  from "@assets/IMG_1966_1777726761653.jpg";
-import vSuperLH    from "@assets/IMG_1967_1777726761654.jpg";
-import vSourDiesel from "@assets/IMG_1968_1777726761654.jpg";
-import vAmnesia    from "@assets/IMG_1969_1777726761655.jpg";
-import vElPablo    from "@assets/IMG_1970_1777726761656.jpg";
-import vLemonStar  from "@assets/IMG_1971_1777726761656.jpg";
-import vGalaxyMist from "@assets/IMG_1972_1777726761657.jpg";
+import vSkywalker  from "@assets/D1B486B7-8743-495F-BA8C-A831AD61DDAA_1778432616736.png";
+import vSuperLH    from "@assets/A3E71B14-FD8E-4761-BC91-0075FED86910_1778432616736.png";
+import vSourDiesel from "@assets/C362AED7-7E09-4802-869D-71A8D466E202_1778432616736.png";
+import vAmnesia    from "@assets/20DBDD51-8484-4487-A0B8-392E52FD178A_1778432616736.png";
+import vElPablo    from "@assets/60822B84-7E01-4350-8E53-5E10845113A5_1778432616736.png";
+import vLemonStar  from "@assets/9908D8D6-15B8-4C05-80C4-E815E08326E8_1778432616736.png";
+import vGalaxyMist from "@assets/13E39CC6-7461-46BF-AF07-8714ECF58375_1778432616736.png";
 
 /* ─── E-LIQUIDS ───────────────────────────────────────── */
-import eLiqBDFront      from "@assets/IMG_1979_1777726761659.jpg";
+import eLiqBDFront      from "@assets/E2202B07-F546-4AFB-B063-869D72582446_1778432616736.png";
 import eLiqBDBack       from "@assets/IMG_1980_1777726761660.jpg";
-import eLiqChurroz      from "@assets/IMG_1976_1777726761658.jpg";
-import eLiqDosiKushF    from "@assets/IMG_1973_1777726761657.jpg";
-import eLiqDosiKushB    from "@assets/IMG_1974_1777726761658.jpg";
-import eLiq300          from "@assets/IMG_1981_1777726761660.jpg";
-import eLiq1000         from "@assets/IMG_1982_1777726761661.jpg";
+import eLiqChurroz      from "@assets/D190778C-DC92-405E-BEB8-1B4E935B9B22_1778432616736.png";
+import eLiqDosiKushF    from "@assets/A1C90842-D43E-4E37-A6C7-029B4C0078D1_1778432616736.png";
+import eLiqDosiKushB    from "@assets/A9938C98-6D7C-4675-9D64-FA1BA5C49C7D_1778432616736.png";
+import eLiq300          from "@assets/16B1E10C-689D-4544-ABE7-1F22FD941F7C_1778432616736.png";
+import eLiq1000         from "@assets/9CDA0506-FD8B-4E32-85BF-23F3738558B4_1778432616736.png";
+import eLiqE6Front      from "@assets/3167AA77-9D3B-4A60-802A-E8A31D8A028C_1778432616736.png";
 import eLiqBaked        from "@assets/IMG_1985_1777726761662.jpg";
-import eLiqStrawberry   from "@assets/IMG_1986_1777726761662.jpg";
+import eLiqStrawberry   from "@assets/D3934F56-32B9-4133-971A-5C0DAE379A6B_1778432616736.png";
+import eLiqStrawberryBack from "@assets/3308D3FF-82A8-4BD9-BB88-A5F590714CD0_1778432616736.png";
 import eLiqKiwi         from "@assets/IMG_1987_1777726761663.jpg";
 
 /* ─── VAPORISERS ──────────────────────────────────────── */
@@ -102,7 +104,7 @@ import vapMaxFront   from "@assets/IMG_1991_1777726809911.jpg";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
 import vapV3ProFront from "@assets/IMG_1993_1777726809912.jpg";
 import vapV3ProBack  from "@assets/IMG_1994_1777726809913.JPG";
-import vapYocan      from "@assets/IMG_1996_1777726809914.JPG";
+import vapYocan      from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapHite       from "@assets/IMG_1997_1777726809914.JPG";
 import vapFogPro     from "@assets/IMG_1998_1777726809915.JPG";
 
@@ -439,7 +441,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "e06", name: "CBD OG Kush E-Liquid 10ml", brand: "Relax Store",
     category: "E-Liquids", subCategory: "CBD Liquids 10ml",
-    price: 25, image: eLiq300, imageBack: eLiq1000,
+    price: 25, image: eLiqE6Front,
   },
   {
     id: "e07", name: "Baked Custard CBD E-Liquid 10ml", brand: "Harmony",
@@ -454,7 +456,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "e09", name: "Strawberry Wild CBD E-Liquid 60ml", brand: "Harmony",
     category: "E-Liquids", subCategory: "Harmony Liquids",
-    price: 30, image: eLiqStrawberry,
+    price: 30, image: eLiqStrawberry, imageBack: eLiqStrawberryBack,
   },
 
   /* ══════════  VAPORISERS (4)  ══════════ */
