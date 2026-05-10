@@ -67,11 +67,6 @@ function FlipCard({ product }: { product: Product }) {
         {/* ── FRONT ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
 
-          {/* studio radial spotlight — green glow centre */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 80% 65% at 50% 46%, rgba(34,100,44,0.38) 0%, transparent 72%)'
-          }} />
-
           {/* product — fully visible, centred, slight hover lift */}
           <img
             src={product.image}
@@ -80,14 +75,9 @@ function FlipCard({ product }: { product: Product }) {
             loading="lazy"
           />
 
-          {/* edge vignette — pushes focus to centre */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 90% 85% at 50% 50%, transparent 45%, rgba(0,0,0,0.65) 100%)'
-          }} />
-
           {/* bottom fade for text legibility */}
-          <div className="absolute bottom-0 left-0 right-0 h-[42%] pointer-events-none" style={{
-            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.88) 45%, transparent 100%)'
+          <div className="absolute bottom-0 left-0 right-0 h-[38%] pointer-events-none" style={{
+            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.82) 40%, transparent 100%)'
           }} />
 
           {/* badges top-right */}
@@ -116,11 +106,6 @@ function FlipCard({ product }: { product: Product }) {
         {/* ── BACK ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
 
-          {/* studio spotlight on back */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(34,100,44,0.32) 0%, transparent 70%)'
-          }} />
-
           {/* back image — fully visible, centred */}
           <img
             src={backImg}
@@ -129,12 +114,7 @@ function FlipCard({ product }: { product: Product }) {
             loading="lazy"
           />
 
-          {/* edge vignette */}
-          <div className="absolute inset-0 pointer-events-none" style={{
-            background: 'radial-gradient(ellipse 90% 85% at 50% 50%, transparent 40%, rgba(0,0,0,0.7) 100%)'
-          }} />
-
-          {/* bottom fade — stronger for price readability */}
+          {/* bottom fade — for price readability */}
           <div className="absolute bottom-0 left-0 right-0 h-[55%] pointer-events-none" style={{
             background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.95) 50%, transparent 100%)'
           }} />
