@@ -1,37 +1,37 @@
 /* ─── FLOWERS ─────────────────────────────────────────── */
-import fWeddingCakeFront    from "@assets/generated_images/wedding_cake_studio.png";
-import fWeddingCakeBack     from "@assets/IMG_1895_1777719017599.jpeg";
-import fCherryPieFront      from "@assets/IMG_1894_1777719017599.jpeg";
 import fAmnesiaHazeFront    from "@assets/FBB23EFC-F7E2-4C59-99B4-B3BF930C4FE3_1778430447744.png";
-import fChocoKushFront      from "@assets/IMG_1896_1777719017599.jpeg";
-import fLemonHazeTHCJDFront from "@assets/IMG_1897_1777719017599.jpeg";
-import fAlienCheeseFront    from "@assets/IMG_1898_1777719017599.jpeg";
-import fOGKushFront         from "@assets/IMG_1899_1777719017599.jpeg";
+import fWeddingCakeFront    from "@assets/C42ECE13-00B2-4D73-B0E4-C8C64C57A87E_1778430447744.png";
+import fWeddingCakeBack     from "@assets/IMG_1895_1777719017599.jpeg";
+import fCherryPieFront      from "@assets/6EB76391-9C0F-4A8E-A396-A65D3E2CD7AB_1778430447744.png";
+import fChocoKushFront      from "@assets/193E2671-0F55-4A2D-B940-7164CA321632_1778430447744.png";
+import fLemonHazeTHCJDFront from "@assets/47403E3A-42A7-449A-946C-02F61021E854_1778430447744.png";
+import fAlienCheeseFront    from "@assets/F23F8B54-82F2-457E-96BD-423908FE21A5_1778430447745.png";
+import fOGKushFront         from "@assets/54CF03EB-1BBA-4A30-830B-CA3A235EAED5_1778430447745.png";
 import fOGKushBack          from "@assets/IMG_1900_1777719017599.jpeg";
-import fGorillaBlue         from "@assets/IMG_1901_1777719017599.jpeg";
-import fWhiteWidowHH        from "@assets/IMG_1902_1777719017599.jpeg";
-import fGreenCrackFront     from "@assets/IMG_1903_1777719017599.jpeg";
+import fGorillaBlue         from "@assets/6F76AD24-4999-4305-8FF5-8F8356ED56A4_1778430447745.png";
+import fWhiteWidowHH        from "@assets/1BA1832D-09D4-4450-AC8B-02B91DA9C7FA_1778430447745.png";
+import fGreenCrackFront     from "@assets/C1CB0CEE-D785-4EF6-A3A1-09D1ADE6A267_1778430447745.png";
 import fGreenCrackBack      from "@assets/IMG_1904_1777719017599.jpeg";
-import fDurbanFront         from "@assets/IMG_1905_1777719017599.jpeg";
+import fDurbanFront         from "@assets/4B2B7CEC-6580-4733-A2B4-66B32C262AB1_1778430447745.png";
 import fDurbanBack          from "@assets/IMG_1906_1777719017599.jpeg";
-import fTigersBloodFront    from "@assets/IMG_1907_1777719017599.jpeg";
-import fAmnesiaHFront       from "@assets/IMG_1908_1777719017599.jpeg";
+import fTigersBloodFront    from "@assets/4E2FF41A-ADD4-452D-A2F9-81193D2D7565_1778430447745.png";
+import fAmnesiaHFront       from "@assets/3914610C-E170-4205-9BB3-1869814FBCBE_1778430447745.png";
 import fAmnesiaHBack        from "@assets/IMG_1909_1777719017599.jpeg";
-import fGelatoHFront        from "@assets/IMG_1910_1777719017599.jpeg";
+import fGelatoHFront        from "@assets/593DB144-7A43-4F5D-B81E-128164B3B17F_1778430447745.png";
 import fGelatoHBack         from "@assets/IMG_1911_1777719017599.jpeg";
-import fRoyalCBDFront       from "@assets/IMG_1912_1777726533797.jpg";
+import fRoyalCBDFront       from "@assets/0711CA3D-4B4A-45DB-9084-CCB3C4558EC7_1778430447745.png";
 import fRoyalCBDBack        from "@assets/IMG_1913_1777726533797.jpg";
-import fLemonGelatoFront    from "@assets/IMG_1914_1777726533798.jpg";
+import fLemonGelatoFront    from "@assets/DD45F799-02EE-4741-AFF9-6143377C5179_1778430447745.png";
 import fLemonGelatoBack     from "@assets/IMG_1915_1777726533798.jpg";
-import fTHCVLiveResinFront  from "@assets/IMG_1916_1777726533799.jpg";
+import fTHCVLiveResinFront  from "@assets/A0222AA0-E4B0-496E-A9DF-48121FCD187B_1778430447745.png";
 import fTHCVLiveResinBack   from "@assets/IMG_1917_1777726533800.jpg";
-import fCBDHempFront        from "@assets/IMG_1918_1777726533800.jpg";
+import fCBDHempFront        from "@assets/67A572B4-2577-41A0-96A1-B0912A4209E6_1778430447745.png";
 import fCBDHempBack         from "@assets/IMG_1919_1777726533801.jpg";
 import fCBGHempFront        from "@assets/IMG_1920_1777725476291.jpeg";
 import fCBGHempBack         from "@assets/IMG_1921_1777726614795.jpg";
-import fTHCVLH15Front       from "@assets/IMG_1922_1777726614796.jpg";
+import fTHCVLH15Front       from "@assets/B383B9A8-7832-47D7-9674-A643D256B004_1778430447745.png";
 import fTHCVLH15Back        from "@assets/IMG_1923_1777726614796.jpg";
-import fTHCVGC15Front       from "@assets/IMG_1924_1777726614797.jpg";
+import fTHCVGC15Front       from "@assets/F4E33B09-BCA8-44F0-A6CF-B5B9081504B0_1778430447745.png";
 import fTHCVGC15Back        from "@assets/IMG_1925_1777726614798.jpg";
 import fTHCVGC5gFront       from "@assets/IMG_1926_1777726614798.jpg";
 import fTHCVGC5gBack        from "@assets/IMG_1927_1777726614799.jpg";
@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] = [
     price: 30, image: fOGKushFront, imageBack: fOGKushBack,
   },
   {
-    id: "f07", name: "THCV Gorilla Blue Flowers 1.5g", brand: "Heavens Haze",
+    id: "f07", name: "THCV Gorilla Glue Flowers 1.5g", brand: "Heavens Haze",
     category: "Flowers", subCategory: "Heavens Haze THCV",
     price: 25, image: fGorillaBlue,
   },
