@@ -6,13 +6,14 @@ import { SEO } from "@/components/SEO";
 import { BLOG_POSTS } from "@/lib/blogData";
 import { BRANDS, PRODUCTS } from "@/lib/data";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
-import scFlowers    from "@assets/IMG_1899_1777719017599.jpeg";
-import scGummies    from "@assets/IMG_1942_1777726690525.jpg";
-import scCrystal    from "@assets/IMG_1955_1777726690531.jpg";
-import scHash       from "@assets/IMG_1961_1777726690533.jpg";
-import scVapes      from "@assets/IMG_1967_1777726761654.jpg";
-import scELiquids   from "@assets/IMG_1979_1777726761659.jpg";
-import scVaporisers from "@assets/IMG_1991_1777726809911.jpg";
+import scFlowers    from "@assets/FBB23EFC-F7E2-4C59-99B4-B3BF930C4FE3_1778430447744.png";
+import scGummies    from "@assets/6841910F-476D-4AA3-923A-EAC819601CEC_1778431598513.png";
+import scCrystal    from "@assets/24A7AD46-78C0-481A-91EE-197E6D7C4682_1778431598513.png";
+import scHash       from "@assets/A81E895E-9CE4-4E08-BD53-CE9926C8FE51_1778431598513.png";
+import scVapes      from "@assets/A3E71B14-FD8E-4761-BC91-0075FED86910_1778432616736.png";
+import scELiquids   from "@assets/E2202B07-F546-4AFB-B063-869D72582446_1778432616736.png";
+import scVaporisers from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
+import scSeeds      from "@assets/777689CA-28F6-4E31-9461-FBA383D7A40C_1778434534745.png";
 import type { Product } from "@/lib/data";
 
 const isNovelCannabinoid = (p: Pick<Product, 'name'>) =>
@@ -26,6 +27,7 @@ const SHOWCASE_CARDS = [
   { id: '05', cat: "CRYSTAL", name: "CRYSTAL", sub: "PURE CBG ISOLATE", bg: "bg-[#4c1d95]", text: "text-white", gradFrom: "#4c1d95", img: scCrystal, link: "/shop?category=Crystal" },
   { id: '06', cat: "E-LIQUIDS", name: "E-LIQUIDS", sub: "THCV 85% · 96% LIVE RESIN", bg: "bg-[#164e63]", text: "text-white", gradFrom: "#164e63", img: scELiquids, link: "/shop?category=E-Liquids" },
   { id: '07', cat: "VAPORISERS", name: "VAPORISERS", sub: "DRY HERB · POD DEVICES", bg: "bg-[#0d0d0d]", text: "text-white", gradFrom: "#0d0d0d", img: scVaporisers, link: "/shop?category=Vaporisers" },
+  { id: '08', cat: "SEEDS", name: "SEEDS", sub: "PREMIUM FEMINIZED · AUTOFLOWERING", bg: "bg-[#365314]", text: "text-white", gradFrom: "#365314", img: scSeeds, link: "/shop?category=Seeds" },
 ];
 
 export default function Home() {

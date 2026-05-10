@@ -99,6 +99,11 @@ import eLiqStrawberry   from "@assets/D3934F56-32B9-4133-971A-5C0DAE379A6B_17784
 import eLiqStrawberryBack from "@assets/3308D3FF-82A8-4BD9-BB88-A5F590714CD0_1778432616736.png";
 import eLiqKiwi         from "@assets/IMG_1987_1777726761663.jpg";
 
+/* ─── SEEDS ───────────────────────────────────────────── */
+import seedRoyalGorilla  from "@assets/777689CA-28F6-4E31-9461-FBA383D7A40C_1778434534745.png";
+import seedWhiteWidow    from "@assets/C2A3EDCF-8A75-492D-9A10-67BCA4A6FC3A_1778434534745.png";
+import seedBlueberryZkit from "@assets/FD3F0F68-D95B-44D7-A360-F18B21EEB663_1778434534745.png";
+
 /* ─── VAPORISERS ──────────────────────────────────────── */
 import vapMaxFront   from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
@@ -116,7 +121,8 @@ export type Category =
   | "Hash"
   | "Vapes"
   | "E-Liquids"
-  | "Vaporisers";
+  | "Vaporisers"
+  | "Seeds";
 
 export interface Product {
   id: string;
@@ -479,5 +485,22 @@ export const PRODUCTS: Product[] = [
     id: "vap04", name: "Relax Fog Pro", brand: "XVape",
     category: "Vaporisers", subCategory: "Dry Herb Vaporisers",
     price: 130, image: vapFogPro, isNew: true,
+  },
+
+  /* ══════════  SEEDS (3)  ══════════ */
+  {
+    id: "s01", name: "Royal Gorilla Automatic", brand: "Royal Queen Seeds",
+    category: "Seeds", subCategory: "Autoflowering Seeds",
+    price: 25, image: seedRoyalGorilla, isNew: true,
+  },
+  {
+    id: "s02", name: "White Widow Feminized", brand: "Royal Queen Seeds",
+    category: "Seeds", subCategory: "Feminized Seeds",
+    price: 25, image: seedWhiteWidow, isNew: true,
+  },
+  {
+    id: "s03", name: "Blueberry Zkittlez Automatic", brand: "Sensi Seeds Research",
+    category: "Seeds", subCategory: "Autoflowering Seeds",
+    price: 30, image: seedBlueberryZkit, isNew: true,
   },
 ];
