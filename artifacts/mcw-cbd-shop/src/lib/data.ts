@@ -100,13 +100,13 @@ import eLiqStrawberryBack from "@assets/3308D3FF-82A8-4BD9-BB88-A5F590714CD0_177
 import eLiqKiwi         from "@assets/IMG_1987_1777726761663.jpg";
 
 /* ─── VAPORISERS ──────────────────────────────────────── */
-import vapMaxFront   from "@assets/IMG_1991_1777726809911.jpg";
+import vapMaxFront   from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
-import vapV3ProFront from "@assets/IMG_1993_1777726809912.jpg";
+import vapV3ProFront from "@assets/D88B9124-AD68-4E02-8391-D21FEE250C9E_1778434031737.png";
 import vapV3ProBack  from "@assets/IMG_1994_1777726809913.JPG";
-import vapYocan      from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
-import vapHite       from "@assets/IMG_1997_1777726809914.JPG";
-import vapFogPro     from "@assets/IMG_1998_1777726809915.JPG";
+import vapYocan      from "@assets/9A065C3E-F436-48F5-B945-D133B7F72231_1778434031737.png";
+import vapHite       from "@assets/658EE696-0E1B-48CE-8874-82C0132DCB42_1778434031737.png";
+import vapFogPro     from "@assets/5EB62D65-82EF-4D26-AB7B-43EEC38E2624_1778434031737.png";
 
 /* ─── TYPES ───────────────────────────────────────────── */
 export type Category =
