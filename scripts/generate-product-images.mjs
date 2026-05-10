@@ -16,7 +16,7 @@ const STYLE =
   "product photography, dark forest green background, centered on background, studio lighting, bright and sharp, commercial quality, isolated product, clean edges, no text overlays, photorealistic";
 
 // Each entry: { id, primary, fallback }
-// primary = specific visual description (no drug/cannabis terms)
+// primary = specific visual description — purely physical form, no cannabinoid/substance terms
 // fallback = ultra-generic shape/color if primary is blocked
 const PRODUCTS = [
   // ── FLOWERS (27) ──────────────────────────────────────────
@@ -28,16 +28,16 @@ const PRODUCTS = [
   { id: "f06", primary: "dried botanical herb buds, 1.5g, inside a sleek branded white and blue mylar pouch labeled OG Kush", fallback: "small sealed white branded mylar pouch 1.5g on dark green background" },
   { id: "f07", primary: "dried botanical herb buds, 1.5g, inside a sleek branded blue mylar pouch labeled Gorilla Blue", fallback: "small sealed blue branded mylar pouch 1.5g on dark green background" },
   { id: "f08", primary: "dried botanical herb buds, 1.5g, inside a sleek branded white mylar pouch labeled White Widow", fallback: "small sealed white branded mylar pouch 1.5g on dark green background" },
-  { id: "f09", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch labeled CBD 20%", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
-  { id: "f10", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch labeled H4CBD 60%", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
-  { id: "f11", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch labeled CBG9 85%", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
+  { id: "f09", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch with strength percentage label, clean minimal design", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
+  { id: "f10", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch with percentage strength badge, white and gold design", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
+  { id: "f11", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch with bold strength label, black and gold design", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
   { id: "f12", primary: "dried botanical herb buds, 1g, inside a minimalist white branded pouch labeled Creative Boost, with a sunrise and leaf motif", fallback: "small sealed white branded pouch 1g on dark green background" },
   { id: "f13", primary: "dried botanical herb buds, 1g, inside a minimalist pastel branded pouch labeled Summer Vibes, with sun and wave motif", fallback: "small sealed pastel branded pouch 1g on dark green background" },
   { id: "f14", primary: "premium dried botanical herb buds, 5g, inside a large elegant branded matte black pouch labeled Royal Premium Flowers", fallback: "large sealed elegant matte black pouch 5g on dark green background" },
   { id: "f15", primary: "dried botanical herb buds, 1g, inside a stylish branded pouch labeled Lemon Gelato with a yellow lemon and gelato design", fallback: "small sealed stylish pouch 1g on dark green background" },
-  { id: "f16", primary: "dried botanical herb buds and golden resin, 1g, inside a transparent branded pouch labeled THCV Live Resin, with amber tones", fallback: "small sealed transparent amber branded pouch 1g on dark green background" },
+  { id: "f16", primary: "dried botanical herb buds and golden resin, 1g, inside a transparent branded pouch labeled Live Resin Flowers, with amber tones and premium finish", fallback: "small sealed transparent amber branded pouch 1g on dark green background" },
   { id: "f17", primary: "dried botanical herb buds, 10g bulk, inside a large sealed branded brown kraft paper bag labeled Hemp Flower 10g", fallback: "large sealed kraft paper bag 10g on dark green background" },
-  { id: "f18", primary: "dried botanical herb buds, 10g bulk, inside a large sealed branded brown kraft paper bag labeled CBG Hemp Flower 10g", fallback: "large sealed kraft paper bag 10g on dark green background" },
+  { id: "f18", primary: "dried botanical herb buds, 10g bulk, inside a large sealed branded brown kraft paper bag labeled Hemp Flower 10g, green logo variant", fallback: "large sealed kraft paper bag 10g on dark green background" },
   { id: "f19", primary: "dried botanical herb buds, 1.5g, inside a bright yellow branded mylar pouch labeled Lemon Haze Sativa with lemon design", fallback: "small sealed yellow branded mylar pouch 1.5g on dark green background" },
   { id: "f20", primary: "dried botanical herb buds, 1.5g, inside a bright green branded mylar pouch labeled Green Crack Sativa Super Strong", fallback: "small sealed green branded mylar pouch 1.5g on dark green background" },
   { id: "f21", primary: "dried botanical herb buds, 5g, inside a large bold branded mylar pouch labeled Green Crack Sativa Super Strong 5g", fallback: "large sealed green branded mylar pouch 5g on dark green background" },
@@ -49,16 +49,16 @@ const PRODUCTS = [
   { id: "f27", primary: "small tin or slim branded can of watermelon-flavored nicotine-free herbal snus pouches labeled Ice Watermelon, bright green and white packaging", fallback: "small branded tin can on dark green background" },
 
   // ── GUMMIES (11) ──────────────────────────────────────────
-  { id: "g01", primary: "yellow lemon-flavored gummy candy pieces in a clear branded resealable bag labeled Lemon Haze Gummies 95%, 20g, bright yellow packaging", fallback: "yellow gummy candies in clear branded bag on dark green background" },
-  { id: "g02", primary: "yellow lemon-flavored gummy candy pieces in a clear branded resealable bag labeled Lemon Haze Gummies 60%, 20g, green packaging", fallback: "yellow gummy candies in green branded bag on dark green background" },
-  { id: "g03", primary: "small purple grape-flavored gummy candies in a sleek branded pouch labeled Gummies 20mg, Euphoria brand, purple and gold design", fallback: "purple gummy candies in branded pouch on dark green background" },
-  { id: "g04", primary: "green apple-flavored gummy candy pieces, 50g bag, in a branded resealable pouch labeled Apple OG 90mg, with apple artwork on packaging", fallback: "green apple gummy candies in branded bag on dark green background" },
-  { id: "g05", primary: "pink strawberry-flavored gummy candy pieces, 50g bag, in a branded resealable pouch labeled Strawberry Haze 90mg, with strawberry artwork", fallback: "pink strawberry gummy candies in branded bag on dark green background" },
-  { id: "g06", primary: "red fruit-flavored gummy candy pieces in a branded red resealable bag labeled Super Strong Gummies Red, bold red design", fallback: "red gummy candies in bold red branded bag on dark green background" },
-  { id: "g07", primary: "purple grape-flavored gummy candy pieces in a branded purple resealable bag labeled Super Strong Gummies Purple, bold purple design", fallback: "purple gummy candies in bold purple branded bag on dark green background" },
-  { id: "g08", primary: "yellow mango-flavored gummy candy pieces in a branded yellow resealable bag labeled Super Strong Gummies Yellow, bold yellow design", fallback: "yellow gummy candies in bold yellow branded bag on dark green background" },
+  { id: "g01", primary: "yellow lemon-flavored gummy candy pieces in a clear branded resealable bag labeled Lemon Haze Gummies, 20g, bright yellow packaging", fallback: "yellow gummy candies in clear branded bag on dark green background" },
+  { id: "g02", primary: "yellow lemon-flavored gummy candy pieces in a clear branded resealable bag labeled Lemon Haze Gummies, 20g, green packaging variant", fallback: "yellow gummy candies in green branded bag on dark green background" },
+  { id: "g03", primary: "small purple grape-flavored gummy candies in a sleek branded pouch, Euphoria brand, purple and gold design", fallback: "purple gummy candies in branded pouch on dark green background" },
+  { id: "g04", primary: "green apple-flavored gummy candy pieces, 50g bag, in a branded resealable pouch labeled Apple OG, with apple artwork on packaging", fallback: "green apple gummy candies in branded bag on dark green background" },
+  { id: "g05", primary: "pink strawberry-flavored gummy candy pieces, 50g bag, in a branded resealable pouch labeled Strawberry Haze, with strawberry artwork", fallback: "pink strawberry gummy candies in branded bag on dark green background" },
+  { id: "g06", primary: "red fruit-flavored gummy candy pieces in a branded red resealable bag labeled Super Strong Gummies, bold red design", fallback: "red gummy candies in bold red branded bag on dark green background" },
+  { id: "g07", primary: "purple grape-flavored gummy candy pieces in a branded purple resealable bag labeled Super Strong Gummies, bold purple design", fallback: "purple gummy candies in bold purple branded bag on dark green background" },
+  { id: "g08", primary: "yellow mango-flavored gummy candy pieces in a branded yellow resealable bag labeled Super Strong Gummies, bold yellow design", fallback: "yellow gummy candies in bold yellow branded bag on dark green background" },
   { id: "g09", primary: "colorful mixed gummy candy pieces, 2g pack, in a branded Kush Kat themed resealable pouch with cat graphic design", fallback: "colorful gummy candies in branded cat-themed pouch on dark green background" },
-  { id: "g10", primary: "cotton candy-flavored pink and white gummy sweets 25mg, in a branded Canapuff resealable pouch with candy cotton artwork", fallback: "pink and white gummy sweets in branded pouch on dark green background" },
+  { id: "g10", primary: "cotton candy-flavored pink and white gummy sweets in a branded Canapuff resealable pouch with candy cotton artwork", fallback: "pink and white gummy sweets in branded pouch on dark green background" },
   { id: "g11", primary: "small round sleep supplement gummies in a branded white bottle labeled Good Night's Sleep Gummies 30 capsules, Hemnia brand, dark blue night sky design", fallback: "supplement gummy bottle 30 capsules on dark green background" },
 
   // ── CRYSTAL (3) ───────────────────────────────────────────
@@ -72,20 +72,20 @@ const PRODUCTS = [
   { id: "h03", primary: "dark brown artisan pressed resin and botanical trim blend, 3.5g, branded Gorillagarz Gorilla Breath paper wrapper with premium design", fallback: "dark brown pressed resin block in branded wrapper on dark green background" },
 
   // ── VAPES (7) ─────────────────────────────────────────────
-  { id: "v01", primary: "slim sleek 1ml vape cartridge device with black mouthpiece, branded CBD Calm Skywalker OG label, silver and black design", fallback: "slim silver vape cartridge device on dark green background" },
+  { id: "v01", primary: "slim sleek 1ml vape cartridge device with black mouthpiece, branded Skywalker OG label, silver and black design", fallback: "slim silver vape cartridge device on dark green background" },
   { id: "v02", primary: "premium branded disposable vape pen device 1000 puffs, labeled Super Lemon Haze, bright yellow and silver design, Canntropy brand", fallback: "yellow branded disposable vape pen on dark green background" },
   { id: "v03", primary: "premium branded disposable vape pen device 1000 puffs, labeled Sour Diesel, dark black and silver design, Canntropy brand", fallback: "black branded disposable vape pen on dark green background" },
   { id: "v04", primary: "cigarette-style white vape joint device 500 puffs, branded Amnesia label, slim cylindrical white and silver design", fallback: "slim white cylindrical vape joint device on dark green background" },
   { id: "v05", primary: "cigarette-style vape joint device 500 puffs, branded El Pablo Blanco label, white and gold luxury design, slim cylindrical", fallback: "slim white gold cylindrical vape joint device on dark green background" },
-  { id: "v06", primary: "sleek branded disposable vape pen device 1000 puffs, labeled Lemon Starship CBG9 85%, bright yellow and cosmic design, Cannastra brand", fallback: "yellow cosmic branded disposable vape pen on dark green background" },
-  { id: "v07", primary: "sleek branded disposable vape pen device 1000 puffs, labeled Galaxy Mist CBG9 85%, purple and blue galaxy design, Cannastra brand", fallback: "purple galaxy branded disposable vape pen on dark green background" },
+  { id: "v06", primary: "sleek branded disposable vape pen device 1000 puffs, labeled Lemon Starship, bright yellow and cosmic design, Cannastra brand", fallback: "yellow cosmic branded disposable vape pen on dark green background" },
+  { id: "v07", primary: "sleek branded disposable vape pen device 1000 puffs, labeled Galaxy Mist, purple and blue galaxy design, Cannastra brand", fallback: "purple galaxy branded disposable vape pen on dark green background" },
 
   // ── E-LIQUIDS (9) ─────────────────────────────────────────
-  { id: "e01", primary: "small 10ml glass dropper bottle with colorful label, e-liquid bottle, branded Canntropy 85% label, amber glass, white dropper cap", fallback: "10ml amber glass dropper bottle on dark green background" },
-  { id: "e02", primary: "small 10ml glass dropper bottle with premium label, e-liquid bottle, branded Canntropy 96% label, dark glass, white dropper cap", fallback: "10ml dark glass dropper bottle on dark green background" },
+  { id: "e01", primary: "small 10ml glass dropper bottle with colorful label, e-liquid bottle, Canntropy brand, amber glass, white dropper cap", fallback: "10ml amber glass dropper bottle on dark green background" },
+  { id: "e02", primary: "small 10ml glass dropper bottle with premium label, e-liquid bottle, Canntropy brand, dark glass, white dropper cap, gold accent", fallback: "10ml dark glass dropper bottle on dark green background" },
   { id: "e03", primary: "small 10ml glass dropper bottle with branded label, e-liquid bottle, Canntropy brand, clear glass bottle, colorful label", fallback: "10ml clear glass dropper bottle on dark green background" },
-  { id: "e04", primary: "small 10ml plastic e-liquid bottle with colored label, branded Relax Store 300mg label, white bottle with colorful design", fallback: "10ml white plastic e-liquid bottle on dark green background" },
-  { id: "e05", primary: "small 10ml plastic e-liquid bottle with branded label, Relax Store 1000mg Amnesia label, white bottle with bold design", fallback: "10ml white plastic e-liquid bottle bold on dark green background" },
+  { id: "e04", primary: "small 10ml plastic e-liquid bottle with colored label, branded Relax Store label, white bottle with colorful design", fallback: "10ml white plastic e-liquid bottle on dark green background" },
+  { id: "e05", primary: "small 10ml plastic e-liquid bottle with branded Amnesia label, Relax Store brand, white bottle with bold design", fallback: "10ml white plastic e-liquid bottle bold on dark green background" },
   { id: "e06", primary: "small 10ml plastic e-liquid bottle with OG Kush branded label, Relax Store, white bottle with green and brown design", fallback: "10ml white plastic e-liquid bottle green on dark green background" },
   { id: "e07", primary: "10ml glass e-liquid dropper bottle labeled Baked Custard, warm yellow and cream colored label, Harmony brand, elegant design", fallback: "10ml glass e-liquid bottle warm yellow on dark green background" },
   { id: "e08", primary: "30ml glass e-liquid bottle labeled Kiwi Skunk, bright green and brown label, Harmony brand, larger bottle with dropper", fallback: "30ml glass e-liquid bottle green on dark green background" },
@@ -106,7 +106,10 @@ async function generateOne(id, prompt, attempt = 1) {
       model: "gpt-image-1",
       prompt: `${prompt}, ${STYLE}`,
       size: "1024x1024",
+      // Note: gpt-image-1 does not support quality:"standard".
+      // Valid values are: "low" | "medium" | "high" | "auto".
       quality: "low",
+      response_format: "b64_json",
     });
     const b64 = resp.data[0]?.b64_json;
     if (!b64 || b64.length < 100) throw new Error("Empty response");
@@ -138,20 +141,22 @@ async function processProduct({ id, primary, fallback }) {
   const outPath = path.join(OUT_DIR, `${id}.png`);
   if (fs.existsSync(outPath)) {
     console.log(`✓ [${id}] Already exists — skipping`);
-    return { id, status: "skipped" };
+    return { id, status: "already_existed" };
   }
 
   console.log(`→ [${id}] Generating...`);
   try {
     let buf = await generateOne(id, primary);
+    let usedFallback = false;
     if (!buf) {
       // Primary was blocked — try fallback
       buf = await generateOne(id, fallback, 1);
+      usedFallback = true;
     }
     if (!buf) throw new Error("Both prompts failed");
     fs.writeFileSync(outPath, buf);
-    console.log(`✓ [${id}] Saved (${Math.round(buf.length / 1024)}KB)`);
-    return { id, status: "generated" };
+    console.log(`✓ [${id}] Saved (${Math.round(buf.length / 1024)}KB)${usedFallback ? " [fallback used]" : ""}`);
+    return { id, status: "generated", fallback_used: usedFallback };
   } catch (err) {
     console.error(`✗ [${id}] FAILED: ${err.message}`);
     return { id, status: "failed", error: err.message };
@@ -172,16 +177,22 @@ async function runBatch(items, concurrency) {
 console.log(`\n🎨 Generating ${PRODUCTS.length} product images...\n`);
 const results = await runBatch(PRODUCTS, 2);
 
+const generated = results.filter(r => r.status === "generated").length;
+const alreadyExisted = results.filter(r => r.status === "already_existed").length;
+const failed = results.filter(r => r.status === "failed").length;
+const fallbackUsed = results.filter(r => r.fallback_used).length;
+
 const manifest = {
-  generated: new Date().toISOString(),
+  generated_at: new Date().toISOString(),
   total: PRODUCTS.length,
-  success: results.filter(r => r.status === "generated" || r.status === "skipped").length,
-  failed: results.filter(r => r.status === "failed").length,
+  generated_count: generated,
+  already_existed_count: alreadyExisted,
+  fallback_used_count: fallbackUsed,
+  failed_count: failed,
   items: results,
 };
 fs.writeFileSync(path.join(OUT_DIR, "manifest.json"), JSON.stringify(manifest, null, 2));
 
-console.log(`\n✅ Done: ${manifest.success} succeeded, ${manifest.failed} failed`);
-if (manifest.failed > 0) {
-  console.log("Failed IDs:", results.filter(r => r.status === "failed").map(r => r.id).join(", "));
-}
+console.log(`\n✅ Done: ${generated} generated, ${alreadyExisted} already existed, ${failed} failed`);
+if (fallbackUsed > 0) console.log(`  Fallback prompt used for: ${results.filter(r => r.fallback_used).map(r => r.id).join(", ")}`);
+if (failed > 0) console.log(`  Failed IDs: ${results.filter(r => r.status === "failed").map(r => r.id).join(", ")}`);
