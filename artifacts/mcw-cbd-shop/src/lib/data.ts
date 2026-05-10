@@ -167,6 +167,11 @@ export const PRODUCTS: Product[] = [
     price: 45, image: fAlienCheeseFront, isNew: true,
   },
   {
+    id: "f28", name: "Choco Kush THCJD Sativa 2.5g", brand: "EastNjoy",
+    category: "Flowers", subCategory: "Leafy Joy",
+    price: 45, image: fChocoKushFront, isNew: true,
+  },
+  {
     id: "f06", name: "THCV OG Kush Flowers 1.5g", brand: "Heavens Haze",
     category: "Flowers", subCategory: "Heavens Haze THCV",
     price: 30, image: fOGKushFront, imageBack: fOGKushBack,
