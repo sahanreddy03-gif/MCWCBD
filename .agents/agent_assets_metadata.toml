@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "KIy5WFbHW7G3cEs1iOI0m"
+uri = "file://attached_assets/generated_images/wedding_cake_studio.png"
+type = "image"
+title = "wedding cake studio product shot"
