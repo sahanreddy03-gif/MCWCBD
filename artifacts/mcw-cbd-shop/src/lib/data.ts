@@ -1,5 +1,5 @@
 /* ─── FLOWERS ─────────────────────────────────────────── */
-import fWeddingCakeFront    from "@assets/IMG_1893_1777719017599.jpeg";
+import fWeddingCakeFront    from "@assets/generated_images/wedding_cake_studio.png";
 import fWeddingCakeBack     from "@assets/IMG_1895_1777719017599.jpeg";
 import fCherryPieFront      from "@assets/IMG_1894_1777719017599.jpeg";
 import fChocoKushFront      from "@assets/IMG_1896_1777719017599.jpeg";
