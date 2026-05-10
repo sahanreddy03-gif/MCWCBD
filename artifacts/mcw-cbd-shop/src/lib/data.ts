@@ -2,6 +2,7 @@
 import fWeddingCakeFront    from "@assets/generated_images/wedding_cake_studio.png";
 import fWeddingCakeBack     from "@assets/IMG_1895_1777719017599.jpeg";
 import fCherryPieFront      from "@assets/IMG_1894_1777719017599.jpeg";
+import fAmnesiaHazeFront    from "@assets/generated_images/amnesia_haze_studio.png";
 import fChocoKushFront      from "@assets/IMG_1896_1777719017599.jpeg";
 import fLemonHazeTHCJDFront from "@assets/IMG_1897_1777719017599.jpeg";
 import fAlienCheeseFront    from "@assets/IMG_1898_1777719017599.jpeg";
@@ -143,7 +144,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "f01", name: "CBD Amnesia Haze 2.5g", brand: "Relax Store",
     category: "Flowers", subCategory: "2.5g Packs",
-    price: 25, image: fChocoKushFront,
+    price: 25, image: fAmnesiaHazeFront,
   },
   {
     id: "f02", name: "CBD Wedding Cake 2.5g", brand: "Relax Store",
