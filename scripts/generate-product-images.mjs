@@ -25,7 +25,7 @@ const PRODUCTS = [
   { id: "f03", primary: "premium dried botanical herb buds, 2.5g, inside a sealed branded black mylar resealable zip-lock pouch labeled Cherry Pie, with cherry artwork", fallback: "small sealed black metallic resealable pouch 2.5g on dark green background" },
   { id: "f04", primary: "premium dried botanical herb buds, 2.5g, inside a vibrant branded mylar resealable pouch labeled Lemon Haze Sativa, bright yellow and green design", fallback: "small sealed branded metallic resealable pouch 2.5g on dark green background" },
   { id: "f05", primary: "premium dried botanical herb buds, 2.5g, inside a vibrant branded mylar resealable pouch labeled Alien Cheese Hybrid, purple and green design", fallback: "small sealed branded metallic resealable pouch 2.5g on dark green background" },
-  { id: "f06", primary: "dried botanical herb buds, 1.5g, inside a sleek branded white and blue mylar pouch labeled OG Kush", fallback: "small sealed white branded mylar pouch 1.5g on dark green background" },
+  { id: "f06", primary: "dried botanical herb buds, 1.5g, inside a sleek branded white and blue mylar pouch with a bold strain name label", fallback: "small sealed white branded mylar pouch 1.5g on dark green background" },
   { id: "f07", primary: "dried botanical herb buds, 1.5g, inside a sleek branded blue mylar pouch labeled Gorilla Blue", fallback: "small sealed blue branded mylar pouch 1.5g on dark green background" },
   { id: "f08", primary: "dried botanical herb buds, 1.5g, inside a sleek branded white mylar pouch labeled White Widow", fallback: "small sealed white branded mylar pouch 1.5g on dark green background" },
   { id: "f09", primary: "dried botanical herb buds, 1g, inside a premium branded transparent window mylar pouch with strength percentage label, clean minimal design", fallback: "small sealed transparent window mylar pouch 1g on dark green background" },
@@ -35,7 +35,7 @@ const PRODUCTS = [
   { id: "f13", primary: "dried botanical herb buds, 1g, inside a minimalist pastel branded pouch labeled Summer Vibes, with sun and wave motif", fallback: "small sealed pastel branded pouch 1g on dark green background" },
   { id: "f14", primary: "premium dried botanical herb buds, 5g, inside a large elegant branded matte black pouch labeled Royal Premium Flowers", fallback: "large sealed elegant matte black pouch 5g on dark green background" },
   { id: "f15", primary: "dried botanical herb buds, 1g, inside a stylish branded pouch labeled Lemon Gelato with a yellow lemon and gelato design", fallback: "small sealed stylish pouch 1g on dark green background" },
-  { id: "f16", primary: "dried botanical herb buds and golden resin, 1g, inside a transparent branded pouch labeled Live Resin Flowers, with amber tones and premium finish", fallback: "small sealed transparent amber branded pouch 1g on dark green background" },
+  { id: "f16", primary: "dried botanical herb buds and golden amber resin crystals, 1g, inside a transparent branded premium pouch with amber tones and gold accent label", fallback: "small sealed transparent amber branded pouch 1g on dark green background" },
   { id: "f17", primary: "dried botanical herb buds, 10g bulk, inside a large sealed branded brown kraft paper bag labeled Hemp Flower 10g", fallback: "large sealed kraft paper bag 10g on dark green background" },
   { id: "f18", primary: "dried botanical herb buds, 10g bulk, inside a large sealed branded brown kraft paper bag labeled Hemp Flower 10g, green logo variant", fallback: "large sealed kraft paper bag 10g on dark green background" },
   { id: "f19", primary: "dried botanical herb buds, 1.5g, inside a bright yellow branded mylar pouch labeled Lemon Haze Sativa with lemon design", fallback: "small sealed yellow branded mylar pouch 1.5g on dark green background" },
@@ -86,7 +86,7 @@ const PRODUCTS = [
   { id: "e03", primary: "small 10ml glass dropper bottle with branded label, e-liquid bottle, Canntropy brand, clear glass bottle, colorful label", fallback: "10ml clear glass dropper bottle on dark green background" },
   { id: "e04", primary: "small 10ml plastic e-liquid bottle with colored label, branded Relax Store label, white bottle with colorful design", fallback: "10ml white plastic e-liquid bottle on dark green background" },
   { id: "e05", primary: "small 10ml plastic e-liquid bottle with branded Amnesia label, Relax Store brand, white bottle with bold design", fallback: "10ml white plastic e-liquid bottle bold on dark green background" },
-  { id: "e06", primary: "small 10ml plastic e-liquid bottle with OG Kush branded label, Relax Store, white bottle with green and brown design", fallback: "10ml white plastic e-liquid bottle green on dark green background" },
+  { id: "e06", primary: "small 10ml plastic e-liquid bottle with a green and brown strain-name branded label, Relax Store, white bottle with earthy tones design", fallback: "10ml white plastic e-liquid bottle green on dark green background" },
   { id: "e07", primary: "10ml glass e-liquid dropper bottle labeled Baked Custard, warm yellow and cream colored label, Harmony brand, elegant design", fallback: "10ml glass e-liquid bottle warm yellow on dark green background" },
   { id: "e08", primary: "30ml glass e-liquid bottle labeled Kiwi Skunk, bright green and brown label, Harmony brand, larger bottle with dropper", fallback: "30ml glass e-liquid bottle green on dark green background" },
   { id: "e09", primary: "60ml glass e-liquid bottle labeled Strawberry Wild, bright red and pink label with strawberry design, Harmony brand, large bottle", fallback: "60ml glass e-liquid bottle pink red on dark green background" },
@@ -112,8 +112,10 @@ async function generateOne(id, prompt, attempt = 1) {
       response_format: "b64_json",
     });
     const b64 = resp.data[0]?.b64_json;
-    if (!b64 || b64.length < 100) throw new Error("Empty response");
-    return Buffer.from(b64, "base64");
+    if (!b64) throw new Error("Empty response — no b64_json in reply");
+    const buf = Buffer.from(b64, "base64");
+    if (buf.length < 1000) throw new Error(`Suspiciously small image: ${buf.length} bytes`);
+    return buf;
   } catch (err) {
     const msg = (err?.message || "").toLowerCase();
     const errMsg = JSON.stringify(err?.error || "").toLowerCase();
