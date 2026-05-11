@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { BLOG_POSTS } from "@/lib/blogData";
@@ -14,6 +14,8 @@ import scVapes      from "@assets/A3E71B14-FD8E-4761-BC91-0075FED86910_177843261
 import scELiquids   from "@assets/E2202B07-F546-4AFB-B063-869D72582446_1778432616736.png";
 import scVaporisers from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import scSeeds      from "@assets/777689CA-28F6-4E31-9461-FBA383D7A40C_1778434534745.png";
+import scNicVapes   from "@assets/WhatsApp_Image_2026-05-11_at_10.05.24_AM_1778494110945.jpeg";
+import scNicEliq    from "@assets/WhatsApp_Image_2026-05-11_at_10.20.15_AM_(2)_1778494231768.jpeg";
 import type { Product } from "@/lib/data";
 
 const isNovelCannabinoid = (p: Pick<Product, 'name'>) =>
@@ -28,6 +30,8 @@ const SHOWCASE_CARDS = [
   { id: '06', cat: "E-LIQUIDS", name: "E-LIQUIDS", sub: "THCV 85% · 96% LIVE RESIN", bg: "bg-[#164e63]", text: "text-white", gradFrom: "#164e63", img: scELiquids, link: "/shop?category=E-Liquids" },
   { id: '07', cat: "VAPORISERS", name: "VAPORISERS", sub: "DRY HERB · POD DEVICES", bg: "bg-[#0d0d0d]", text: "text-white", gradFrom: "#0d0d0d", img: scVaporisers, link: "/shop?category=Vaporisers" },
   { id: '08', cat: "SEEDS", name: "SEEDS", sub: "PREMIUM FEMINIZED · AUTOFLOWERING", bg: "bg-[#365314]", text: "text-white", gradFrom: "#365314", img: scSeeds, link: "/shop?category=Seeds" },
+  { id: '09', cat: "NICOTINE VAPES", name: "NICOTINE VAPES", sub: "FUMOT TORNADO MINI PODS", bg: "bg-[#a16207]", text: "text-white", gradFrom: "#a16207", img: scNicVapes, link: "/shop?category=Nicotine%20Vapes" },
+  { id: '10', cat: "NICOTINE E-LIQUIDS", name: "NICOTINE E-LIQUIDS", sub: "TORNADOLIQ NIC SALTS", bg: "bg-[#0f766e]", text: "text-white", gradFrom: "#0f766e", img: scNicEliq, link: "/shop?category=Nicotine%20E-Liquids" },
 ];
 
 export default function Home() {
@@ -39,12 +43,12 @@ export default function Home() {
     video.play().catch(() => {});
   }, []);
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+      transition: { delay: i * 0.15, duration: 0.8, ease: "easeOut" }
     })
   };
 

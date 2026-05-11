@@ -6,7 +6,7 @@ import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
 
 const PRIMARY_CATEGORIES: Category[] = [
-  "Flowers", "Gummies", "Crystal", "Hash", "Vapes", "E-Liquids", "Vaporisers", "Seeds",
+  "Flowers", "Gummies", "Crystal", "Hash", "Vapes", "E-Liquids", "Vaporisers", "Seeds", "Nicotine Vapes", "Nicotine E-Liquids",
 ];
 
 const CATEGORY_COLORS: Record<Category, string> = {
@@ -18,6 +18,8 @@ const CATEGORY_COLORS: Record<Category, string> = {
   "E-Liquids": "#22d3ee",
   Vaporisers:  "#94a3b8",
   Seeds:       "#84cc16",
+  "Nicotine Vapes": "#f59e0b",
+  "Nicotine E-Liquids": "#14b8a6",
 };
 
 const CATEGORY_ICONS: Record<Category, string> = {
@@ -29,6 +31,8 @@ const CATEGORY_ICONS: Record<Category, string> = {
   "E-Liquids": "🔋",
   Vaporisers:  "🔥",
   Seeds:       "🌱",
+  "Nicotine Vapes": "🫧",
+  "Nicotine E-Liquids": "💧",
 };
 
 /* ── Cart store ─────────────────────────────────────── */
@@ -240,7 +244,7 @@ export default function Shop() {
             THE MCW COLLECTION
           </h1>
           <p className="text-white/30 font-black tracking-widest uppercase text-sm mb-8">
-            68 Products · 8 Categories · Malta's Best
+            92 Products · 10 Categories · Malta's Best
           </p>
 
           <div className="flex flex-col md:flex-row justify-between gap-4 items-end">

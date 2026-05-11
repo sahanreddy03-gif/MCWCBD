@@ -43,7 +43,7 @@ import fMamaRuntzFront      from "@assets/A08B9226-F6BB-4496-B084-D6A696A624BF_1
 import fMamaRuntzBack       from "@assets/IMG_1933_1777726614802.jpg";
 import fMamaAmnesiaFront    from "@assets/58B70DC3-5DF5-48A6-ACAB-7FA0C43564A8_1778431598513.png";
 import fMamaAmnesiaBack     from "@assets/IMG_1935_1777726614803.jpg";
-import fEuphoriaCBDP        from "@assets/5f7541cd-3369-460d-af38-1403ba5d197b_1777726533795.JPG";
+import fEuphoriaCBDP        from "@assets/5f7541cd-3369-460d-af38-1403ba5d197b_1777726533795.jpg";
 import fSnus                from "@assets/1BF88910-73ED-44CC-8A81-6A6535CA9995_1778431598513.png";
 
 /* ─── GUMMIES ─────────────────────────────────────────── */
@@ -99,6 +99,34 @@ import eLiqStrawberry   from "@assets/D3934F56-32B9-4133-971A-5C0DAE379A6B_17784
 import eLiqStrawberryBack from "@assets/3308D3FF-82A8-4BD9-BB88-A5F590714CD0_1778432616736.png";
 import eLiqKiwi         from "@assets/IMG_1987_1777726761663.jpg";
 
+/* ─── NICOTINE VAPES ─────────────────────────────────── */
+import nvCoolMint from "@assets/WhatsApp_Image_2026-05-11_at_10.05.24_AM_1778494110945.jpeg";
+import nvBullIce from "@assets/WhatsApp_Image_2026-05-11_at_10.05.23_AM_(2)_1778494110946.jpeg";
+import nvCottonCandy from "@assets/WhatsApp_Image_2026-05-11_at_10.05.23_AM_(1)_1778494110946.jpeg";
+import nvBlueSourRasp from "@assets/WhatsApp_Image_2026-05-11_at_10.05.23_AM_1778494110946.jpeg";
+import nvFrozenStraw from "@assets/WhatsApp_Image_2026-05-11_at_10.05.22_AM_(4)_1778494110946.jpeg";
+import nvKiwiPassion from "@assets/WhatsApp_Image_2026-05-11_at_10.05.22_AM_(3)_1778494110947.jpeg";
+import nvPeachIce from "@assets/WhatsApp_Image_2026-05-11_at_10.05.22_AM_(2)_1778494110947.jpeg";
+import nvMixedBerries from "@assets/WhatsApp_Image_2026-05-11_at_10.05.22_AM_(1)_1778494110947.jpeg";
+import nvPeachMango from "@assets/WhatsApp_Image_2026-05-11_at_10.05.22_AM_1778494110947.jpeg";
+import nvStrawWaterml from "@assets/WhatsApp_Image_2026-05-11_at_10.05.21_AM_1778494110948.jpeg";
+
+/* ─── NICOTINE E-LIQUIDS ─────────────────────────────── */
+import nlPeachMangoPineapple from "@assets/WhatsApp_Image_2026-05-11_at_10.20.15_AM_(2)_1778494231768.jpeg";
+import nlApplePeachIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.15_AM_(1)_1778494231777.jpeg";
+import nlStrawRaspCherryIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.15_AM_1778494231777.jpeg";
+import nlStrawKiwiIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.14_AM_(4)_1778494231777.jpeg";
+import nlPeachBerry from "@assets/WhatsApp_Image_2026-05-11_at_10.20.14_AM_(3)_1778494231777.jpeg";
+import nlFreshMint from "@assets/WhatsApp_Image_2026-05-11_at_10.20.14_AM_(2)_1778494231778.jpeg";
+import nlStrawRaspWatermelon from "@assets/WhatsApp_Image_2026-05-11_at_10.20.14_AM_(1)_1778494231778.jpeg";
+import nlTripleMango from "@assets/WhatsApp_Image_2026-05-11_at_10.20.14_AM_1778494231778.jpeg";
+import nlWatermelonKiwiIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.13_AM_(3)_1778494231778.jpeg";
+import nlWatermelonMangoPeach from "@assets/WhatsApp_Image_2026-05-11_at_10.20.13_AM_(2)_1778494231779.jpeg";
+import nlBlueRaspLemonade from "@assets/WhatsApp_Image_2026-05-11_at_10.20.13_AM_(1)_1778494231779.jpeg";
+import nlDragonFruitBlueIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.13_AM_1778494231779.jpeg";
+import nlMixedBerry from "@assets/WhatsApp_Image_2026-05-11_at_10.20.12_AM_(1)_1778494231779.jpeg";
+import nlPeachIce from "@assets/WhatsApp_Image_2026-05-11_at_10.20.12_AM_1778494231780.jpeg";
+
 /* ─── SEEDS ───────────────────────────────────────────── */
 import seedRoyalGorilla  from "@assets/777689CA-28F6-4E31-9461-FBA383D7A40C_1778434534745.png";
 import seedWhiteWidow    from "@assets/C2A3EDCF-8A75-492D-9A10-67BCA4A6FC3A_1778434534745.png";
@@ -108,7 +136,7 @@ import seedBlueberryZkit from "@assets/FD3F0F68-D95B-44D7-A360-F18B21EEB663_1778
 import vapMaxFront   from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
 import vapV3ProFront from "@assets/D88B9124-AD68-4E02-8391-D21FEE250C9E_1778434031737.png";
-import vapV3ProBack  from "@assets/IMG_1994_1777726809913.JPG";
+import vapV3ProBack  from "@assets/IMG_1994_1777726809913.jpg";
 import vapYocan      from "@assets/9A065C3E-F436-48F5-B945-D133B7F72231_1778434031737.png";
 import vapHite       from "@assets/658EE696-0E1B-48CE-8874-82C0132DCB42_1778434031737.png";
 import vapFogPro     from "@assets/5EB62D65-82EF-4D26-AB7B-43EEC38E2624_1778434031737.png";
@@ -122,7 +150,9 @@ export type Category =
   | "Vapes"
   | "E-Liquids"
   | "Vaporisers"
-  | "Seeds";
+  | "Seeds"
+  | "Nicotine Vapes"
+  | "Nicotine E-Liquids";
 
 export interface Product {
   id: string;
@@ -464,6 +494,34 @@ export const PRODUCTS: Product[] = [
     category: "E-Liquids", subCategory: "Harmony Liquids",
     price: 30, image: eLiqStrawberry, imageBack: eLiqStrawberryBack,
   },
+
+  /* ══════════  NICOTINE VAPES (10)  ══════════ */
+  { id: "nv01", name: "Cool Mint", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvCoolMint },
+  { id: "nv02", name: "Bull Ice", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvBullIce },
+  { id: "nv03", name: "Cotton Candy", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvCottonCandy },
+  { id: "nv04", name: "Blueberry Sour Raspberry", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvBlueSourRasp },
+  { id: "nv05", name: "Frozen Strawberry", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvFrozenStraw },
+  { id: "nv06", name: "Kiwi Passion Fruit Guava", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvKiwiPassion },
+  { id: "nv07", name: "Peach Ice", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvPeachIce },
+  { id: "nv08", name: "Mixed Berries", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvMixedBerries },
+  { id: "nv09", name: "Peach Mango", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvPeachMango },
+  { id: "nv10", name: "Strawberry Watermelon", brand: "Fumot", category: "Nicotine Vapes", subCategory: "Nicotine Disposables 1200 Puffs", price: 12.9, image: nvStrawWaterml },
+
+  /* ══════════  NICOTINE E-LIQUIDS (14)  ══════════ */
+  { id: "nl01", name: "Peach Mango Pineapple", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlPeachMangoPineapple },
+  { id: "nl02", name: "Apple Peach Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlApplePeachIce },
+  { id: "nl03", name: "Strawberry Raspberry Cherry Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlStrawRaspCherryIce },
+  { id: "nl04", name: "Strawberry Kiwi Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlStrawKiwiIce },
+  { id: "nl05", name: "Peach Berry", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlPeachBerry },
+  { id: "nl06", name: "Fresh Mint", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlFreshMint },
+  { id: "nl07", name: "Strawberry Raspberry Watermelon", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlStrawRaspWatermelon },
+  { id: "nl08", name: "Triple Mango", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlTripleMango },
+  { id: "nl09", name: "Watermelon Kiwi Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlWatermelonKiwiIce },
+  { id: "nl10", name: "Watermelon Mango Peach", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlWatermelonMangoPeach },
+  { id: "nl11", name: "Blueberry Raspberry Lemonade", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlBlueRaspLemonade },
+  { id: "nl12", name: "Dragon Fruit Blueberry Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlDragonFruitBlueIce },
+  { id: "nl13", name: "Mixed Berry", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlMixedBerry },
+  { id: "nl14", name: "Peach Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlPeachIce },
 
   /* ══════════  VAPORISERS (4)  ══════════ */
   {
