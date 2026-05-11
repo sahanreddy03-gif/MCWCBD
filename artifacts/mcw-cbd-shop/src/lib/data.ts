@@ -43,7 +43,7 @@ import fMamaRuntzFront      from "@assets/A08B9226-F6BB-4496-B084-D6A696A624BF_1
 import fMamaRuntzBack       from "@assets/IMG_1933_1777726614802.jpg";
 import fMamaAmnesiaFront    from "@assets/58B70DC3-5DF5-48A6-ACAB-7FA0C43564A8_1778431598513.png";
 import fMamaAmnesiaBack     from "@assets/IMG_1935_1777726614803.jpg";
-import fEuphoriaCBDP        from "@assets/5f7541cd-3369-460d-af38-1403ba5d197b_1777726533795.jpg";
+import fEuphoriaCBDP        from "@assets/5f7541cd-3369-460d-af38-1403ba5d197b_1777726533795.JPG";
 import fSnus                from "@assets/1BF88910-73ED-44CC-8A81-6A6535CA9995_1778431598513.png";
 
 /* ─── GUMMIES ─────────────────────────────────────────── */
@@ -136,7 +136,7 @@ import seedBlueberryZkit from "@assets/FD3F0F68-D95B-44D7-A360-F18B21EEB663_1778
 import vapMaxFront   from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
 import vapV3ProFront from "@assets/D88B9124-AD68-4E02-8391-D21FEE250C9E_1778434031737.png";
-import vapV3ProBack  from "@assets/IMG_1994_1777726809913.jpg";
+import vapV3ProBack  from "@assets/IMG_1994_1777726809913.JPG";
 import vapYocan      from "@assets/9A065C3E-F436-48F5-B945-D133B7F72231_1778434031737.png";
 import vapHite       from "@assets/658EE696-0E1B-48CE-8874-82C0132DCB42_1778434031737.png";
 import vapFogPro     from "@assets/5EB62D65-82EF-4D26-AB7B-43EEC38E2624_1778434031737.png";
