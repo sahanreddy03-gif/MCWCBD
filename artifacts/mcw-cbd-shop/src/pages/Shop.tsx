@@ -101,7 +101,7 @@ function FlipCard({ product }: { product: Product }) {
               {product.brand}
             </p>
             <h3 className="font-bebas text-[1.65rem] leading-tight text-white">{product.name}</h3>
-            <p className="mt-1 text-[10px] font-black uppercase tracking-widest text-white/30">hover for price →</p>
+            <p className="mt-1 font-bebas text-2xl leading-none" style={{ color }}>€{product.price.toFixed(2)}</p>
           </div>
         </div>
 
