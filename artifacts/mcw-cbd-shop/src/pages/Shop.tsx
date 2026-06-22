@@ -4,6 +4,8 @@ import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { Link, useSearch } from "wouter";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
+import { addToCart, subscribeCart, getCartCount } from "@/lib/cart";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const PRIMARY_CATEGORIES: Category[] = [
   "Flowers", "Gummies", "Crystal", "Hash", "Vapes", "E-Liquids", "Vaporisers", "Seeds", "Nicotine Vapes", "Nicotine E-Liquids",
@@ -35,36 +37,18 @@ const CATEGORY_ICONS: Record<Category, string> = {
   "Nicotine E-Liquids": "💧",
 };
 
-/* ── Cart store ─────────────────────────────────────── */
-let cartItems: { product: Product; quantity: number }[] = [];
-let cartListeners: (() => void)[] = [];
-const subscribeCart = (l: () => void) => {
-  cartListeners.push(l);
-  return () => { cartListeners = cartListeners.filter(x => x !== l); };
-};
-const addToCart = (product: Product) => {
-  const ex = cartItems.find(i => i.product.id === product.id);
-  if (ex) ex.quantity++;
-  else cartItems.push({ product, quantity: 1 });
-  cartListeners.forEach(l => l());
-};
-const removeFromCart = (id: string) => {
-  cartItems = cartItems.filter(i => i.product.id !== id);
-  cartListeners.forEach(l => l());
-};
-const decrementCart = (id: string) => {
-  const ex = cartItems.find(i => i.product.id === id);
-  if (!ex) return;
-  if (ex.quantity <= 1) cartItems = cartItems.filter(i => i.product.id !== id);
-  else ex.quantity--;
-  cartListeners.forEach(l => l());
-};
-const getCartTotal = () => cartItems.reduce((acc, i) => acc + i.product.price * i.quantity, 0);
-
 /* ── Flip Card ──────────────────────────────────────── */
-function FlipCard({ product }: { product: Product }) {
+function FlipCard({ product, onCartOpen }: { product: Product; onCartOpen: () => void }) {
   const backImg = product.imageBack ?? product.image;
   const color = CATEGORY_COLORS[product.category];
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    addToCart(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1200);
+  };
 
   return (
     <div className="group [perspective:1200px] h-[460px] cursor-pointer">
@@ -72,21 +56,15 @@ function FlipCard({ product }: { product: Product }) {
 
         {/* ── FRONT ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
-
-          {/* product — fully visible, centred, slight hover lift */}
           <img
             src={product.image}
             alt={product.name}
             className="absolute inset-0 w-full h-full object-contain p-5 group-hover:scale-[1.06] transition-transform duration-300 ease-out"
             loading="lazy"
           />
-
-          {/* bottom fade for text legibility */}
-          <div className="absolute bottom-0 left-0 right-0 h-[38%] pointer-events-none" style={{
-            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.82) 40%, transparent 100%)'
+          <div className="absolute bottom-0 left-0 right-0 h-[42%] pointer-events-none" style={{
+            background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.88) 45%, transparent 100%)'
           }} />
-
-          {/* badges top-right */}
           <div className="absolute top-3 right-3 flex flex-col gap-1.5 items-end">
             {product.isNew && (
               <span className="bg-[#f472b6] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1 shadow-lg">NEW</span>
@@ -95,40 +73,37 @@ function FlipCard({ product }: { product: Product }) {
               <span className="bg-[#FFB800] text-black text-[9px] font-black uppercase tracking-widest px-2.5 py-1 shadow-lg">HOT</span>
             )}
           </div>
-
-          {/* colored accent line at top */}
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
 
-          {/* bottom info */}
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] mb-1" style={{ color }}>
-              {product.brand}
-            </p>
-            <h3 className="font-bebas text-[1.65rem] leading-tight text-white">{product.name}</h3>
-            <p className="mt-1 font-bebas text-2xl leading-none" style={{ color }}>€{product.price.toFixed(2)}</p>
+          {/* bottom info + ADD button */}
+          <div className="absolute bottom-0 left-0 right-0 p-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.25em] mb-0.5" style={{ color }}>{product.brand}</p>
+            <h3 className="font-bebas text-[1.55rem] leading-tight text-white">{product.name}</h3>
+            <div className="flex items-center justify-between mt-2 gap-2">
+              <p className="font-bebas text-2xl leading-none" style={{ color }}>€{product.price.toFixed(2)}</p>
+              <button
+                onClick={handleAdd}
+                className="flex items-center gap-1.5 px-3 py-2 font-black uppercase tracking-widest text-[10px] text-black transition-all active:scale-95 shrink-0"
+                style={{ backgroundColor: added ? "#4ade80" : color }}
+              >
+                {added ? "✓ Added" : "+ Add"}
+              </button>
+            </div>
           </div>
         </div>
 
         {/* ── BACK ── */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden" style={{ backgroundColor: '#071a09' }}>
-
-          {/* back image — fully visible, centred */}
           <img
             src={backImg}
             alt={`${product.name} – detail`}
             className="absolute inset-0 w-full h-full object-contain p-5 group-hover:scale-[1.05] transition-transform duration-300 ease-out"
             loading="lazy"
           />
-
-          {/* bottom fade — for price readability */}
           <div className="absolute bottom-0 left-0 right-0 h-[55%] pointer-events-none" style={{
             background: 'linear-gradient(to top, #071a09 0%, rgba(7,26,9,0.95) 50%, transparent 100%)'
           }} />
-
-          {/* colored top bar */}
           <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ backgroundColor: color }} />
-
-          {/* content */}
           <div className="absolute inset-0 flex flex-col justify-between p-5 pt-6">
             <div>
               <p className="text-[9px] font-black uppercase tracking-[0.25em] mb-1" style={{ color }}>
@@ -140,7 +115,7 @@ function FlipCard({ product }: { product: Product }) {
               <p className="font-bebas text-7xl text-white leading-none mb-1">€{product.price.toFixed(2)}</p>
               <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-4">incl. VAT · Malta delivery</p>
               <button
-                onClick={(e) => { e.stopPropagation(); addToCart(product); }}
+                onClick={(e) => { e.stopPropagation(); addToCart(product); onCartOpen(); }}
                 className="w-full py-4 font-black uppercase tracking-widest text-sm text-black transition-all hover:brightness-110 active:scale-95 shadow-lg"
                 style={{ backgroundColor: color }}
               >
@@ -169,13 +144,11 @@ export default function Shop() {
   const [search, setSearch] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartState, setCartState] = useState(cartItems);
+  const [cartCount, setCartCount] = useState(getCartCount());
 
-  useState(() => subscribeCart(() => setCartState([...cartItems])));
+  useEffect(() => subscribeCart(() => setCartCount(getCartCount())), []);
 
-  useEffect(() => {
-    setActiveSubCategory(null);
-  }, [activeCategory]);
+  useEffect(() => { setActiveSubCategory(null); }, [activeCategory]);
 
   useEffect(() => {
     const t = setTimeout(() => setSearch(searchInput), 300);
@@ -200,27 +173,6 @@ export default function Shop() {
     });
   }, [activeCategory, activeSubCategory, search]);
 
-  const DELIVERY_FEE = 3.50;
-  const FREE_THRESHOLD = 50;
-  const deliveryFee = () => (getCartTotal() >= FREE_THRESHOLD ? 0 : DELIVERY_FEE);
-  const orderTotal = () => getCartTotal() + deliveryFee();
-
-  const handleCheckout = () => {
-    if (cartItems.length === 0) return;
-    const sub = getCartTotal();
-    const del = deliveryFee();
-    const tot = orderTotal();
-    let text = "Hello MCW! 👋 I would like to place an order:\n\n";
-    cartItems.forEach(item => {
-      text += `• ${item.quantity}x ${item.product.name} — €${item.product.price.toFixed(2)}\n`;
-    });
-    text += `\nSubtotal: €${sub.toFixed(2)}`;
-    text += `\nDelivery: ${del === 0 ? "FREE 🎉" : `€${del.toFixed(2)}`}`;
-    text += `\n*TOTAL: €${tot.toFixed(2)}*`;
-    text += `\n\nPayment options:\n1. Revolut link (preferred)\n2. Cash on delivery\n\nPlease confirm my order and send payment details. Thank you!`;
-    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(text)}`, "_blank");
-  };
-
   const clearFilters = () => {
     setActiveSubCategory(null);
     setSearchInput("");
@@ -235,6 +187,9 @@ export default function Shop() {
         title={activeCategory ? `${activeCategory} Malta — MCW CBD Shop` : "Shop the Collection — MCW CBD Malta"}
         description="Malta's #1 Hemp & CBD Destination. Real products, real photos. Same-day delivery across Malta."
       />
+
+      {/* ── CART DRAWER ── */}
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
       {/* ── SHOP HEADER ── */}
       <div className="pt-32 pb-10 bg-[#0a0a0a] border-b border-white/10 relative overflow-hidden">
@@ -269,7 +224,7 @@ export default function Shop() {
                 onClick={() => setIsCartOpen(true)}
                 className="flex-1 md:flex-none px-7 py-3.5 bg-white text-black flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs hover:bg-[#FFB800] transition-colors"
               >
-                <ShoppingBag size={15} /> Cart ({cartState.reduce((a, b) => a + b.quantity, 0)})
+                <ShoppingBag size={15} /> Cart ({cartCount})
               </button>
             </div>
           </div>
@@ -320,28 +275,6 @@ export default function Shop() {
           <span className="text-[10px] font-black uppercase tracking-widest text-white/50">📍 Same-day across Malta</span>
           <span className="hidden sm:inline text-white/20 font-black">·</span>
           <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🕙 Open daily until 11:30pm</span>
-        </div>
-      </div>
-
-      {/* ── DELIVERY PROGRESS ── */}
-      <div className="bg-[#0d0d0d] border-b border-white/5 px-4 py-2.5">
-        <div className="max-w-[1400px] mx-auto flex items-center gap-4">
-          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-            <div
-              className="h-full rounded-full transition-all duration-500"
-              style={{
-                width: `${Math.min(100, (getCartTotal() / FREE_THRESHOLD) * 100)}%`,
-                background: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : activeColor,
-              }}
-            />
-          </div>
-          <span className="text-[10px] font-black uppercase tracking-widest shrink-0" style={{ color: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "rgba(255,255,255,0.3)" }}>
-            {getCartTotal() >= FREE_THRESHOLD
-              ? "🎉 FREE delivery!"
-              : cartState.length === 0
-                ? `€${FREE_THRESHOLD} = free delivery`
-                : `€${(FREE_THRESHOLD - getCartTotal()).toFixed(2)} to free delivery`}
-          </span>
         </div>
       </div>
 
@@ -405,115 +338,13 @@ export default function Shop() {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {filteredProducts.map(product => (
-                  <FlipCard key={product.id} product={product} />
+                  <FlipCard key={product.id} product={product} onCartOpen={() => setIsCartOpen(true)} />
                 ))}
               </div>
             )}
           </div>
         </div>
       </div>
-
-      {/* ── CART SIDEBAR ── */}
-      <AnimatePresence>
-        {isCartOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setIsCartOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
-            />
-            <motion.div
-              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-full max-w-md bg-[#0d0d0d] border-l border-white/10 z-50 flex flex-col shadow-2xl"
-            >
-              <div className="p-6 border-b border-white/10 flex justify-between items-center">
-                <h2 className="font-bebas text-5xl tracking-widest text-white leading-none">YOUR CART</h2>
-                <button onClick={() => setIsCartOpen(false)} className="p-2 text-white/50 hover:text-white transition-colors">
-                  <X size={24} />
-                </button>
-              </div>
-
-              <div className="flex-1 overflow-y-auto p-6 space-y-4">
-                {cartState.length === 0 ? (
-                  <div className="text-center text-white/20 mt-32">
-                    <ShoppingBag size={56} className="mx-auto mb-6 opacity-20" />
-                    <p className="font-black uppercase tracking-widest">Your cart is empty.</p>
-                  </div>
-                ) : (
-                  cartState.map(item => (
-                    <div key={item.product.id} className="flex gap-4 bg-white/5 border border-white/10 p-3">
-                      <img src={item.product.image} className="w-20 h-20 object-cover shrink-0" alt={item.product.name} />
-                      <div className="flex-1 flex flex-col justify-between py-0.5">
-                        <div>
-                          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/40">{item.product.brand}</p>
-                          <h4 className="font-bold text-xs text-white line-clamp-2 mt-0.5 uppercase">{item.product.name}</h4>
-                        </div>
-                        <div className="flex justify-between items-center mt-2">
-                          <span className="font-bebas text-2xl text-white">€{(item.product.price * item.quantity).toFixed(2)}</span>
-                          <div className="flex items-center border border-white/20">
-                            <button onClick={() => decrementCart(item.product.id)} className="px-2.5 py-1 text-white/70 hover:text-white hover:bg-white/10 transition-colors font-black text-sm">−</button>
-                            <span className="px-2.5 py-1 text-[11px] font-black text-white border-x border-white/20 min-w-[2rem] text-center">{item.quantity}</span>
-                            <button onClick={() => addToCart(item.product)} className="px-2.5 py-1 text-white/70 hover:text-white hover:bg-white/10 transition-colors font-black text-sm">+</button>
-                          </div>
-                        </div>
-                      </div>
-                      <button onClick={() => removeFromCart(item.product.id)} className="text-white/20 hover:text-red-400 transition-colors self-start mt-1">
-                        <X size={14} />
-                      </button>
-                    </div>
-                  ))
-                )}
-              </div>
-
-              <div className="p-6 border-t border-white/10">
-                {cartState.length > 0 && (
-                  <div className="mb-4">
-                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-2">
-                      <div
-                        className="h-full rounded-full transition-all duration-500"
-                        style={{
-                          width: `${Math.min(100, (getCartTotal() / FREE_THRESHOLD) * 100)}%`,
-                          background: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "#FFB800",
-                        }}
-                      />
-                    </div>
-                    {getCartTotal() < FREE_THRESHOLD ? (
-                      <p className="text-[10px] font-black uppercase tracking-widest text-white/30 text-center">
-                        Add €{(FREE_THRESHOLD - getCartTotal()).toFixed(2)} more for FREE delivery
-                      </p>
-                    ) : (
-                      <p className="text-[10px] font-black uppercase tracking-widest text-[#4ade80] text-center">🎉 Free delivery unlocked!</p>
-                    )}
-                  </div>
-                )}
-                <div className="flex justify-between items-center mb-1.5">
-                  <span className="font-black uppercase tracking-widest text-xs text-white/40">Subtotal</span>
-                  <span className="font-bebas text-2xl text-white">€{getCartTotal().toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between items-center mb-4 pb-4 border-b border-white/10">
-                  <span className="font-black uppercase tracking-widest text-xs text-white/40">Delivery</span>
-                  <span className="font-bebas text-2xl" style={{ color: deliveryFee() === 0 ? "#4ade80" : "white" }}>
-                    {deliveryFee() === 0 ? "FREE" : `€${deliveryFee().toFixed(2)}`}
-                  </span>
-                </div>
-                <div className="flex justify-between items-end mb-6">
-                  <span className="font-black uppercase tracking-widest text-sm text-white">Total</span>
-                  <span className="font-bebas text-5xl text-white">€{orderTotal().toFixed(2)}</span>
-                </div>
-                <p className="text-[9px] text-white/20 uppercase tracking-wider font-bold text-center mb-4">Pay via Revolut or Cash on Delivery</p>
-                <button
-                  onClick={handleCheckout}
-                  disabled={cartState.length === 0}
-                  className="w-full py-4 bg-[#22C55E] text-black font-black uppercase tracking-widest text-sm hover:bg-[#4ade80] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-                >
-                  Enquire via WhatsApp
-                </button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
 
       {/* ── MOBILE FILTER DRAWER ── */}
       <AnimatePresence>

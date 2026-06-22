@@ -3,6 +3,7 @@ import { Menu, X, MessageCircle, Instagram, Facebook } from "lucide-react";
 import { useState } from "react";
 import { WhatsAppCTA } from "./WhatsAppCTA";
 import { AgeGate } from "./AgeGate";
+import { FloatingCart } from "./CartDrawer";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -189,10 +190,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
               href="https://www.instagram.com/mcwcbdrelax"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-gray-300 hover:text-pink-400 transition-colors"
+              className="flex items-center gap-1.5 transition-colors hover:opacity-80"
               aria-label="Instagram"
+              style={{ color: "#E1306C" }}
             >
-              <Instagram size={20} />
+              <Instagram size={22} />
             </a>
             <a
               href="https://wa.me/35699536248"
@@ -418,6 +420,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       {/* WhatsApp CTA */}
       <WhatsAppCTA />
+
+      {/* Floating Cart — visible on all pages */}
+      <FloatingCart />
     </div>
   );
 }
