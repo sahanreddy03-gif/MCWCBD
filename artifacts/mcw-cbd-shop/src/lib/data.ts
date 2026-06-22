@@ -227,7 +227,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "f09", name: "Canntropy CBD 20% Flowers 1g", brand: "Canntropy",
     category: "Flowers", subCategory: "Canntropy",
-    price: 2, image: fGreenCrackFront, imageBack: fGreenCrackBack,
+    price: 25, image: fGreenCrackFront, imageBack: fGreenCrackBack,
   },
   {
     id: "f10", name: "Canntropy H4CBD 60% Flowers 1g", brand: "Canntropy",

@@ -17,7 +17,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       url: "https://mcwcbd.com",
       logo: "https://mcwcbd.com/images/favicon.png",
       sameAs: [
-        "https://www.instagram.com/cbd_paterson/",
+        "https://www.instagram.com/mcwcbdrelax",
         "https://www.facebook.com/profile.php?id=61580762071984",
         "https://wa.me/35699536248",
       ],
@@ -183,8 +183,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          {/* Right: WhatsApp CTA + Hamburger */}
+          {/* Right: Instagram + WhatsApp CTA + Hamburger */}
           <div className="flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/mcwcbdrelax"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-gray-300 hover:text-pink-400 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
             <a
               href="https://wa.me/35699536248"
               target="_blank"
@@ -353,9 +362,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/cbd_paterson/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#22c55e] text-sm transition-colors flex items-center gap-3">
+                  <a href="https://www.instagram.com/mcwcbdrelax" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#22c55e] text-sm transition-colors flex items-center gap-3">
                     <Instagram size={16} className="text-[#22c55e] shrink-0" />
-                    <span>@cbd_paterson</span>
+                    <span>@mcwcbdrelax</span>
                   </a>
                 </li>
                 <li>
