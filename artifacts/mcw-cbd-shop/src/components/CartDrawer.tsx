@@ -6,8 +6,8 @@ import {
   getCartItems, getCartTotal, getCartCount,
 } from "@/lib/cart";
 
-const DELIVERY_FEE = 3.50;
-const FREE_THRESHOLD = 50;
+const MIN_ORDER = 75;
+const FREE_THRESHOLD = 75;
 
 export function CartDrawer({
   isOpen,
@@ -29,9 +29,10 @@ export function CartDrawer({
     if (!isOpen) setStep("cart");
   }, [isOpen]);
 
-  const deliveryFee = getCartTotal() >= FREE_THRESHOLD ? 0 : DELIVERY_FEE;
-  const orderTotal = getCartTotal() + deliveryFee;
+  const deliveryFee = 0;
+  const orderTotal = getCartTotal();
   const cartCount = cartState.reduce((a, b) => a + b.quantity, 0);
+  const canOrder = getCartTotal() >= MIN_ORDER;
 
   const handleLocate = () => {
     if (!navigator.geolocation) return;
@@ -48,7 +49,7 @@ export function CartDrawer({
   };
 
   const handleOrder = () => {
-    if (cartState.length === 0) return;
+    if (cartState.length === 0 || !canOrder) return;
     const sub = getCartTotal();
     const del = deliveryFee;
     const tot = orderTotal;
@@ -140,14 +141,14 @@ export function CartDrawer({
 
                 {cartState.length > 0 && (
                   <div className="p-5 border-t border-white/10 shrink-0">
-                    {/* Free delivery progress */}
+                    {/* Progress bar */}
                     <div className="mb-4">
                       <div className="h-1.5 bg-white/5 rounded-full overflow-hidden mb-1.5">
                         <div className="h-full rounded-full transition-all duration-500"
-                          style={{ width: `${Math.min(100, (getCartTotal() / FREE_THRESHOLD) * 100)}%`, background: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "#FFB800" }} />
+                          style={{ width: `${Math.min(100, (getCartTotal() / MIN_ORDER) * 100)}%`, background: canOrder ? "#4ade80" : "#FFB800" }} />
                       </div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-center" style={{ color: getCartTotal() >= FREE_THRESHOLD ? "#4ade80" : "rgba(255,255,255,0.3)" }}>
-                        {getCartTotal() >= FREE_THRESHOLD ? "🎉 Free delivery unlocked!" : `€${(FREE_THRESHOLD - getCartTotal()).toFixed(2)} more for free delivery`}
+                      <p className="text-[10px] font-black uppercase tracking-widest text-center" style={{ color: canOrder ? "#4ade80" : "rgba(255,255,255,0.4)" }}>
+                        {canOrder ? "🎉 Free delivery included!" : `Min. order €${MIN_ORDER} · Free delivery — €${(MIN_ORDER - getCartTotal()).toFixed(2)} to go`}
                       </p>
                     </div>
                     <div className="flex justify-between mb-1">
@@ -156,19 +157,19 @@ export function CartDrawer({
                     </div>
                     <div className="flex justify-between mb-4 pb-4 border-b border-white/10">
                       <span className="text-xs font-black uppercase tracking-widest text-white/40">Delivery</span>
-                      <span className="font-bebas text-2xl" style={{ color: deliveryFee === 0 ? "#4ade80" : "white" }}>
-                        {deliveryFee === 0 ? "FREE" : `€${deliveryFee.toFixed(2)}`}
-                      </span>
+                      <span className="font-bebas text-2xl text-[#4ade80]">FREE</span>
                     </div>
                     <div className="flex justify-between items-end mb-5">
                       <span className="text-sm font-black uppercase tracking-widest text-white">Total</span>
                       <span className="font-bebas text-5xl text-white">€{orderTotal.toFixed(2)}</span>
                     </div>
                     <button
-                      onClick={() => setStep("checkout")}
-                      className="w-full py-4 bg-[#22C55E] text-black font-black uppercase tracking-widest text-sm hover:bg-[#4ade80] transition-colors active:scale-[0.98]"
+                      onClick={() => canOrder && setStep("checkout")}
+                      disabled={!canOrder}
+                      className="w-full py-4 font-black uppercase tracking-widest text-sm transition-colors active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
+                      style={{ backgroundColor: canOrder ? "#22C55E" : "#333", color: canOrder ? "#000" : "#fff" }}
                     >
-                      Proceed to Order →
+                      {canOrder ? "Proceed to Order →" : `Add €${(MIN_ORDER - getCartTotal()).toFixed(2)} more to order`}
                     </button>
                   </div>
                 )}
