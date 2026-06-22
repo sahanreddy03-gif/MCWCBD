@@ -199,7 +199,7 @@ export default function Shop() {
             THE MCW COLLECTION
           </h1>
           <p className="text-white/30 font-black tracking-widest uppercase text-sm mb-8">
-            92 Products · 10 Categories · Malta's Best
+            93 Products · 10 Categories · Malta's Best
           </p>
 
           <div className="flex flex-col md:flex-row justify-between gap-4 items-end">

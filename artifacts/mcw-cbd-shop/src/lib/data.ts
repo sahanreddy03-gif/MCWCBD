@@ -133,6 +133,7 @@ import seedWhiteWidow    from "@assets/C2A3EDCF-8A75-492D-9A10-67BCA4A6FC3A_1778
 import seedBlueberryZkit from "@assets/FD3F0F68-D95B-44D7-A360-F18B21EEB663_1778434534745.png";
 
 /* ─── VAPORISERS ──────────────────────────────────────── */
+import vapYoozWhite  from "@assets/IMG_4457_1782142541910.webp";
 import vapMaxFront   from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
 import vapMaxBack    from "@assets/IMG_1992_1777726809912.jpg";
 import vapV3ProFront from "@assets/D88B9124-AD68-4E02-8391-D21FEE250C9E_1778434031737.png";
@@ -523,7 +524,12 @@ export const PRODUCTS: Product[] = [
   { id: "nl13", name: "Mixed Berry", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlMixedBerry },
   { id: "nl14", name: "Peach Ice", brand: "Tornadoliq", category: "Nicotine E-Liquids", subCategory: "Nic Salts 10ml", price: 8.5, image: nlPeachIce },
 
-  /* ══════════  VAPORISERS (4)  ══════════ */
+  /* ══════════  VAPORISERS (5)  ══════════ */
+  {
+    id: "vap00", name: "YOOZ Zero V5 Kit", brand: "YOOZ",
+    category: "Vaporisers", subCategory: "Pod Kits",
+    price: 200, image: vapYoozWhite, isNew: true,
+  },
   {
     id: "vap01", name: "Relax Max", brand: "XVape",
     category: "Vaporisers", subCategory: "Dry Herb Vaporisers",

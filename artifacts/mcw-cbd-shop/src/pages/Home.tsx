@@ -12,7 +12,7 @@ import scCrystal    from "@assets/24A7AD46-78C0-481A-91EE-197E6D7C4682_177843159
 import scHash       from "@assets/A81E895E-9CE4-4E08-BD53-CE9926C8FE51_1778431598513.png";
 import scVapes      from "@assets/A3E71B14-FD8E-4761-BC91-0075FED86910_1778432616736.png";
 import scELiquids   from "@assets/E2202B07-F546-4AFB-B063-869D72582446_1778432616736.png";
-import scVaporisers from "@assets/38183A21-1961-4C12-8B2D-AB8ADCD85F6A_1778432616736.png";
+import scVaporisers from "@assets/IMG_4457_1782142541910.webp";
 import scSeeds      from "@assets/777689CA-28F6-4E31-9461-FBA383D7A40C_1778434534745.png";
 import scNicVapes   from "@assets/WhatsApp_Image_2026-05-11_at_10.05.24_AM_1778494110945.jpeg";
 import scNicEliq    from "@assets/WhatsApp_Image_2026-05-11_at_10.20.15_AM_(2)_1778494231768.jpeg";
