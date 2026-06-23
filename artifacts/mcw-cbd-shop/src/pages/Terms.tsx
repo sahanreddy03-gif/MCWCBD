@@ -55,7 +55,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">8. Contact</h2>
-            <p>For any questions regarding these terms, contact us at <strong>+356 9953 6248</strong> via WhatsApp or visit any of our 4 store locations in Sliema, Gzira, Mellieha, or Bugibba.</p>
+            <p>For any questions regarding these terms, contact us at <strong>+356 9953 6248</strong> via WhatsApp or visit any of our 4 store locations in Sliema, Mellieha, Bugibba, or Valletta.</p>
           </section>
 
         </div>

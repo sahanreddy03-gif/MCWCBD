@@ -46,10 +46,9 @@ const commitments = [
 
 const stores = [
   { name: "Sliema", sub: "Main Branch · Triq Bisazza" },
-  { name: "Gzira", sub: "Open Daily" },
   { name: "Mellieha", sub: "Open Daily" },
   { name: "Bugibba", sub: "Open Daily" },
-  { name: "Valletta", sub: "Coming Soon" },
+  { name: "Valletta", sub: "Open Daily" },
 ];
 
 const breadcrumbSchema = {

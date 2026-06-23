@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 5 locations in Sliema, Gzira, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -95,10 +95,9 @@ export default function Home() {
             <motion.div custom={3} variants={lineVariants} className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-4">
               <p className="text-sm md:text-base font-bold text-muted-foreground uppercase tracking-[0.3em] flex gap-4">
                 <span>● Sliema</span>
-                <span>● Gzira</span>
                 <span>● Mellieha</span>
                 <span>● Bugibba</span>
-                <span>● Valletta</span>
+                <span className="text-[#22c55e]">● Valletta ✦</span>
               </p>
               
               <div className="flex gap-4">
@@ -438,7 +437,7 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { stat: "5", label: "Stores Island-Wide", sub: "Sliema · Gzira · Mellieha · Bugibba · Valletta" },
+              { stat: "4", label: "Stores Island-Wide", sub: "Sliema · Mellieha · Bugibba · Valletta" },
               { stat: "200+", label: "Premium Products", sub: "Curated from world-leading brands" },
               { stat: "5+", label: "Years in Malta", sub: "Malta's original CBD destination" },
               { stat: "100%", label: "Malta Legal", sub: "Every product certified <0.2% THC" },

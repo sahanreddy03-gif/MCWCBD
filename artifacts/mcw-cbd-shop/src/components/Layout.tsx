@@ -55,21 +55,6 @@ const LOCAL_BUSINESS_SCHEMA = {
     },
     {
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwcbd.com/#gzira",
-      name: "MCW CBD Relax Shop — Gzira",
-      url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699536248",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "348, Manuel Dimech Street",
-        addressLocality: "Gzira",
-        addressCountry: "MT",
-      },
-      openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
-    },
-    {
-      "@type": ["LocalBusiness", "Store"],
       "@id": "https://mcwcbd.com/#mellieha",
       name: "MCW CBD Relax Shop — Mellieha",
       url: "https://mcwcbd.com/store-locator",
@@ -333,7 +318,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-3">
                 {[
                   ["Sliema (Flagship)", "/store-locator"],
-                  ["Gzira", "/store-locator"],
                   ["Mellieha", "/store-locator"],
                   ["Bugibba", "/store-locator"],
                   ["Valletta", "/store-locator"],

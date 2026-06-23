@@ -12,12 +12,6 @@ const stores = [
     lat: 35.3378, lng: 14.3008, featured: true,
   },
   {
-    id: 2, name: "Gzira", tag: null,
-    address: "348, Manuel Dimech Street, Gzira",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
-    lat: 35.342, lng: 14.298, featured: false,
-  },
-  {
     id: 3, name: "Mellieha", tag: null,
     address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
     phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
@@ -51,7 +45,7 @@ export default function StoreLocator() {
     <>
       <SEO
         title="Find a CBD Store in Malta — MCW Locations"
-        description="MCW CBD Relax Shop has 5 locations across Malta: Sliema, Gzira, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Same-day delivery available."
+        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Same-day delivery available."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -61,7 +55,7 @@ export default function StoreLocator() {
         <div className="absolute inset-0 bg-gradient-to-b from-green-950/60 via-black/80 to-black pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
         <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Malta · 5 Locations</p>
+          <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Malta · 4 Locations</p>
           <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">
             FIND US
           </h1>
