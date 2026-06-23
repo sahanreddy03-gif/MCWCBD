@@ -94,10 +94,10 @@ export default function Home() {
             
             <motion.div custom={3} variants={lineVariants} className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-4">
               <p className="text-sm md:text-base font-bold text-muted-foreground uppercase tracking-[0.3em] flex gap-4">
+                <span className="text-[#22c55e]">● Valletta ✦</span>
                 <span>● Sliema</span>
                 <span>● Mellieha</span>
                 <span>● Bugibba</span>
-                <span className="text-[#22c55e]">● Valletta ✦</span>
               </p>
               
               <div className="flex gap-4">

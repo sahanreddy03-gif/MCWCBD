@@ -45,10 +45,10 @@ const commitments = [
 ];
 
 const stores = [
-  { name: "Sliema", sub: "Main Branch · Triq Bisazza" },
+  { name: "Valletta", sub: "Main Branch · Triq San Gwann" },
+  { name: "Sliema", sub: "Open Daily" },
   { name: "Mellieha", sub: "Open Daily" },
   { name: "Bugibba", sub: "Open Daily" },
-  { name: "Valletta", sub: "Open Daily" },
 ];
 
 const breadcrumbSchema = {

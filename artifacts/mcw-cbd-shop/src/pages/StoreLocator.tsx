@@ -6,10 +6,16 @@ const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transi
 
 const stores = [
   {
-    id: 1, name: "Sliema", tag: "Main Branch",
+    id: 5, name: "Valletta", tag: "Main Branch",
+    address: "94 First Floor, Triq San Gwann, Valletta VLT",
+    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
+    lat: 35.8989, lng: 14.5146, featured: true,
+  },
+  {
+    id: 1, name: "Sliema", tag: null,
     address: "Triq Bisazza, Sliema SLM 1641",
     phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
-    lat: 35.3378, lng: 14.3008, featured: true,
+    lat: 35.3378, lng: 14.3008, featured: false,
   },
   {
     id: 3, name: "Mellieha", tag: null,
@@ -22,12 +28,6 @@ const stores = [
     address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
     phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
     lat: 35.585, lng: 14.42, featured: false,
-  },
-  {
-    id: 5, name: "Valletta", tag: null,
-    address: "94 First Floor, Triq San Gwann, Valletta VLT",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
-    lat: 35.8989, lng: 14.5146, featured: false,
   },
 ];
 

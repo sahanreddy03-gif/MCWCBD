@@ -317,10 +317,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Our Stores</h3>
               <ul className="space-y-3">
                 {[
-                  ["Sliema (Flagship)", "/store-locator"],
+                  ["Valletta (Flagship)", "/store-locator"],
+                  ["Sliema", "/store-locator"],
                   ["Mellieha", "/store-locator"],
                   ["Bugibba", "/store-locator"],
-                  ["Valletta", "/store-locator"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">

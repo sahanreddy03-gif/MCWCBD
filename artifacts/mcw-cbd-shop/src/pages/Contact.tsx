@@ -133,7 +133,7 @@ export default function Contact() {
             <motion.div variants={fadeUp} className="mt-8">
               <p className="text-[10px] text-gray-700 uppercase tracking-widest mb-4">Our Locations</p>
               <div className="grid grid-cols-4 gap-2">
-                {["Sliema", "Mellieha", "Bugibba", "Valletta"].map((loc) => (
+                {["Valletta", "Sliema", "Mellieha", "Bugibba"].map((loc) => (
                   <div key={loc} className="border border-gray-800 py-3 text-center">
                     <p className="font-bebas text-[13px] tracking-widest text-gray-500">{loc}</p>
                   </div>
