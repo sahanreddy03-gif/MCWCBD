@@ -4,7 +4,7 @@ export function localBizSchema(slug: string, label: string) {
     "@type": "LocalBusiness",
     name: `MCW CBD Relax Shop — ${label}`,
     url: `https://mcwcbd.com/guides/${slug}`,
-    telephone: "+35699536248",
+    telephone: "+35699312258",
     openingHours: "Mo-Su 09:00-23:30",
     priceRange: "€€",
     address: { "@type": "PostalAddress", addressCountry: "MT" },

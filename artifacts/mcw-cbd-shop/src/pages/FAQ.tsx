@@ -15,7 +15,7 @@ const faqs = [
   { q: "Do you offer delivery?", a: "Yes. Delivery is €3.50 for orders under €50, and FREE for orders €50 and above. Enquire via WhatsApp." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
   { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },
-  { q: "How do I contact customer support?", a: "WhatsApp or call 9953 6248, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
+  { q: "How do I contact customer support?", a: "WhatsApp us, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
   { q: "What is your return policy?", a: "Contact us within 7 days of purchase if you're not satisfied. We will find a solution." },
   { q: "Are there age restrictions?", a: "Yes — all products are strictly 18+. Age verification is required online and in store." },
   { q: "Can I use CBD while pregnant or nursing?", a: "Consult your healthcare provider first. CBD may interact with medications or affect pregnancy." },
@@ -114,7 +114,7 @@ export default function FAQ() {
             Our team is online daily until 11:30 pm. Message us on WhatsApp for a fast, personal answer.
           </p>
           <a
-            href="https://wa.me/35699536248"
+            href="https://wa.me/35699312258"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest px-8 py-4 transition-colors"

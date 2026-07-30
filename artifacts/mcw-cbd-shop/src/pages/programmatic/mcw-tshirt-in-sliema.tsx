@@ -65,7 +65,7 @@ export default function McwTshirtInSliema() {
                 <div className="flex items-start">
                   <Phone className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-bold">📞 9953 6248</p>
+                    <p className="font-bold">💬 WhatsApp us</p>
                     <p className="text-gray-400 text-sm">Call for availability</p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export default function McwTshirtInSliema() {
 
               <div className="space-y-3">
                 <a
-                  href="https://wa.me/35699536248?text=Hi%20MCW%2C%20I%27m%20interested%20in%20MCW T-Shirt"
+                  href="https://wa.me/35699312258?text=Hi%20MCW%2C%20I%27m%20interested%20in%20MCW T-Shirt"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-4 rounded-lg transition-colors text-center"

@@ -448,9 +448,9 @@ Ask our staff for the latest stock. New gummy flavours and brands arrive regular
 ## MCW Sliema: Our Flagship Location
 
 **Address:** Triq Bisazza, Sliema SLM 1641
-**Phone:** +356 99536248
+**Phone:** +356 99312258
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699536248
+**WhatsApp:** wa.me/35699312258
 
 Located in the heart of Sliema — one of Malta's most vibrant and cosmopolitan areas — our flagship store is the largest and most fully-stocked of all our Malta locations. Sliema attracts both locals and tourists, and our store has been designed to serve everyone from complete CBD beginners to experienced connoisseurs looking for specific strains or rare cannabinoids.
 
@@ -479,7 +479,7 @@ All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 
 ## Same-Day Delivery from Sliema
 
-Can't make it to the store? Message us on WhatsApp (+356 99536248) and we'll organise same-day delivery anywhere in Malta. Delivery costs €3.50 and is completely free on orders over €50. Most deliveries arrive within 2-3 hours of ordering.
+Can't make it to the store? Message us on WhatsApp (+356 99312258) and we'll organise same-day delivery anywhere in Malta. Delivery costs €3.50 and is completely free on orders over €50. Most deliveries arrive within 2-3 hours of ordering.
 
 We deliver to Sliema, St Julian's, Valletta, Birkirkara, Mosta, Naxxar, Attard, and every other corner of the island.
 
@@ -508,9 +508,9 @@ Sliema is Malta's most cosmopolitan neighbourhood, and MCW fits right in. Whethe
 ## MCW Gzira: Central Malta's CBD Destination
 
 **Address:** 348, Manuel Dimech Street, Gzira, Malta
-**Phone:** +356 99536248
+**Phone:** +356 99312258
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699536248
+**WhatsApp:** wa.me/35699312258
 
 Gzira has quickly become one of Malta's most sought-after addresses — a young, energetic town with a thriving food scene, a busy promenade, and growing residential and business community. MCW Gzira puts premium CBD within easy reach of residents across central Malta.
 
@@ -543,7 +543,7 @@ No guesswork. No mystery. Every cannabinoid content confirmed.
 
 ## Same-Day Delivery to Gzira and Nearby Areas
 
-Rather order from your sofa? WhatsApp us on +356 99536248 and we'll arrange same-day delivery directly to your door in Gzira, Msida, Birkirkara, Ta' Xbiex, Sliema, Valletta, or anywhere across Malta.
+Rather order from your sofa? WhatsApp us on +356 99312258 and we'll arrange same-day delivery directly to your door in Gzira, Msida, Birkirkara, Ta' Xbiex, Sliema, Valletta, or anywhere across Malta.
 
 Delivery costs €3.50, with free delivery on all orders over €50. Most deliveries arrive within 1-3 hours of your message.
 
@@ -571,9 +571,9 @@ Come and visit us in Gzira — we're open every single day until late.`,
 ## MCW Mellieha: North Malta's CBD Shop
 
 **Address:** 51 Triq Gorg Borg Olivier, Mellieħa MLH 1025
-**Phone:** +356 99536248
+**Phone:** +356 99312258
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699536248
+**WhatsApp:** wa.me/35699312258
 
 Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, and a gateway for visitors heading to and from Gozo. Our Mellieha store has become the go-to spot for North Malta residents and tourists who want premium CBD without having to travel south to Sliema or Gzira.
 
@@ -616,7 +616,7 @@ We display COAs openly and encourage customers to ask. Transparency is part of h
 
 ## Same-Day Delivery to Mellieha and North Malta
 
-Can't make it in? WhatsApp us on +356 99536248 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
+Can't make it in? WhatsApp us on +356 99312258 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
 
 Delivery costs €3.50. Free delivery on all orders over €50. Orders are discreetly packaged with no external markings.
 
@@ -635,9 +635,9 @@ We're open every single day until 11:30 pm. Walk in or message us — North Malt
 ## MCW Bugibba: St Paul's Bay CBD Destination
 
 **Address:** Bugibba Square, San Pawl il-Baħar SPB 2510
-**Phone:** +356 99536248
+**Phone:** +356 99312258
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699536248
+**WhatsApp:** wa.me/35699312258
 
 Bugibba is packed with seafront restaurants, dive shops, bars, and hotels. It attracts thousands of visitors every year alongside a growing permanent resident and expat community. MCW Bugibba is positioned to serve both — tourists curious about legal CBD in Malta, and locals who want a quality, reliable shop nearby.
 
@@ -682,7 +682,7 @@ No card machine needed. Simple and fast.
 
 ## Same-Day Delivery: Bugibba, Qawra, Salina and Beyond
 
-Don't want to leave your hotel or apartment? WhatsApp us on +356 99536248 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
+Don't want to leave your hotel or apartment? WhatsApp us on +356 99312258 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
 
 Delivery: €3.50 flat fee. Free for all orders over €50. Discreet packaging, no external branding.
 

@@ -26,7 +26,7 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
   ],
   Local: [
     { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Our team is on WhatsApp throughout store hours for same-day delivery orders." },
-    { q: "Do you offer same-day delivery in Malta?", a: "Yes. Enquire via WhatsApp (+356 9953 6248) and we deliver same-day island-wide. Delivery is €3.50 for orders under €50, and FREE for orders €50+." },
+    { q: "Do you offer same-day delivery in Malta?", a: "Yes. Enquire via WhatsApp and we deliver same-day island-wide. Delivery is €3.50 for orders under €50, and FREE for orders €50+." },
     { q: "How do I pay for my order?", a: "We accept Revolut transfer and Cash on Delivery (COD) for delivery orders. In-store you can pay cash or Revolut." },
   ],
   Products: [
@@ -282,7 +282,7 @@ export default function BlogPost() {
               Visit any of our 4 stores or order via WhatsApp with same-day delivery.
             </p>
             <a
-              href="https://wa.me/35699536248"
+              href="https://wa.me/35699312258"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-4 bg-green-500 text-black font-black uppercase tracking-widest text-sm hover:bg-green-400 transition-colors"

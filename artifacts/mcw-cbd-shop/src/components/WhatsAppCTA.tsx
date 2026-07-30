@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function WhatsAppCTA() {
   const message = encodeURIComponent("Hello MCW! I'd like to enquire about your CBD product range.");
-  const url = `https://wa.me/35699536248?text=${message}`;
+  const url = `https://wa.me/35699312258?text=${message}`;
 
   return (
     <motion.a

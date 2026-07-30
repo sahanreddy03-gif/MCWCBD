@@ -26,7 +26,7 @@ export default function SourSpaceCandyInValletta() {
                   <span>Lab tested and verified</span>
                 </div>
               </div>
-              <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-4 rounded-lg transition-colors text-center block">
+              <a href="https://wa.me/35699312258" target="_blank" rel="noopener noreferrer" className="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-4 rounded-lg transition-colors text-center block">
                 Enquire via WhatsApp
               </a>
             </div>
@@ -46,7 +46,7 @@ export default function SourSpaceCandyInValletta() {
                 <div className="flex items-start">
                   <Phone className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-bold">📞 9953 6248</p>
+                    <p className="font-bold">💬 WhatsApp us</p>
                   </div>
                 </div>
               </div>

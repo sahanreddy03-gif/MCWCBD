@@ -83,7 +83,7 @@ export default function Compliance() {
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">Request Lab Reports</h2>
             <p className="text-sm mb-4">We are fully transparent about our product testing. To request a Certificate of Analysis (CoA) for any product, contact us directly:</p>
             <a
-              href="https://wa.me/35699536248?text=Hello%20MCW!%20I%20would%20like%20to%20request%20a%20lab%20report%20(CoA)%20for%20a%20product."
+              href="https://wa.me/35699312258?text=Hello%20MCW!%20I%20would%20like%20to%20request%20a%20lab%20report%20(CoA)%20for%20a%20product."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-sm px-6 py-3 transition-colors"

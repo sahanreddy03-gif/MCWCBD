@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { MapPin, Phone, CheckCircle, Lock, Truck, Star, ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
+import { MapPin, CheckCircle, Lock, Truck, Star, ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES_BY_SLUG } from "@/lib/seoPages";
 import { buildSchema } from "@/lib/schemaBuilders";
@@ -208,7 +208,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                 </p>
 
                 <a
-                  href="https://wa.me/35699536248"
+                  href="https://wa.me/35699312258"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest rounded-xl transition-all mb-3"
@@ -218,8 +218,8 @@ export default function SeoPage({ slug }: SeoPageProps) {
                 </a>
 
                 <div className="flex items-center gap-2 text-xs text-gray-500 justify-center">
-                  <Phone size={10} />
-                  <span>9953 6248</span>
+                  <MessageCircle size={10} />
+                  <span>WhatsApp us</span>
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-white/5 space-y-2">

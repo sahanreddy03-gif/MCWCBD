@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingBag, Filter, X, Search, Phone } from "lucide-react";
+import { ShoppingBag, Filter, X, Search } from "lucide-react";
 import { Link, useSearch } from "wouter";
 import { SEO } from "@/components/SEO";
 import { PRODUCTS, type Category, type Product } from "@/lib/data";
@@ -80,17 +80,7 @@ function FlipCard({ product, onCartOpen }: { product: Product; onCartOpen: () =>
             <p className="text-[10px] font-black uppercase tracking-[0.25em] mb-0.5" style={{ color }}>{product.brand}</p>
             <h3 className="font-bebas text-[1.55rem] leading-tight text-white">{product.name}</h3>
             <div className="flex items-center justify-between mt-2 gap-2">
-              <span className="flex items-center gap-1.5">
-                <p className="font-bebas text-2xl leading-none" style={{ color }}>€{product.price.toFixed(2)}</p>
-                <a
-                  href="tel:+35699536248"
-                  onClick={(e) => e.stopPropagation()}
-                  aria-label="Call to order"
-                  className="text-white/25 hover:text-white/60 transition-colors"
-                >
-                  <Phone size={11} />
-                </a>
-              </span>
+              <p className="font-bebas text-2xl leading-none" style={{ color }}>€{product.price.toFixed(2)}</p>
               <button
                 onClick={handleAdd}
                 className="flex items-center gap-1.5 px-3 py-2 font-black uppercase tracking-widest text-[10px] text-black transition-all active:scale-95 shrink-0"
@@ -122,17 +112,7 @@ function FlipCard({ product, onCartOpen }: { product: Product; onCartOpen: () =>
               <h3 className="font-bebas text-[1.75rem] leading-tight text-white">{product.name}</h3>
             </div>
             <div>
-              <p className="font-bebas text-7xl text-white leading-none mb-1 flex items-center gap-2">
-                €{product.price.toFixed(2)}
-                <a
-                  href="tel:+35699536248"
-                  onClick={(e) => e.stopPropagation()}
-                  aria-label="Call to order"
-                  className="text-white/25 hover:text-white/60 transition-colors"
-                >
-                  <Phone size={14} />
-                </a>
-              </p>
+              <p className="font-bebas text-7xl text-white leading-none mb-1">€{product.price.toFixed(2)}</p>
               <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-4">incl. VAT · Malta delivery</p>
               <button
                 onClick={(e) => { e.stopPropagation(); addToCart(product); onCartOpen(); }}

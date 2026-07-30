@@ -47,12 +47,12 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. Your Rights</h2>
-            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, contact us directly at <strong>+356 9953 6248</strong> via WhatsApp.</p>
+            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, contact us directly at <strong>hello@oarcdigital.com</strong> or via WhatsApp.</p>
           </section>
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">6. Contact</h2>
-            <p>Data controller: MCW CBD Relax Shop, Malta. Contact: <strong>+356 9953 6248</strong> via WhatsApp or visit any of our 4 stores island-wide.</p>
+            <p>Data controller: MCW CBD Relax Shop, Malta. Contact: <strong>hello@oarcdigital.com</strong> or via WhatsApp, or visit any of our 4 stores island-wide.</p>
           </section>
 
         </div>

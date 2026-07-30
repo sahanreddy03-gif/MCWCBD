@@ -1,4 +1,4 @@
-import { Phone, MapPin, MessageCircle, Clock } from "lucide-react";
+import { Phone, MapPin, MessageCircle, Clock, Mail } from "lucide-react";
 import heroContactImg from "../assets/hero-contact.webp";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -10,16 +10,23 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+356 99536248",
+    value: "+356 99312258",
     sub: "Available during store hours",
-    href: "tel:+35699536248",
+    href: "tel:+35699312258",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "hello@oarcdigital.com",
+    sub: "We reply within 24 hours",
+    href: "mailto:hello@oarcdigital.com",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
     value: "Message us instantly",
     sub: "Fastest response guaranteed",
-    href: "https://wa.me/35699536248",
+    href: "https://wa.me/35699312258",
     external: true,
   },
   {
@@ -48,7 +55,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
-    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/35699312258?text=${encodeURIComponent(msg)}`, "_blank");
     setFormData({ name: "", email: "", phone: "", message: "" });
     setSent(true);
     setTimeout(() => setSent(false), 4000);

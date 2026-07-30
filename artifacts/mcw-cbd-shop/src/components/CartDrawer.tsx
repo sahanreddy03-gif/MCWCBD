@@ -65,7 +65,7 @@ export function CartDrawer({
     text += `\n*TOTAL: €${tot.toFixed(2)}*`;
     if (notes) text += `\n\n📝 Notes: ${notes}`;
     text += `\n\nPlease confirm and send payment link. Thank you!`;
-    window.open(`https://wa.me/35699536248?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/35699312258?text=${encodeURIComponent(text)}`, "_blank");
     clearCart();
     onClose();
   };

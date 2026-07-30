@@ -20,11 +20,11 @@ const LOCAL_BUSINESS_SCHEMA = {
       sameAs: [
         "https://www.instagram.com/mcwcbdrelax",
         "https://www.facebook.com/profile.php?id=61580762071984",
-        "https://wa.me/35699536248",
+        "https://wa.me/35699312258",
       ],
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+35699536248",
+        telephone: "+35699312258",
         contactType: "customer service",
         availableLanguage: ["English", "Maltese"],
       },
@@ -35,7 +35,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       name: "MCW CBD Relax Shop — Sliema",
       description: "Malta's #1 hemp and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
       url: "https://mcwcbd.com",
-      telephone: "+35699536248",
+      telephone: "+35699312258",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Triq Bisazza",
@@ -58,7 +58,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       "@id": "https://mcwcbd.com/#mellieha",
       name: "MCW CBD Relax Shop — Mellieha",
       url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699536248",
+      telephone: "+35699312258",
       address: {
         "@type": "PostalAddress",
         streetAddress: "51 Triq Gorg Borg Olivier",
@@ -74,7 +74,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       "@id": "https://mcwcbd.com/#bugibba",
       name: "MCW CBD Relax Shop — Bugibba",
       url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699536248",
+      telephone: "+35699312258",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Bugibba Square",
@@ -90,7 +90,7 @@ const LOCAL_BUSINESS_SCHEMA = {
       "@id": "https://mcwcbd.com/#valletta",
       name: "MCW CBD Relax Shop — Valletta",
       url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699536248",
+      telephone: "+35699312258",
       address: {
         "@type": "PostalAddress",
         streetAddress: "94 First Floor, Triq San Gwann",
@@ -182,7 +182,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Instagram size={22} />
             </a>
             <a
-              href="https://wa.me/35699536248"
+              href="https://wa.me/35699312258"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] tracking-widest uppercase px-4 py-2 transition-colors"
@@ -220,7 +220,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             ))}
             <div className="px-5 pt-4">
               <a
-                href="https://wa.me/35699536248"
+                href="https://wa.me/35699312258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-green-500 text-black font-black text-sm uppercase tracking-widest py-3 w-full"
@@ -251,7 +251,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-3">Malta's #1 Hemp &amp; CBD Destination</p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <a
-                href="https://wa.me/35699536248"
+                href="https://wa.me/35699312258"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3 bg-[#22c55e] text-black font-black text-xs uppercase tracking-widest hover:bg-green-400 transition-colors"
@@ -259,10 +259,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 Enquire on WhatsApp
               </a>
               <a
-                href="tel:+35699536248"
+                href="tel:+35699312258"
                 className="px-7 py-3 border-2 border-white/20 text-white font-black text-xs uppercase tracking-widest hover:border-[#22c55e] hover:text-[#22c55e] transition-colors"
               >
-                Call: +356 99536248
+                Call Us
               </a>
             </div>
           </div>
@@ -336,13 +336,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Connect</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="tel:+35699536248" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
-                    <span className="text-[#22c55e] text-base">📞</span>
-                    <span>+356 99536248</span>
+                  <a href="mailto:hello@oarcdigital.com" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                    <span className="text-[#22c55e] text-base">✉️</span>
+                    <span>hello@oarcdigital.com</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/35699536248" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                  <a href="https://wa.me/35699312258" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
                     <span className="text-[#22c55e] text-base">💬</span>
                     <span>WhatsApp Order</span>
                   </a>

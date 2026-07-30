@@ -72,7 +72,7 @@ function buildLocationContent(product: string, location: string): { h1: string; 
     bodyParagraphs: [
       `Our ${product.toLowerCase()} selection in ${location} includes products from Malta's most trusted brands. Every product is independently lab-tested and contains less than 0.2% THC, making them fully legal to purchase and use in Malta.`,
       `Whether you're new to CBD or an experienced user, our knowledgeable staff at the ${location} store can help you find the right product and dosage. We provide personalised recommendations based on your needs and lifestyle.`,
-      `Can't make it to our ${location} store? Enquire via WhatsApp and get same-day delivery anywhere in ${location} and across Malta. Contact us at 9953 6248 for product enquiries and expert advice.`,
+      `Can't make it to our ${location} store? Enquire via WhatsApp and get same-day delivery anywhere in ${location} and across Malta. Contact us at 9931 2258 for product enquiries and expert advice.`,
       `MCW has served the ${location} community since 2021, building a reputation for quality, transparency, and exceptional customer service. All our products come with full lab reports so you know exactly what you're buying.`,
     ],
   };
@@ -114,7 +114,7 @@ function buildComparisonContent(label: string): { h1: string; intro: string; bod
       `${a} and ${b} are both popular products available at all four MCW CBD Relax Shop locations (Sliema, Gzira, Mellieha, Bugibba). The best choice depends on your personal preferences, desired effects, and how you prefer to use CBD.`,
       `When comparing ${a} and ${b}, consider factors like onset time, duration, ease of use, and your daily routine. Both options have their merits: some customers love the convenience of one, while others prefer the experience of the other. Our staff can walk you through the differences in person.`,
       `At MCW, we carry both ${a} and ${b} from Malta's most trusted CBD brands. All products are independently lab-tested, contain less than 0.2% THC, and are fully legal under Malta's current regulations.`,
-      `Not sure which to choose? Visit any MCW CBD Relax Shop or contact us on WhatsApp at 9953 6248 — our knowledgeable team will help you find the perfect product for your needs and budget.`,
+      `Not sure which to choose? Visit any MCW CBD Relax Shop or contact us on WhatsApp at 9931 2258 — our knowledgeable team will help you find the perfect product for your needs and budget.`,
     ],
   };
 }
@@ -126,7 +126,7 @@ function buildGuideContent(label: string): { h1: string; intro: string; bodyPara
     bodyParagraphs: [
       `Understanding ${label.toLowerCase()} is essential for getting the most out of your CBD experience. At MCW, we're committed to educating our customers so they can make informed, confident decisions.`,
       `Malta's CBD regulations allow adults to purchase and use CBD products containing less than 0.2% THC. All MCW products are fully compliant and independently lab-tested, giving you complete peace of mind.`,
-      `If you have specific questions about ${label.toLowerCase()}, our expert team at MCW is available in-store at all four locations (Sliema, Gzira, Mellieha, Bugibba) or via WhatsApp at 9953 6248.`,
+      `If you have specific questions about ${label.toLowerCase()}, our expert team at MCW is available in-store at all four locations (Sliema, Gzira, Mellieha, Bugibba) or via WhatsApp at 9931 2258.`,
       `MCW CBD Relax Shop has been Malta's trusted CBD destination since 2021. We combine premium product selection with expert knowledge to help every customer find the right solution.`,
     ],
   };
@@ -140,7 +140,7 @@ function buildEducationContent(label: string): { h1: string; intro: string; body
       `The CBD industry is rapidly evolving, and understanding the science behind ${label.toLowerCase()} helps you make better purchasing decisions. At MCW, we only stock products that meet our strict quality standards.`,
       `Whether you're exploring CBD for the first time or deepening your knowledge, understanding ${label.toLowerCase()} is a valuable step on your wellness journey. Malta's CBD market has grown significantly, and quality education is more important than ever.`,
       `All MCW CBD products are sourced from EU-certified hemp farms and tested by independent laboratories. We provide full transparency on cannabinoid content, terpene profiles, and compliance with Malta's legal THC limits.`,
-      `Have more questions about ${label.toLowerCase()}? Visit any of our four MCW stores in Sliema, Gzira, Mellieha, or Bugibba, or reach out on WhatsApp at 9953 6248.`,
+      `Have more questions about ${label.toLowerCase()}? Visit any of our four MCW stores in Sliema, Gzira, Mellieha, or Bugibba, or reach out on WhatsApp at 9931 2258.`,
     ],
   };
 }
@@ -153,7 +153,7 @@ function buildLifestyleContent(label: string): { h1: string; intro: string; body
       `${label} is a topic many MCW customers ask about. Our team has helped hundreds of Maltese residents incorporate CBD into their lifestyle in a way that works for them.`,
       `The key to a successful CBD lifestyle is finding the right products and routines. MCW offers everything from fast-acting vapes and flowers to long-lasting oils and gummies — each suited to different moments and preferences.`,
       `Malta's warm climate and vibrant culture make it an ideal place to explore wellness trends like CBD. MCW CBD Relax Shop is proud to serve the Maltese community from four convenient locations across the island.`,
-      `Ready to start your CBD lifestyle journey? Visit an MCW store in Sliema, Gzira, Mellieha, or Bugibba, or order via WhatsApp at 9953 6248 for same-day island-wide delivery.`,
+      `Ready to start your CBD lifestyle journey? Visit an MCW store in Sliema, Gzira, Mellieha, or Bugibba, or order via WhatsApp at 9931 2258 for same-day island-wide delivery.`,
     ],
   };
 }
@@ -166,7 +166,7 @@ function buildAboutContent(label: string): { h1: string; intro: string; bodyPara
       `MCW CBD Relax Shop was founded with a simple mission: to provide Maltese residents with access to premium, lab-tested CBD products and the education they need to use them confidently.`,
       `Today, MCW operates four stores in Sliema, Gzira, Mellieha, and Bugibba — serving customers from all walks of life, from wellness enthusiasts to curious first-timers. All stores are open daily until 11:30 pm.`,
       `We partner only with brands that share our commitment to quality, transparency, and legal compliance. Every product on our shelves has been reviewed, tested, and approved by our team before it reaches you.`,
-      `${label} is a story of community, quality, and passion. Thank you for being part of the MCW family. Visit us in-store or reach out on WhatsApp at 9953 6248 to learn more.`,
+      `${label} is a story of community, quality, and passion. Thank you for being part of the MCW family. Visit us in-store or reach out on WhatsApp at 9931 2258 to learn more.`,
     ],
   };
 }

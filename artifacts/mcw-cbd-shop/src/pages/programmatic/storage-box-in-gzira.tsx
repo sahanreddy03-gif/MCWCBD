@@ -59,7 +59,7 @@ export default function StorageBoxInGzira() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="https://wa.me/35699536248"
+                  href="https://wa.me/35699312258"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg overflow-hidden transition-all hover:shadow-2xl hover:shadow-green-500/50"
@@ -145,7 +145,7 @@ export default function StorageBoxInGzira() {
                 <div className="flex items-start gap-4 p-4 bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-lg hover:border-green-500/50 transition">
                   <Phone className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-bold text-white">📞 9953 6248</p>
+                    <p className="font-bold text-white">💬 WhatsApp us</p>
                     <p className="text-gray-400 text-sm">Available during store hours</p>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function StorageBoxInGzira() {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-white">Ready to Experience Premium CBD?</h2>
           <a
-            href="https://wa.me/35699536248"
+            href="https://wa.me/35699312258"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all"

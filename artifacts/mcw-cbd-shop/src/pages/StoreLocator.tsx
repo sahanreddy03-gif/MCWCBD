@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Clock, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
 
@@ -8,25 +8,25 @@ const stores = [
   {
     id: 5, name: "Valletta", tag: "Main Branch",
     address: "94 First Floor, Triq San Gwann, Valletta VLT",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
     lat: 35.8989, lng: 14.5146, featured: true,
   },
   {
     id: 1, name: "Sliema", tag: null,
     address: "Triq Bisazza, Sliema SLM 1641",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
     lat: 35.3378, lng: 14.3008, featured: false,
   },
   {
     id: 3, name: "Mellieha", tag: null,
     address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
     lat: 35.37, lng: 14.34, featured: false,
   },
   {
     id: 4, name: "Bugibba", tag: null,
     address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
-    phone: "+356 99536248", hours: "Open · Closes 11:30 pm",
+    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
     lat: 35.585, lng: 14.42, featured: false,
   },
 ];
@@ -117,12 +117,6 @@ export default function StoreLocator() {
                   <p className="text-gray-500 text-sm">{store.address}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-green-700 shrink-0" strokeWidth={1.5} />
-                  <a href={`tel:${store.phone.replace(/\s/g, "")}`} className="text-gray-500 hover:text-green-400 text-sm transition-colors">
-                    {store.phone}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-green-700 shrink-0" strokeWidth={1.5} />
                   <p className="text-gray-500 text-sm">{store.hours}</p>
                 </div>
@@ -130,7 +124,7 @@ export default function StoreLocator() {
 
               <div className="flex gap-3">
                   <a
-                    href="https://wa.me/35699536248"
+                    href="https://wa.me/35699312258"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] uppercase tracking-widest py-3 text-center transition-colors"

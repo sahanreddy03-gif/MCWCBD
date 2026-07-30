@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { ShoppingBag, Phone } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import type { Product } from "@/lib/data";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 
@@ -283,16 +283,8 @@ export default function MCWOriginalsCard({ product, onAddToCart, selectedVariant
         >
           <ShoppingBag size={15} />
         </button>
-        <span className="font-bebas text-4xl text-white leading-none flex items-center gap-1.5">
+        <span className="font-bebas text-4xl text-white leading-none">
           €{price.toFixed(2)}
-          <a
-            href="tel:+35699536248"
-            onClick={(e) => e.stopPropagation()}
-            aria-label="Call to order"
-            className="text-white/25 hover:text-white/60 transition-colors"
-          >
-            <Phone size={12} />
-          </a>
         </span>
       </div>
 

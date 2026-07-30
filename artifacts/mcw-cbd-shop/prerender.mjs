@@ -127,8 +127,8 @@ const corePages = [
   },
   {
     path: "/contact",
-    title: "Contact MCW CBD Malta | WhatsApp +356 9953 6248",
-    description: "Get in touch with MCW CBD Relax Shop. WhatsApp us at +356 9953 6248 for orders, delivery, or questions. Open daily until 23:30.",
+    title: "Contact MCW CBD Malta | WhatsApp +356 9931 2258",
+    description: "Get in touch with MCW CBD Relax Shop. WhatsApp us at +356 9931 2258 for orders, delivery, or questions. Open daily until 23:30.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Contact", url: BASE + "/contact" }]),
   },
   {
@@ -144,7 +144,7 @@ const corePages = [
           mainEntity: [
             { "@type": "Question", name: "Is CBD legal in Malta?", acceptedAnswer: { "@type": "Answer", text: "Yes. CBD products with less than 0.2% THC are fully legal in Malta. Every MCW product complies with this regulation." } },
             { "@type": "Question", name: "Where can I buy CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "MCW CBD Relax Shop has 5 stores across Malta: Sliema, Gzira, Mellieha, Bugibba, and Valletta. Same-day delivery island-wide via WhatsApp." } },
-            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "Yes. Order via WhatsApp (+356 9953 6248) for same-day delivery across Malta. Free delivery on orders over 50 euros." } },
+            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "Yes. Order via WhatsApp (+356 9931 2258) for same-day delivery across Malta. Free delivery on orders over 50 euros." } },
             { "@type": "Question", name: "Will CBD products make me high?", acceptedAnswer: { "@type": "Answer", text: "No. Our products contain less than 0.2% THC - not nearly enough to produce any psychoactive effect." } },
             { "@type": "Question", name: "Are your products lab-tested?", acceptedAnswer: { "@type": "Answer", text: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." } },
           ],
