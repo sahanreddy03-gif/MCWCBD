@@ -47,7 +47,7 @@ All products sold at MCW are fully lab-tested and certified to contain less than
 
 ## What About Online Ordering?
 
-You can order directly via WhatsApp and receive same-day delivery anywhere in Malta. All orders are discreetly packaged.
+You can enquire or reserve directly via WhatsApp, then collect your order in store at any of our 4 Malta locations. Just message us and pick up when it suits you.
 
 ## Frequently Asked Questions
 
@@ -228,7 +228,7 @@ Every product at MCW:
 - Contains less than 0.2% THC (fully legal in Malta)
 - Is lab-tested with a Certificate of Analysis available on request
 - Is sold by trained, knowledgeable staff who genuinely use and understand CBD
-- Can be delivered to your door via WhatsApp order with same-day delivery
+- Can be reserved via WhatsApp and collected in store at any of our 4 locations
 
 ## Visit Us
 
@@ -306,7 +306,7 @@ For topical use — muscle recovery, joint support, or general skincare — our 
 
 ## Where to Get These Products
 
-All of these products are available at our 4 Malta stores and via WhatsApp delivery. New products arrive regularly — follow us on Instagram @cbd_paterson or ask in-store what's new.`,
+All of these products are available at our 4 Malta stores — reserve via WhatsApp and collect in store. New products arrive regularly — follow us on Instagram @cbd_paterson or ask in-store what's new.`,
   },
   {
     slug: "how-to-use-cbd-vapes",
@@ -348,7 +348,7 @@ A standard disposable CBD vape contains 100-500 puffs. For general wellness, 3-5
 
 ## Where to Buy CBD Vapes in Malta
 
-MCW stocks a curated range of premium CBD vapes at all 4 Malta locations and for same-day WhatsApp delivery. Our staff will help you choose the right option for your needs.`,
+MCW stocks a curated range of premium CBD vapes at all 4 Malta locations — reserve via WhatsApp and collect in store. Our staff will help you choose the right option for your needs.`,
   },
   {
     slug: "cbd-gummies-guide-malta",
@@ -431,7 +431,7 @@ Yes, completely. CBD gummies containing less than 0.2% THC are legal to buy, sel
 
 ## Where to Buy CBD Gummies in Malta
 
-All of our gummies are available at MCW's 4 Malta stores — Sliema, Gzira, Mellieha, and Bugibba — and via same-day WhatsApp delivery island-wide. Delivery is €3.50, free on orders over €50.
+All of our gummies are available at MCW's 4 Malta stores — Valletta, Sliema, Mellieha, and Bugibba. Reserve via WhatsApp and collect in store, open daily until 11:30 pm.
 
 Ask our staff for the latest stock. New gummy flavours and brands arrive regularly, and we always have something to recommend based on your specific goals.`,
   },
@@ -443,7 +443,7 @@ Ask our staff for the latest stock. New gummy flavours and brands arrive regular
     category: "Local",
     readingTime: 4,
     featuredColor: "#FF6B35",
-    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. We're open daily until 11:30 pm and deliver same-day island-wide.
+    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. We're open daily until 11:30 pm — visit us in store or reserve via WhatsApp for pickup.
 
 ## MCW Sliema: Our Flagship Location
 
@@ -477,11 +477,11 @@ Every single product at MCW Sliema comes with a Certificate of Analysis (COA) fr
 
 All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 
-## Same-Day Delivery from Sliema
+## Visit Us in Store
 
-Can't make it to the store? Message us on WhatsApp (+356 99312258) and we'll organise same-day delivery anywhere in Malta. Delivery costs €3.50 and is completely free on orders over €50. Most deliveries arrive within 2-3 hours of ordering.
+Prefer to reserve before you visit? Message us on WhatsApp (+356 99312258) and we'll set your order aside for in-store pickup. All orders are collected in person — we don't offer delivery.
 
-We deliver to Sliema, St Julian's, Valletta, Birkirkara, Mosta, Naxxar, Attard, and every other corner of the island.
+You'll find us at our Sliema flagship, plus three more MCW stores in Valletta, Mellieha, and Bugibba, all open daily until 11:30 pm.
 
 ## What Makes MCW Sliema Different?
 
@@ -541,18 +541,15 @@ Every product at MCW Gzira contains less than 0.2% THC and is fully legal in Mal
 
 No guesswork. No mystery. Every cannabinoid content confirmed.
 
-## Same-Day Delivery to Gzira and Nearby Areas
+## Reserve Ahead, Collect in Store
 
-Rather order from your sofa? WhatsApp us on +356 99312258 and we'll arrange same-day delivery directly to your door in Gzira, Msida, Birkirkara, Ta' Xbiex, Sliema, Valletta, or anywhere across Malta.
-
-Delivery costs €3.50, with free delivery on all orders over €50. Most deliveries arrive within 1-3 hours of your message.
+Want to sort your order before you visit? WhatsApp us on +356 99312258 and we'll set it aside for in-store pickup. All orders are collected in person — we don't offer delivery, but with four MCW stores across Malta there's always one nearby.
 
 ## Payment Options at MCW Gzira
 
 We keep payments simple and flexible:
 - **Cash** — Accepted in-store
 - **Revolut** — Send directly to our account (details in store)
-- **Cash on Delivery** — Available for WhatsApp delivery orders
 
 No card machine, no fuss. Just great CBD and friendly service.
 
@@ -566,7 +563,7 @@ Come and visit us in Gzira — we're open every single day until late.`,
     category: "Local",
     readingTime: 5,
     featuredColor: "#22c55e",
-    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — open every day until 11:30 pm, with same-day delivery across the entire island.
+    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — open every day until 11:30 pm. Visit us in store or reserve via WhatsApp for pickup.
 
 ## MCW Mellieha: North Malta's CBD Shop
 
@@ -614,11 +611,9 @@ Every product at MCW Mellieha:
 
 We display COAs openly and encourage customers to ask. Transparency is part of how we operate.
 
-## Same-Day Delivery to Mellieha and North Malta
+## Reserve Ahead, Collect in Store
 
-Can't make it in? WhatsApp us on +356 99312258 and we'll arrange same-day delivery to your door — anywhere in Mellieha, St Paul's Bay, Bugibba, Mosta, Naxxar, Rabat, or anywhere across Malta.
-
-Delivery costs €3.50. Free delivery on all orders over €50. Orders are discreetly packaged with no external markings.
+Want to sort your order first? WhatsApp us on +356 99312258 and we'll set it aside for in-store pickup at our Mellieha shop. All orders are collected in person — we don't offer delivery, but our Bugibba store is close by too if that's more convenient.
 
 We're open every single day until 11:30 pm. Walk in or message us — North Malta is fully covered.`,
   },
@@ -674,17 +669,11 @@ In-store at MCW Bugibba:
 - **Cash** — Always accepted
 - **Revolut** — Transfer in-store using our Revolut account
 
-For WhatsApp delivery orders:
-- **Cash on Delivery (COD)**
-- **Revolut transfer**
-
 No card machine needed. Simple and fast.
 
-## Same-Day Delivery: Bugibba, Qawra, Salina and Beyond
+## Reserve Ahead, Collect in Store
 
-Don't want to leave your hotel or apartment? WhatsApp us on +356 99312258 and we'll send your order to you. We deliver same-day across all of St Paul's Bay including Bugibba, Qawra, Salina, and all surrounding areas. We also deliver island-wide to Sliema, Valletta, Mosta, Rabat, and everywhere in between.
-
-Delivery: €3.50 flat fee. Free for all orders over €50. Discreet packaging, no external branding.
+Don't want to wait around? WhatsApp us on +356 99312258 and we'll set your order aside for in-store pickup. All orders are collected in person — we don't offer delivery, but with MCW stores in Bugibba, Mellieha, Sliema, and Valletta there's always one within easy reach.
 
 MCW Bugibba is here every day until 11:30 pm. Come visit us — or just send a message.`,
   },

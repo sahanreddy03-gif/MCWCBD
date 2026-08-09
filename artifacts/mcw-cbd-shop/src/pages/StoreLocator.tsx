@@ -45,7 +45,7 @@ export default function StoreLocator() {
     <>
       <SEO
         title="Find a CBD Store in Malta — MCW Locations"
-        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Same-day delivery available."
+        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Visit us in store or reserve via WhatsApp."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">

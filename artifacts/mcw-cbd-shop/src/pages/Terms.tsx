@@ -3,7 +3,7 @@ import { SEO } from "@/components/SEO";
 export default function Terms() {
   return (
     <>
-      <SEO title="Terms & Conditions — MCW CBD Relax Shop Malta" description="Terms and conditions for MCW CBD Relax Shop Malta. Legal information, purchase terms, delivery policy and age verification requirements." />
+      <SEO title="Terms & Conditions — MCW CBD Relax Shop Malta" description="Terms and conditions for MCW CBD Relax Shop Malta. Legal information, purchase terms, in-store pickup policy and age verification requirements." />
 
       <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-bebas text-7xl md:text-9xl tracking-tight text-white mb-4 leading-none">
@@ -15,7 +15,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">1. About MCW CBD Relax Shop</h2>
-            <p>MCW CBD Relax Shop is a retail and delivery business operating in Malta. We sell hemp-derived CBD products, lifestyle accessories, and collectibles. Our products comply with Maltese law and EU Directive 2019/515, with all cannabinoid products containing ≤0.2% THC.</p>
+            <p>MCW CBD Relax Shop is a retail business operating in Malta with in-store collection only. We sell hemp-derived CBD products, lifestyle accessories, and collectibles. Our products comply with Maltese law and EU Directive 2019/515, with all cannabinoid products containing ≤0.2% THC.</p>
           </section>
 
           <section>
@@ -35,12 +35,12 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">4. Orders & Payment</h2>
-            <p>Orders are placed via WhatsApp. Payment is accepted via Revolut or cash on delivery. Orders are confirmed only after payment receipt or mutual agreement.</p>
+            <p>Orders can be placed or reserved via WhatsApp and are collected in store. Payment is accepted via Revolut or cash in store. Orders are confirmed only after payment receipt or mutual agreement.</p>
           </section>
 
           <section>
-            <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. Delivery</h2>
-            <p>Delivery across Malta: €3.50 flat fee. Free delivery on orders of €50 or more. Estimated same-day delivery depending on order time and location. We are not liable for delays caused by circumstances outside our control.</p>
+            <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. In-Store Collection</h2>
+            <p>We do not offer delivery. All orders are collected in person at one of our four stores in Valletta, Sliema, Mellieha, or Bugibba, open daily until 11:30 pm. Reserve your items via WhatsApp and pick them up in store at your convenience.</p>
           </section>
 
           <section>

@@ -158,7 +158,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                 {[
                   { icon: CheckCircle, label: "Lab Tested" },
                   { icon: Lock, label: "100% Legal" },
-                  { icon: Truck, label: "Same-Day Delivery" },
+                  { icon: Truck, label: "In-Store Pickup" },
                   { icon: Star, label: "Malta's #1 CBD Shop" },
                 ].map(({ icon: Icon, label }) => (
                   <span key={label} className="flex items-center gap-1.5 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
@@ -201,10 +201,10 @@ export default function SeoPage({ slug }: SeoPageProps) {
               >
                 <p className="text-xs font-black uppercase tracking-widest text-green-400 mb-3">Enquire Now</p>
                 <h3 className="text-xl font-bebas tracking-wide text-white mb-3">
-                  Get {page.label} delivered today
+                  Get {page.label} today
                 </h3>
                 <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                  Enquire via WhatsApp for same-day delivery anywhere in Malta. Open daily until 11:30 pm.
+                  Enquire via WhatsApp and collect in store at any of our 4 Malta locations. Open daily until 11:30 pm.
                 </p>
 
                 <a
@@ -226,7 +226,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                   {[
                     { icon: CheckCircle, text: "Lab tested products" },
                     { icon: Lock, text: "Less than 0.2% THC" },
-                    { icon: Truck, text: "Island-wide delivery" },
+                    { icon: Truck, text: "In-store pickup" },
                     { icon: MapPin, text: "4 stores in Malta" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-xs text-gray-400">

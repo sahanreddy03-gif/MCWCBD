@@ -55,7 +55,7 @@ export default function CBDMellieha() {
         <div className="bg-gray-900 rounded-lg p-8 border border-green-500">
           <h2 className="text-2xl font-bold text-green-400 mb-6">Our Product Range</h2>
           <p className="text-gray-300 mb-6">
-            We stock a wide variety of premium CBD products available for delivery in Mellieha:
+            We stock a wide variety of premium CBD products available in store in Mellieha:
           </p>
           <a href="/shop" className="inline-block bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-8 rounded-lg transition-colors">
             <ShoppingCart className="w-4 h-4 inline mr-2" />

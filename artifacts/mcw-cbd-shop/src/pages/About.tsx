@@ -8,7 +8,7 @@ const FAQS = [
   { q: "What's the difference between CBD and THC?", a: "CBD (Cannabidiol) is non-psychoactive and is known for relaxing and therapeutic effects. THC is the psychoactive compound. Our products contain <0.2% THC and will not get you 'high'." },
   { q: "Are your products lab tested?", a: "Absolutely. Every single product we stock undergoes rigorous third-party EU laboratory testing for cannabinoid profile, heavy metals, and pesticides." },
   { q: "Can tourists buy from MCW?", a: "Yes! As long as you are 18 years or older, you can purchase from any of our stores. Please bring valid ID." },
-  { q: "Do you deliver?", a: "Yes, we offer same-day delivery across the entire island of Malta for orders placed via WhatsApp before 4:00 PM." },
+  { q: "Do you deliver?", a: "No, we don't offer delivery — all orders are collected in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba), open daily until 11:30 pm, or reserve your items via WhatsApp for in-store pickup." },
   { q: "What is H4CBD?", a: "H4CBD is a hydrogenated form of CBD that binds more strongly to CB1 receptors, often described as offering more noticeable relaxing effects than standard CBD." },
   { q: "What is HHC?", a: "HHC is a minor cannabinoid occurring naturally in trace amounts. It is psychoactive and currently legal in Malta. We advise starting with low doses." },
   { q: "Do you offer consultations?", a: "Yes, our staff at all 4 locations are highly trained and can provide personal consultations to help you find the right product for your needs." }

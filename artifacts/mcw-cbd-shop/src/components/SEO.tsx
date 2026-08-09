@@ -7,7 +7,7 @@ interface SEOProps {
   schema?: object | object[];
 }
 
-const DEFAULT_DESC = "Malta's #1 Hemp & CBD Destination. 4 stores: Sliema, Mellieħa, Bugibba, Valletta. Shop premium CBD oils, flowers, vapes, gummies. Same-day delivery.";
+const DEFAULT_DESC = "Malta's #1 Hemp & CBD Destination. 4 stores: Sliema, Mellieħa, Bugibba, Valletta. Shop premium CBD oils, flowers, vapes, gummies. Visit us in store or reserve via WhatsApp.";
 
 export function SEO({ title, description = DEFAULT_DESC, canonical, schema }: SEOProps) {
   useEffect(() => {

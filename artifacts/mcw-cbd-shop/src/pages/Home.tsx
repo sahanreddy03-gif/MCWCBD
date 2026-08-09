@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — same-day island-wide delivery." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — visit us in store or reserve via WhatsApp." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -140,7 +140,7 @@ export default function Home() {
           <div className="flex whitespace-nowrap animate-marquee-reverse text-xs font-black uppercase tracking-[0.25em] text-black">
             {[...Array(3)].map((_, i) => (
               <div key={`bottom-${i}`} className="flex items-center">
-                <span className="mx-8">Same-Day Delivery</span>
+                <span className="mx-8">In-Store Pickup</span>
                 <span className="text-black/50">◆</span>
                 <span className="mx-8">5 Locations Island-Wide</span>
                 <span className="text-black/50">◆</span>
@@ -508,7 +508,7 @@ export default function Home() {
       {/* FOOTER CTA BANNER */}
       <section className="py-32 bg-[#00C8C8] text-black text-center px-4 flex flex-col items-center justify-center border-t-4 border-black">
         <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">ORDER ON WHATSAPP</h2>
-        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">SAME DAY DELIVERY</p>
+        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">RESERVE &amp; COLLECT IN STORE</p>
         <a 
           href="https://wa.me/35699312258" 
           target="_blank" 

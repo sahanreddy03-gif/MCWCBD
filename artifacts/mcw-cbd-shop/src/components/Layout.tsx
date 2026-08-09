@@ -370,7 +370,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </ul>
               <div className="mt-6 pt-5 border-t border-white/10">
                 <p className="text-[#22c55e] font-bebas text-sm tracking-widest">Payment</p>
-                <p className="text-gray-400 text-xs mt-1.5">Revolut · Cash on Delivery</p>
+                <p className="text-gray-400 text-xs mt-1.5">Revolut · Cash in Store</p>
               </div>
             </div>
           </div>

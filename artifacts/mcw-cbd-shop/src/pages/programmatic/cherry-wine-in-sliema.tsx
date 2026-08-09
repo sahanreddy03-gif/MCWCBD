@@ -36,7 +36,7 @@ export default function CherryWineInSliema() {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                  <span>Fast delivery in Sliema</span>
+                  <span>Visit our Sliema store</span>
                 </div>
               </div>
 

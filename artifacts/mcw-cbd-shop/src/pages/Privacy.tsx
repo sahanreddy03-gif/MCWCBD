@@ -18,7 +18,7 @@ export default function Privacy() {
             <p>When you contact us or place an order via WhatsApp, we may collect:</p>
             <ul className="list-disc list-inside space-y-1 mt-4">
               <li>Your name and WhatsApp contact number</li>
-              <li>Delivery address for order fulfillment</li>
+              <li>Preferred store location for in-store pickup</li>
               <li>Order details and payment confirmation</li>
             </ul>
             <p className="mt-4">We do not collect sensitive personal data or payment card information. Revolut payments are processed through the Revolut platform and governed by their privacy policy.</p>
@@ -28,7 +28,7 @@ export default function Privacy() {
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">2. How We Use Your Data</h2>
             <p>Your data is used solely to:</p>
             <ul className="list-disc list-inside space-y-1 mt-4">
-              <li>Process and deliver your order</li>
+              <li>Process and prepare your order for in-store pickup</li>
               <li>Communicate regarding your purchase</li>
               <li>Comply with legal obligations</li>
             </ul>

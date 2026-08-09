@@ -11,8 +11,8 @@ const faqs = [
   { q: "What are the benefits of CBD?", a: "Many users report relaxation, stress relief, and improved sleep. CBD interacts with the endocannabinoid system. Always consult a healthcare professional before use." },
   { q: "How long do the effects last?", a: "Vapes and flowers: 5–15 min onset, 2–4 hours duration. Oils take longer but last longer. Individual results vary." },
   { q: "Are your products lab-tested?", a: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." },
-  { q: "What payment methods do you accept?", a: "Revolut transfer and Cash on Delivery (COD). You can also pay in person at any store location." },
-  { q: "Do you offer delivery?", a: "Yes. Delivery is €3.50 for orders under €50, and FREE for orders €50 and above. Enquire via WhatsApp." },
+  { q: "What payment methods do you accept?", a: "Revolut transfer and cash in store. You can pay in person at any of our store locations." },
+  { q: "Do you offer delivery?", a: "No, we don't deliver — all orders are collected in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba), open daily until 11:30 pm, or reserve your items via WhatsApp for in-store pickup." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
   { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },
   { q: "How do I contact customer support?", a: "WhatsApp us, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
@@ -47,7 +47,7 @@ export default function FAQ() {
     <>
       <SEO
         title="FAQ — CBD Malta"
-        description="Got questions about CBD in Malta? Find answers on legality, products, delivery, and more. MCW CBD Relax Shop — Malta's #1 CBD destination."
+        description="Got questions about CBD in Malta? Find answers on legality, products, in-store pickup, and more. MCW CBD Relax Shop — Malta's #1 CBD destination."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -61,7 +61,7 @@ export default function FAQ() {
           <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Got Questions?</p>
           <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">FAQ</h1>
           <p className="text-gray-400 text-lg max-w-lg mx-auto leading-relaxed">
-            Everything you need to know about MCW CBD products, delivery, and legality in Malta.
+            Everything you need to know about MCW CBD products, in-store pickup, and legality in Malta.
           </p>
         </div>
       </div>

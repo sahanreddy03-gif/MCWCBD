@@ -36,7 +36,7 @@ export default function PreRollInGzira() {
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed max-w-xl">
                   Experience premium quality pre-roll crafted for discerning customers in Gzira. 
-                  Lab-tested, legally compliant, and delivered with excellence.
+                  Lab-tested, legally compliant, and available in store.
                 </p>
               </div>
 
@@ -52,7 +52,7 @@ export default function PreRollInGzira() {
                 </div>
                 <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-lg p-4 text-center hover:border-green-500/50 transition">
                   <Truck className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                  <p className="text-sm text-gray-300">Fast Delivery</p>
+                  <p className="text-sm text-gray-300">In-Store Pickup</p>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ export default function PreRollInGzira() {
             {[
               { icon: '✓', title: 'Premium Quality', desc: 'Sourced from finest EU hemp' },
               { icon: '🔬', title: 'Lab Tested', desc: 'Verified purity & potency' },
-              { icon: '⚡', title: 'Fast Delivery', desc: 'Quick shipping in Gzira' },
+              { icon: '⚡', title: 'In-Store Pickup', desc: 'Collect from our Gzira store' },
               { icon: '🛡️', title: 'Legal Compliant', desc: '&lt;0.2% THC guaranteed' },
               { icon: '💚', title: 'Expert Support', desc: 'Knowledgeable team' },
               { icon: '🌍', title: 'Sustainable', desc: 'Eco-friendly practices' },

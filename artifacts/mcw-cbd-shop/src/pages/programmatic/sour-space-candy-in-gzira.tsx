@@ -36,7 +36,7 @@ export default function SourSpaceCandyInGzira() {
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-                  <span>Fast delivery in Gzira</span>
+                  <span>Visit our Gzira store</span>
                 </div>
               </div>
 

@@ -25,9 +25,9 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
     { q: "Should I consult a doctor before using CBD?", a: "If you take prescription medication or have a medical condition, yes — CBD can interact with some medications. For general wellness use, CBD is considered safe by the WHO." },
   ],
   Local: [
-    { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Our team is on WhatsApp throughout store hours for same-day delivery orders." },
-    { q: "Do you offer same-day delivery in Malta?", a: "Yes. Enquire via WhatsApp and we deliver same-day island-wide. Delivery is €3.50 for orders under €50, and FREE for orders €50+." },
-    { q: "How do I pay for my order?", a: "We accept Revolut transfer and Cash on Delivery (COD) for delivery orders. In-store you can pay cash or Revolut." },
+    { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Our team is on WhatsApp throughout store hours to answer questions and reserve orders for in-store pickup." },
+    { q: "Do you offer delivery in Malta?", a: "No. MCW is in-store pickup only — we don't deliver. Enquire or reserve via WhatsApp and collect your order at any of our 4 stores in Valletta, Sliema, Mellieha, or Bugibba." },
+    { q: "How do I pay for my order?", a: "We accept Revolut transfer and cash in store. You can pay in person at any of our store locations." },
   ],
   Products: [
     { q: "Are your products third-party lab tested?", a: "Yes. Every MCW product comes with a Certificate of Analysis (COA) from an independent EU laboratory confirming cannabinoid profile, THC content (<0.2%), and absence of pesticides and heavy metals." },
@@ -279,7 +279,7 @@ export default function BlogPost() {
               READY TO BUY CBD IN MALTA?
             </h3>
             <p className="text-gray-400 mb-6">
-              Visit any of our 4 stores or order via WhatsApp with same-day delivery.
+              Visit any of our 4 stores or reserve via WhatsApp for in-store pickup.
             </p>
             <a
               href="https://wa.me/35699312258"

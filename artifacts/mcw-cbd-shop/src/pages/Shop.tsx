@@ -113,7 +113,7 @@ function FlipCard({ product, onCartOpen }: { product: Product; onCartOpen: () =>
             </div>
             <div>
               <p className="font-bebas text-7xl text-white leading-none mb-1">€{product.price.toFixed(2)}</p>
-              <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-4">incl. VAT · Malta delivery</p>
+              <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-4">incl. VAT · In-store pickup</p>
               <button
                 onClick={(e) => { e.stopPropagation(); addToCart(product); onCartOpen(); }}
                 className="w-full py-4 font-black uppercase tracking-widest text-sm text-black transition-all hover:brightness-110 active:scale-95 shadow-lg"
@@ -185,7 +185,7 @@ export default function Shop() {
     <>
       <SEO
         title={activeCategory ? `${activeCategory} Malta — MCW CBD Shop` : "Shop the Collection — MCW CBD Malta"}
-        description="Malta's #1 Hemp & CBD Destination. Real products, real photos. Same-day delivery across Malta."
+        description="Malta's #1 Hemp & CBD Destination. Real products, real photos. Visit us in store or reserve via WhatsApp for pickup."
       />
 
       {/* ── CART DRAWER ── */}
@@ -267,12 +267,12 @@ export default function Shop() {
         </div>
       </div>
 
-      {/* ── FREE DELIVERY STRIP ── */}
+      {/* ── IN-STORE PICKUP STRIP ── */}
       <div className="bg-[#111] border-b border-white/5 py-2.5 px-4">
         <div className="max-w-[1400px] mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-center">
-          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🚚 Free delivery over €50</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">📍 In-store pickup only</span>
           <span className="hidden sm:inline text-white/20 font-black">·</span>
-          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">📍 Same-day across Malta</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">💬 Reserve via WhatsApp</span>
           <span className="hidden sm:inline text-white/20 font-black">·</span>
           <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🕙 Open daily until 11:30pm</span>
         </div>

@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ShoppingBag, MapPin, Loader2 } from "lucide-react";
+import { X, ShoppingBag } from "lucide-react";
 import {
   subscribeCart, addToCart, decrementCart, removeFromCart, clearCart,
   getCartItems, getCartTotal, getCartCount,
 } from "@/lib/cart";
 
 const MIN_ORDER = 75;
-const FREE_THRESHOLD = 75;
 
 export function CartDrawer({
   isOpen,
@@ -19,9 +18,7 @@ export function CartDrawer({
   const [cartState, setCartState] = useState(getCartItems());
   const [step, setStep] = useState<"cart" | "checkout">("cart");
   const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
-  const [locating, setLocating] = useState(false);
 
   useEffect(() => subscribeCart(() => setCartState([...getCartItems()])), []);
 
@@ -29,39 +26,19 @@ export function CartDrawer({
     if (!isOpen) setStep("cart");
   }, [isOpen]);
 
-  const deliveryFee = 0;
   const orderTotal = getCartTotal();
   const cartCount = cartState.reduce((a, b) => a + b.quantity, 0);
   const canOrder = getCartTotal() >= MIN_ORDER;
 
-  const handleLocate = () => {
-    if (!navigator.geolocation) return;
-    setLocating(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        setAddress(`https://maps.google.com/?q=${latitude},${longitude}`);
-        setLocating(false);
-      },
-      () => setLocating(false),
-      { timeout: 8000 }
-    );
-  };
-
   const handleOrder = () => {
     if (cartState.length === 0 || !canOrder) return;
-    const sub = getCartTotal();
-    const del = deliveryFee;
     const tot = orderTotal;
-    let text = `Hello MCW! 👋 I'd like to place an order:\n\n`;
+    let text = `Hello MCW! 👋 I'd like to place an order for in-store pickup:\n\n`;
     if (name) text += `👤 Name: ${name}\n`;
-    if (address) text += `📍 Address: ${address}\n`;
     text += `\n`;
     cartState.forEach(item => {
       text += `• ${item.quantity}× ${item.product.name} — €${(item.product.price * item.quantity).toFixed(2)}\n`;
     });
-    text += `\nSubtotal: €${sub.toFixed(2)}`;
-    text += `\nDelivery: ${del === 0 ? "FREE 🎉" : `€${del.toFixed(2)}`}`;
     text += `\n*TOTAL: €${tot.toFixed(2)}*`;
     if (notes) text += `\n\n📝 Notes: ${notes}`;
     text += `\n\nPlease confirm and send payment link. Thank you!`;
@@ -148,18 +125,14 @@ export function CartDrawer({
                           style={{ width: `${Math.min(100, (getCartTotal() / MIN_ORDER) * 100)}%`, background: canOrder ? "#4ade80" : "#FFB800" }} />
                       </div>
                       <p className="text-[10px] font-black uppercase tracking-widest text-center" style={{ color: canOrder ? "#4ade80" : "rgba(255,255,255,0.4)" }}>
-                        {canOrder ? "🎉 Free delivery included!" : `Min. order €${MIN_ORDER} · Free delivery — €${(MIN_ORDER - getCartTotal()).toFixed(2)} to go`}
+                        {canOrder ? "✓ Ready to order!" : `Min. order €${MIN_ORDER} — €${(MIN_ORDER - getCartTotal()).toFixed(2)} to go`}
                       </p>
                     </div>
                     <div className="flex justify-between mb-1">
                       <span className="text-xs font-black uppercase tracking-widest text-white/40">Subtotal</span>
                       <span className="font-bebas text-2xl text-white">€{getCartTotal().toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between mb-4 pb-4 border-b border-white/10">
-                      <span className="text-xs font-black uppercase tracking-widest text-white/40">Delivery</span>
-                      <span className="font-bebas text-2xl text-[#4ade80]">FREE</span>
-                    </div>
-                    <div className="flex justify-between items-end mb-5">
+                    <div className="flex justify-between items-end mb-5 mt-3 pt-3 border-t border-white/10">
                       <span className="text-sm font-black uppercase tracking-widest text-white">Total</span>
                       <span className="font-bebas text-5xl text-white">€{orderTotal.toFixed(2)}</span>
                     </div>
@@ -206,32 +179,12 @@ export function CartDrawer({
                     />
                   </div>
 
-                  {/* Address / Location */}
-                  <div>
-                    <label className="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Delivery Address</label>
-                    <textarea
-                      placeholder="Street, area, apartment… or share your location below"
-                      value={address}
-                      onChange={e => setAddress(e.target.value)}
-                      rows={3}
-                      className="w-full bg-white/5 border border-white/15 focus:border-[#22c55e] outline-none px-4 py-3 text-white text-sm font-bold placeholder:text-white/20 transition-colors resize-none"
-                    />
-                    <button
-                      onClick={handleLocate}
-                      disabled={locating}
-                      className="mt-2 w-full flex items-center justify-center gap-2 py-2.5 border border-[#22c55e]/40 text-[#22c55e] font-black uppercase tracking-widest text-[11px] hover:bg-[#22c55e]/10 transition-colors disabled:opacity-50"
-                    >
-                      {locating ? <Loader2 size={14} className="animate-spin" /> : <MapPin size={14} />}
-                      {locating ? "Getting location…" : "📍 Share My Location"}
-                    </button>
-                  </div>
-
                   {/* Notes */}
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-white/40 mb-2">Notes (optional)</label>
                     <input
                       type="text"
-                      placeholder="Special instructions, gate code, etc."
+                      placeholder="Special instructions, preferred store, etc."
                       value={notes}
                       onChange={e => setNotes(e.target.value)}
                       className="w-full bg-white/5 border border-white/15 focus:border-[#22c55e] outline-none px-4 py-3 text-white text-sm font-bold placeholder:text-white/20 transition-colors"
@@ -239,7 +192,7 @@ export function CartDrawer({
                   </div>
 
                   <p className="text-[10px] text-white/25 uppercase tracking-widest font-bold text-center leading-relaxed">
-                    WhatsApp will open with your order pre-filled.<br />We'll send a payment link to confirm.
+                    WhatsApp will open with your order pre-filled.<br />Collect and pay at any of our 4 stores.
                   </p>
                 </div>
 

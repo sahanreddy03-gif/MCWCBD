@@ -32,7 +32,7 @@ const BRAND_REGIONS = [
 export default function Brands() {
   return (
     <>
-      <SEO title="Premium CBD Brands in Malta — MCW Shop" description="Shop Malta's best CBD brands at MCW — Jeeter, Canapuff, Cookies, Tyson 2.0, H4CBD, THCV and more. 4 stores across Malta with same-day delivery available." />
+      <SEO title="Premium CBD Brands in Malta — MCW Shop" description="Shop Malta's best CBD brands at MCW — Jeeter, Canapuff, Cookies, Tyson 2.0, H4CBD, THCV and more. 4 stores across Malta — visit us in store or reserve via WhatsApp." />
 
       {/* Photo Hero */}
       <div className="relative h-72 sm:h-[420px] overflow-hidden">
