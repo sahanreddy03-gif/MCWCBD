@@ -381,6 +381,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <p className="text-gray-500 text-[10px] leading-relaxed max-w-3xl mx-auto">
             MCW CBD Relax Shop does not sell cannabis or THC products exceeding legal limits. All products comply with EU Directive 2019/515 and Maltese law (≤0.2% THC). Products are hemp-derived food supplements or collectibles and are not medicines. Adults 18+ only.
           </p>
+          <p className="text-gray-500 text-[10px] mt-3">
+            Built by{" "}
+            <a
+              href="https://oarcdigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#22c55e] underline underline-offset-2 transition-colors"
+            >
+              OARC Digital
+            </a>
+          </p>
         </div>
 
         {/* Bold Bottom Bar */}
