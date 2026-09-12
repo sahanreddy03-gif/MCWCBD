@@ -12,10 +12,10 @@ const faqs = [
   { q: "How long do the effects last?", a: "Vapes and flowers: 5–15 min onset, 2–4 hours duration. Oils take longer but last longer. Individual results vary." },
   { q: "Are your products lab-tested?", a: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." },
   { q: "What payment methods do you accept?", a: "Revolut transfer and cash in store. You can pay in person at any of our store locations." },
-  { q: "Do you offer delivery?", a: "No, we don't deliver — all orders are collected in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba), open daily until 11:30 pm, or reserve your items via WhatsApp for in-store pickup." },
+  { q: "Do you offer delivery?", a: "No, we don't offer delivery — purchases are made in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba), open daily until 11:30 pm." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
   { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },
-  { q: "How do I contact customer support?", a: "WhatsApp us, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
+  { q: "How do I contact customer support?", a: "Email hello@oarcdigital.com, or walk into any of our 4 Malta store locations. We're here daily until 11:30 pm." },
   { q: "What is your return policy?", a: "Contact us within 7 days of purchase if you're not satisfied. We will find a solution." },
   { q: "Are there age restrictions?", a: "Yes — all products are strictly 18+. Age verification is required online and in store." },
   { q: "Can I use CBD while pregnant or nursing?", a: "Consult your healthcare provider first. CBD may interact with medications or affect pregnancy." },
@@ -47,7 +47,7 @@ export default function FAQ() {
     <>
       <SEO
         title="FAQ — CBD Malta"
-        description="Got questions about CBD in Malta? Find answers on legality, products, in-store pickup, and more. MCW CBD Relax Shop — Malta's #1 CBD destination."
+        description="Got questions about CBD in Malta? Find answers on legality, products, in-store purchasing, and more. MCW CBD Relax Shop — Malta's #1 CBD destination."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -61,7 +61,7 @@ export default function FAQ() {
           <p className="text-green-400 font-bebas tracking-widest text-base mb-3">Got Questions?</p>
           <h1 className="font-bebas text-7xl md:text-9xl tracking-widest text-white mb-5 leading-none">FAQ</h1>
           <p className="text-gray-400 text-lg max-w-lg mx-auto leading-relaxed">
-            Everything you need to know about MCW CBD products, in-store pickup, and legality in Malta.
+            Everything you need to know about MCW CBD products, in-store purchasing, and legality in Malta.
           </p>
         </div>
       </div>
@@ -111,16 +111,14 @@ export default function FAQ() {
         >
           <h2 className="font-bebas text-3xl md:text-4xl tracking-widest text-white mb-3">Still have questions?</h2>
           <p className="text-gray-600 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-            Our team is online daily until 11:30 pm. Message us on WhatsApp for a fast, personal answer.
+            Our team is available daily until 11:30 pm. Email hello@oarcdigital.com or visit a store for help.
           </p>
-          <a
-            href="https://wa.me/35699312258"
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+              href="mailto:hello@oarcdigital.com"
             className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest px-8 py-4 transition-colors"
           >
             <MessageCircle size={16} />
-            Message us on WhatsApp
+            Email our team
           </a>
         </motion.div>
 

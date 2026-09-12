@@ -1,35 +1,15 @@
 import { MapPin, Clock, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { MCW_STORES } from "@/lib/locations";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
-const stores = [
-  {
-    id: 5, name: "Valletta", tag: "Main Branch",
-    address: "94 First Floor, Triq San Gwann, Valletta VLT",
-    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
-    lat: 35.8989, lng: 14.5146, featured: true,
-  },
-  {
-    id: 1, name: "Sliema", tag: null,
-    address: "Triq Bisazza, Sliema SLM 1641",
-    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
-    lat: 35.3378, lng: 14.3008, featured: false,
-  },
-  {
-    id: 3, name: "Mellieha", tag: null,
-    address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
-    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
-    lat: 35.37, lng: 14.34, featured: false,
-  },
-  {
-    id: 4, name: "Bugibba", tag: null,
-    address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
-    phone: "+356 99312258", hours: "Open · Closes 11:30 pm",
-    lat: 35.585, lng: 14.42, featured: false,
-  },
-];
+const stores = MCW_STORES.map((store) => ({
+  ...store,
+  hours: "Open · Closes 11:30 pm",
+  featured: store.id === "valletta",
+}));
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -45,7 +25,7 @@ export default function StoreLocator() {
     <>
       <SEO
         title="Find a CBD Store in Malta — MCW Locations"
-        description="MCW CBD Relax Shop has 4 locations across Malta: Sliema, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Visit us in store or reserve via WhatsApp."
+        description="MCW CBD Relax Shop has four verified locations across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Open daily until 11:30 pm. Visit us in store."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -67,18 +47,22 @@ export default function StoreLocator() {
 
       <div className="max-w-6xl mx-auto px-4 pb-24">
 
-        {/* Map placeholder */}
+        {/* Main branch map; each card below links to its verified Google listing. */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 bg-[#080808] border border-gray-800 h-64 flex items-center justify-center"
+          className="mb-16 bg-[#080808] border border-gray-800 h-64 overflow-hidden"
         >
-          <div className="text-center">
-            <MapPin className="w-10 h-10 text-green-900 mx-auto mb-3" strokeWidth={1.5} />
-            <p className="text-gray-700 text-sm font-bebas tracking-widest">Interactive Map Coming Soon</p>
-            <p className="text-gray-800 text-xs mt-1">Use the Directions button on each store card</p>
-          </div>
+          <iframe
+            title="Google Maps listing for MCW Valletta main branch"
+            src={MCW_STORES[0].googleEmbedUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
         </motion.div>
 
         {/* Store Cards */}
@@ -114,7 +98,15 @@ export default function StoreLocator() {
               <div className="space-y-4 mb-7">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-green-700 mt-0.5 shrink-0" strokeWidth={1.5} />
-                  <p className="text-gray-500 text-sm">{store.address}</p>
+                   <div>
+                     <p className="text-gray-500 text-sm">{store.address}</p>
+                     {store.addressNote && (
+                       <p className="text-amber-500/80 text-xs mt-1">{store.addressNote}</p>
+                     )}
+                     {store.mapNote && (
+                       <p className="text-amber-500/80 text-xs mt-1">{store.mapNote}</p>
+                     )}
+                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="w-4 h-4 text-green-700 shrink-0" strokeWidth={1.5} />
@@ -124,15 +116,13 @@ export default function StoreLocator() {
 
               <div className="flex gap-3">
                   <a
-                    href="https://wa.me/35699312258"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="flex-1 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] uppercase tracking-widest py-3 text-center transition-colors"
                   >
-                    WhatsApp
+                    Contact Us
                   </a>
                   <a
-                    href={`https://maps.google.com/?q=${store.lat},${store.lng}`}
+                     href={store.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 border border-gray-700 hover:border-green-600 text-gray-400 hover:text-green-400 font-black text-[11px] uppercase tracking-widest py-3 flex items-center justify-center gap-2 transition-colors"

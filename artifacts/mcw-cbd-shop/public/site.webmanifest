@@ -1,7 +1,7 @@
 {
   "name": "MCW CBD Relax Shop",
   "short_name": "MCW CBD",
-  "description": "Malta's #1 Hemp & CBD destination. 5 stores: Sliema, Gzira, Mellieha, Bugibba, Valletta.",
+  "description": "Malta's #1 Hemp & CBD destination. Four verified stores: Valletta, Sliema, Mellieha, Bugibba.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

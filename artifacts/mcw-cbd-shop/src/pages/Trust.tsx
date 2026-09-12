@@ -25,7 +25,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Customer Protection",
-    body: "Secure ordering, multiple payment options, fast WhatsApp support, and a 7-day satisfaction guarantee.",
+    body: "Secure in-store purchasing, multiple payment options, and knowledgeable support.",
   },
 ];
 
@@ -41,7 +41,7 @@ const commitments = [
   { title: "Transparency", body: "Complete product info — lab reports, cannabinoid profiles, and sourcing details for every item in our catalogue." },
   { title: "Quality Assurance", body: "Our team personally evaluates every product batch before it hits the shelf. Zero compromise on standards." },
   { title: "Legal Compliance", body: "Strictly Malta-law-aligned. Every product sold is fully legal for purchase and consumption on the island." },
-  { title: "Expert Support", body: "Questions about effects, dosage, or products? Our knowledgeable team is a WhatsApp message away." },
+  { title: "Expert Support", body: "Questions about effects, dosage, or products? Email hello@oarcdigital.com or visit a store." },
 ];
 
 const stores = [
@@ -162,7 +162,7 @@ export default function Trust() {
               All products sold by MCW CBD Relax Shop contain less than 0.2% THC and are legal for sale and consumption in Malta.
               For adults 18+ only. CBD and cannabinoids are not intended to diagnose, treat, cure, or prevent any disease.
               Consult a healthcare professional before use — especially if pregnant, nursing, or taking medications.
-              Sedqa Helpline: <strong className="text-gray-400">1930</strong>.
+              For addiction support in Malta, contact Sedqa Agency through its official support channels.
             </p>
           </div>
         </motion.section>

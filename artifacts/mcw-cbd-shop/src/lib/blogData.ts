@@ -39,7 +39,7 @@ In 2021, Malta became the first EU country to legalise recreational cannabis for
 
 MCW CBD Relax Shop is Malta's #1 authorised CBD retailer with 4 locations across the island:
 - **Sliema** — Our flagship store
-- **Gzira** — Central location
+- **Valletta** — Central location
 - **Mellieha** — North Malta
 - **Bugibba** — Bay area
 
@@ -47,7 +47,7 @@ All products sold at MCW are fully lab-tested and certified to contain less than
 
 ## What About Online Ordering?
 
-You can enquire or reserve directly via WhatsApp, then collect your order in store at any of our 4 Malta locations. Just message us and pick up when it suits you.
+Browse products online before visiting any of our 4 Malta locations to purchase in store. We do not offer remote ordering or delivery.
 
 ## Frequently Asked Questions
 
@@ -212,7 +212,7 @@ Find our full range of CBD flowers at any of our 4 Malta stores.`,
 What started as a single shop has grown to become Malta's most trusted CBD retailer, with 4 locations across the island:
 
 - **Sliema** — Our original flagship store
-- **Gzira** — Central Malta's go-to CBD destination
+- **Valletta** — Central Malta's go-to CBD destination
 - **Mellieha** — Serving North Malta and Gozo visitors
 - **Bugibba** — Bayside location with easy parking
 
@@ -228,11 +228,11 @@ Every product at MCW:
 - Contains less than 0.2% THC (fully legal in Malta)
 - Is lab-tested with a Certificate of Analysis available on request
 - Is sold by trained, knowledgeable staff who genuinely use and understand CBD
-- Can be reserved via WhatsApp and collected in store at any of our 4 locations
+- Can be purchased in store at any of our 4 locations
 
 ## Visit Us
 
-Find us at any of our 4 locations or order via WhatsApp. We're open 7 days a week.`,
+Find us at any of our 4 locations. We're open 7 days a week.`,
   },
   {
     slug: "cbd-for-sleep-guide",
@@ -306,7 +306,7 @@ For topical use — muscle recovery, joint support, or general skincare — our 
 
 ## Where to Get These Products
 
-All of these products are available at our 4 Malta stores — reserve via WhatsApp and collect in store. New products arrive regularly — follow us on Instagram @cbd_paterson or ask in-store what's new.`,
+All of these products are available at our 4 Malta stores. New products arrive regularly — follow us on Instagram @cbd_paterson or ask in-store what's new.`,
   },
   {
     slug: "how-to-use-cbd-vapes",
@@ -348,7 +348,7 @@ A standard disposable CBD vape contains 100-500 puffs. For general wellness, 3-5
 
 ## Where to Buy CBD Vapes in Malta
 
-MCW stocks a curated range of premium CBD vapes at all 4 Malta locations — reserve via WhatsApp and collect in store. Our staff will help you choose the right option for your needs.`,
+MCW stocks a curated range of premium CBD vapes at all 4 Malta locations. Our staff will help you choose the right option for your needs.`,
   },
   {
     slug: "cbd-gummies-guide-malta",
@@ -431,7 +431,7 @@ Yes, completely. CBD gummies containing less than 0.2% THC are legal to buy, sel
 
 ## Where to Buy CBD Gummies in Malta
 
-All of our gummies are available at MCW's 4 Malta stores — Valletta, Sliema, Mellieha, and Bugibba. Reserve via WhatsApp and collect in store, open daily until 11:30 pm.
+All of our gummies are available at MCW's 4 Malta stores — Valletta, Sliema, Mellieha, and Bugibba. Visit in store, open daily until 11:30 pm.
 
 Ask our staff for the latest stock. New gummy flavours and brands arrive regularly, and we always have something to recommend based on your specific goals.`,
   },
@@ -443,14 +443,12 @@ Ask our staff for the latest stock. New gummy flavours and brands arrive regular
     category: "Local",
     readingTime: 4,
     featuredColor: "#FF6B35",
-    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. We're open daily until 11:30 pm — visit us in store or reserve via WhatsApp for pickup.
+    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. We're open daily until 11:30 pm — visit us in store.
 
 ## MCW Sliema: Our Flagship Location
 
-**Address:** Triq Bisazza, Sliema SLM 1641
-**Phone:** +356 99312258
+**Address:** Triq Bisazza SLM 1641
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699312258
 
 Located in the heart of Sliema — one of Malta's most vibrant and cosmopolitan areas — our flagship store is the largest and most fully-stocked of all our Malta locations. Sliema attracts both locals and tourists, and our store has been designed to serve everyone from complete CBD beginners to experienced connoisseurs looking for specific strains or rare cannabinoids.
 
@@ -479,7 +477,7 @@ All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 
 ## Visit Us in Store
 
-Prefer to reserve before you visit? Message us on WhatsApp (+356 99312258) and we'll set your order aside for in-store pickup. All orders are collected in person — we don't offer delivery.
+Prefer to plan before you visit? Browse the online range, then purchase in person at our Sliema flagship. All purchases are made in person — we don't offer delivery.
 
 You'll find us at our Sliema flagship, plus three more MCW stores in Valletta, Mellieha, and Bugibba, all open daily until 11:30 pm.
 
@@ -497,63 +495,17 @@ Sliema is Malta's most cosmopolitan neighbourhood, and MCW fits right in. Whethe
   },
   {
     slug: "cbd-shop-gzira-malta",
-    title: "CBD Shop in Gzira, Malta: MCW's Gzira Location",
-    excerpt: "Looking for CBD in Gzira? MCW CBD Relax Shop has a Gzira location stocked with premium oils, flowers, vapes, and gummies — open daily.",
+    title: "CBD Shop in Gzira, Malta: MCW Legacy Guide",
+    excerpt: "A legacy MCW CBD guide for Gzira visitors. Use the current store locator for verified branches, addresses, maps, and directions.",
     publishedAt: "2025-04-05",
     category: "Local",
-    readingTime: 4,
+    readingTime: 3,
     featuredColor: "#7B4FFF",
-    content: `Gzira is one of Malta's most connected towns — right between Sliema and Msida, with easy access from Valletta, St Julian's, and the rest of the island. MCW CBD Relax Shop's Gzira location brings our full range of premium legal CBD products to central Malta, open daily until 11:30 pm.
+    content: `This legacy Gzira guide remains available for visitors who saved the original URL.
 
-## MCW Gzira: Central Malta's CBD Destination
+MCW no longer lists a Gzira branch. For current store information, use the MCW Store Locator and choose from the four verified branches in Valletta, Sliema, Mellieħa, and Bugibba. Each current branch card includes the verified address, Google Maps listing, embedded map, and directions link.
 
-**Address:** 348, Manuel Dimech Street, Gzira, Malta
-**Phone:** +356 99312258
-**Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699312258
-
-Gzira has quickly become one of Malta's most sought-after addresses — a young, energetic town with a thriving food scene, a busy promenade, and growing residential and business community. MCW Gzira puts premium CBD within easy reach of residents across central Malta.
-
-## The MCW Gzira Advantage
-
-If you live or work in Gzira, Msida, Ta' Xbiex, Pembroke, or Birkirkara, this is your closest MCW branch. You won't need to travel to Sliema for Malta's best CBD — we've brought it to your neighbourhood. The store is compact but well-stocked, with our most popular products always available and fresh stock rotating weekly.
-
-## What's Available in Gzira?
-
-Our Gzira store carries a curated selection of MCW's full range:
-
-- **CBD Oils** — Multiple brands and strengths, including MCW Originals 1500mg, Canapuff 3000mg, and popular entry-level 500mg options for beginners
-- **CBD Flowers** — Always-fresh stock of our top strains: Kush Mintz, White Widow, Amnesia Haze, Zkittles, Gorilla Glue, and more. New arrivals every week
-- **CBD Vapes** — H4CBD disposable pens, THCV vapes, standard CBD cartridges, and starter kits. All third-party tested
-- **CBD Gummies** — Canapuff Full Spectrum 20mg, Tyson 2.0 Knockout Gummies, MCW Sleep Gummies with melatonin, and Euphoria Mixed Fruit
-- **Pre-Rolls** — MCW house pre-rolls (1g), Jeeter-branded premium joints, Cookies, and infused options
-- **Accessories** — RAW rolling papers, ceramic grinders, glass storage jars, smell-proof pouches, and rolling trays
-
-## Not Sure What to Buy?
-
-Our Gzira team is knowledgeable and approachable. Tell us your goal — better sleep, reduced anxiety, pain management, or just curiosity — and we'll walk you through the right products, starting doses, and what to expect. We never rush you, and we'll never upsell you to something you don't need.
-
-First-timers are very welcome. Malta's CBD scene has exploded in recent years and there's a lot to learn — we're here to make it easy.
-
-## Lab-Tested, Malta-Legal Products
-
-Every product at MCW Gzira contains less than 0.2% THC and is fully legal in Malta under EU hemp regulations. We hold Certificates of Analysis (COA) from independent EU laboratories for every product on our shelves. Ask at the counter and we'll show you the lab results.
-
-No guesswork. No mystery. Every cannabinoid content confirmed.
-
-## Reserve Ahead, Collect in Store
-
-Want to sort your order before you visit? WhatsApp us on +356 99312258 and we'll set it aside for in-store pickup. All orders are collected in person — we don't offer delivery, but with four MCW stores across Malta there's always one nearby.
-
-## Payment Options at MCW Gzira
-
-We keep payments simple and flexible:
-- **Cash** — Accepted in-store
-- **Revolut** — Send directly to our account (details in store)
-
-No card machine, no fuss. Just great CBD and friendly service.
-
-Come and visit us in Gzira — we're open every single day until late.`,
+All MCW purchases are made in store. Products are lab-tested and compliant with Maltese THC limits. Visit the store locator for the latest opening hours and branch details.`,
   },
   {
     slug: "cbd-shop-mellieha-malta",
@@ -563,16 +515,14 @@ Come and visit us in Gzira — we're open every single day until late.`,
     category: "Local",
     readingTime: 5,
     featuredColor: "#22c55e",
-    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — open every day until 11:30 pm. Visit us in store or reserve via WhatsApp for pickup.
+    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — open every day until 11:30 pm. Visit us in store.
 
 ## MCW Mellieha: North Malta's CBD Shop
 
-**Address:** 51 Triq Gorg Borg Olivier, Mellieħa MLH 1025
-**Phone:** +356 99312258
+**Address:** 51 Triq Gorg Borg Olivier MLH 1025
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699312258
 
-Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, and a gateway for visitors heading to and from Gozo. Our Mellieha store has become the go-to spot for North Malta residents and tourists who want premium CBD without having to travel south to Sliema or Gzira.
+Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, and a gateway for visitors heading to and from Gozo. Our Mellieha store has become the go-to spot for North Malta residents and tourists who want premium CBD without having to travel south to Sliema.
 
 ## Why Mellieha?
 
@@ -611,9 +561,9 @@ Every product at MCW Mellieha:
 
 We display COAs openly and encourage customers to ask. Transparency is part of how we operate.
 
-## Reserve Ahead, Collect in Store
+## Browse Online, Purchase in Store
 
-Want to sort your order first? WhatsApp us on +356 99312258 and we'll set it aside for in-store pickup at our Mellieha shop. All orders are collected in person — we don't offer delivery, but our Bugibba store is close by too if that's more convenient.
+Want to plan your visit? Browse the online range and purchase in person at our Mellieha shop. All purchases are made in person — we don't offer delivery, but our Bugibba store is close by too if that's more convenient.
 
 We're open every single day until 11:30 pm. Walk in or message us — North Malta is fully covered.`,
   },
@@ -629,10 +579,8 @@ We're open every single day until 11:30 pm. Walk in or message us — North Malt
 
 ## MCW Bugibba: St Paul's Bay CBD Destination
 
-**Address:** Bugibba Square, San Pawl il-Baħar SPB 2510
-**Phone:** +356 99312258
+**Address:** Bugibba Square San Pawl il-Bahar SPB 2510 (approximate area address search)
 **Hours:** Open daily, closes 11:30 pm
-**WhatsApp:** wa.me/35699312258
 
 Bugibba is packed with seafront restaurants, dive shops, bars, and hotels. It attracts thousands of visitors every year alongside a growing permanent resident and expat community. MCW Bugibba is positioned to serve both — tourists curious about legal CBD in Malta, and locals who want a quality, reliable shop nearby.
 
@@ -671,9 +619,9 @@ In-store at MCW Bugibba:
 
 No card machine needed. Simple and fast.
 
-## Reserve Ahead, Collect in Store
+## Browse Online, Purchase in Store
 
-Don't want to wait around? WhatsApp us on +356 99312258 and we'll set your order aside for in-store pickup. All orders are collected in person — we don't offer delivery, but with MCW stores in Bugibba, Mellieha, Sliema, and Valletta there's always one within easy reach.
+Don't want to wait around? Browse the online range before visiting for in-store purchasing. All purchases are made in person — we don't offer delivery, but with MCW stores in Bugibba, Mellieha, Sliema, and Valletta there's always one within easy reach.
 
 MCW Bugibba is here every day until 11:30 pm. Come visit us — or just send a message.`,
   },

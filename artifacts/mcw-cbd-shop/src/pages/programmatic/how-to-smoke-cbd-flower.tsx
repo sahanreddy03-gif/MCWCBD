@@ -96,12 +96,10 @@ export default function HowToSmokeCbdFlower() {
 
         <div className="text-center">
           <a
-            href="https://wa.me/35699312258"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/store-locator"
             className="inline-block bg-green-500 text-black font-black uppercase tracking-widest text-sm px-8 py-4 hover:bg-green-400 transition-colors"
           >
-            Enquire via WhatsApp
+            Find a Store
           </a>
         </div>
       </div>

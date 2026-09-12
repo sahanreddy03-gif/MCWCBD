@@ -2,71 +2,17 @@ import { motion } from "framer-motion";
 import heroStoresImg from "../assets/hero-stores.png";
 import { MapPin, Clock, Navigation } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { MCW_STORES } from "@/lib/locations";
 
-// To switch to Google Maps, change this to 'google'.
-// Requires the API key (AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY) to be
-// authorized for mcwcbd.com in Google Cloud Console → APIs & Services → Credentials.
-const MAPS_PROVIDER: "osm" | "google" = "osm";
-
-const GOOGLE_MAPS_API_KEY = "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY";
-
-const STORES = [
-  {
-    id: "sliema",
-    name: "MCW Sliema",
-    address: "Triq Bisazza, Sliema SLM 1641",
-    hours: "Open daily · Closes 11:30 pm",
-    phone: "+356 99312258",
-    mapQuery: "Triq+Bisazza,+Sliema,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4977,35.9067,14.5077,35.9167&layer=mapnik&marker=35.9117,14.5027",
-    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=Triq+Bisazza,+Sliema,+Malta`
-  },
-  {
-    id: "gzira",
-    name: "MCW Gzira",
-    address: "348, Manuel Dimech Street, Gzira",
-    hours: "Open daily · Closes 11:30 pm",
-    phone: "+356 99312258",
-    mapQuery: "348+Manuel+Dimech+Street,+Gzira,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4930,35.9013,14.5030,35.9113&layer=mapnik&marker=35.9063,14.4980",
-    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=348+Manuel+Dimech+Street,+Gzira,+Malta`
-  },
-  {
-    id: "mellieha",
-    name: "MCW Mellieha",
-    address: "51 Triq Gorg Borg Olivier, Mellieħa MLH 1025",
-    hours: "Open daily · Closes 11:30 pm",
-    phone: "+356 99312258",
-    mapQuery: "51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.3570,35.9547,14.3670,35.9647&layer=mapnik&marker=35.9597,14.3620",
-    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=51+Triq+Gorg+Borg+Olivier,+Mellieha,+Malta`
-  },
-  {
-    id: "bugibba",
-    name: "MCW Bugibba",
-    address: "Bugibba Square, San Pawl il-Baħar SPB 2510",
-    hours: "Open daily · Closes 11:30 pm",
-    phone: "+356 99312258",
-    mapQuery: "Bugibba+Square,+St+Pauls+Bay,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.4120,35.9458,14.4220,35.9558&layer=mapnik&marker=35.9508,14.4170",
-    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=Bugibba+Square,+St+Pauls+Bay,+Malta`
-  },
-  {
-    id: "valletta",
-    name: "MCW Valletta",
-    address: "94 First Floor, Triq San Gwann, Valletta VLT",
-    hours: "Open daily · Closes 11:30 pm",
-    phone: "+356 99312258",
-    mapQuery: "94+Triq+San+Gwann,+Valletta,+Malta",
-    osm_embed: "https://www.openstreetmap.org/export/embed.html?bbox=14.5095,35.8939,14.5195,35.9039&layer=mapnik&marker=35.8989,14.5145",
-    google_embed: `https://www.google.com/maps/embed/v1/place?key=${GOOGLE_MAPS_API_KEY}&q=94+Triq+San+Gwann,+Valletta,+Malta`
-  }
-];
+const STORES = MCW_STORES.map((store) => ({
+  ...store,
+  hours: "Open daily · Closes 11:30 pm",
+}));
 
 export default function Stores() {
   return (
     <>
-      <SEO title="MCW CBD Shop Locations — Sliema, Gzira, Mellieha, Bugibba & Valletta" description="Find MCW CBD Relax Shop near you. 5 stores across Malta: Sliema (flagship), Gzira, Mellieha, Bugibba, and Valletta. Open daily until 11:30 pm. Visit us in store or reserve via WhatsApp for pickup." />
+      <SEO title="MCW CBD Shop Locations — Valletta, Sliema, Mellieha & Bugibba" description="Find MCW CBD Relax Shop near you. Four verified stores across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Open daily until 11:30 pm. Visit us in store." />
 
       {/* Photo Hero */}
       <div className="relative h-72 sm:h-[420px] overflow-hidden">
@@ -78,7 +24,7 @@ export default function Stores() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black" />
         <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-12 pb-10 max-w-7xl mx-auto w-full">
-          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">Sliema · Gzira · Mellieha · Bugibba · Valletta</p>
+          <p className="text-[#22c55e] font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-2">Valletta · Sliema · Mellieha · Bugibba</p>
           <h1 className="font-bebas text-6xl sm:text-8xl md:text-[9rem] tracking-tight text-white leading-none drop-shadow-2xl">
             FIND A STORE
           </h1>
@@ -105,19 +51,31 @@ export default function Stores() {
                   width="100%"
                   height="100%"
                   frameBorder="0"
-                  style={{ border: 0, filter: MAPS_PROVIDER === "osm" ? 'invert(90%) hue-rotate(180deg)' : undefined }}
-                  src={MAPS_PROVIDER === "google" ? store.google_embed : store.osm_embed}
+                   style={{ border: 0 }}
+                   src={store.googleEmbedUrl}
+                   loading="lazy"
                   allowFullScreen
                   title={`Map to ${store.name}`}
                 ></iframe>
               </div>
               <div className="p-8">
                 <h2 className="text-3xl font-bebas tracking-wide mb-6">{store.name}</h2>
+                 {store.tag && (
+                   <p className="text-primary text-xs font-black uppercase tracking-widest -mt-4 mb-5">{store.tag}</p>
+                 )}
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-4 text-muted-foreground">
                     <MapPin className="text-primary shrink-0 mt-1" size={20} />
-                    <span>{store.address}</span>
+                     <span>
+                       {store.address}
+                       {store.addressNote && (
+                         <span className="block text-xs mt-1 text-amber-500/80">{store.addressNote}</span>
+                       )}
+                       {store.mapNote && (
+                         <span className="block text-xs mt-1 text-amber-500/80">{store.mapNote}</span>
+                       )}
+                     </span>
                   </div>
                   <div className="flex items-center gap-4 text-muted-foreground">
                     <Clock className="text-primary shrink-0" size={20} />
@@ -127,7 +85,7 @@ export default function Stores() {
 
                 <div className="flex gap-4">
                   <a 
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${store.mapQuery}`}
+                     href={store.directionsUrl}
                     target="_blank" rel="noreferrer"
                     className="flex-1 py-3 px-4 bg-white/5 border border-white/10 rounded-xl text-center font-bold uppercase tracking-wider text-sm hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
                   >

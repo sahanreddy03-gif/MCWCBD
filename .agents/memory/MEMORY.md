@@ -1,0 +1,1 @@
+- [Store map verification](store-map-verification.md) — distinguish supplied address searches from exact business pins.

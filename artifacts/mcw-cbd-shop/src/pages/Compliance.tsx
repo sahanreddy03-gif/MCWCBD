@@ -75,20 +75,18 @@ export default function Compliance() {
               <p>CBD products are food supplements or collectibles. They are <strong>not medicines</strong> and are not intended to diagnose, treat, cure, or prevent any disease.</p>
               <p>Always consult a qualified healthcare professional before using CBD products, especially if pregnant, breastfeeding, or on medication.</p>
               <p>Hemp aromatic flowers are sold as collectibles. Hemp herbal sticks are not intended for combustion or consumption.</p>
-              <p>For addiction support in Malta, contact <strong>Sedqa Agency</strong> on freephone <strong>1930</strong>.</p>
+              <p>For addiction support in Malta, contact <strong>Sedqa Agency</strong> through its official support channels.</p>
             </div>
           </section>
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">Request Lab Reports</h2>
             <p className="text-sm mb-4">We are fully transparent about our product testing. To request a Certificate of Analysis (CoA) for any product, contact us directly:</p>
-            <a
-              href="https://wa.me/35699312258?text=Hello%20MCW!%20I%20would%20like%20to%20request%20a%20lab%20report%20(CoA)%20for%20a%20product."
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="mailto:hello@oarcdigital.com?subject=Lab%20report%20request"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-sm px-6 py-3 transition-colors"
             >
-              Request Lab Report via WhatsApp
+                Request Lab Report by Email
             </a>
           </section>
 

@@ -1,12 +1,12 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X, MessageCircle, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { useState } from "react";
-import { WhatsAppCTA } from "./WhatsAppCTA";
 import { AgeGate } from "./AgeGate";
 import { FloatingCart } from "./CartDrawer";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { MCW_STORES } from "@/lib/locations";
 
 const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
@@ -20,87 +20,34 @@ const LOCAL_BUSINESS_SCHEMA = {
       sameAs: [
         "https://www.instagram.com/mcwcbdrelax",
         "https://www.facebook.com/profile.php?id=61580762071984",
-        "https://wa.me/35699312258",
       ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone: "+35699312258",
-        contactType: "customer service",
-        availableLanguage: ["English", "Maltese"],
-      },
     },
-    {
+    ...MCW_STORES.map((store) => ({
       "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwcbd.com/#sliema",
-      name: "MCW CBD Relax Shop — Sliema",
-      description: "Malta's #1 hemp and CBD destination. Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
-      url: "https://mcwcbd.com",
-      telephone: "+35699312258",
+      "@id": `https://mcwcbd.com/#${store.id}`,
+      name: `MCW CBD Relax Shop — ${store.name}`,
+      description: [
+        store.id === "valletta"
+          ? "MCW CBD Relax Shop's main branch in Valletta."
+          : "Malta's #1 hemp and CBD destination.",
+        store.mapNote ?? "Premium CBD oils, flowers, vapes, gummies, and pre-rolls. 100% legal in Malta.",
+      ].join(" "),
+      url: "https://mcwcbd.com/store-locator",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Triq Bisazza",
-        addressLocality: "Sliema",
-        postalCode: "SLM 1641",
+        ...store.schemaAddress,
         addressCountry: "MT",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 35.3378,
-        longitude: 14.3008,
+        latitude: store.latitude,
+        longitude: store.longitude,
       },
       openingHours: "Mo-Su 09:00-23:30",
       priceRange: "€€",
-      hasMap: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x130e45d73f5403ff:0x366de4b0f4ff050e",
+      hasMap: store.googleMapsUrl,
       parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
-    },
-    {
-      "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwcbd.com/#mellieha",
-      name: "MCW CBD Relax Shop — Mellieha",
-      url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699312258",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "51 Triq Gorg Borg Olivier",
-        addressLocality: "Mellieħa",
-        postalCode: "MLH 1025",
-        addressCountry: "MT",
-      },
-      openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
-    },
-    {
-      "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwcbd.com/#bugibba",
-      name: "MCW CBD Relax Shop — Bugibba",
-      url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699312258",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Bugibba Square",
-        addressLocality: "San Pawl il-Baħar",
-        postalCode: "SPB 2510",
-        addressCountry: "MT",
-      },
-      openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
-    },
-    {
-      "@type": ["LocalBusiness", "Store"],
-      "@id": "https://mcwcbd.com/#valletta",
-      name: "MCW CBD Relax Shop — Valletta",
-      url: "https://mcwcbd.com/store-locator",
-      telephone: "+35699312258",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "94 First Floor, Triq San Gwann",
-        addressLocality: "Valletta",
-        postalCode: "VLT",
-        addressCountry: "MT",
-      },
-      openingHours: "Mo-Su 09:00-23:30",
-      parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
-    },
+    })),
   ],
 };
 
@@ -169,7 +116,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </div>
 
-          {/* Right: Instagram + WhatsApp CTA + Hamburger */}
+          {/* Right: Instagram + shop navigation + Hamburger */}
           <div className="flex items-center gap-3">
             <a
               href="https://www.instagram.com/mcwcbdrelax"
@@ -181,15 +128,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             >
               <Instagram size={22} />
             </a>
-            <a
-              href="https://wa.me/35699312258"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/shop"
               className="hidden md:flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] tracking-widest uppercase px-4 py-2 transition-colors"
             >
-              <MessageCircle size={13} />
               View Range
-            </a>
+            </Link>
             <button
               className="md:hidden text-gray-300 hover:text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -219,16 +163,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <div className="px-5 pt-4">
-              <a
-                href="https://wa.me/35699312258"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/shop"
                 className="flex items-center justify-center gap-2 bg-green-500 text-black font-black text-sm uppercase tracking-widest py-3 w-full"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <MessageCircle size={16} />
-                View Range via WhatsApp
-              </a>
+                View Range
+              </Link>
             </div>
           </div>
         )}
@@ -250,20 +191,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </h2>
             <p className="text-gray-400 text-xs tracking-[0.3em] uppercase mt-3">Malta's #1 Hemp &amp; CBD Destination</p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <a
-                href="https://wa.me/35699312258"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/shop"
                 className="px-7 py-3 bg-[#22c55e] text-black font-black text-xs uppercase tracking-widest hover:bg-green-400 transition-colors"
               >
-                Enquire on WhatsApp
-              </a>
-              <a
-                href="tel:+35699312258"
+                Browse Products
+              </Link>
+              <Link
+                href="/store-locator"
                 className="px-7 py-3 border-2 border-white/20 text-white font-black text-xs uppercase tracking-widest hover:border-[#22c55e] hover:text-[#22c55e] transition-colors"
               >
-                Call Us
-              </a>
+                Visit a Store
+              </Link>
             </div>
           </div>
 
@@ -316,16 +255,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Our Stores</h3>
               <ul className="space-y-3">
-                {[
-                  ["Valletta (Flagship)", "/store-locator"],
-                  ["Sliema", "/store-locator"],
-                  ["Mellieha", "/store-locator"],
-                  ["Bugibba", "/store-locator"],
-                ].map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
-                      {label}
-                    </Link>
+                {MCW_STORES.map((store) => (
+                  <li key={store.id}>
+                    <a
+                      href={store.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white text-sm transition-colors"
+                    >
+                      {store.name}{store.id === "valletta" ? " (Main Branch)" : ""}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -342,10 +281,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/35699312258" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
-                    <span className="text-[#22c55e] text-base">💬</span>
-                    <span>WhatsApp Order</span>
-                  </a>
+                  <Link href="/store-locator" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                    <span className="text-[#22c55e] text-base">📍</span>
+                    <span>Find a Store</span>
+                  </Link>
                 </li>
                 <li>
                   <a href="https://www.instagram.com/mcwcbdrelax" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#22c55e] text-sm transition-colors flex items-center gap-3">
@@ -361,7 +300,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">📍</span>
-                  <span>Triq Bisazza, Sliema SLM 1641</span>
+                  <a
+                    href={MCW_STORES[0].googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    {MCW_STORES[0].address}
+                  </a>
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">🕐</span>
@@ -401,7 +347,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               © {new Date().getFullYear()} MCW CBD Relax Shop Malta
             </span>
             <p className="text-black/70 text-[10px] uppercase tracking-widest text-center max-w-sm">
-              All products &lt;0.2% THC · Legal in Malta · Adults 18+ · Sedqa: <strong>1930</strong>
+              All products &lt;0.2% THC · Legal in Malta · Adults 18+
             </p>
             <div className="flex gap-5 font-black text-xs uppercase tracking-widest text-black">
               <a href="/terms" className="hover:opacity-70 transition-opacity">Terms</a>
@@ -412,9 +358,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </footer>
-
-      {/* WhatsApp CTA */}
-      <WhatsAppCTA />
 
       {/* Floating Cart — visible on all pages */}
       <FloatingCart />

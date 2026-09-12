@@ -1,4 +1,4 @@
-import { MapPin, Phone, ShoppingCart, CheckCircle, Star, Truck, Lock } from 'lucide-react';
+import { MapPin, ShoppingCart, CheckCircle, Star, Truck, Lock } from 'lucide-react';
 import { useState } from 'react';
 
 export default function CBDGummiesInBugibba() {
@@ -52,21 +52,21 @@ export default function CBDGummiesInBugibba() {
                 </div>
                 <div className="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-lg p-4 text-center hover:border-green-500/50 transition">
                   <Truck className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                  <p className="text-sm text-gray-300">In-Store Pickup</p>
+                  <p className="text-sm text-gray-300">In-Store Purchase</p>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="https://wa.me/35699312258"
+                  href="/shop"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg overflow-hidden transition-all hover:shadow-2xl hover:shadow-green-500/50"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <ShoppingCart className="w-5 h-5" />
-                    Enquire via WhatsApp
+                    View Products In Store
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition"></div>
                 </a>
@@ -105,7 +105,7 @@ export default function CBDGummiesInBugibba() {
             {[
               { icon: '✓', title: 'Premium Quality', desc: 'Sourced from finest EU hemp' },
               { icon: '🔬', title: 'Lab Tested', desc: 'Verified purity & potency' },
-              { icon: '⚡', title: 'In-Store Pickup', desc: 'Collect from our Bugibba store' },
+              { icon: '⚡', title: 'In-Store Purchase', desc: 'Purchase at our Bugibba store' },
               { icon: '🛡️', title: 'Legal Compliant', desc: '&lt;0.2% THC guaranteed' },
               { icon: '💚', title: 'Expert Support', desc: 'Knowledgeable team' },
               { icon: '🌍', title: 'Sustainable', desc: 'Eco-friendly practices' },
@@ -143,9 +143,9 @@ export default function CBDGummiesInBugibba() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-slate-800/30 backdrop-blur border border-slate-700/50 rounded-lg hover:border-green-500/50 transition">
-                  <Phone className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <MapPin className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-bold text-white">💬 WhatsApp us</p>
+                    <p className="font-bold text-white">Find a Store</p>
                     <p className="text-gray-400 text-sm">Available during store hours</p>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function CBDGummiesInBugibba() {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-white">Ready to Experience Premium CBD?</h2>
           <a
-            href="https://wa.me/35699312258"
+            href="/store-locator"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all"

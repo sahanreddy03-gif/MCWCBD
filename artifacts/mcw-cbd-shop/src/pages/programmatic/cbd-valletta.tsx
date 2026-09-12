@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, ShoppingCart } from 'lucide-react';
+import { MapPin, Clock, ShoppingCart } from 'lucide-react';
 
 export default function CBDValletta() {
   return (
@@ -27,10 +27,10 @@ export default function CBDValletta() {
               </div>
             </div>
             <div className="flex items-start">
-              <Phone className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
+              <MapPin className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-green-300">💬 WhatsApp us</h3>
-                <p className="text-gray-300">Call for availability and orders</p>
+                <h3 className="font-bold text-green-300">Find a Store</h3>
+                <p className="text-gray-300">View locations and directions</p>
               </div>
             </div>
             <div className="flex items-start">
@@ -43,12 +43,10 @@ export default function CBDValletta() {
           </div>
 
           <a
-            href="https://wa.me/35699312258"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/store-locator"
             className="inline-block w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-6 rounded-lg transition-colors text-center"
           >
-            Order from Valletta via WhatsApp
+            Find a Store to Purchase
           </a>
         </div>
 

@@ -93,7 +93,7 @@ const corePages = [
   {
     path: "/",
     title: "MCW - Malta No.1 CBD and Hemp Shop",
-    description: "MCW CBD Relax Shop - Malta No.1 hemp and CBD destination. 5 stores: Sliema, Gzira, Mellieha, Bugibba, Valletta. Shop premium CBD oils, flowers, vapes, gummies. Visit us in store or reserve via WhatsApp.",
+    description: "MCW CBD Relax Shop - Malta No.1 hemp and CBD destination. Four verified stores: Valletta, Sliema, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, gummies. Visit us in store.",
   },
   {
     path: "/shop",
@@ -110,7 +110,7 @@ const corePages = [
   {
     path: "/about",
     title: "About MCW CBD Relax Shop | Malta No.1 Hemp Destination",
-    description: "Learn about MCW CBD Relax Shop - Malta leading hemp and CBD retailer with 5 stores across Malta. Our story, mission, and commitment to quality.",
+    description: "Learn about MCW CBD Relax Shop - Malta leading hemp and CBD retailer with four verified stores across Malta. Our story, mission, and commitment to quality.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "About", url: BASE + "/about" }]),
   },
   {
@@ -122,13 +122,13 @@ const corePages = [
   {
     path: "/store-locator",
     title: "CBD Stores in Malta | Find MCW Near You",
-    description: "Find your nearest MCW CBD store: Sliema (Triq Bisazza), Gzira (Manuel Dimech St), Mellieha, Bugibba Square, and Valletta. Open daily 09:00 to 23:30.",
+    description: "Find your nearest MCW CBD store: Valletta (94 First Floor, Triq San Gwann), Sliema (Triq Bisazza SLM 1641), Mellieha (51 Triq Gorg Borg Olivier MLH 1025), and Bugibba Square, San Pawl il-Bahar SPB 2510 (approximate area address search). Open daily 09:00 to 23:30.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Store Locator", url: BASE + "/store-locator" }]),
   },
   {
     path: "/contact",
-    title: "Contact MCW CBD Malta | WhatsApp +356 9931 2258",
-    description: "Get in touch with MCW CBD Relax Shop. WhatsApp us at +356 9931 2258 for orders, in-store pickup, or questions. Open daily until 23:30.",
+    title: "Contact MCW CBD Malta | Email and Store Locations",
+    description: "Get in touch with MCW CBD Relax Shop by email, or visit a store for in-person purchasing and questions. Open daily until 23:30.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Contact", url: BASE + "/contact" }]),
   },
   {
@@ -143,8 +143,8 @@ const corePages = [
           "@type": "FAQPage",
           mainEntity: [
             { "@type": "Question", name: "Is CBD legal in Malta?", acceptedAnswer: { "@type": "Answer", text: "Yes. CBD products with less than 0.2% THC are fully legal in Malta. Every MCW product complies with this regulation." } },
-            { "@type": "Question", name: "Where can I buy CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "MCW CBD Relax Shop has 5 stores across Malta: Sliema, Gzira, Mellieha, Bugibba, and Valletta. Visit us in store or reserve via WhatsApp for in-store pickup." } },
-            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "No. MCW is in-store pickup only. Order or enquire via WhatsApp (+356 9931 2258) and collect at any of our 5 Malta stores, open daily until 23:30." } },
+            { "@type": "Question", name: "Where can I buy CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "MCW CBD Relax Shop has four verified stores across Malta: Valletta, Sliema, Mellieha, and Bugibba. Visit us in store to browse and purchase." } },
+            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "No. MCW is in-store purchasing only. Visit any of our four Malta stores, open daily until 23:30." } },
             { "@type": "Question", name: "Will CBD products make me high?", acceptedAnswer: { "@type": "Answer", text: "No. Our products contain less than 0.2% THC - not nearly enough to produce any psychoactive effect." } },
             { "@type": "Question", name: "Are your products lab-tested?", acceptedAnswer: { "@type": "Answer", text: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." } },
           ],
@@ -161,7 +161,7 @@ const corePages = [
   {
     path: "/guides",
     title: "CBD Guides Malta | Product and Location Guides | MCW",
-    description: "164 expert guides covering CBD products and locations across Malta. Find the right CBD oil, flower, vape or gummy in Sliema, Gzira, Mellieha, Bugibba, and Valletta.",
+    description: "164 expert guides covering CBD products and locations across Malta. Find the right CBD oil, flower, vape or gummy in Valletta, Sliema, Mellieha, and Bugibba.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Guides", url: BASE + "/guides" }]),
   },
   {
@@ -199,14 +199,15 @@ const blogPosts = [
   { slug: "how-to-use-cbd-vapes", title: "How to Use CBD Vapes | Beginner Guide Malta", desc: "Step-by-step guide to using CBD vapes in Malta. Types of vapes, how to inhale, dosage, and safety tips from MCW." },
   { slug: "cbd-gummies-guide-malta", title: "CBD Gummies Malta | Complete Buyer Guide", desc: "Everything about CBD gummies in Malta. Effects, dosage, brands, and where to buy. MCW stocks the best selection." },
   { slug: "cbd-shop-sliema-malta", title: "CBD Shop Sliema Malta | MCW Triq Bisazza", desc: "Visit MCW CBD Relax Shop in Sliema at Triq Bisazza SLM 1641. Malta best CBD products. Open daily 09:00 to 23:30." },
-  { slug: "cbd-shop-gzira-malta", title: "CBD Shop Gzira Malta | MCW 348 Manuel Dimech St", desc: "Visit MCW CBD Relax Shop in Gzira at 348 Manuel Dimech Street. Full range of CBD products. Open daily until 23:30." },
-  { slug: "cbd-shop-mellieha-malta", title: "CBD Shop Mellieha Malta | MCW Triq Gorg Borg Olivier", desc: "MCW CBD Relax Shop in Mellieha - your local CBD destination. Oils, flowers, vapes and more. Open daily 09:00 to 23:30." },
-  { slug: "cbd-shop-bugibba-malta", title: "CBD Shop Bugibba Malta | MCW Bugibba Square", desc: "Visit MCW CBD Relax Shop at Bugibba Square, SPB 2510. Premium CBD products in the heart of Bugibba. Open daily." },
+  { slug: "cbd-shop-gzira-malta", title: "CBD Shop Gzira Malta | MCW Legacy Guide", desc: "Legacy MCW CBD guide for Gzira visitors. Use the current Store Locator for verified branches, addresses, maps, and directions." },
+  { slug: "cbd-shop-mellieha-malta", title: "CBD Shop Mellieha Malta | MCW Triq Gorg Borg Olivier", desc: "MCW CBD Relax Shop in Mellieha at 51 Triq Gorg Borg Olivier MLH 1025. Oils, flowers, vapes and more. Open daily 09:00 to 23:30." },
+  { slug: "cbd-shop-bugibba-malta", title: "CBD Shop Bugibba Malta | MCW Google Listing", desc: "Visit the MCW CBD Relax Shop address search for the approximate Bugibba Square area, San Pawl il-Bahar SPB 2510. Premium CBD products in the north of Malta. Open daily." },
 ];
 
 const guidePages = [
   "best-time-to-take-cbd","cbd-and-fitness","cbd-and-travel","cbd-and-wellness","cbd-anxiety",
-  "cbd-better-sleep","cbd-bugibba","cbd-community-stories","cbd-cream-in-bugibba","cbd-cream-in-gzira",
+  "cbd-better-sleep","cbd-bugibba","cbd-community-stories","cbd-cream-in-bugibba",
+  "cbd-cream-in-gzira",
   "cbd-cream-in-mellieha","cbd-cream-in-sliema","cbd-cream-in-valletta","cbd-cream-vs-cbd-vape",
   "cbd-dosage-guide","cbd-drug-interactions","cbd-energy","cbd-extraction-methods",
   "cbd-flower-in-bugibba","cbd-flower-in-gzira","cbd-flower-in-mellieha","cbd-flower-in-sliema",
@@ -230,8 +231,8 @@ const guidePages = [
   "hemp-vs-cannabis","how-long-does-cbd-last","how-to-smoke-cbd-flower","how-to-use-cbd-flower",
   "how-to-use-cbd-oil","how-to-vape-cbd","is-cbd-legal-in-malta","isolate-oil-in-bugibba",
   "isolate-oil-in-valletta","isolate-oil-vs-cbd-hash","lab-testing-explained","mcw-cbd-shop-story",
-  "mcw-t-shirt-in-bugibba","mcw-t-shirt-in-gzira","mcw-tshirt-in-gzira","mcw-t-shirt-in-mellieha",
-  "mcw-tshirt-in-mellieha","mcw-t-shirt-in-sliema","mcw-tshirt-in-sliema","mcw-t-shirt-in-valletta",
+  "mcw-t-shirt-in-bugibba","mcw-t-shirt-in-gzira","mcw-t-shirt-in-mellieha",
+  "mcw-tshirt-in-gzira","mcw-tshirt-in-mellieha","mcw-t-shirt-in-sliema","mcw-tshirt-in-sliema","mcw-t-shirt-in-valletta",
   "mcw-t-shirt-vs-premium-hash","natural-relaxation-methods","premium-hash-in-bugibba",
   "premium-hash-in-valletta","premium-hash-vs-cbd-cream","premium-hash-vs-cbd-lighter",
   "premium-hash-vs-cbd-oil","premium-hash-vs-cbd-vape","premium-hash-vs-disposable-vape",
@@ -251,7 +252,7 @@ const guidePages = [
   "vaporizer-in-valletta",
 ];
 
-const LOCATIONS = ["Sliema", "Gzira", "Mellieha", "Bugibba", "Valletta"];
+const LOCATIONS = ["Valletta", "Sliema", "Mellieha", "Bugibba"];
 
 function guideDesc(slug) {
   const label = slugToLabel(slug);

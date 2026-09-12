@@ -1,13 +1,30 @@
+import { MCW_STORES } from "@/lib/locations";
+
 export function localBizSchema(slug: string, label: string) {
+  const store = MCW_STORES.find(({ id }) => slug.toLowerCase().includes(id));
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: `MCW CBD Relax Shop — ${label}`,
     url: `https://mcwcbd.com/guides/${slug}`,
-    telephone: "+35699312258",
+    ...(store?.mapNote ? { description: store.mapNote } : {}),
     openingHours: "Mo-Su 09:00-23:30",
     priceRange: "€€",
-    address: { "@type": "PostalAddress", addressCountry: "MT" },
+    ...(store
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            ...store.schemaAddress,
+            addressCountry: "MT",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: store.latitude,
+            longitude: store.longitude,
+          },
+          hasMap: store.googleMapsUrl,
+        }
+      : { address: { "@type": "PostalAddress", addressCountry: "MT" } }),
     parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
   };
 }

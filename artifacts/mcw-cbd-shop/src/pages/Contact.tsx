@@ -1,19 +1,13 @@
-import { Phone, MapPin, MessageCircle, Clock, Mail } from "lucide-react";
+import { MapPin, Clock, Mail } from "lucide-react";
 import heroContactImg from "../assets/hero-contact.webp";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
+import { MCW_STORES } from "@/lib/locations";
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
 const contactItems = [
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+356 99312258",
-    sub: "Available during store hours",
-    href: "tel:+35699312258",
-  },
   {
     icon: Mail,
     label: "Email",
@@ -22,19 +16,11 @@ const contactItems = [
     href: "mailto:hello@oarcdigital.com",
   },
   {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "Message us instantly",
-    sub: "Fastest response guaranteed",
-    href: "https://wa.me/35699312258",
-    external: true,
-  },
-  {
     icon: MapPin,
     label: "Main Store",
-    value: "Sliema Branch",
-    sub: "Triq Bisazza, Sliema SLM 1641",
-    href: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x130e45d73f5403ff:0x366de4b0f4ff050e",
+    value: `${MCW_STORES[0].name} Branch`,
+    sub: [MCW_STORES[0].address, MCW_STORES[0].mapNote].filter(Boolean).join(" · "),
+    href: MCW_STORES[0].googleMapsUrl,
     external: true,
   },
   {
@@ -46,19 +32,16 @@ const contactItems = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`;
-    window.open(`https://wa.me/35699312258?text=${encodeURIComponent(msg)}`, "_blank");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    const subject = `MCW enquiry from ${formData.name}`;
+    const body = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    window.location.href = `mailto:hello@oarcdigital.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const breadcrumbSchema = {
@@ -74,7 +57,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact MCW — CBD Shop Malta"
-        description="Get in touch with MCW CBD Relax Shop. Enquire via WhatsApp, call us, or visit one of our 5 Malta locations in Sliema, Gzira, Mellieha, Bugibba, or Valletta."
+        description="Get in touch with MCW CBD Relax Shop by email or visit one of our four verified Malta locations in Valletta, Sliema, Mellieha, or Bugibba."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -112,7 +95,7 @@ export default function Contact() {
 
             <div className="space-y-4">
               {contactItems.map(({ icon: Icon, label, value, sub, href, external }) => {
-                const Wrapper = href ? "a" : "div";
+                const Wrapper: any = href ? "a" : "div";
                 const wrapperProps = href
                   ? { href, ...(external ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
                   : {};
@@ -140,10 +123,16 @@ export default function Contact() {
             <motion.div variants={fadeUp} className="mt-8">
               <p className="text-[10px] text-gray-700 uppercase tracking-widest mb-4">Our Locations</p>
               <div className="grid grid-cols-4 gap-2">
-                {["Valletta", "Sliema", "Mellieha", "Bugibba"].map((loc) => (
-                  <div key={loc} className="border border-gray-800 py-3 text-center">
-                    <p className="font-bebas text-[13px] tracking-widest text-gray-500">{loc}</p>
-                  </div>
+                {MCW_STORES.map((store) => (
+                  <a
+                    key={store.id}
+                    href={store.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-gray-800 py-3 text-center hover:border-green-700/50 transition-colors"
+                  >
+                    <p className="font-bebas text-[13px] tracking-widest text-gray-500">{store.name}</p>
+                  </a>
                 ))}
               </div>
             </motion.div>
@@ -164,7 +153,6 @@ export default function Contact() {
               {[
                 { name: "name", label: "Name", type: "text", placeholder: "Your name", required: true },
                 { name: "email", label: "Email", type: "email", placeholder: "your@email.com", required: true },
-                { name: "phone", label: "Phone (optional)", type: "tel", placeholder: "Your phone number", required: false },
               ].map(({ name, label, type, placeholder, required }) => (
                 <div key={name}>
                   <label className="block text-[10px] text-gray-600 uppercase tracking-widest mb-2">{label}</label>
@@ -197,13 +185,13 @@ export default function Contact() {
                 type="submit"
                 className="w-full bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest py-4 transition-colors flex items-center justify-center gap-2"
               >
-                <MessageCircle size={16} />
-                {sent ? "Sent! Opening WhatsApp..." : "Send via WhatsApp"}
+                <Mail size={16} />
+                Open Email Draft
               </button>
             </form>
 
             <p className="text-gray-700 text-xs mt-5 leading-relaxed">
-              Your message opens in WhatsApp for instant delivery to our team. Typical response time: under 30 minutes during store hours.
+              Your email app will open with a draft addressed to hello@oarcdigital.com. Review it and send when ready.
             </p>
           </motion.div>
 

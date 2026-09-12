@@ -1,4 +1,4 @@
-import { MapPin, Phone, ShoppingCart, CheckCircle } from 'lucide-react';
+import { MapPin, ShoppingCart, CheckCircle } from 'lucide-react';
 
 export default function CherryWineInMellieha() {
   return (
@@ -63,22 +63,22 @@ export default function CherryWineInMellieha() {
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-bold">💬 WhatsApp us</p>
-                    <p className="text-gray-400 text-sm">Call for availability</p>
+                    <p className="font-bold">Find a Store</p>
+                    <p className="text-gray-400 text-sm">View locations and directions</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <a
-                  href="https://wa.me/35699312258?text=Hi%20MCW%2C%20I%27m%20interested%20in%20Cherry Wine"
+                  href="/store-locator"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-4 rounded-lg transition-colors text-center"
                 >
-                  Order Cherry Wine via WhatsApp
+                  Find a Store to Purchase
                 </a>
               </div>
             </div>

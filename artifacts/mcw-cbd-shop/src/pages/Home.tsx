@@ -5,6 +5,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { BLOG_POSTS } from "@/lib/blogData";
 import { BRANDS, PRODUCTS } from "@/lib/data";
+import { MCW_STORES } from "@/lib/locations";
 import logoSrc from "@assets/Untitled_design_(42)_1773502384512.png";
 import scFlowers    from "@assets/FBB23EFC-F7E2-4C59-99B4-B3BF930C4FE3_1778430447744.png";
 import scGummies    from "@assets/6841910F-476D-4AA3-923A-EAC819601CEC_1778431598513.png";
@@ -54,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with 4 locations in Sliema, Mellieha, Bugibba, and Valletta. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — visit us in store or reserve via WhatsApp." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with four verified locations in Valletta, Sliema, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Open daily until 11:30 pm — visit us in store." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -93,11 +94,18 @@ export default function Home() {
             </h1>
             
             <motion.div custom={3} variants={lineVariants} className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 mt-4">
-              <p className="text-sm md:text-base font-bold text-muted-foreground uppercase tracking-[0.3em] flex gap-4">
-                <span className="text-[#22c55e]">● Valletta ✦</span>
-                <span>● Sliema</span>
-                <span>● Mellieha</span>
-                <span>● Bugibba</span>
+              <p className="text-sm md:text-base font-bold text-muted-foreground uppercase tracking-[0.3em] flex flex-wrap gap-4">
+                {MCW_STORES.map((store, index) => (
+                  <a
+                    key={store.id}
+                    href={store.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={index === 0 ? "text-[#22c55e]" : "hover:text-white transition-colors"}
+                  >
+                    ● {store.name}{index === 0 ? " ✦" : ""}
+                  </a>
+                ))}
               </p>
               
               <div className="flex gap-4">
@@ -140,9 +148,9 @@ export default function Home() {
           <div className="flex whitespace-nowrap animate-marquee-reverse text-xs font-black uppercase tracking-[0.25em] text-black">
             {[...Array(3)].map((_, i) => (
               <div key={`bottom-${i}`} className="flex items-center">
-                <span className="mx-8">In-Store Pickup</span>
+                <span className="mx-8">Purchase In Store</span>
                 <span className="text-black/50">◆</span>
-                <span className="mx-8">5 Locations Island-Wide</span>
+                <span className="mx-8">4 Locations Island-Wide</span>
                 <span className="text-black/50">◆</span>
                 <span className="mx-8">Top International Brands</span>
                 <span className="text-black/50">◆</span>
@@ -437,7 +445,7 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { stat: "4", label: "Stores Island-Wide", sub: "Sliema · Mellieha · Bugibba · Valletta" },
+              { stat: "4", label: "Stores Island-Wide", sub: "Valletta · Sliema · Mellieha · Bugibba" },
               { stat: "200+", label: "Premium Products", sub: "Curated from world-leading brands" },
               { stat: "5+", label: "Years in Malta", sub: "Malta's original CBD destination" },
               { stat: "100%", label: "Malta Legal", sub: "Every product certified <0.2% THC" },
@@ -507,15 +515,13 @@ export default function Home() {
 
       {/* FOOTER CTA BANNER */}
       <section className="py-32 bg-[#00C8C8] text-black text-center px-4 flex flex-col items-center justify-center border-t-4 border-black">
-        <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">ORDER ON WHATSAPP</h2>
-        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">RESERVE &amp; COLLECT IN STORE</p>
+        <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">VISIT OUR STORES</h2>
+        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">BROWSE &amp; PURCHASE IN STORE</p>
         <a 
-          href="https://wa.me/35699312258" 
-          target="_blank" 
-          rel="noreferrer" 
+          href="/store-locator"
           className="inline-block px-16 py-6 bg-black text-white font-black text-xl md:text-2xl uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:translate-y-2 hover:translate-x-2"
         >
-          Chat With Us
+          Find a Store
         </a>
       </section>
     </>

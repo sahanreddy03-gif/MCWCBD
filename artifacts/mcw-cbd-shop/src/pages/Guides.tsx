@@ -35,7 +35,7 @@ export default function Guides() {
     <>
       <SEO
         title={`CBD Guides Malta — ${GUIDE_COUNT} Resources`}
-        description={`Browse ${GUIDE_COUNT} CBD guides covering every product, city, and topic in Malta. CBD oil in Sliema, CBD flower in Gzira, legal guides, how-to articles and more.`}
+        description={`Browse ${GUIDE_COUNT} CBD guides covering every product, city, and topic in Malta. CBD oil in Valletta, CBD flower in Sliema, legal guides, how-to articles and more.`}
       />
 
       <div className="min-h-screen bg-[#080808]">

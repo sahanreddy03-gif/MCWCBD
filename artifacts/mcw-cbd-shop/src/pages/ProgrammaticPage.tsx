@@ -19,6 +19,7 @@ import { useParams, Link } from "wouter";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES_BY_SLUG } from "@/lib/seoPages";
 import { buildSchema } from "@/lib/schemaBuilders";
+import { MCW_STORES } from "@/lib/locations";
 import SeoPage from "./SeoPage";
 
 const pageModules = import.meta.glob<{ default: React.ComponentType }>(
@@ -42,6 +43,60 @@ const Spinner = () => (
   </div>
 );
 
+function ProgrammaticStoreLocations() {
+  return (
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="border-t border-white/10 pt-8">
+        <p className="text-xs font-black uppercase tracking-widest text-green-400 mb-3">
+          Verified MCW locations
+        </p>
+        <h2 className="text-3xl font-bebas tracking-wide text-white mb-5">
+          Visit a Store in Malta
+        </h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+          {MCW_STORES.map((store) => (
+            <div key={store.id} className="bg-[#0d0d0d] border border-white/10 rounded-xl p-4">
+              <iframe
+                title={`Google Maps listing for MCW ${store.name}`}
+                src={store.googleEmbedUrl}
+                className="w-full h-28 border-0 mb-3"
+                loading="lazy"
+                allowFullScreen
+              />
+              <p className="text-white font-medium text-sm mb-1">{store.name}</p>
+              <p className="text-gray-400 text-xs leading-relaxed">{store.address}</p>
+              {store.addressNote && (
+                <p className="text-amber-500/80 text-[10px] mt-1 leading-relaxed">{store.addressNote}</p>
+              )}
+              {store.mapNote && (
+                <p className="text-amber-500/80 text-[10px] mt-1 leading-relaxed">{store.mapNote}</p>
+              )}
+              <div className="flex flex-wrap gap-3 mt-3">
+                <a
+                  href={store.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400 text-[10px] font-black uppercase tracking-wider hover:text-white"
+                >
+                  Google Maps
+                </a>
+                <a
+                  href={store.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 text-[10px] font-black uppercase tracking-wider hover:text-white"
+                >
+                  Directions
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function ProgrammaticPage() {
   const params = useParams<{ slug: string }>();
   const slug = params.slug ?? "";
@@ -63,9 +118,12 @@ export default function ProgrammaticPage() {
 
   if (!PageComponent && meta) {
     return (
-      <Suspense fallback={<Spinner />}>
-        <SeoPage slug={slug} />
-      </Suspense>
+      <>
+        <Suspense fallback={<Spinner />}>
+          <SeoPage slug={slug} />
+        </Suspense>
+        <ProgrammaticStoreLocations />
+      </>
     );
   }
 
@@ -83,6 +141,7 @@ export default function ProgrammaticPage() {
       <Suspense fallback={<Spinner />}>
         <PageComponent />
       </Suspense>
+      <ProgrammaticStoreLocations />
     </>
   );
 }

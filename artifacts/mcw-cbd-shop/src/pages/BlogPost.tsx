@@ -1,6 +1,6 @@
 import { useParams, Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, Clock, ArrowRight, MessageCircle, ChevronDown } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blogData";
@@ -25,8 +25,8 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
     { q: "Should I consult a doctor before using CBD?", a: "If you take prescription medication or have a medical condition, yes — CBD can interact with some medications. For general wellness use, CBD is considered safe by the WHO." },
   ],
   Local: [
-    { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Our team is on WhatsApp throughout store hours to answer questions and reserve orders for in-store pickup." },
-    { q: "Do you offer delivery in Malta?", a: "No. MCW is in-store pickup only — we don't deliver. Enquire or reserve via WhatsApp and collect your order at any of our 4 stores in Valletta, Sliema, Mellieha, or Bugibba." },
+    { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Visit a store to browse and purchase in person." },
+    { q: "Do you offer delivery in Malta?", a: "No. MCW is in-store purchasing only — we don't deliver. Visit any of our 4 stores in Valletta, Sliema, Mellieha, or Bugibba." },
     { q: "How do I pay for my order?", a: "We accept Revolut transfer and cash in store. You can pay in person at any of our store locations." },
   ],
   Products: [
@@ -264,7 +264,7 @@ export default function BlogPost() {
             <FAQAccordion faqs={CATEGORY_FAQS[post.category]} color={color} />
           )}
 
-          {/* WhatsApp CTA */}
+          {/* Store navigation CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,17 +279,14 @@ export default function BlogPost() {
               READY TO BUY CBD IN MALTA?
             </h3>
             <p className="text-gray-400 mb-6">
-              Visit any of our 4 stores or reserve via WhatsApp for in-store pickup.
+              Visit any of our 4 stores to browse and purchase in person.
             </p>
-            <a
-              href="https://wa.me/35699312258"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/store-locator"
               className="inline-flex items-center gap-2 px-10 py-4 bg-green-500 text-black font-black uppercase tracking-widest text-sm hover:bg-green-400 transition-colors"
             >
-              <MessageCircle size={16} />
-              Enquire via WhatsApp
-            </a>
+              Find a Store
+            </Link>
           </motion.div>
         </section>
 

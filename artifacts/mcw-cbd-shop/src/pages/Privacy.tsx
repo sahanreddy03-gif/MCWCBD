@@ -3,7 +3,7 @@ import { SEO } from "@/components/SEO";
 export default function Privacy() {
   return (
     <>
-      <SEO title="Privacy Policy — MCW CBD Relax Shop Malta" description="Privacy policy for MCW CBD Relax Shop Malta. How we handle your personal data, WhatsApp conversations, and order information." />
+      <SEO title="Privacy Policy — MCW CBD Relax Shop Malta" description="Privacy policy for MCW CBD Relax Shop Malta. How we handle your personal data and contact enquiries." />
 
       <div className="pt-32 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="font-bebas text-7xl md:text-9xl tracking-tight text-white mb-4 leading-none">
@@ -15,10 +15,10 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">1. Data We Collect</h2>
-            <p>When you contact us or place an order via WhatsApp, we may collect:</p>
+            <p>When you contact us by email or through our website, we may collect:</p>
             <ul className="list-disc list-inside space-y-1 mt-4">
-              <li>Your name and WhatsApp contact number</li>
-              <li>Preferred store location for in-store pickup</li>
+              <li>Your name and email address</li>
+              <li>Preferred store location for in-store purchasing</li>
               <li>Order details and payment confirmation</li>
             </ul>
             <p className="mt-4">We do not collect sensitive personal data or payment card information. Revolut payments are processed through the Revolut platform and governed by their privacy policy.</p>
@@ -28,7 +28,7 @@ export default function Privacy() {
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">2. How We Use Your Data</h2>
             <p>Your data is used solely to:</p>
             <ul className="list-disc list-inside space-y-1 mt-4">
-              <li>Process and prepare your order for in-store pickup</li>
+              <li>Support your in-store purchase enquiry</li>
               <li>Communicate regarding your purchase</li>
               <li>Comply with legal obligations</li>
             </ul>
@@ -37,7 +37,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">3. Data Retention</h2>
-            <p>Order-related data is retained for up to 12 months for accounting and legal compliance purposes, then securely deleted. WhatsApp conversation history is subject to WhatsApp's own retention policies.</p>
+            <p>Contact and purchase-related data is retained only as long as needed for accounting, legal compliance, and responding to enquiries, then securely deleted.</p>
           </section>
 
           <section>
@@ -47,12 +47,12 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. Your Rights</h2>
-            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, contact us directly at <strong>hello@oarcdigital.com</strong> or via WhatsApp.</p>
+            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, contact us directly at <strong>hello@oarcdigital.com</strong>.</p>
           </section>
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">6. Contact</h2>
-            <p>Data controller: MCW CBD Relax Shop, Malta. Contact: <strong>hello@oarcdigital.com</strong> or via WhatsApp, or visit any of our 4 stores island-wide.</p>
+            <p>Data controller: MCW CBD Relax Shop, Malta. Contact: <strong>hello@oarcdigital.com</strong>, or visit any of our 4 stores island-wide.</p>
           </section>
 
         </div>

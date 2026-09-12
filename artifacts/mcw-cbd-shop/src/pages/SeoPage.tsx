@@ -1,9 +1,10 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { MapPin, CheckCircle, Lock, Truck, Star, ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
+import { MapPin, CheckCircle, Lock, Truck, Star, ArrowRight, ArrowLeft } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { SEO_PAGES_BY_SLUG } from "@/lib/seoPages";
 import { buildSchema } from "@/lib/schemaBuilders";
+import { MCW_STORES } from "@/lib/locations";
 
 const catColors: Record<string, string> = {
   Location: "#22c55e",
@@ -158,7 +159,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                 {[
                   { icon: CheckCircle, label: "Lab Tested" },
                   { icon: Lock, label: "100% Legal" },
-                  { icon: Truck, label: "In-Store Pickup" },
+                  { icon: Truck, label: "In-Store Purchase" },
                   { icon: Star, label: "Malta's #1 CBD Shop" },
                 ].map(({ icon: Icon, label }) => (
                   <span key={label} className="flex items-center gap-1.5 text-xs font-medium text-gray-400 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
@@ -192,7 +193,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
 
             {/* Sidebar CTA */}
             <div className="space-y-4">
-              {/* WhatsApp order CTA */}
+              {/* Store and contact navigation */}
               <motion.div
                 className="bg-[#0d0d0d] border border-white/10 rounded-2xl p-6 sticky top-24"
                 initial={{ opacity: 0, x: 20 }}
@@ -204,29 +205,26 @@ export default function SeoPage({ slug }: SeoPageProps) {
                   Get {page.label} today
                 </h3>
                 <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                  Enquire via WhatsApp and collect in store at any of our 4 Malta locations. Open daily until 11:30 pm.
+                  Browse the range online, then visit one of our 4 Malta stores to purchase in person. Open daily until 11:30 pm.
                 </p>
 
-                <a
-                  href="https://wa.me/35699312258"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/store-locator"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest rounded-xl transition-all mb-3"
                 >
-                  <MessageCircle size={16} />
-                  Enquire via WhatsApp
-                </a>
+                  Find a Store
+                </Link>
 
                 <div className="flex items-center gap-2 text-xs text-gray-500 justify-center">
-                  <MessageCircle size={10} />
-                  <span>WhatsApp us</span>
+                  <MapPin size={10} />
+                  <span>Purchase in store</span>
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
                   {[
                     { icon: CheckCircle, text: "Lab tested products" },
                     { icon: Lock, text: "Less than 0.2% THC" },
-                    { icon: Truck, text: "In-store pickup" },
+                    { icon: Truck, text: "Purchase in store" },
                     { icon: MapPin, text: "4 stores in Malta" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-xs text-gray-400">
@@ -247,12 +245,35 @@ export default function SeoPage({ slug }: SeoPageProps) {
               Visit Us in Malta
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {["Sliema", "Gzira", "Mellieha", "Bugibba"].map((loc) => (
-                <div key={loc} className="bg-[#0d0d0d] border border-white/5 rounded-xl p-4 hover:border-green-500/30 transition-all">
+              {MCW_STORES.map((store) => (
+                <div
+                  key={store.id}
+                  className="bg-[#0d0d0d] border border-white/5 rounded-xl p-4 hover:border-green-500/30 transition-all"
+                >
                   <MapPin size={18} className="text-green-400 mb-2" />
-                  <p className="text-white font-medium text-sm">MCW CBD Shop</p>
-                  <p className="text-gray-400 text-xs">{loc}, Malta</p>
+                  <p className="text-white font-medium text-sm">MCW CBD Shop — {store.name}</p>
+                  <p className="text-gray-400 text-xs">{store.address}</p>
+                  {store.addressNote && <p className="text-amber-500/80 text-[10px] mt-1">{store.addressNote}</p>}
+                  {store.mapNote && <p className="text-amber-500/80 text-[10px] mt-1">{store.mapNote}</p>}
                   <p className="text-green-500 text-xs mt-1">Open daily until 11:30 pm</p>
+                  <div className="flex gap-3 mt-3">
+                    <a
+                      href={store.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-400 text-[10px] font-black uppercase tracking-wider hover:text-white"
+                    >
+                      Google Maps
+                    </a>
+                    <a
+                      href={store.directionsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-500 text-[10px] font-black uppercase tracking-wider hover:text-white"
+                    >
+                      Directions
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
