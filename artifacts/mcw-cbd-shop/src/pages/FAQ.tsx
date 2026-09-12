@@ -12,10 +12,10 @@ const faqs = [
   { q: "How long do the effects last?", a: "Vapes and flowers: 5–15 min onset, 2–4 hours duration. Oils take longer but last longer. Individual results vary." },
   { q: "Are your products lab-tested?", a: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." },
   { q: "What payment methods do you accept?", a: "Only Cash In Store. Pay in person at any of our store locations." },
-  { q: "Do you offer delivery?", a: "No, we don't offer delivery — purchases are made in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba); daily hours are 12:00–22:00." },
+  { q: "Do you offer delivery?", a: "No, we don't offer delivery — purchases are made in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba). Work time -12:00 - 22:00." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
   { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },
-  { q: "How do I contact customer support?", a: "Visit any of our 4 Malta store locations for in-person help. Daily hours are 12:00–22:00." },
+  { q: "How do I contact customer support?", a: "Visit any of our 4 Malta store locations for in-person help. Work time -12:00 - 22:00." },
   { q: "What is your return policy?", a: "Contact us within 7 days of purchase if you're not satisfied. We will find a solution." },
   { q: "Are there age restrictions?", a: "Yes — all products are strictly 18+. Age verification is required online and in store." },
   { q: "Can I use CBD while pregnant or nursing?", a: "Consult your healthcare provider first. CBD may interact with medications or affect pregnancy." },
@@ -111,7 +111,7 @@ export default function FAQ() {
         >
           <h2 className="font-bebas text-3xl md:text-4xl tracking-widest text-white mb-3">Still have questions?</h2>
           <p className="text-gray-600 text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-            Our team is available daily from 12:00–22:00. Visit a store for in-person help.
+            Work time -12:00 - 22:00. Visit a store for in-person help.
           </p>
           <a
             href="/store-locator"

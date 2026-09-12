@@ -232,7 +232,7 @@ Every product at MCW:
 
 ## Visit Us
 
-Find us at any of our 4 locations. We're open 7 days a week.`,
+Find us at any of our 4 locations. Work time -12:00 - 22:00.`,
   },
   {
     slug: "cbd-for-sleep-guide",
@@ -431,7 +431,7 @@ Yes, completely. CBD gummies containing less than 0.2% THC are legal to buy, sel
 
 ## Where to Buy CBD Gummies in Malta
 
-All of our gummies are available at MCW's 4 Malta stores — Valletta, Sliema, Mellieha, and Bugibba. Visit in store during daily hours of 12:00–22:00.
+ All of our gummies are available at MCW's 4 Malta stores — Valletta, Sliema, Mellieha, and Bugibba. Visit in store. Work time -12:00 - 22:00.
 
 Ask our staff for the latest stock. New gummy flavours and brands arrive regularly, and we always have something to recommend based on your specific goals.`,
   },
@@ -443,12 +443,12 @@ Ask our staff for the latest stock. New gummy flavours and brands arrive regular
     category: "Local",
     readingTime: 4,
     featuredColor: "#FF6B35",
-    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. Daily hours are 12:00–22:00 — visit us in store.
+    content: `If you're searching for CBD in Sliema, Malta, MCW CBD Relax Shop is the place to go. Our Sliema flagship store on Triq Bisazza is Malta's most trusted source for premium legal CBD products — from oils and flowers to vapes and gummies. Work time -12:00 - 22:00. Visit us in store.
 
 ## MCW Sliema: Our Flagship Location
 
 **Address:** Triq Bisazza SLM 1641
-**Hours:** Daily, 12:00–22:00
+Work time -12:00 - 22:00
 
 Located in the heart of Sliema — one of Malta's most vibrant and cosmopolitan areas — our flagship store is the largest and most fully-stocked of all our Malta locations. Sliema attracts both locals and tourists, and our store has been designed to serve everyone from complete CBD beginners to experienced connoisseurs looking for specific strains or rare cannabinoids.
 
@@ -479,7 +479,7 @@ All CBD products at MCW are 100% legal in Malta under EU hemp regulations.
 
 Prefer to plan before you visit? Browse the online range, then purchase in person at our Sliema flagship. All purchases are made in person — we don't offer delivery.
 
-You'll find us at our Sliema flagship, plus three more MCW stores in Valletta, Mellieha, and Bugibba, all with daily hours of 12:00–22:00.
+You'll find us at our Sliema flagship, plus three more MCW stores in Valletta, Mellieha, and Bugibba. Work time -12:00 - 22:00.
 
 ## What Makes MCW Sliema Different?
 
@@ -488,7 +488,7 @@ In a market full of generic CBD retailers, MCW stands out for a few reasons:
 1. **Range** — We carry more strains, brands, and product types than any other shop in Malta
 2. **Knowledge** — Our staff are trained experts who stay current with new cannabinoids and products
 3. **Transparency** — Every product has lab certificates. No guesswork, no mystery
-4. **Hours** — 12:00–22:00 daily, so you can shop after work, after dinner, or whenever you need
+4. **Work time -12:00 - 22:00** — shop after work, after dinner, or whenever you need
 5. **Community** — We're Malta's CBD community hub. Regular customers know us by name
 
 Sliema is Malta's most cosmopolitan neighbourhood, and MCW fits right in. Whether you're a tourist curious about Malta's CBD scene or a long-term resident looking for your usual products, come in and say hello.`,
@@ -505,22 +505,22 @@ Sliema is Malta's most cosmopolitan neighbourhood, and MCW fits right in. Whethe
 
 MCW no longer lists a Gzira branch. For current store information, use the MCW Store Locator and choose from the four verified branches in Valletta, Sliema, Mellieħa, and Bugibba. Each current branch card includes the verified address, Google Maps listing, embedded map, and directions link.
 
-All MCW purchases are made in store. Products are lab-tested and compliant with Maltese THC limits. Visit the store locator for the latest opening hours and branch details.`,
+All MCW purchases are made in store. Products are lab-tested and compliant with Maltese THC limits. Visit the store locator for branch details. Work time -12:00 - 22:00.`,
   },
   {
     slug: "cbd-shop-mellieha-malta",
     title: "CBD Shop in Mellieha, Malta: MCW's North Malta Location",
-    excerpt: "Looking for CBD in Mellieha? MCW CBD Relax Shop serves North Malta with premium oils, flowers, vapes, and gummies — daily hours 12:00–22:00.",
+    excerpt: "Looking for CBD in Mellieha? MCW CBD Relax Shop serves North Malta with premium oils, flowers, vapes, and gummies. Work time -12:00 - 22:00.",
     publishedAt: "2025-04-10",
     category: "Local",
     readingTime: 5,
     featuredColor: "#22c55e",
-    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta — daily hours are 12:00–22:00. Visit us in store.
+    content: `If you're looking for CBD in Mellieha, Malta, MCW CBD Relax Shop is your local destination. Our Mellieha store brings premium, lab-tested CBD products to North Malta. Work time -12:00 - 22:00. Visit us in store.
 
 ## MCW Mellieha: North Malta's CBD Shop
 
 **Address:** 51 Triq Gorg Borg Olivier MLH 1025
-**Hours:** Daily, 12:00–22:00
+Work time -12:00 - 22:00
 
 Mellieha is one of Malta's most beloved towns — perched on a hilltop overlooking the famous Mellieha Bay, and a gateway for visitors heading to and from Gozo. Our Mellieha store has become the go-to spot for North Malta residents and tourists who want premium CBD without having to travel south to Sliema.
 
@@ -565,22 +565,22 @@ We display COAs openly and encourage customers to ask. Transparency is part of h
 
 Want to plan your visit? Browse the online range and purchase in person at our Mellieha shop. All purchases are made in person — we don't offer delivery, but our Bugibba store is close by too if that's more convenient.
 
-Daily hours are 12:00–22:00. Walk in or message us — North Malta is fully covered.`,
+Work time -12:00 - 22:00. Walk in or message us — North Malta is fully covered.`,
   },
   {
     slug: "cbd-shop-bugibba-malta",
     title: "CBD Shop in Bugibba & St Paul's Bay: MCW's North Coast Location",
-    excerpt: "MCW CBD Relax Shop has a dedicated Bugibba location serving St Paul's Bay with premium CBD oils, flowers, vapes, and gummies — daily hours 12:00–22:00.",
+    excerpt: "MCW CBD Relax Shop has a dedicated Bugibba location serving St Paul's Bay with premium CBD oils, flowers, vapes, and gummies. Work time -12:00 - 22:00.",
     publishedAt: "2025-04-12",
     category: "Local",
     readingTime: 5,
     featuredColor: "#7B4FFF",
-    content: `Bugibba is one of Malta's most energetic and tourist-friendly towns, and MCW CBD Relax Shop is proud to have a dedicated location serving the entire St Paul's Bay area. If you're searching for CBD in Bugibba, Qawra, or the surrounding coastline, our daily hours are 12:00–22:00.
+    content: `Bugibba is one of Malta's most energetic and tourist-friendly towns, and MCW CBD Relax Shop is proud to have a dedicated location serving the entire St Paul's Bay area. If you're searching for CBD in Bugibba, Qawra, or the surrounding coastline, visit us in store. Work time -12:00 - 22:00.
 
 ## MCW Bugibba: St Paul's Bay CBD Destination
 
 **Address:** Bugibba Square San Pawl il-Bahar SPB 2510 (approximate area address search)
-**Hours:** Daily, 12:00–22:00
+Work time -12:00 - 22:00
 
 Bugibba is packed with seafront restaurants, dive shops, bars, and hotels. It attracts thousands of visitors every year alongside a growing permanent resident and expat community. MCW Bugibba is positioned to serve both — tourists curious about legal CBD in Malta, and locals who want a quality, reliable shop nearby.
 
@@ -622,7 +622,7 @@ No card machine needed. Simple and fast.
 
 Don't want to wait around? Browse the online range before visiting for in-store purchasing. All purchases are made in person — we don't offer delivery, but with MCW stores in Bugibba, Mellieha, Sliema, and Valletta there's always one within easy reach.
 
-MCW Bugibba has daily hours of 12:00–22:00. Come visit us — or just send a message.`,
+MCW Bugibba. Work time -12:00 - 22:00. Come visit us — or just send a message.`,
   },
 ];
 

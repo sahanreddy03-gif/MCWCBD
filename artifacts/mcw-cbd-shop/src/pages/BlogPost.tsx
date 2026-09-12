@@ -25,7 +25,7 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
     { q: "Should I consult a doctor before using CBD?", a: "If you take prescription medication or have a medical condition, yes — CBD can interact with some medications. For general wellness use, CBD is considered safe by the WHO." },
   ],
   Local: [
-    { q: "What are MCW's opening hours?", a: "All 4 MCW stores have daily hours of 12:00–22:00. Visit a store to browse and purchase in person." },
+    { q: "What is MCW's work time?", a: "Work time -12:00 - 22:00 at all 4 MCW stores. Visit a store to browse and purchase in person." },
     { q: "Do you offer delivery in Malta?", a: "No. MCW is in-store purchasing only — we don't deliver. Visit any of our 4 stores in Valletta, Sliema, Mellieha, or Bugibba." },
     { q: "How do I pay for my order?", a: "Only Cash In Store. Pay in person at any of our store locations." },
   ],

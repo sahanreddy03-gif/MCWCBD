@@ -40,7 +40,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. In-Store Purchasing</h2>
-            <p>We do not offer delivery. Purchases are made in person at one of our four stores in Valletta, Sliema, Mellieha, or Bugibba, with daily hours of 12:00–22:00.</p>
+            <p>We do not offer delivery. Purchases are made in person at one of our four stores in Valletta, Sliema, Mellieha, or Bugibba. Work time -12:00 - 22:00.</p>
           </section>
 
           <section>
@@ -55,7 +55,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">8. Contact</h2>
-            <p>For any questions regarding these terms, visit any of our 4 store locations in Sliema, Mellieha, Bugibba, or Valletta. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses, opening hours, and directions.</p>
+            <p>For any questions regarding these terms, visit any of our 4 store locations in Sliema, Mellieha, Bugibba, or Valletta. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses and directions. Work time -12:00 - 22:00.</p>
           </section>
 
         </div>

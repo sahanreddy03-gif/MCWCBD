@@ -46,9 +46,9 @@ const commitments = [
 
 const stores = [
   { name: "Valletta", sub: "Main Branch · Triq San Gwann" },
-  { name: "Sliema", sub: "Daily · 12:00–22:00" },
-  { name: "Mellieha", sub: "Daily · 12:00–22:00" },
-  { name: "Bugibba", sub: "Daily · 12:00–22:00" },
+  { name: "Sliema", sub: "Work time -12:00 - 22:00" },
+  { name: "Mellieha", sub: "Work time -12:00 - 22:00" },
+  { name: "Bugibba", sub: "Work time -12:00 - 22:00" },
 ];
 
 const breadcrumbSchema = {

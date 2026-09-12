@@ -124,13 +124,13 @@ const corePages = [
   {
     path: "/store-locator",
     title: "CBD Stores in Malta | Find MCW Near You",
-    description: "Find your nearest MCW CBD store: Valletta (94 First Floor, Triq San Gwann), Sliema (Triq Bisazza SLM 1641), Mellieha (51 Triq Gorg Borg Olivier MLH 1025), and Bugibba Square, San Pawl il-Bahar SPB 2510 (approximate area address search). Daily hours: 12:00–22:00.",
+    description: "Find your nearest MCW CBD store: Valletta (94 First Floor, Triq San Gwann), Sliema (Triq Bisazza SLM 1641), Mellieha (51 Triq Gorg Borg Olivier MLH 1025), and Bugibba Square, San Pawl il-Bahar SPB 2510 (approximate area address search). Work time -12:00 - 22:00.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Store Locator", url: BASE + "/store-locator" }]),
   },
   {
     path: "/contact",
     title: "Contact MCW CBD Malta | Store Locations",
-    description: "Visit MCW CBD Relax Shop at one of four Malta stores for in-person purchasing and questions. Daily hours: 12:00–22:00.",
+    description: "Visit MCW CBD Relax Shop at one of four Malta stores for in-person purchasing and questions. Work time -12:00 - 22:00.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Contact", url: BASE + "/contact" }]),
   },
   {
@@ -146,7 +146,7 @@ const corePages = [
           mainEntity: [
             { "@type": "Question", name: "Is CBD legal in Malta?", acceptedAnswer: { "@type": "Answer", text: "Yes. CBD products with less than 0.2% THC are fully legal in Malta. Every MCW product complies with this regulation." } },
             { "@type": "Question", name: "Where can I buy CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "MCW CBD Relax Shop has four verified stores across Malta: Valletta, Sliema, Mellieha, and Bugibba. Visit us in store to browse and purchase." } },
-            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "No. MCW is in-store purchasing only. Visit any of our four Malta stores; daily hours are 12:00–22:00." } },
+            { "@type": "Question", name: "Does MCW deliver CBD in Malta?", acceptedAnswer: { "@type": "Answer", text: "No. MCW is in-store purchasing only. Visit any of our four Malta stores. Work time -12:00 - 22:00." } },
             { "@type": "Question", name: "Will CBD products make me high?", acceptedAnswer: { "@type": "Answer", text: "No. Our products contain less than 0.2% THC - not nearly enough to produce any psychoactive effect." } },
             { "@type": "Question", name: "Are your products lab-tested?", acceptedAnswer: { "@type": "Answer", text: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." } },
           ],
@@ -200,10 +200,10 @@ const blogPosts = [
   { slug: "best-cbd-products-malta-2025", title: "Best CBD Products in Malta 2025 | MCW Top Picks", desc: "The best CBD oils, flowers, vapes, and gummies available in Malta in 2025. Expert picks from MCW CBD Relax Shop." },
   { slug: "how-to-use-cbd-vapes", title: "How to Use CBD Vapes | Beginner Guide Malta", desc: "Step-by-step guide to using CBD vapes in Malta. Types of vapes, how to inhale, dosage, and safety tips from MCW." },
   { slug: "cbd-gummies-guide-malta", title: "CBD Gummies Malta | Complete Buyer Guide", desc: "Everything about CBD gummies in Malta. Effects, dosage, brands, and where to buy. MCW stocks the best selection." },
-  { slug: "cbd-shop-sliema-malta", title: "CBD Shop Sliema Malta | MCW Triq Bisazza", desc: "Visit MCW CBD Relax Shop in Sliema at Triq Bisazza SLM 1641. Malta best CBD products. Daily hours: 12:00–22:00." },
+  { slug: "cbd-shop-sliema-malta", title: "CBD Shop Sliema Malta | MCW Triq Bisazza", desc: "Visit MCW CBD Relax Shop in Sliema at Triq Bisazza SLM 1641. Malta best CBD products. Work time -12:00 - 22:00." },
   { slug: "cbd-shop-gzira-malta", title: "CBD Shop Gzira Malta | MCW Legacy Guide", desc: "Legacy MCW CBD guide for Gzira visitors. Use the current Store Locator for verified branches, addresses, maps, and directions." },
-  { slug: "cbd-shop-mellieha-malta", title: "CBD Shop Mellieha Malta | MCW Triq Gorg Borg Olivier", desc: "MCW CBD Relax Shop in Mellieha at 51 Triq Gorg Borg Olivier MLH 1025. Oils, flowers, vapes and more. Daily hours: 12:00–22:00." },
-  { slug: "cbd-shop-bugibba-malta", title: "CBD Shop Bugibba Malta | MCW Google Listing", desc: "Visit the MCW CBD Relax Shop address search for the approximate Bugibba Square area, San Pawl il-Bahar SPB 2510. Premium CBD products in the north of Malta. Daily hours: 12:00–22:00." },
+  { slug: "cbd-shop-mellieha-malta", title: "CBD Shop Mellieha Malta | MCW Triq Gorg Borg Olivier", desc: "MCW CBD Relax Shop in Mellieha at 51 Triq Gorg Borg Olivier MLH 1025. Oils, flowers, vapes and more. Work time -12:00 - 22:00." },
+  { slug: "cbd-shop-bugibba-malta", title: "CBD Shop Bugibba Malta | MCW Google Listing", desc: "Visit the MCW CBD Relax Shop address search for the approximate Bugibba Square area, San Pawl il-Bahar SPB 2510. Premium CBD products in the north of Malta. Work time -12:00 - 22:00." },
 ];
 
 const guidePages = [
@@ -266,7 +266,7 @@ function guideDesc(slug) {
       label +
       " in Malta. Buy from MCW CBD Relax Shop in " +
       loc +
-      " - daily hours 12:00–22:00. Premium quality, lab-tested, fully legal in Malta."
+      " - Work time -12:00 - 22:00. Premium quality, lab-tested, fully legal in Malta."
     );
   }
   return (

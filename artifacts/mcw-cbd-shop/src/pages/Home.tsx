@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with four verified locations in Valletta, Sliema, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Daily hours: 12:00–22:00 — visit us in store." />
+      <SEO title="MCW CBD Relax Shop — Malta's #1 Hemp & CBD Destination" description="Malta's #1 CBD shop with four verified locations in Valletta, Sliema, Mellieha, and Bugibba. Shop premium CBD oils, flowers, vapes, and gummies. Work time -12:00 - 22:00 — visit us in store." />
       
       {/* HERO SECTION - CINEMATIC */}
       <section className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050505]">
@@ -516,7 +516,7 @@ export default function Home() {
       {/* FOOTER CTA BANNER */}
       <section className="py-32 bg-[#00C8C8] text-black text-center px-4 flex flex-col items-center justify-center border-t-4 border-black">
         <h2 className="text-7xl md:text-[9rem] font-bebas leading-[0.8] tracking-tighter mb-6">VISIT OUR STORES</h2>
-        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">BROWSE &amp; PURCHASE IN STORE · DAILY 12:00–22:00</p>
+        <p className="text-2xl md:text-3xl font-black uppercase tracking-[0.3em] mb-12 opacity-90">BROWSE &amp; PURCHASE IN STORE · Work time -12:00 - 22:00</p>
         <a 
           href="/store-locator"
           className="inline-block px-16 py-6 bg-black text-white font-black text-xl md:text-2xl uppercase tracking-widest hover:bg-white hover:text-black transition-colors shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:translate-y-2 hover:translate-x-2"

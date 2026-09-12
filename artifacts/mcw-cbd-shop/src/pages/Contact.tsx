@@ -17,9 +17,9 @@ const contactItems = [
   },
   {
     icon: Clock,
-    label: "Store Hours",
-    value: "Daily · 12:00–22:00",
-    sub: "Every day, all locations",
+    label: "Work time",
+    value: "Work time -12:00 - 22:00",
+    sub: "All locations",
   },
 ];
 
@@ -132,8 +132,8 @@ export default function Contact() {
             <div className="bg-[#080808] border border-gray-800 p-7 md:p-8">
               <p className="text-gray-400 text-sm leading-relaxed">
                 MCW is an in-store shop. Visit any of our four Malta locations for product guidance, purchases, and
-                answers to your questions. Use the store locator to check opening hours and get directions to the branch
-                that suits you.
+                answers to your questions. Work time -12:00 - 22:00. Use the store locator to get directions to the
+                branch that suits you.
               </p>
               <a
                 href="/store-locator"
@@ -143,7 +143,7 @@ export default function Contact() {
                 Visit Stores
               </a>
               <p className="text-gray-700 text-xs mt-5 leading-relaxed">
-                Walk-ins are welcome daily from 12:00–22:00. Select a location below or open the store locator for
+                Walk-ins are welcome. Work time -12:00 - 22:00. Select a location below or open the store locator for
                 full directions.
               </p>
             </div>

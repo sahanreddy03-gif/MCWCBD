@@ -305,7 +305,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">🕐</span>
-                  <span>Daily · 12:00–22:00</span>
+                  <span>Work time -12:00 - 22:00</span>
                 </li>
               </ul>
               <div className="mt-6 pt-5 border-t border-white/10">

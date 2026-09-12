@@ -52,7 +52,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">6. Contact</h2>
-            <p>Data controller: MCW CBD Relax Shop, Malta. For in-person questions, visit any of our 4 stores island-wide. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses, opening hours, and directions.</p>
+            <p>Data controller: MCW CBD Relax Shop, Malta. For in-person questions, visit any of our 4 stores island-wide. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses and directions. Work time -12:00 - 22:00.</p>
           </section>
 
         </div>

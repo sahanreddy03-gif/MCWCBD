@@ -146,7 +146,7 @@ export default function RollingPapersInMellieha() {
                   <MapPin className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-bold text-white">Find a Store</p>
-                    <p className="text-gray-400 text-sm">Available during store hours</p>
+                    <p className="text-gray-400 text-sm">Work time -12:00 - 22:00</p>
                   </div>
                 </div>
               </div>
