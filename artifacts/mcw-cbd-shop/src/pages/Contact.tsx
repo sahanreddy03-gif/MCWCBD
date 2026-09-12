@@ -1,4 +1,4 @@
-import { MapPin, Clock, Mail } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 import heroContactImg from "../assets/hero-contact.webp";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
@@ -7,13 +7,6 @@ import { MCW_STORES } from "@/lib/locations";
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
 const contactItems = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "citymarketmellieha@gmail.com",
-    sub: "For product questions and store support",
-    href: "mailto:citymarketmellieha@gmail.com",
-  },
   {
     icon: MapPin,
     label: "Main Store",
@@ -44,7 +37,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact MCW — CBD Shop Malta"
-        description="Email citymarketmellieha@gmail.com or visit MCW CBD Relax Shop at one of our four verified Malta locations."
+        description="Visit MCW CBD Relax Shop at one of our four verified Malta locations for in-person purchasing and questions."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">

@@ -81,12 +81,12 @@ export default function Compliance() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">Request Lab Reports</h2>
-            <p className="text-sm mb-4">We are fully transparent about our product testing. To request a Certificate of Analysis (CoA) for any product, email us or ask our team in store:</p>
+            <p className="text-sm mb-4">We are fully transparent about our product testing. To request a Certificate of Analysis (CoA) for any product, ask our team in store:</p>
               <a
-                href="mailto:citymarketmellieha@gmail.com?subject=Lab%20report%20request"
+                href="/store-locator"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-black font-black uppercase tracking-widest text-sm px-6 py-3 transition-colors"
             >
-                Request Lab Report by Email
+                Find a Store to Ask In Person
             </a>
           </section>
 

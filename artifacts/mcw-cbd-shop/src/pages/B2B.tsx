@@ -121,10 +121,10 @@ export default function B2BElitePartnership() {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-12 px-4 sm:px-0">
             <a
-              href="mailto:citymarketmellieha@gmail.com?subject=Wholesale%20partnership%20enquiry"
+              href="/store-locator"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base"
             >
-              Visit MCW Stores <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              Find a Store <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a
               href="#journey"
@@ -393,13 +393,13 @@ export default function B2BElitePartnership() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="mailto:citymarketmellieha@gmail.com?subject=Wholesale%20partnership%20enquiry"
+              href="/store-locator"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-black font-bold rounded-lg hover:shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
             >
               Visit MCW Stores
             </a>
             <a
-              href="mailto:citymarketmellieha@gmail.com?subject=Wholesale%20consultation%20enquiry"
+              href="/store-locator"
               className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-green-500 text-green-400 font-bold rounded-lg hover:bg-green-500 hover:text-black transition-all duration-300 text-sm sm:text-base"
             >
               Find a Store
