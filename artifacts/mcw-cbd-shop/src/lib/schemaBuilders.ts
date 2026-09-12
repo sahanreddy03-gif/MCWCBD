@@ -8,7 +8,7 @@ export function localBizSchema(slug: string, label: string) {
     name: `MCW CBD Relax Shop — ${label}`,
     url: `https://mcwcbd.com/guides/${slug}`,
     ...(store?.mapNote ? { description: store.mapNote } : {}),
-    openingHours: "Mo-Su 09:00-23:30",
+    openingHours: "Mo-Su 12:00-22:00",
     priceRange: "€€",
     ...(store
       ? {

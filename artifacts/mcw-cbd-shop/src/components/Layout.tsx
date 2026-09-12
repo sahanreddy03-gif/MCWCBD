@@ -43,7 +43,7 @@ const LOCAL_BUSINESS_SCHEMA = {
         latitude: store.latitude,
         longitude: store.longitude,
       },
-      openingHours: "Mo-Su 09:00-23:30",
+      openingHours: "Mo-Su 12:00-22:00",
       priceRange: "€€",
       hasMap: store.googleMapsUrl,
       parentOrganization: { "@id": "https://mcwcbd.com/#organization" },
@@ -305,7 +305,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="text-gray-400 text-sm flex items-start gap-3">
                   <span className="text-[#22c55e] text-base shrink-0">🕐</span>
-                  <span>Open Daily · 9am – 11:30pm</span>
+                  <span>Daily · 12:00–22:00</span>
                 </li>
               </ul>
               <div className="mt-6 pt-5 border-t border-white/10">

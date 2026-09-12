@@ -274,7 +274,7 @@ export default function Shop() {
           <span className="hidden sm:inline text-white/20 font-black">·</span>
           <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🛍️ Purchase in store</span>
           <span className="hidden sm:inline text-white/20 font-black">·</span>
-          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🕙 Open daily until 11:30pm</span>
+          <span className="text-[10px] font-black uppercase tracking-widest text-white/50">🕙 Daily 12:00–22:00</span>
         </div>
       </div>
 

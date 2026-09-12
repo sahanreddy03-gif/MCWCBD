@@ -7,7 +7,7 @@ const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transi
 
 const stores = MCW_STORES.map((store) => ({
   ...store,
-  hours: "Open · Closes 11:30 pm",
+  hours: "Daily · 12:00–22:00",
   featured: store.id === "valletta",
 }));
 
@@ -25,7 +25,7 @@ export default function StoreLocator() {
     <>
       <SEO
         title="Find a CBD Store in Malta — MCW Locations"
-        description="MCW CBD Relax Shop has four verified locations across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Open daily until 11:30 pm. Visit us in store."
+        description="MCW CBD Relax Shop has four verified locations across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Daily hours: 12:00–22:00. Visit us in store."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -40,7 +40,7 @@ export default function StoreLocator() {
             FIND US
           </h1>
           <p className="text-gray-400 text-lg max-w-lg mx-auto leading-relaxed">
-            Walk in at any of our premium CBD stores across Malta — open every day until 11:30 pm.
+            Visit any of our premium CBD stores across Malta — daily hours are 12:00–22:00.
           </p>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function StoreLocator() {
         >
           <p className="font-bebas text-2xl tracking-widest text-green-400 mb-3">Walk-ins Always Welcome</p>
           <p className="text-gray-600 text-sm max-w-lg mx-auto leading-relaxed">
-            All MCW stores are open daily until 11:30 pm. Our expert staff will guide you to the perfect product for your lifestyle.
+             All MCW stores have daily hours of 12:00–22:00. Our expert staff will guide you to the perfect product for your lifestyle.
           </p>
         </motion.div>
 

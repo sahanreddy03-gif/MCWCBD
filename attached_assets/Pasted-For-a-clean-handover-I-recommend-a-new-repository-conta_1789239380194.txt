@@ -1,0 +1,18 @@
+For a clean handover, I recommend a new repository containing only the cleaned current source, without the old commit history. Rewriting the existing repository is more disruptive and cannot guarantee removal from existing clones, forks, or cached records.
+
+I have not yet verified or cleaned GitHub deployment records, so I cannot honestly say everything there is cleared.
+
+
+
+Worked for 48 seconds
+Work time - 12:00 - 22:00 update this in website
+
+Just now
+I’ll update the opening hours to 12:00–22:00 throughout the website, including store pages, the footer, and search-engine information.
+
+
+
+Subagent: Update MCW shop working hours to daily 12:00–22:00 throughout artifacts/mcw-cbd-shop only. All visible footer/home/contact/stores/locator FAQ blog guides programmatic and meta descriptions, openingHours JSON-LD index/prerender public llms. Replace old 09:00 / 9am openings and 23:30 / 11:30pm closings, inspect alternate formats. Display full range 12:00–22:00 on main surfaces; no static 'Open now' unsupported claim. Keep daily schedule. Do not modify unrelated data phone email maps. Use apply_patch. Read react-vite skill. Verify no old hours in active source/public and node --check prerender plus git diff --check. Report succinctly. No workflow restart/screenshot main does that.
+Subagent: Update MCW shop working hours to daily 12:00–22:00 throughout artifacts/mcw-cbd-shop only. All visible footer/home/contact/stores/locator FAQ blog guides programmatic and meta descriptions, openingHours JSON-LD index/prerender public llms. Replace old 09:00 / 9am openings and 23:30 / 11:30pm closings, inspect alternate formats. Display full range 12:00–22:00 on main surfaces; no static 'Open now' unsupported claim. Keep daily schedule. Do not modify unrelated data phone email maps. Use apply_patch. Read react-vite skill. Verify no old hours in active source/public and node --check prerender plus git diff --check. Report succinctly. No workflow restart/screenshot main does that.
+Work time - 12:00 - 22:00 update this in website I’ll update the opening hours to **12:00–22:00** throughout the website, including store pages, the footer, and search-engine information. Agent activity
+

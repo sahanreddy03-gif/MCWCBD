@@ -205,7 +205,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                   Get {page.label} today
                 </h3>
                 <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                  Browse the range online, then visit one of our 4 Malta stores to purchase in person. Open daily until 11:30 pm.
+                  Browse the range online, then visit one of our 4 Malta stores to purchase in person. Daily hours: 12:00–22:00.
                 </p>
 
                 <Link
@@ -255,7 +255,7 @@ export default function SeoPage({ slug }: SeoPageProps) {
                   <p className="text-gray-400 text-xs">{store.address}</p>
                   {store.addressNote && <p className="text-amber-500/80 text-[10px] mt-1">{store.addressNote}</p>}
                   {store.mapNote && <p className="text-amber-500/80 text-[10px] mt-1">{store.mapNote}</p>}
-                  <p className="text-green-500 text-xs mt-1">Open daily until 11:30 pm</p>
+                  <p className="text-green-500 text-xs mt-1">Daily · 12:00–22:00</p>
                   <div className="flex gap-3 mt-3">
                     <a
                       href={store.googleMapsUrl}

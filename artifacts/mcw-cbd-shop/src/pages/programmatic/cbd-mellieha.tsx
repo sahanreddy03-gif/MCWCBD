@@ -36,7 +36,7 @@ export default function CBDMellieha() {
             <div className="flex items-start">
               <Clock className="w-6 h-6 text-green-400 mr-4 mt-1 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-green-300">Open - 11:30 pm Daily</h3>
+                <h3 className="font-bold text-green-300">Daily · 12:00–22:00</h3>
                 <p className="text-gray-300">Fast service and expert advice</p>
               </div>
             </div>

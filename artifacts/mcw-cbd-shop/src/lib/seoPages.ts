@@ -67,7 +67,7 @@ function parseCitySlug(slug: string): string | null {
 function buildLocationContent(product: string, location: string): { h1: string; intro: string; bodyParagraphs: string[] } {
   return {
     h1: `Buy ${product} in ${location}, Malta`,
-    intro: `Looking for ${product} in ${location}? MCW CBD Relax Shop is ${location}'s #1 destination for premium CBD products. Open daily until 11:30 pm, we carry a full range of lab-tested CBD products including oils, flowers, vapes, gummies, and accessories.`,
+    intro: `Looking for ${product} in ${location}? MCW CBD Relax Shop is ${location}'s #1 destination for premium CBD products. Daily hours are 12:00–22:00, and we carry a full range of lab-tested CBD products including oils, flowers, vapes, gummies, and accessories.`,
     bodyParagraphs: [
       `Our ${product.toLowerCase()} selection in ${location} includes products from Malta's most trusted brands. Every product is independently lab-tested and contains less than 0.2% THC, making them fully legal to purchase and use in Malta.`,
       `Whether you're new to CBD or an experienced user, our knowledgeable staff at the ${location} store can help you find the right product and dosage. We provide personalised recommendations based on your needs and lifestyle.`,
@@ -83,7 +83,7 @@ function buildCityContent(city: string): { h1: string; intro: string; bodyParagr
     intro: `MCW CBD Relax Shop is ${city}'s premier CBD and hemp accessories destination. With a full range of CBD oils, flowers, vapes, hash, gummies, and lifestyle accessories, we have everything you need for a relaxed lifestyle.`,
     bodyParagraphs: [
       `Our ${city} customers enjoy access to Malta's widest selection of premium CBD products, all independently lab-tested and 100% legal. From starter kits to premium oils, we cater to every budget and experience level.`,
-      `MCW CBD Relax Shop serves ${city} with in-store shopping and a full range of products to browse online before your visit. Our store is open daily until 11:30 pm so you can shop when it suits you.`,
+      `MCW CBD Relax Shop serves ${city} with in-store shopping and a full range of products to browse online before your visit. Daily hours are 12:00–22:00 so you can shop when it suits you.`,
       `Every MCW product is sourced from trusted EU hemp farms and tested by independent laboratories. You'll always find the lab report for any product you're interested in — we believe in full transparency.`,
       `Join thousands of satisfied customers in ${city} who trust MCW for their CBD needs. Whether you're managing stress, improving sleep, or simply looking for natural wellness solutions, we're here to help.`,
     ],
@@ -163,7 +163,7 @@ function buildAboutContent(label: string): { h1: string; intro: string; bodyPara
     intro: `${label}: learn more about MCW CBD Relax Shop, Malta's #1 hemp and CBD destination. Since opening in 2021, we've grown into a trusted community institution with four locations across Malta.`,
     bodyParagraphs: [
       `MCW CBD Relax Shop was founded with a simple mission: to provide Maltese residents with access to premium, lab-tested CBD products and the education they need to use them confidently.`,
-      `Today, MCW operates four stores in Valletta, Sliema, Mellieha, and Bugibba — serving customers from all walks of life, from wellness enthusiasts to curious first-timers. All stores are open daily until 11:30 pm.`,
+      `Today, MCW operates four stores in Valletta, Sliema, Mellieha, and Bugibba — serving customers from all walks of life, from wellness enthusiasts to curious first-timers. All stores have daily hours of 12:00–22:00.`,
       `We partner only with brands that share our commitment to quality, transparency, and legal compliance. Every product on our shelves has been reviewed, tested, and approved by our team before it reaches you.`,
       `${label} is a story of community, quality, and passion. Thank you for being part of the MCW family. Visit us in-store or use our contact page to learn more.`,
     ],
@@ -185,7 +185,7 @@ function generatePageContent(slug: string, label: string, cat: string): {
       const { h1, intro, bodyParagraphs } = buildLocationContent(product, location);
       return {
         title: `${product} in ${location} Malta — MCW CBD Shop`,
-        metaDescription: `Buy ${product} in ${location}, Malta at MCW CBD Relax Shop. Premium quality, lab-tested, 100% legal. Visit our ${location} store to browse and purchase in person. Open daily until 11:30 pm.`,
+        metaDescription: `Buy ${product} in ${location}, Malta at MCW CBD Relax Shop. Premium quality, lab-tested, 100% legal. Visit our ${location} store to browse and purchase in person. Daily hours: 12:00–22:00.`,
         h1,
         intro,
         bodyParagraphs,
@@ -200,7 +200,7 @@ function generatePageContent(slug: string, label: string, cat: string): {
       const { h1, intro, bodyParagraphs } = buildCityContent(city);
       return {
         title: `CBD in ${city}, Malta — MCW CBD Relax Shop`,
-        metaDescription: `Looking for CBD in ${city}? MCW CBD Relax Shop is ${city}'s #1 CBD destination. Shop oils, flowers, vapes, gummies, and more. Open daily until 11:30 pm. Purchase in store.`,
+        metaDescription: `Looking for CBD in ${city}? MCW CBD Relax Shop is ${city}'s #1 CBD destination. Shop oils, flowers, vapes, gummies, and more. Daily hours: 12:00–22:00. Purchase in store.`,
         h1,
         intro,
         bodyParagraphs,

@@ -71,6 +71,7 @@ function ProgrammaticStoreLocations() {
               {store.mapNote && (
                 <p className="text-amber-500/80 text-[10px] mt-1 leading-relaxed">{store.mapNote}</p>
               )}
+               <p className="text-green-400 text-[10px] mt-2">Daily · 12:00–22:00</p>
               <div className="flex flex-wrap gap-3 mt-3">
                 <a
                   href={store.googleMapsUrl}

@@ -6,13 +6,13 @@ import { MCW_STORES } from "@/lib/locations";
 
 const STORES = MCW_STORES.map((store) => ({
   ...store,
-  hours: "Open daily · Closes 11:30 pm",
+  hours: "Daily · 12:00–22:00",
 }));
 
 export default function Stores() {
   return (
     <>
-      <SEO title="MCW CBD Shop Locations — Valletta, Sliema, Mellieha & Bugibba" description="Find MCW CBD Relax Shop near you. Four verified stores across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Open daily until 11:30 pm. Visit us in store." />
+      <SEO title="MCW CBD Shop Locations — Valletta, Sliema, Mellieha & Bugibba" description="Find MCW CBD Relax Shop near you. Four verified stores across Malta: Valletta (main branch), Sliema, Mellieha, and Bugibba. Daily hours: 12:00–22:00. Visit us in store." />
 
       {/* Photo Hero */}
       <div className="relative h-72 sm:h-[420px] overflow-hidden">

@@ -18,7 +18,7 @@ const contactItems = [
   {
     icon: Clock,
     label: "Store Hours",
-    value: "Open · Closes 11:30 pm",
+    value: "Daily · 12:00–22:00",
     sub: "Every day, all locations",
   },
 ];
@@ -143,7 +143,7 @@ export default function Contact() {
                 Visit Stores
               </a>
               <p className="text-gray-700 text-xs mt-5 leading-relaxed">
-                Walk-ins are welcome every day until 11:30 pm. Select a location below or open the store locator for
+                Walk-ins are welcome daily from 12:00–22:00. Select a location below or open the store locator for
                 full directions.
               </p>
             </div>
