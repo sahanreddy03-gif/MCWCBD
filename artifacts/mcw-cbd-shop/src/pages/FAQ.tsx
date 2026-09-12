@@ -11,7 +11,7 @@ const faqs = [
   { q: "What are the benefits of CBD?", a: "Many users report relaxation, stress relief, and improved sleep. CBD interacts with the endocannabinoid system. Always consult a healthcare professional before use." },
   { q: "How long do the effects last?", a: "Vapes and flowers: 5–15 min onset, 2–4 hours duration. Oils take longer but last longer. Individual results vary." },
   { q: "Are your products lab-tested?", a: "Yes. Every MCW product has third-party lab reports verifying cannabinoid profiles, potency, pesticides, heavy metals, and purity." },
-  { q: "What payment methods do you accept?", a: "Revolut transfer and cash in store. You can pay in person at any of our store locations." },
+  { q: "What payment methods do you accept?", a: "Only Cash In Store. Pay in person at any of our store locations." },
   { q: "Do you offer delivery?", a: "No, we don't offer delivery — purchases are made in store. Visit any of our 4 stores (Valletta, Sliema, Mellieha, Bugibba), open daily until 11:30 pm." },
   { q: "What brands do you stock?", a: "We carry premium international CBD brands including Canntropy, Euphoria, Hemnia, Jeeter, and many more — all verified for quality and Malta compliance." },
   { q: "Do you sell HHC, HHCp, or THCP?", a: "MCW does not sell HHCp or THCP products. Selected HHC items (a minor cannabinoid) may be stocked where legal under current Maltese law. All products are verified compliant before stocking." },

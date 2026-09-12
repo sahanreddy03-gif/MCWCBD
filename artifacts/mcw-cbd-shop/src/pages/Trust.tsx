@@ -25,7 +25,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Customer Protection",
-    body: "Secure in-store purchasing, multiple payment options, and knowledgeable support.",
+    body: "In-store purchasing, cash-only payment, and knowledgeable support.",
   },
 ];
 

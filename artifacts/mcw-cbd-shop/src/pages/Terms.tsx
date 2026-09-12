@@ -35,7 +35,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">4. Orders & Payment</h2>
-            <p>Products are purchased in store. Payment is accepted via Revolut or cash in store. We do not take remote orders or payments.</p>
+            <p>Products are purchased in store. Payment: Only Cash In Store. We do not take remote orders or payments.</p>
           </section>
 
           <section>

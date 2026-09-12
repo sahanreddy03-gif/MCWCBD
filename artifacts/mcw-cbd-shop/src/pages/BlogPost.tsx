@@ -27,7 +27,7 @@ const CATEGORY_FAQS: Record<string, { q: string; a: string }[]> = {
   Local: [
     { q: "What are MCW's opening hours?", a: "All 4 MCW stores are open daily until 11:30 pm. Visit a store to browse and purchase in person." },
     { q: "Do you offer delivery in Malta?", a: "No. MCW is in-store purchasing only — we don't deliver. Visit any of our 4 stores in Valletta, Sliema, Mellieha, or Bugibba." },
-    { q: "How do I pay for my order?", a: "We accept Revolut transfer and cash in store. You can pay in person at any of our store locations." },
+    { q: "How do I pay for my order?", a: "Only Cash In Store. Pay in person at any of our store locations." },
   ],
   Products: [
     { q: "Are your products third-party lab tested?", a: "Yes. Every MCW product comes with a Certificate of Analysis (COA) from an independent EU laboratory confirming cannabinoid profile, THC content (<0.2%), and absence of pesticides and heavy metals." },

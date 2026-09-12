@@ -21,7 +21,7 @@ export default function Privacy() {
               <li>Preferred store location for in-store purchasing</li>
               <li>Order details and payment confirmation</li>
             </ul>
-            <p className="mt-4">We do not collect sensitive personal data or payment card information. Revolut payments are processed through the Revolut platform and governed by their privacy policy.</p>
+            <p className="mt-4">We do not collect sensitive personal data or payment card information. We accept only cash in store and do not process online payments.</p>
           </section>
 
           <section>

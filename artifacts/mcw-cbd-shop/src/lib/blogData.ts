@@ -614,8 +614,7 @@ We speak English fluently and are accustomed to helping international visitors.
 ## Payment and Convenience
 
 In-store at MCW Bugibba:
-- **Cash** — Always accepted
-- **Revolut** — Transfer in-store using our Revolut account
+- **Only Cash In Store** — Pay in person.
 
 No card machine needed. Simple and fast.
 
