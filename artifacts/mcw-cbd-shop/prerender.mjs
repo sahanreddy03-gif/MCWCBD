@@ -128,7 +128,7 @@ const corePages = [
   {
     path: "/contact",
     title: "Contact MCW CBD Malta | Email and Store Locations",
-    description: "Get in touch with MCW CBD Relax Shop by email, or visit a store for in-person purchasing and questions. Open daily until 23:30.",
+    description: "Email citymarketmellieha@gmail.com or visit MCW CBD Relax Shop at one of four Malta stores for in-person purchasing and questions. Open daily until 23:30.",
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Contact", url: BASE + "/contact" }]),
   },
   {

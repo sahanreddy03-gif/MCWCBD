@@ -15,9 +15,9 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">1. Data We Collect</h2>
-            <p>When you contact us by email or through our website, we may collect:</p>
+            <p>When you contact us by email, visit us in store, or make a purchase, we may collect:</p>
             <ul className="list-disc list-inside space-y-1 mt-4">
-              <li>Your name and email address</li>
+              <li>Your name and any contact details you choose to provide</li>
               <li>Preferred store location for in-store purchasing</li>
               <li>Order details and payment confirmation</li>
             </ul>
@@ -47,12 +47,12 @@ export default function Privacy() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">5. Your Rights</h2>
-            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, contact us directly at <strong>hello@oarcdigital.com</strong>.</p>
+            <p>Under GDPR, you have the right to access, correct, or delete personal data we hold about you. To exercise these rights, email <a href="mailto:citymarketmellieha@gmail.com" className="text-green-400 hover:text-green-300 underline underline-offset-2">citymarketmellieha@gmail.com</a> or visit an MCW store. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> to find your nearest branch.</p>
           </section>
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">6. Contact</h2>
-            <p>Data controller: MCW CBD Relax Shop, Malta. Contact: <strong>hello@oarcdigital.com</strong>, or visit any of our 4 stores island-wide.</p>
+            <p>Data controller: MCW CBD Relax Shop, Malta. Contact <a href="mailto:citymarketmellieha@gmail.com" className="text-green-400 hover:text-green-300 underline underline-offset-2">citymarketmellieha@gmail.com</a> or visit any of our 4 stores island-wide. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses, opening hours, and directions.</p>
           </section>
 
         </div>

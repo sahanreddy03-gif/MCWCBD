@@ -96,7 +96,7 @@ export default function Brands() {
         <div className="mt-32 p-12 bg-primary/10 border border-primary/20 rounded-3xl text-center">
           <h2 className="text-4xl font-bebas tracking-wide mb-4">Want to stock your brand at MCW?</h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">We are always looking to expand our catalog with high-quality, fully compliant products.</p>
-          <a href="mailto:info@mcw.com.mt" className="inline-block px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest rounded-xl hover:bg-primary/90 transition-colors">
+          <a href="mailto:citymarketmellieha@gmail.com" className="inline-block px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest rounded-xl hover:bg-primary/90 transition-colors">
             Contact Purchasing
           </a>
         </div>

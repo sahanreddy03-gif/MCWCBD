@@ -41,7 +41,7 @@ const commitments = [
   { title: "Transparency", body: "Complete product info — lab reports, cannabinoid profiles, and sourcing details for every item in our catalogue." },
   { title: "Quality Assurance", body: "Our team personally evaluates every product batch before it hits the shelf. Zero compromise on standards." },
   { title: "Legal Compliance", body: "Strictly Malta-law-aligned. Every product sold is fully legal for purchase and consumption on the island." },
-  { title: "Expert Support", body: "Questions about effects, dosage, or products? Email hello@oarcdigital.com or visit a store." },
+  { title: "Expert Support", body: "Questions about effects, dosage, or products? Email citymarketmellieha@gmail.com or visit a store for in-person guidance." },
 ];
 
 const stores = [

@@ -71,7 +71,7 @@ function buildLocationContent(product: string, location: string): { h1: string; 
     bodyParagraphs: [
       `Our ${product.toLowerCase()} selection in ${location} includes products from Malta's most trusted brands. Every product is independently lab-tested and contains less than 0.2% THC, making them fully legal to purchase and use in Malta.`,
       `Whether you're new to CBD or an experienced user, our knowledgeable staff at the ${location} store can help you find the right product and dosage. We provide personalised recommendations based on your needs and lifestyle.`,
-      `Can't make it to our ${location} store right now? Browse the range online, then visit any of our four Malta stores to purchase in person. Contact us by email for product enquiries and expert advice.`,
+      `Can't make it to our ${location} store right now? Browse the range online, then visit any of our four Malta stores to purchase in person. Contact us at citymarketmellieha@gmail.com for product enquiries and expert advice.`,
       `MCW has served the ${location} community since 2021, building a reputation for quality, transparency, and exceptional customer service. All our products come with full lab reports so you know exactly what you're buying.`,
     ],
   };
@@ -113,7 +113,7 @@ function buildComparisonContent(label: string): { h1: string; intro: string; bod
       `${a} and ${b} are both popular products available at all four MCW CBD Relax Shop locations (Valletta, Sliema, Mellieha, Bugibba). The best choice depends on your personal preferences, desired effects, and how you prefer to use CBD.`,
       `When comparing ${a} and ${b}, consider factors like onset time, duration, ease of use, and your daily routine. Both options have their merits: some customers love the convenience of one, while others prefer the experience of the other. Our staff can walk you through the differences in person.`,
       `At MCW, we carry both ${a} and ${b} from Malta's most trusted CBD brands. All products are independently lab-tested, contain less than 0.2% THC, and are fully legal under Malta's current regulations.`,
-      `Not sure which to choose? Visit any MCW CBD Relax Shop or use our contact page to reach the team by email — our knowledgeable staff will help you find the right product for your needs and budget.`,
+      `Not sure which to choose? Email citymarketmellieha@gmail.com or visit any MCW CBD Relax Shop — our knowledgeable staff will help you find the right product for your needs and budget.`,
     ],
   };
 }
@@ -125,7 +125,7 @@ function buildGuideContent(label: string): { h1: string; intro: string; bodyPara
     bodyParagraphs: [
       `Understanding ${label.toLowerCase()} is essential for getting the most out of your CBD experience. At MCW, we're committed to educating our customers so they can make informed, confident decisions.`,
       `Malta's CBD regulations allow adults to purchase and use CBD products containing less than 0.2% THC. All MCW products are fully compliant and independently lab-tested, giving you complete peace of mind.`,
-      `If you have specific questions about ${label.toLowerCase()}, our expert team at MCW is available in-store at all four locations (Valletta, Sliema, Mellieha, Bugibba) or by email through our contact page.`,
+      `If you have specific questions about ${label.toLowerCase()}, email citymarketmellieha@gmail.com or visit our expert team in-store at any of four locations (Valletta, Sliema, Mellieha, Bugibba).`,
       `MCW CBD Relax Shop has been Malta's trusted CBD destination since 2021. We combine premium product selection with expert knowledge to help every customer find the right solution.`,
     ],
   };
@@ -139,7 +139,7 @@ function buildEducationContent(label: string): { h1: string; intro: string; body
       `The CBD industry is rapidly evolving, and understanding the science behind ${label.toLowerCase()} helps you make better purchasing decisions. At MCW, we only stock products that meet our strict quality standards.`,
       `Whether you're exploring CBD for the first time or deepening your knowledge, understanding ${label.toLowerCase()} is a valuable step on your wellness journey. Malta's CBD market has grown significantly, and quality education is more important than ever.`,
       `All MCW CBD products are sourced from EU-certified hemp farms and tested by independent laboratories. We provide full transparency on cannabinoid content, terpene profiles, and compliance with Malta's legal THC limits.`,
-      `Have more questions about ${label.toLowerCase()}? Visit any of our four MCW stores in Valletta, Sliema, Mellieha, or Bugibba, or email hello@oarcdigital.com.`,
+      `Have more questions about ${label.toLowerCase()}? Email citymarketmellieha@gmail.com or visit any of our four MCW stores in Valletta, Sliema, Mellieha, or Bugibba for in-person guidance.`,
     ],
   };
 }

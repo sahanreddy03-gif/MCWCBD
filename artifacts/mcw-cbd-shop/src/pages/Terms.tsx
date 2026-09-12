@@ -55,7 +55,7 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bebas text-4xl tracking-wide text-white mb-4">8. Contact</h2>
-            <p>For any questions regarding these terms, contact us at <strong>hello@oarcdigital.com</strong>, or visit any of our 4 store locations in Sliema, Mellieha, Bugibba, or Valletta.</p>
+            <p>For any questions regarding these terms, email <a href="mailto:citymarketmellieha@gmail.com" className="text-green-400 hover:text-green-300 underline underline-offset-2">citymarketmellieha@gmail.com</a> or visit any of our 4 store locations in Sliema, Mellieha, Bugibba, or Valletta. Use the <a href="/store-locator" className="text-green-400 hover:text-green-300 underline underline-offset-2">store locator</a> for addresses, opening hours, and directions.</p>
           </section>
 
         </div>

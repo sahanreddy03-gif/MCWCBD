@@ -1,6 +1,5 @@
 import { MapPin, Clock, Mail } from "lucide-react";
 import heroContactImg from "../assets/hero-contact.webp";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/SEO";
 import { MCW_STORES } from "@/lib/locations";
@@ -11,9 +10,9 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@oarcdigital.com",
-    sub: "We reply within 24 hours",
-    href: "mailto:hello@oarcdigital.com",
+    value: "citymarketmellieha@gmail.com",
+    sub: "For product questions and store support",
+    href: "mailto:citymarketmellieha@gmail.com",
   },
   {
     icon: MapPin,
@@ -32,18 +31,6 @@ const contactItems = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = `MCW enquiry from ${formData.name}`;
-    const body = `Hello MCW CBD Shop,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:hello@oarcdigital.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -57,7 +44,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact MCW — CBD Shop Malta"
-        description="Get in touch with MCW CBD Relax Shop by email or visit one of our four verified Malta locations in Valletta, Sliema, Mellieha, or Bugibba."
+        description="Email citymarketmellieha@gmail.com or visit MCW CBD Relax Shop at one of our four verified Malta locations."
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="min-h-screen bg-black text-white">
@@ -138,7 +125,7 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Visit Us */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -146,53 +133,27 @@ export default function Contact() {
             transition={{ duration: 0.55 }}
           >
             <h2 className="font-bebas text-4xl md:text-5xl tracking-widest text-white mb-8">
-              Send a <span className="text-green-400">Message</span>
+              Visit <span className="text-green-400">Us</span>
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {[
-                { name: "name", label: "Name", type: "text", placeholder: "Your name", required: true },
-                { name: "email", label: "Email", type: "email", placeholder: "your@email.com", required: true },
-              ].map(({ name, label, type, placeholder, required }) => (
-                <div key={name}>
-                  <label className="block text-[10px] text-gray-600 uppercase tracking-widest mb-2">{label}</label>
-                  <input
-                    type={type}
-                    name={name}
-                    value={formData[name as keyof typeof formData]}
-                    onChange={handleChange}
-                    required={required}
-                    placeholder={placeholder}
-                    className="w-full bg-[#080808] border border-gray-800 focus:border-green-700 text-white text-sm px-4 py-3 outline-none transition-colors placeholder:text-gray-800"
-                  />
-                </div>
-              ))}
-
-              <div>
-                <label className="block text-[10px] text-gray-600 uppercase tracking-widest mb-2">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  placeholder="Your message..."
-                  className="w-full bg-[#080808] border border-gray-800 focus:border-green-700 text-white text-sm px-4 py-3 outline-none resize-none transition-colors placeholder:text-gray-800"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest py-4 transition-colors flex items-center justify-center gap-2"
+            <div className="bg-[#080808] border border-gray-800 p-7 md:p-8">
+              <p className="text-gray-400 text-sm leading-relaxed">
+                MCW is an in-store shop. Visit any of our four Malta locations for product guidance, purchases, and
+                answers to your questions. Use the store locator to check opening hours and get directions to the branch
+                that suits you.
+              </p>
+              <a
+                href="/store-locator"
+                className="mt-8 w-full bg-green-500 hover:bg-green-400 text-black font-black text-sm uppercase tracking-widest py-4 transition-colors flex items-center justify-center gap-2"
               >
-                <Mail size={16} />
-                Open Email Draft
-              </button>
-            </form>
-
-            <p className="text-gray-700 text-xs mt-5 leading-relaxed">
-              Your email app will open with a draft addressed to hello@oarcdigital.com. Review it and send when ready.
-            </p>
+                <MapPin size={16} />
+                Visit Stores
+              </a>
+              <p className="text-gray-700 text-xs mt-5 leading-relaxed">
+                Walk-ins are welcome every day until 11:30 pm. Select a location below or open the store locator for
+                full directions.
+              </p>
+            </div>
           </motion.div>
 
         </div>

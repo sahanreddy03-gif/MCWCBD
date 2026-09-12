@@ -275,9 +275,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <h3 className="font-bebas text-2xl tracking-widest text-[#22c55e] mb-5 pb-2 border-b border-[#22c55e]/30">Connect</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="mailto:hello@oarcdigital.com" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
+                  <a href="mailto:citymarketmellieha@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-3">
                     <span className="text-[#22c55e] text-base">✉️</span>
-                    <span>hello@oarcdigital.com</span>
+                    <span>citymarketmellieha@gmail.com</span>
                   </a>
                 </li>
                 <li>
