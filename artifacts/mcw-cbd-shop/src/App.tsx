@@ -18,6 +18,7 @@ const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Guides = lazy(() => import("@/pages/Guides"));
 const ProgrammaticPage = lazy(() => import("@/pages/ProgrammaticPage"));
 const B2B = lazy(() => import("@/pages/B2B"));
+const Franchise = lazy(() => import("@/pages/Franchise"));
 const Terms = lazy(() => import("@/pages/Terms"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const Compliance = lazy(() => import("@/pages/Compliance"));
@@ -57,6 +58,7 @@ function Router() {
           <Route path="/guides" component={Guides} />
           <Route path="/guides/:slug" component={ProgrammaticPage} />
           <Route path="/b2b" component={B2B} />
+          <Route path="/franchise" component={Franchise} />
           <Route path="/terms" component={Terms} />
           <Route path="/privacy" component={Privacy} />
           <Route path="/compliance" component={Compliance} />

@@ -63,6 +63,7 @@ const navLinks = [
   { name: "Guides", path: "/guides" },
   { name: "Trust", path: "/trust" },
   { name: "Wholesale", path: "/b2b" },
+  { name: "Franchise", path: "/franchise" },
   { name: "Stores", path: "/store-locator" },
   { name: "FAQ", path: "/faq" },
   { name: "Contact", path: "/contact" },
@@ -99,7 +100,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-7 items-center">
+          <div className="hidden lg:flex gap-4 xl:gap-7 items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -130,12 +131,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </a>
             <Link
               href="/shop"
-              className="hidden md:flex items-center gap-1.5 bg-green-500 hover:bg-green-400 text-black font-black text-[11px] tracking-widest uppercase px-4 py-2 transition-colors"
+              className="hidden lg:flex items-center gap-1.5 whitespace-nowrap bg-green-500 hover:bg-green-400 text-black font-black text-[11px] tracking-widest uppercase px-4 py-2 transition-colors"
             >
               View Range
             </Link>
             <button
-              className="md:hidden text-gray-300 hover:text-white"
+              className="lg:hidden text-gray-300 hover:text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -146,7 +147,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black border-t border-green-900/40 pb-4">
+          <div className="lg:hidden bg-black border-t border-green-900/40 pb-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -241,6 +242,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   ["FAQ", "/faq"],
                   ["Contact", "/contact"],
                   ["Brands", "/brands"],
+                  ["Franchise", "/franchise"],
                 ].map(([label, href]) => (
                   <li key={label}>
                     <Link href={href} className="text-gray-400 hover:text-white text-sm transition-colors">

@@ -173,6 +173,12 @@ const corePages = [
     schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Wholesale", url: BASE + "/b2b" }]),
   },
   {
+    path: "/franchise",
+    title: "CBD Store Franchise Malta | €20,000 Package | MCW",
+    description: "Open your own CBD Relax Store in Malta. The €20,000 franchise package includes trademark rights, full store fit-out and equipment, an exclusive territory, 3 days of on-site training and ongoing support.",
+    schema: breadcrumb([{ name: "Home", url: BASE + "/" }, { name: "Franchise", url: BASE + "/franchise" }]),
+  },
+  {
     path: "/compliance",
     title: "CBD Compliance Malta | Legal Information | MCW",
     description: "Full legal and compliance information for CBD products sold at MCW in Malta. EU Directive 2019/515, Maltese law, THC limits, and more.",
