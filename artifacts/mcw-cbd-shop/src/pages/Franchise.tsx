@@ -293,7 +293,7 @@ function PackageCard() {
           <motion.div className="pointer-events-none absolute inset-0 rounded-[21px]" style={{ background: glare }} />
 
           <div className="relative px-7 pt-7 pb-6 sm:px-8 sm:pt-8">
-            <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
+            <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
               <span>Franchise package</span>
               <span className="flex items-center gap-1.5 text-green-400">
                 <span className="relative flex h-1.5 w-1.5">
@@ -305,7 +305,7 @@ function PackageCard() {
             </div>
 
             <PriceCounter className="mt-6 block font-bebas text-[5.25rem] sm:text-[6.5rem] leading-[0.8] tracking-tight text-white tabular-nums" />
-            <p className="mt-3 text-sm text-gray-400">Brand, fit-out, equipment, training and support.</p>
+            <p className="mt-3 text-sm text-gray-300">Brand, fit-out, equipment, training and support.</p>
           </div>
 
           <div className="relative mx-7 border-t border-dashed border-white/15 sm:mx-8" aria-hidden />
@@ -328,7 +328,7 @@ function PackageCard() {
           </ul>
 
           <div className="relative flex items-center justify-between border-t border-white/[0.06] px-7 py-4 sm:px-8">
-            <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gray-500">Assembly & installation</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gray-400">Assembly & installation</span>
             <span className="text-[10px] font-black uppercase tracking-[0.28em] text-green-400">Free</span>
           </div>
         </div>
@@ -425,7 +425,7 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.4 }}
-        className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] font-bold uppercase tracking-[0.32em] text-gray-500 transition-colors hover:text-green-400 lg:flex"
+        className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] font-bold uppercase tracking-[0.32em] text-gray-400 transition-colors hover:text-green-400 lg:flex"
       >
         Scroll to build your store
         <span className="flex h-10 w-6 justify-center rounded-full border border-white/20 pt-2 group-hover:border-green-400">
@@ -461,7 +461,7 @@ function FactStrip() {
             className={`px-5 py-8 sm:px-8 sm:py-10 ${i % 2 === 1 ? "border-l border-white/[0.07]" : ""} ${i > 1 ? "border-t border-white/[0.07] lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}
           >
             <p className="font-bebas text-4xl leading-none tracking-wide text-white sm:text-5xl">{f.value}</p>
-            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-500">{f.label}</p>
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-400">{f.label}</p>
           </motion.div>
         ))}
       </div>
@@ -502,7 +502,7 @@ function Included() {
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="lg:pt-14">
-            <p className="max-w-lg text-base leading-relaxed text-gray-400 sm:text-lg">
+            <p className="max-w-lg text-base leading-relaxed text-gray-300 sm:text-lg">
               Ten things come with the {PRICE_LABEL} package — from the name above the door to the coffee machine
               behind the counter.
             </p>
@@ -529,7 +529,7 @@ function Included() {
                       {current.group}
                     </motion.span>
                   </AnimatePresence>
-                  <span className="tabular-nums text-gray-500">
+                  <span className="tabular-nums text-gray-400">
                     {String(active + 1).padStart(2, "0")} / {INCLUSIONS.length}
                   </span>
                 </div>
@@ -623,7 +623,7 @@ function Included() {
                     <div className="flex-1">
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">{item.group}</p>
+                          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">{item.group}</p>
                           <h3 className="mt-2 font-bebas text-3xl uppercase leading-none tracking-wide text-white sm:text-[2.6rem]">
                             {item.title}
                           </h3>
@@ -632,7 +632,7 @@ function Included() {
                           <ItemIcon className="h-5 w-5" strokeWidth={1.5} />
                         </span>
                       </div>
-                      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-gray-400">{item.desc}</p>
+                      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-gray-300">{item.desc}</p>
                     </div>
                   </div>
                 </li>
@@ -665,7 +665,7 @@ function ChapterCard({ children }: { children: React.ReactNode }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.55 }}
         transition={{ duration: 0.7, ease: EASE }}
-        className="w-full max-w-md rounded-[22px] border border-white/10 bg-black/60 p-5 backdrop-blur-xl sm:p-8 lg:ml-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:max-w-[26rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none"
+        className="w-full max-w-md rounded-[22px] border border-white/10 bg-black/75 p-5 backdrop-blur-xl [text-shadow:0_1px_18px_rgba(0,0,0,0.85)] sm:p-8 lg:ml-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:max-w-[26rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none"
       >
         {children}
       </motion.div>
@@ -722,7 +722,7 @@ function StoreStory() {
           className={`absolute right-4 top-[7.25rem] z-10 w-44 rounded-xl bg-black/45 px-3 py-2.5 backdrop-blur-md transition-opacity duration-500 sm:right-8 sm:w-60 lg:top-32 ${inclusion ? "opacity-100" : "opacity-0"}`}
           aria-hidden
         >
-          <div className="flex items-baseline justify-between text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+          <div className="flex items-baseline justify-between text-[10px] font-bold uppercase tracking-[0.3em] text-gray-300">
             <span>Included</span>
             <span className="tabular-nums text-white">
               {String(inclusion || 1).padStart(2, "0")}
@@ -743,7 +743,7 @@ function StoreStory() {
 
         <a
           href="#road"
-          className="absolute bottom-6 right-8 z-10 hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 transition-colors hover:text-green-400 lg:flex"
+          className="absolute bottom-6 right-8 z-10 hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 transition-colors hover:text-green-400 lg:flex"
         >
           Skip the build <ArrowDown className="h-3.5 w-3.5" />
         </a>
@@ -771,12 +771,12 @@ function StoreStory() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="h-px flex-1 bg-white/15 lg:max-w-16" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">{item.group}</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-300">{item.group}</span>
             </div>
             <h3 className="mt-3 font-bebas text-[2.3rem] uppercase leading-[0.92] tracking-wide text-white sm:mt-4 sm:text-5xl lg:text-6xl">
               {item.title}
             </h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-gray-300 sm:mt-4 sm:text-base">{item.desc}</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-white/90 sm:mt-4 sm:text-[17px]">{item.desc}</p>
             <p className="mt-4 inline-flex sm:mt-6 items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-green-400">
               <Check className="h-3 w-3" strokeWidth={3} /> Included in the package
             </p>
@@ -848,7 +848,7 @@ function Journey() {
                 </span>
                 <div className="lg:mt-8">
                   <h3 className="font-bebas text-3xl uppercase leading-none tracking-wide text-white">{step.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-gray-400">{step.desc}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-gray-300">{step.desc}</p>
                 </div>
               </motion.li>
             ))}
@@ -873,7 +873,7 @@ function Range() {
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="lg:pt-14">
-            <p className="max-w-lg text-base leading-relaxed text-gray-400 sm:text-lg">
+            <p className="max-w-lg text-base leading-relaxed text-gray-300 sm:text-lg">
               A broad lifestyle range built for everyday customers and visitors alike — food, beverages, cosmetics,
               clothing, souvenirs and accessories.
             </p>
@@ -959,7 +959,7 @@ function Faq() {
             <h2 className="mt-6 font-bebas text-5xl uppercase leading-[0.9] tracking-tight text-white sm:text-7xl">
               Franchise <span className="text-green-400">FAQ.</span>
             </h2>
-            <p className="mt-6 max-w-sm text-base leading-relaxed text-gray-400">
+            <p className="mt-6 max-w-sm text-base leading-relaxed text-gray-300">
               The essentials, answered. Anything else, ask us directly — we're happy to talk it through.
             </p>
           </div>
@@ -998,7 +998,7 @@ function Faq() {
                       transition={{ duration: 0.45, ease: EASE }}
                       className="overflow-hidden"
                     >
-                      <p className="max-w-2xl pb-7 pr-12 text-[15px] leading-relaxed text-gray-400">{item.a}</p>
+                      <p className="max-w-2xl pb-7 pr-12 text-[15px] leading-relaxed text-gray-300">{item.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -1059,7 +1059,7 @@ function Enquire() {
             </a>
           </Reveal>
 
-          <Reveal delay={0.2} className="mt-12 flex flex-col items-center justify-center gap-3 text-xs text-gray-500 sm:flex-row sm:gap-8">
+          <Reveal delay={0.2} className="mt-12 flex flex-col items-center justify-center gap-3 text-xs text-gray-400 sm:flex-row sm:gap-8">
             <span className="flex items-center gap-2">
               <MapPin className="h-3.5 w-3.5 text-green-500" />
               {MAIN_STORE.address}
@@ -1081,7 +1081,7 @@ function Enquire() {
               key={label}
               className={`flex items-center justify-between px-6 py-5 sm:px-8 ${i > 0 ? "border-t border-white/[0.08] sm:border-l sm:border-t-0" : ""}`}
             >
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gray-500">{label}</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-gray-400">{label}</span>
               <span className="font-bebas text-2xl tracking-wide text-white">{value}</span>
             </div>
           ))}

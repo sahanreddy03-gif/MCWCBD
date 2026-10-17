@@ -1,5 +1,6 @@
 import {
   createContext,
+  memo,
   useContext,
   useEffect,
   useMemo,
@@ -9,7 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, Lightformer, RoundedBox } from "@react-three/drei";
+import { Environment, Lightformer, PerformanceMonitor, RoundedBox } from "@react-three/drei";
 import { Bloom, EffectComposer, Vignette } from "@react-three/postprocessing";
 import * as THREE from "three";
 
@@ -144,13 +145,14 @@ function useMaterials() {
       coolGlow: glow("#e8fff1", 2.2),
       glass: new THREE.MeshPhysicalMaterial({
         color: "#ffffff",
-        roughness: 0.04,
+        roughness: 0.02,
         metalness: 0,
-        transmission: 0.96,
-        thickness: 0.08,
-        ior: 1.45,
+        clearcoat: 1,
+        clearcoatRoughness: 0.05,
+        envMapIntensity: 1.6,
         transparent: true,
-        opacity: 0.9,
+        opacity: 0.2,
+        depthWrite: false,
       }),
       clearGlass: new THREE.MeshStandardMaterial({
         color: "#d1fae5",
@@ -383,19 +385,21 @@ function NeonSign({ mats, fontsReady }: { mats: Mats; fontsReady: boolean }) {
   });
 
   return (
-    <group ref={group} position={[0.6, 3.05, -2.9]}>
-      <RoundedBox
-        args={[4.05, 0.82, 0.06]}
-        radius={0.03}
-        smoothness={3}
-        material={mats.black}
-        position={[0, 0, -0.04]}
-      />
-      <mesh material={mat}>
-        <planeGeometry args={[3.85, 0.6]} />
-      </mesh>
-      <pointLight ref={light} color={GREEN} distance={4.5} decay={2} position={[0, 0, 0.6]} />
-    </group>
+    <>
+      <group ref={group} position={[0.6, 3.05, -2.9]}>
+        <RoundedBox
+          args={[4.05, 0.82, 0.06]}
+          radius={0.03}
+          smoothness={3}
+          material={mats.black}
+          position={[0, 0, -0.04]}
+        />
+        <mesh material={mat}>
+          <planeGeometry args={[3.85, 0.6]} />
+        </mesh>
+      </group>
+      <pointLight ref={light} color={GREEN} distance={4.5} decay={2} position={[0.6, 3.05, -2.3]} />
+    </>
   );
 }
 
@@ -459,12 +463,16 @@ function Plant({ mats, scale = 1 }: { mats: Mats; scale?: number }) {
   );
 }
 
-function Pendant({ mats, x }: { mats: Mats; x: number }) {
+function LampLight() {
   const p = useStory();
   const light = useRef<THREE.PointLight>(null);
   useFrame(() => {
-    if (light.current) light.current.intensity = arrive(p.current, 2, 0.25) * 2.4;
+    if (light.current) light.current.intensity = arrive(p.current, 2, 0.25) * 4.2;
   });
+  return <pointLight ref={light} color="#ffcf7a" distance={5.5} decay={2} position={[0.9, 3.0, 0.3]} />;
+}
+
+function Pendant({ mats, x }: { mats: Mats; x: number }) {
   return (
     <group position={[x, 0, 0.3]}>
       <mesh position={[0, 3.85, 0]} material={mats.black}>
@@ -476,7 +484,6 @@ function Pendant({ mats, x }: { mats: Mats; x: number }) {
       <mesh position={[0, 3.2, 0]} material={mats.warmGlow}>
         <sphereGeometry args={[0.07, 16, 16]} />
       </mesh>
-      <pointLight ref={light} color="#ffcf7a" distance={3.6} decay={2} position={[0, 3.05, 0]} />
     </group>
   );
 }
@@ -547,6 +554,7 @@ function Interior({ mats }: { mats: Mats }) {
         <Plant mats={mats} scale={0.7} />
       </Reveal>
 
+      <LampLight />
       {[-0.2, 0.9, 2.0].map((x, i) => (
         <Reveal key={x} at={2} delay={0.12 + i * 0.07} from={[0, 3.2, 0]} explode={[0, 1.4, 0]}>
           <Pendant mats={mats} x={x} />
@@ -630,7 +638,6 @@ function Fridge({ mats }: { mats: Mats }) {
   const p = useStory();
   const light = useRef<THREE.PointLight>(null);
   const inner = useRef<THREE.MeshBasicMaterial>(null);
-  const innerLight = useRef<THREE.PointLight>(null);
   const bottles = useMemo(() => {
     const out: { y: number; z: number; m: number }[] = [];
     [0.45, 0.88, 1.31, 1.74].forEach((y, row) => {
@@ -648,46 +655,46 @@ function Fridge({ mats }: { mats: Mats }) {
   useFrame(() => {
     const a = arrive(p.current, 4, 0.2);
     if (light.current) light.current.intensity = a * 3;
-    if (innerLight.current) innerLight.current.intensity = a * 3.5;
     if (inner.current) inner.current.color.setScalar(0.08 + a * 1.4);
   });
 
   return (
-    <Reveal at={4} position={[-3.55, 0, -1.25]} from={[-1.2, 0, 0]} explode={[1.6, 1.0, 0]}>
-      <mesh position={[0, 1.1, 0]} material={mats.black} castShadow receiveShadow>
-        <boxGeometry args={[0.8, 2.2, 1.02]} />
-      </mesh>
-      <mesh position={[0.05, 1.08, 0]}>
-        <boxGeometry args={[0.66, 1.86, 0.88]} />
-        <meshBasicMaterial ref={inner} color="#e8fff1" toneMapped={false} side={THREE.BackSide} />
-      </mesh>
-      {[0.42, 0.85, 1.28, 1.71].map((y) => (
-        <mesh key={y} position={[0.06, y, 0]} material={mats.steel}>
-          <boxGeometry args={[0.6, 0.015, 0.84]} />
+    <>
+      <Reveal at={4} position={[-3.55, 0, -1.25]} from={[-1.2, 0, 0]} explode={[1.6, 1.0, 0]}>
+        <mesh position={[0, 1.1, 0]} material={mats.black} castShadow receiveShadow>
+          <boxGeometry args={[0.8, 2.2, 1.02]} />
         </mesh>
-      ))}
-      {bottles.map((b, i) => (
-        <group key={i} position={[0.12, b.y, b.z]}>
-          <mesh position={[0, 0.13, 0]} material={bottleMats[b.m]}>
-            <cylinderGeometry args={[0.045, 0.045, 0.26, 12]} />
+        <mesh position={[0.05, 1.08, 0]}>
+          <boxGeometry args={[0.66, 1.86, 0.88]} />
+          <meshBasicMaterial ref={inner} color="#e8fff1" toneMapped={false} side={THREE.BackSide} />
+        </mesh>
+        {[0.42, 0.85, 1.28, 1.71].map((y) => (
+          <mesh key={y} position={[0.06, y, 0]} material={mats.steel}>
+            <boxGeometry args={[0.6, 0.015, 0.84]} />
           </mesh>
-          <mesh position={[0, 0.3, 0]} material={bottleMats[b.m]}>
-            <cylinderGeometry args={[0.018, 0.04, 0.08, 10]} />
-          </mesh>
-        </group>
-      ))}
-      <mesh position={[0.41, 1.08, 0]} material={mats.clearGlass}>
-        <boxGeometry args={[0.03, 1.9, 0.92]} />
-      </mesh>
-      <mesh position={[0.43, 2.12, 0]} material={mats.greenGlow}>
-        <boxGeometry args={[0.01, 0.07, 0.7]} />
-      </mesh>
-      <mesh position={[0.44, 1.1, 0.4]} material={mats.steel}>
-        <boxGeometry args={[0.04, 0.6, 0.03]} />
-      </mesh>
-      <pointLight ref={light} color="#e8fff1" distance={3} decay={2} position={[0.9, 1.2, 0]} />
-      <pointLight ref={innerLight} color="#f0fff4" distance={1.8} decay={2} position={[0.2, 1.25, 0]} />
-    </Reveal>
+        ))}
+        {bottles.map((b, i) => (
+          <group key={i} position={[0.12, b.y, b.z]}>
+            <mesh position={[0, 0.13, 0]} material={bottleMats[b.m]}>
+              <cylinderGeometry args={[0.045, 0.045, 0.26, 12]} />
+            </mesh>
+            <mesh position={[0, 0.3, 0]} material={bottleMats[b.m]}>
+              <cylinderGeometry args={[0.018, 0.04, 0.08, 10]} />
+            </mesh>
+          </group>
+        ))}
+        <mesh position={[0.41, 1.08, 0]} material={mats.clearGlass}>
+          <boxGeometry args={[0.03, 1.9, 0.92]} />
+        </mesh>
+        <mesh position={[0.43, 2.12, 0]} material={mats.greenGlow}>
+          <boxGeometry args={[0.01, 0.07, 0.7]} />
+        </mesh>
+        <mesh position={[0.44, 1.1, 0.4]} material={mats.steel}>
+          <boxGeometry args={[0.04, 0.6, 0.03]} />
+        </mesh>
+      </Reveal>
+      <pointLight ref={light} color="#e8fff1" distance={3} decay={2} position={[-2.65, 1.2, -1.25]} />
+    </>
   );
 }
 
@@ -1306,6 +1313,30 @@ function Lights({ shadows }: { shadows: boolean }) {
   );
 }
 
+/** Prepares every shader once on load, including for pieces that are still hidden. */
+function Warmup() {
+  const { gl, scene, camera } = useThree();
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      const hidden: THREE.Object3D[] = [];
+      scene.traverse((o) => {
+        if (!o.visible) {
+          hidden.push(o);
+          o.visible = true;
+        }
+      });
+      const target = new THREE.WebGLRenderTarget(64, 64);
+      gl.setRenderTarget(target);
+      gl.render(scene, camera);
+      gl.setRenderTarget(null);
+      target.dispose();
+      hidden.forEach((o) => (o.visible = false));
+    });
+    return () => cancelAnimationFrame(id);
+  }, [gl, scene, camera]);
+  return null;
+}
+
 function Scene({ target, layout }: { target: MutableRefObject<number>; layout: "wide" | "tall" }) {
   const mats = useMaterials();
   const fontsReady = useFontsReady();
@@ -1313,6 +1344,7 @@ function Scene({ target, layout }: { target: MutableRefObject<number>; layout: "
   return (
     <>
       <Driver target={target} />
+      <Warmup />
       <CameraRig layout={layout} />
       <color attach="background" args={["#030403"]} />
       <fog attach="fog" args={["#030403", 45, 95]} />
@@ -1357,8 +1389,16 @@ function Scene({ target, layout }: { target: MutableRefObject<number>; layout: "
   );
 }
 
-export default function StoreBuild3D({ progress, active }: { progress: MutableRefObject<number>; active: boolean }) {
+export default memo(function StoreBuild3D({
+  progress,
+  active,
+}: {
+  progress: MutableRefObject<number>;
+  active: boolean;
+}) {
   const smoothed = useRef(progress.current);
+  // Render resolution adapts to the device: sharper where the frame rate allows, lighter where it doesn't.
+  const [quality, setQuality] = useState(0.5);
   const [layout, setLayout] = useState<"wide" | "tall">(() =>
     typeof window !== "undefined" && window.innerWidth >= 1024 ? "wide" : "tall",
   );
@@ -1373,7 +1413,10 @@ export default function StoreBuild3D({ progress, active }: { progress: MutableRe
     <Canvas
       frameloop={active ? "always" : "never"}
       shadows={layout === "wide" ? "percentage" : false}
-      dpr={layout === "wide" ? [1, 1.75] : [1, 1.5]}
+      dpr={Math.min(
+        typeof window !== "undefined" ? window.devicePixelRatio : 1,
+        1 + quality * (layout === "wide" ? 1 : 0.6),
+      )}
       camera={{ fov: 32, near: 0.1, far: 200, position: [13, 10, 14] }}
       gl={{ antialias: false, powerPreference: "high-performance" }}
       onCreated={({ gl }) => {
@@ -1381,9 +1424,10 @@ export default function StoreBuild3D({ progress, active }: { progress: MutableRe
         gl.toneMappingExposure = 1.05;
       }}
     >
+      <PerformanceMonitor flipflops={3} onChange={({ factor }) => setQuality(Math.round(factor * 4) / 4)} />
       <StoryCtx.Provider value={{ p: smoothed }}>
         <Scene target={progress} layout={layout} />
       </StoryCtx.Provider>
     </Canvas>
   );
-}
+});
