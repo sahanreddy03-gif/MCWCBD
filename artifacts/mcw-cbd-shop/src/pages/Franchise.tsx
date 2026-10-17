@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ComponentType, type PointerEvent, type SVGProps } from "react";
+import { lazy, Suspense, useEffect, useRef, useState, type ComponentType, type PointerEvent, type SVGProps } from "react";
 import {
   AnimatePresence,
   MotionConfig,
@@ -7,6 +7,7 @@ import {
   useInView,
   useMotionTemplate,
   useMotionValue,
+  useMotionValueEvent,
   useReducedMotion,
   useScroll,
   useSpring,
@@ -14,6 +15,7 @@ import {
 } from "framer-motion";
 import {
   ArrowRight,
+  ArrowDown,
   ArrowUpRight,
   Check,
   Clock,
@@ -39,6 +41,8 @@ import {
 } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { MCW_STORES } from "@/lib/locations";
+
+const StoreBuild3D = lazy(() => import("@/components/franchise/StoreBuild3D"));
 
 type Icon = ComponentType<SVGProps<SVGSVGElement> & { strokeWidth?: number }>;
 
@@ -415,6 +419,23 @@ function Hero() {
 
         <PackageCard />
       </div>
+
+      <motion.a
+        href="#included"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.4 }}
+        className="group absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] font-bold uppercase tracking-[0.32em] text-gray-500 transition-colors hover:text-green-400 lg:flex"
+      >
+        Scroll to build your store
+        <span className="flex h-10 w-6 justify-center rounded-full border border-white/20 pt-2 group-hover:border-green-400">
+          <motion.span
+            className="h-2 w-1 rounded-full bg-green-400"
+            animate={{ y: [0, 12, 0], opacity: [1, 0.2, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </span>
+      </motion.a>
     </section>
   );
 }
@@ -624,13 +645,172 @@ function Included() {
   );
 }
 
+
+function hasWebGL() {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch {
+    return false;
+  }
+}
+
+const SEGMENTS = INCLUSIONS.length + 2;
+
+function ChapterCard({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex h-svh items-end px-4 pb-6 sm:px-8 lg:items-center lg:pb-0">
+      <motion.div
+        initial={{ opacity: 0, y: 48 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.55 }}
+        transition={{ duration: 0.7, ease: EASE }}
+        className="w-full max-w-md rounded-[22px] border border-white/10 bg-black/60 p-5 backdrop-blur-xl sm:p-8 lg:ml-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:max-w-[26rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none"
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+function StoreStory() {
+  const ref = useRef<HTMLElement>(null);
+  const progress = useRef(0);
+  const [chapter, setChapter] = useState(0);
+  const [active, setActive] = useState(false);
+  const [webgl] = useState(() => typeof window !== "undefined" && hasWebGL());
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    progress.current = v * (SEGMENTS - 1);
+    const c = Math.round(progress.current);
+    setChapter((prev) => (prev === c ? prev : c));
+  });
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setActive(entry.isIntersecting), { rootMargin: "300px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [webgl]);
+
+  if (!webgl) return <Included />;
+
+  const inclusion = chapter >= 1 && chapter <= INCLUSIONS.length ? chapter : 0;
+
+  return (
+    <section id="included" ref={ref} className="relative scroll-mt-0 bg-[#030403]" style={{ height: `${SEGMENTS * 100}svh` }}>
+      <div className="sticky top-0 h-svh overflow-hidden">
+        <Suspense
+          fallback={
+            <div className="flex h-full items-center justify-center">
+              <span className="animate-pulse text-[11px] font-bold uppercase tracking-[0.32em] text-green-400">
+                Building your store…
+              </span>
+            </div>
+          }
+        >
+          <StoreBuild3D progress={progress} active={active} />
+        </Suspense>
+
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[56%] bg-gradient-to-r from-[#030403] from-30% via-[#030403]/80 to-transparent lg:block" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#030403] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#030403] to-transparent" />
+
+        <div
+          className={`absolute right-4 top-[7.25rem] z-10 w-44 rounded-xl bg-black/45 px-3 py-2.5 backdrop-blur-md transition-opacity duration-500 sm:right-8 sm:w-60 lg:top-32 ${inclusion ? "opacity-100" : "opacity-0"}`}
+          aria-hidden
+        >
+          <div className="flex items-baseline justify-between text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+            <span>Included</span>
+            <span className="tabular-nums text-white">
+              {String(inclusion || 1).padStart(2, "0")}
+              <span className="text-gray-600"> / {INCLUSIONS.length}</span>
+            </span>
+          </div>
+          <div className="mt-3 flex gap-1">
+            {INCLUSIONS.map((_, i) => (
+              <span key={i} className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/15">
+                <span
+                  className="absolute inset-0 origin-left bg-green-400 transition-transform duration-500"
+                  style={{ transform: `scaleX(${i < inclusion ? 1 : 0})` }}
+                />
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <a
+          href="#road"
+          className="absolute bottom-6 right-8 z-10 hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 transition-colors hover:text-green-400 lg:flex"
+        >
+          Skip the build <ArrowDown className="h-3.5 w-3.5" />
+        </a>
+      </div>
+
+      <div className="absolute inset-0">
+        <ChapterCard>
+          <Eyebrow>What's included</Eyebrow>
+          <h2 className="mt-5 font-bebas text-5xl uppercase leading-[0.9] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Watch your store <span className="text-green-400">come together.</span>
+          </h2>
+          <p className="mt-5 text-[15px] leading-relaxed text-gray-300 sm:text-base">
+            Keep scrolling. Every part of the {PRICE_LABEL} package builds itself in front of you — from the name above
+            the door to the coffee machine behind the counter.
+          </p>
+          <p className="mt-6 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-green-400">
+            <ArrowDown className="h-3.5 w-3.5 animate-bounce" /> Scroll
+          </p>
+        </ChapterCard>
+
+        {INCLUSIONS.map((item, i) => (
+          <ChapterCard key={item.title}>
+            <div className="flex items-center gap-4">
+              <span className="font-bebas text-4xl leading-none text-green-400 sm:text-5xl lg:text-6xl">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="h-px flex-1 bg-white/15 lg:max-w-16" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">{item.group}</span>
+            </div>
+            <h3 className="mt-3 font-bebas text-[2.3rem] uppercase leading-[0.92] tracking-wide text-white sm:mt-4 sm:text-5xl lg:text-6xl">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-[15px] leading-relaxed text-gray-300 sm:mt-4 sm:text-base">{item.desc}</p>
+            <p className="mt-4 inline-flex sm:mt-6 items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-green-400">
+              <Check className="h-3 w-3" strokeWidth={3} /> Included in the package
+            </p>
+          </ChapterCard>
+        ))}
+
+        <ChapterCard>
+          <Eyebrow>Ready to open</Eyebrow>
+          <h2 className="mt-5 font-bebas text-5xl uppercase leading-[0.9] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Your store. <span className="text-green-400">Fully equipped.</span>
+          </h2>
+          <p className="mt-5 text-[15px] leading-relaxed text-gray-300 sm:text-base">
+            Ten inclusions. One franchise package. <span className="font-semibold text-white">{PRICE_LABEL}.</span>
+          </p>
+          <a
+            href="#enquire"
+            className="group mt-7 inline-flex items-center justify-center gap-3 bg-green-500 px-6 py-4 text-xs font-black uppercase tracking-[0.16em] text-black transition-colors hover:bg-green-400 sm:px-8 sm:tracking-[0.22em]"
+          >
+            Enquire about a territory
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+        </ChapterCard>
+      </div>
+    </section>
+  );
+}
+
 function Journey() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 80%", "end 55%"] });
   const progress = useSpring(scrollYProgress, { stiffness: 90, damping: 24 });
 
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.07] bg-[#050505] px-5 py-24 sm:px-8 md:py-36">
+    <section id="road" className="relative scroll-mt-24 overflow-hidden border-t border-white/[0.07] bg-[#050505] px-5 py-24 sm:px-8 md:py-36">
       <div className="pointer-events-none absolute inset-0 fr-dots opacity-30" aria-hidden />
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="max-w-3xl">
@@ -923,7 +1103,7 @@ export default function Franchise() {
       <div className="relative bg-black text-white">
         <Hero />
         <FactStrip />
-        <Included />
+        <StoreStory />
         <Journey />
         <Range />
         <Faq />
